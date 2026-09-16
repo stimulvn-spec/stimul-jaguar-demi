@@ -116,6 +116,11 @@
   .cta:hover{background:var(--olive-hover)}
   .cta:active{transform:translateY(1px)}
   .cta svg{width:20px;height:20px}
+  .actions{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:10px}
+  .site-btn{display:flex;align-items:center;justify-content:center;gap:8px;border:1.5px solid var(--ink);border-radius:16px;background:var(--surface);color:var(--ink);font:600 16px/1.15 var(--body);padding:16px 18px;text-decoration:none;text-align:center;transition:background .15s,color .15s}
+  .site-btn:hover{background:var(--ink);color:#fff}
+  .site-btn svg{width:17px;height:17px;flex:none}
+  .price-note{font-size:12.5px;color:var(--muted)}
   .trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:-8px}
   .trust div{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;line-height:1.35;color:var(--muted)}
   .trust svg{flex:none;width:18px;height:18px;color:var(--ink);margin-top:1px}
@@ -185,7 +190,8 @@
     .bar .p{display:flex;flex-direction:column;line-height:1.1}
     .bar .p b{font:600 24px var(--display);font-variant-numeric:tabular-nums}
     .bar .p s{font-size:12.5px;color:var(--muted)}
-    .bar .cta{padding:15px 18px;font-size:16px;border-radius:14px;flex:1}
+    .bar .cta{padding:15px 14px;font-size:15px;border-radius:14px;flex:1;white-space:nowrap}
+    .bar .bar-site{padding:13px 12px;font-size:14px;border-radius:14px;gap:6px;flex:none}
   }
   @media (max-width:560px){
     .sizes{grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -197,6 +203,10 @@
     .cell{min-width:46px}
     .nav{width:36px;height:36px}
     .brand span{display:none}
+    .actions{grid-template-columns:minmax(0,1fr)}
+    .bar{gap:10px}
+    .bar .p s{display:none}
+    .bar .p b{font-size:21px}
   }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation:none!important;transition:none!important}
@@ -222,7 +232,7 @@
       <div class="thumbs" id="thumbs" role="list"></div>
       <div class="stage" id="stage">
         <img id="mainImg" src="img/koiot-1.jpg" alt="Кросівки Ягуар STIMUL, демісезон, колір Койот" width="1000" height="1000">
-        <span class="sale-tag">−13%</span>
+        <span class="sale-tag" id="saleTag">−13%</span>
         <button class="nav prev" id="prev" type="button" aria-label="Попереднє фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
         <button class="nav next" id="next" type="button" aria-label="Наступне фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
         <span class="counter" id="counter">1 / 7</span>
@@ -247,10 +257,11 @@
       <div class="offer">
         <div class="price">
           <div class="price-row">
-            <span class="price-now">2 685<small>грн</small></span>
-            <span class="price-old">3 085 грн</span>
+            <span class="price-now"><span id="priceNow">2 685</span><small>грн</small></span>
+            <span class="price-old" id="priceOld">3 085 грн</span>
           </div>
-          <span class="save">Економія 400 грн</span>
+          <span class="save" id="priceSave">Економія 400 грн</span>
+          <span class="price-note" id="priceNote">Ціна для розмірів 35–46 · 47 — 2 985 грн · 48–50 — 3 185 грн</span>
         </div>
         <div class="timer" aria-live="off">
           <span class="timer-label">До кінця акції</span>
@@ -274,10 +285,16 @@
         <p class="size-err" id="sizeErr" hidden>Оберіть розмір, щоб продовжити</p>
       </div>
 
-      <button class="cta" id="orderBtn" type="button">
-        Замовити зараз
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </button>
+      <div class="actions">
+        <button class="cta" id="orderBtn" type="button">
+          Швидке замовлення
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <a class="site-btn" id="siteBtn" href="https://stimul.in.ua/krosivky-yahuar-koiot-44-28.8-sm-ustilka-demi/" target="_blank" rel="noopener">
+          Купити на сайті
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+        </a>
+      </div>
 
       <div class="trust">
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg><span><b>Нова пошта</b>по Україні 110–155 грн</span></div>
@@ -300,8 +317,9 @@
 
 <!-- Мобільна панель -->
 <div class="bar" id="bar">
-  <div class="p"><b>2 685 грн</b><s>3 085 грн</s></div>
-  <button class="cta" type="button" id="barBtn">Замовити зараз</button>
+  <div class="p"><b id="barPrice">2 685 грн</b><s id="barOld">3 085 грн</s></div>
+  <button class="cta" type="button" id="barBtn">Швидке замовлення</button>
+  <a class="site-btn bar-site" href="https://stimul.in.ua/krosivky-yahuar-koiot-44-28.8-sm-ustilka-demi/" target="_blank" rel="noopener" aria-label="Купити на сайті STIMUL"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>Сайт</a>
 </div>
 
 <!-- Форма замовлення -->
@@ -313,7 +331,7 @@
         <div>
           <h2 id="mTitle">Кросівки Ягуар Демі</h2>
           <p id="mSub">Койот · розмір не обрано</p>
-          <span class="m-price">2 685 грн</span>
+          <span class="m-price" id="mPrice">2 685 грн</span>
         </div>
         <button class="close" type="button" data-close aria-label="Закрити"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
       </div>
@@ -339,7 +357,7 @@
             <span class="err">Оберіть розмір</span>
           </div>
         </div>
-        <div class="total"><span>До сплати</span><b>2 685 грн</b></div>
+        <div class="total"><span>До сплати</span><b id="mTotal">2 685 грн</b></div>
         <button class="cta" type="submit">Оформити замовлення</button>
         <p class="demo">Демо-прототип: дані нікуди не надсилаються</p>
       </form>
@@ -426,7 +444,27 @@
     [].forEach.call(sizesEl.children,function(b){b.setAttribute('aria-checked',+b.dataset.s===s)});
     $('sizeName').textContent=s?s+' (устілка '+insole(s)+' см)':'оберіть';
     $('sizeErr').hidden=true;
+    renderPrice();
     syncForm();
+  }
+
+  /* Ціни за розміром (як на сайті): 35–46 — 2 685 (стара 3 085), 47 — 2 985, 48–50 — 3 185 */
+  function priceOf(s){ return s===47?2985:(s>=48?3185:2685) }
+  function oldPriceOf(s){ return (!s||s<=46)?3085:null }
+  function money(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' грн' }
+  function renderPrice(){
+    var s=state.size, p=priceOf(s), old=oldPriceOf(s);
+    $('priceNow').textContent=money(p).replace(' грн','');
+    $('priceOld').hidden=!old; $('barOld').hidden=!old;
+    $('saleTag').hidden=!old; $('priceSave').hidden=!old;
+    if(old){
+      $('priceOld').textContent=money(old); $('barOld').textContent=money(old);
+      $('priceSave').textContent='Економія '+money(old-p);
+    }
+    $('priceNote').hidden=!!s;
+    $('barPrice').textContent=money(p);
+    $('mPrice').textContent=money(p);
+    $('mTotal').textContent=money(p);
   }
   sizesEl.addEventListener('click',function(e){var b=e.target.closest('.size'); if(b) setSize(+b.dataset.s)});
 
@@ -510,7 +548,7 @@
       '<dt>Колір</dt><dd>'+c.name+'</dd>'+
       '<dt>Розмір</dt><dd>'+state.size+' ('+insole(state.size)+' см)</dd>'+
       '<dt>Телефон</dt><dd>'+fmt(ph)+'</dd>'+
-      '<dt>Сума</dt><dd>2 685 грн</dd>';
+      '<dt>Сума</dt><dd>'+money(priceOf(state.size))+'</dd>';
     $('formView').hidden=true; $('successView').hidden=false;
     $('successView').querySelector('.ghost').focus();
   });
