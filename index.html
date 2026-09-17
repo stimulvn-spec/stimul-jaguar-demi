@@ -4,268 +4,303 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Кросівки Ягуар Демі</title>
+<meta name="description" content="Кросівки Ягуар від STIMUL: натуральний нубук і кордура, поліуретанова підошва, розміри 35–50. Власне виробництво.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Onest:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Golos+Text:wght@400;500;600;700&display=swap">
 <style>
   :root{
-    --ground:#ECEEE8;
-    --surface:#FFFFFF;
-    --ink:#1C211A;
-    --muted:#646B5E;
-    --line:#DCDFD5;
-    --olive:#2F3B24;
-    --olive-hover:#3D4D2F;
-    --coyote:#B0742C;
-    --coyote-soft:#F3E6D3;
-    --ok:#3F7A3A;
-    --danger:#B3261E;
-    --radius-lg:22px;
-    --radius:14px;
-    --shadow:0 1px 2px rgba(28,33,26,.05),0 12px 32px -12px rgba(28,33,26,.18);
-    --display:"Oswald","Arial Narrow",Impact,sans-serif;
-    --body:"Onest",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    --asphalt:#131416;
+    --graphite:#24262A;
+    --concrete:#E7E8E9;
+    --paper:#FFFFFF;
+    --ink:#131416;
+    --muted:#6A6D73;
+    --muted-dark:#A3A6AC;
+    --line:#D6D8DB;
+    --line-dark:#34373C;
+    --signal:#FC7301;
+    --signal-hover:#FF8A24;
+    --danger:#C8321E;
+    --radius:18px;
+    --shadow:0 1px 2px rgba(19,20,22,.06),0 14px 34px -16px rgba(19,20,22,.25);
+    --display:"Unbounded","Arial Black",Arial,sans-serif;
+    --body:"Golos Text",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   }
   *{box-sizing:border-box}
   [hidden]{display:none!important}
-  html{-webkit-text-size-adjust:100%}
-  body{margin:0;background:var(--ground);color:var(--ink);font:400 15px/1.5 var(--body);padding-inline:24px}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{margin:0;background:var(--concrete);color:var(--ink);font:400 16px/1.55 var(--body)}
   img{max-width:100%;display:block}
-  button,input,select{font:inherit;color:inherit}
-  :focus-visible{outline:2px solid var(--coyote);outline-offset:2px}
-  .wrap{max-width:1240px;margin:0 auto}
+  button{font:inherit;color:inherit}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+  .wrap{max-width:1240px;margin:0 auto;padding-inline:24px}
+  .band-dark{background:var(--asphalt);color:#fff}
 
-  /* Header */
-  .top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
-  .brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:var(--ink)}
-  .brand b{font:600 24px/1 var(--display);letter-spacing:.08em}
-  .brand span{font-size:12px;color:var(--muted);letter-spacing:.04em}
-  .phone{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
-  .phone small{display:block;font-weight:400;color:var(--muted);font-size:12px;text-align:right}
+  /* ---------- Шапка ---------- */
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:14px}
+  .logo img{height:52px;width:auto}
+  .own{display:flex;align-items:center;gap:12px;border:1px solid var(--line-dark);border-radius:999px;padding:8px 18px 8px 10px}
+  .own i{width:34px;height:34px;border-radius:50%;background:var(--signal);color:var(--asphalt);display:grid;place-items:center;flex:none}
+  .own svg{width:18px;height:18px}
+  .own b{display:block;font:700 13px/1.1 var(--display);letter-spacing:.02em;text-transform:uppercase}
+  .own span{display:block;font-size:12.5px;color:var(--muted-dark)}
+  .phone{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .phone svg{width:18px;height:18px;color:var(--signal)}
+  .phone small{display:block;font-weight:400;font-size:12px;color:var(--muted-dark)}
 
-  /* Hero */
-  .hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:28px;align-items:start;padding-block:4px 28px}
-
-  .gallery{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:18px;display:grid;grid-template-columns:78px minmax(0,1fr);gap:16px;position:sticky;top:16px}
-  .thumbs{display:flex;flex-direction:column;gap:10px;max-height:620px;overflow:auto;scrollbar-width:none}
-  .thumbs::-webkit-scrollbar{display:none}
-  .thumb{border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:0;cursor:pointer;overflow:hidden;aspect-ratio:1;width:100%;flex:none;transition:border-color .15s}
-  .thumb img{width:100%;height:100%;object-fit:cover}
-  .thumb:hover{border-color:#b9bdb0}
-  .thumb[aria-current="true"]{border-color:var(--ink)}
-  .stage{position:relative;aspect-ratio:1;border-radius:16px;overflow:hidden;background:#fff;touch-action:pan-y}
-  .stage img{width:100%;height:100%;object-fit:contain;transition:opacity .25s ease}
+  /* ---------- Перший екран ---------- */
+  .hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:32px;align-items:start;padding-block:28px 56px}
+  .gallery{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;display:flex;flex-direction:column;gap:14px}
+  .stage{position:relative;aspect-ratio:1;border-radius:12px;overflow:hidden;background:#fff;touch-action:pan-y}
+  .stage img{width:100%;height:100%;object-fit:contain;transition:opacity .22s ease}
   .stage img.fade{opacity:0}
-  .nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.92);cursor:pointer;display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.08)}
-  .nav:hover{background:#fff}
-  .nav.prev{left:10px}.nav.next{right:10px}
+  .nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:var(--asphalt);color:#fff;cursor:pointer;display:grid;place-items:center;opacity:.88;transition:opacity .15s,background .15s}
+  .nav:hover{opacity:1;background:#000}
+  .nav.prev{left:12px}.nav.next{right:12px}
   .nav svg{width:18px;height:18px}
-  .counter{position:absolute;right:12px;bottom:12px;background:rgba(28,33,26,.72);color:#fff;font-size:12px;padding:4px 10px;border-radius:99px;font-variant-numeric:tabular-nums}
-  .sale-tag{position:absolute;left:12px;top:12px;background:var(--coyote);color:#fff;font:600 15px/1 var(--display);letter-spacing:.04em;padding:8px 10px;border-radius:10px}
+  .counter{position:absolute;left:12px;bottom:12px;background:rgba(19,20,22,.8);color:#fff;font-size:12px;padding:4px 10px;border-radius:99px;font-variant-numeric:tabular-nums}
+  .deal{position:absolute;left:12px;top:12px;background:var(--signal);color:var(--asphalt);font:700 13px/1 var(--display);padding:9px 11px;border-radius:8px}
+  .thumbs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+  .thumbs::-webkit-scrollbar{display:none}
+  .thumb{flex:none;width:72px;aspect-ratio:1;border:2px solid transparent;border-radius:10px;overflow:hidden;padding:0;background:#F3F3F4;cursor:pointer}
+  .thumb img{width:100%;height:100%;object-fit:cover}
+  .thumb[aria-current="true"]{border-color:var(--asphalt)}
 
-  /* Buy panel */
-  .buy{display:flex;flex-direction:column;gap:22px;padding-top:6px}
-  .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;padding:5px 11px;border-radius:99px;background:var(--surface);border:1px solid var(--line)}
-  .chip .dot{width:7px;height:7px;border-radius:50%;background:var(--ok)}
-  .chip.accent{background:var(--coyote-soft);border-color:transparent;color:#7A4E17}
-  .title{display:flex;flex-direction:column;gap:8px}
-  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
-  h1{margin:0;font:600 clamp(40px,5.2vw,64px)/.95 var(--display);text-transform:uppercase;letter-spacing:.01em;text-wrap:balance}
-  h1 em{font-style:normal;color:var(--coyote)}
-  .lede{margin:0;color:var(--muted);max-width:52ch;font-size:15.5px}
-  .meta{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--muted)}
-  .meta b{color:var(--ink);font-weight:600}
+  .swatches{border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:10px}
+  .sw-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:14px}
+  .sw-head b{font-weight:600}
+  .sw-head > span:last-child{color:var(--muted)}
+  .sw-list{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+  .sw{border:2px solid var(--line);border-radius:12px;background:#fff;padding:4px 4px 6px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;transition:border-color .15s}
+  .sw img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px}
+  .sw span{font-size:12px;font-weight:500;line-height:1.1}
+  .sw:hover{border-color:#A9ACB1}
+  .sw[aria-checked="true"]{border-color:var(--asphalt);box-shadow:inset 0 0 0 1px var(--asphalt)}
 
-  .offer{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:20px 22px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
-  .price{display:flex;flex-direction:column;gap:2px}
+  .buy{display:flex;flex-direction:column;gap:22px;padding-top:4px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font-size:12.5px;font-weight:500;padding:5px 12px;border-radius:99px;background:var(--paper);border:1px solid var(--line);display:inline-flex;align-items:center;gap:7px}
+  .tag .dot{width:7px;height:7px;border-radius:50%;background:#2E9E5B}
+  .tag.dark{background:var(--asphalt);border-color:var(--asphalt);color:#fff}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  h1{margin:6px 0 0;font:800 clamp(56px,7.4vw,104px)/.9 var(--display);letter-spacing:-.03em;text-transform:uppercase}
+  .lede{margin:14px 0 0;color:#3E4146;font-size:17px;max-width:44ch}
+  .rating{display:inline-flex;align-items:center;gap:10px;margin-top:14px;font-size:14px;text-decoration:none;color:var(--ink)}
+  .stars{color:var(--signal);letter-spacing:2px;font-size:15px}
+  .rating u{text-decoration-color:var(--line);text-underline-offset:3px}
+
+  .offer{background:var(--asphalt);color:#fff;border-radius:var(--radius);padding:20px 22px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px}
   .price-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-  .price-now{font:600 44px/1 var(--display);letter-spacing:.01em;font-variant-numeric:tabular-nums}
-  .price-now small{font:500 20px var(--body);margin-left:4px}
-  .price-old{color:var(--muted);text-decoration:line-through;font-size:17px;font-variant-numeric:tabular-nums}
-  .save{font-size:13px;color:#7A4E17;font-weight:600}
-  .timer{display:flex;flex-direction:column;gap:6px}
-  .timer-label{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
-  .timer-cells{display:flex;gap:6px}
-  .cell{min-width:52px;background:var(--ground);border-radius:10px;padding:6px 6px 5px;text-align:center}
-  .cell b{display:block;font:600 24px/1 var(--display);font-variant-numeric:tabular-nums}
-  .cell span{font-size:10.5px;color:var(--muted)}
+  .price-now{font:700 42px/1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .price-now small{font:500 18px var(--body);margin-left:6px;letter-spacing:0}
+  .price-old{color:var(--muted-dark);text-decoration:line-through;font-size:17px;font-variant-numeric:tabular-nums}
+  .price-note{margin-top:6px;font-size:12.5px;color:var(--muted-dark)}
+  .price-note b{color:#fff;font-weight:600}
+  .timer-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-dark);font-weight:600;margin-bottom:6px}
+  .cells{display:flex;gap:6px}
+  .cell{min-width:50px;background:var(--graphite);border-radius:10px;padding:7px 4px 5px;text-align:center}
+  .cell b{display:block;font:700 20px/1 var(--display);font-variant-numeric:tabular-nums}
+  .cell span{font-size:10.5px;color:var(--muted-dark)}
 
-  .opt{display:flex;flex-direction:column;gap:10px}
-  .opt-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:14px}
+  .opt-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:14px;margin-bottom:10px}
   .opt-head b{font-weight:600}
   .opt-head .val{color:var(--muted)}
   .opt-head .hint{font-size:12.5px;color:var(--muted)}
-  .colors{display:flex;flex-wrap:wrap;gap:10px}
-  .color{width:44px;height:44px;border-radius:50%;border:2px solid transparent;padding:3px;background:none;cursor:pointer;transition:border-color .15s}
-  .color i{display:block;width:100%;height:100%;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
-  .color:hover{border-color:#b9bdb0}
-  .color[aria-checked="true"]{border-color:var(--ink)}
   .sizes{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}
-  .size{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 0 6px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px;transition:border-color .15s,background .15s}
+  .size{border:1.5px solid var(--line);background:var(--paper);border-radius:10px;padding:8px 0 6px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px;transition:border-color .15s,background .15s}
   .size b{font-weight:600;font-size:15px;font-variant-numeric:tabular-nums}
-  .size span{font-size:10.5px;color:var(--muted);font-variant-numeric:tabular-nums}
-  .size:hover{border-color:#b9bdb0}
-  .size[aria-checked="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
-  .size[aria-checked="true"] span{color:#c9cec2}
-  .sizes.shake{animation:shake .35s}
-  .size-err{color:var(--danger);font-size:13px;margin:0}
-  @keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+  .size span{font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .size:hover{border-color:#A9ACB1}
+  .size[aria-checked="true"]{background:var(--asphalt);border-color:var(--asphalt);color:#fff}
+  .size[aria-checked="true"] span{color:var(--muted-dark)}
+  .size-err{margin:10px 0 0;color:var(--danger);font-size:13.5px;font-weight:500}
+  .shake{animation:shake .35s}
+  @keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 
-  .cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;border-radius:16px;background:var(--olive);color:#fff;font:600 19px/1 var(--body);padding:20px 24px;cursor:pointer;box-shadow:0 10px 24px -10px rgba(47,59,36,.6);transition:background .15s,transform .15s}
-  .cta:hover{background:var(--olive-hover)}
-  .cta:active{transform:translateY(1px)}
-  .cta svg{width:20px;height:20px}
-  .actions{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:10px}
-  .site-btn{display:flex;align-items:center;justify-content:center;gap:8px;border:1.5px solid var(--ink);border-radius:16px;background:var(--surface);color:var(--ink);font:600 16px/1.15 var(--body);padding:16px 18px;text-decoration:none;text-align:center;transition:background .15s,color .15s}
-  .site-btn:hover{background:var(--ink);color:#fff}
-  .site-btn svg{width:17px;height:17px;flex:none}
-  .price-note{font-size:12.5px;color:var(--muted)}
-  .trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:-8px}
-  .trust div{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;line-height:1.35;color:var(--muted)}
-  .trust svg{flex:none;width:18px;height:18px;color:var(--ink);margin-top:1px}
-  .trust b{display:block;color:var(--ink);font-weight:600}
+  .buy-btn{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;border-radius:14px;background:var(--signal);color:var(--asphalt);font:700 17px/1 var(--display);letter-spacing:.01em;text-transform:uppercase;padding:22px 24px;text-decoration:none;box-shadow:0 12px 26px -12px rgba(252,115,1,.7);transition:background .15s,transform .15s}
+  .buy-btn:hover{background:var(--signal-hover)}
+  .buy-btn:active{transform:translateY(1px)}
+  .buy-btn svg{width:20px;height:20px;flex:none}
+  .buy-sub{margin:-12px 0 0;text-align:center;font-size:12.5px;color:var(--muted)}
 
-  /* Specs */
-  .specs{background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:22px 26px;margin-bottom:40px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
-  .spec{display:flex;flex-direction:column;gap:4px;padding-left:14px;border-left:1px solid var(--line)}
-  .spec:first-child{border-left:0;padding-left:0}
-  .spec dt{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
-  .spec dd{margin:0;font-size:14.5px;font-weight:500;line-height:1.35}
-  .note{font-size:12px;color:var(--muted);margin:-28px 0 40px}
+  .perks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 18px;padding-top:4px}
+  .perk{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.35;color:var(--muted)}
+  .perk svg{flex:none;width:20px;height:20px;color:var(--ink);margin-top:1px}
+  .perk b{display:block;color:var(--ink);font-weight:600}
 
-  /* Sticky mobile bar */
+  /* ---------- Секції ---------- */
+  section.block{padding-block:72px}
+  .kicker{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--signal)}
+  h2{margin:10px 0 0;font:700 clamp(28px,3.6vw,46px)/1.05 var(--display);letter-spacing:-.02em;text-wrap:balance}
+
+  .why-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:center}
+  .why-photo{position:relative;margin:0;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;background:var(--graphite)}
+  .why-photo img{width:100%;height:100%;object-fit:cover}
+  .why-photo figcaption{position:absolute;left:14px;bottom:14px;background:rgba(19,20,22,.82);color:#fff;font-size:12.5px;padding:6px 12px;border-radius:99px}
+  .why-text p.intro{margin:18px 0 0;color:#C6C8CC;font-size:17.5px;max-width:56ch}
+  .reasons{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line-dark);border:1px solid var(--line-dark);border-radius:var(--radius);overflow:hidden}
+  .reasons li{background:var(--asphalt);padding:20px 20px 22px}
+  .reasons h3{margin:0 0 6px;font:700 15px/1.25 var(--display);letter-spacing:-.01em;color:#fff}
+  .reasons p{margin:0;font-size:14.5px;color:#B4B7BC}
+  .figures{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:28px}
+  .figure b{display:block;font:700 30px/1 var(--display);color:var(--signal);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .figure span{display:block;margin-top:6px;font-size:13px;color:var(--muted-dark);line-height:1.3}
+
+  .tables{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:24px;margin-top:32px;align-items:start}
+  .card{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+  .card h3{margin:0;padding:18px 22px;font:700 16px/1.2 var(--display);border-bottom:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:15px}
+  th,td{text-align:left;padding:12px 22px;vertical-align:top;border-bottom:1px solid #ECEDEE}
+  tr:last-child th,tr:last-child td{border-bottom:0}
+  .specs th{width:40%;font-weight:500;color:var(--muted)}
+  .specs td{font-weight:500}
+  .sizes-t{font-variant-numeric:tabular-nums}
+  .sizes-t thead th{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:#F5F5F6;padding-block:10px}
+  .sizes-t td{padding-block:9px}
+  .sizes-t td:last-child,.sizes-t th:last-child{text-align:right}
+  .sizes-t tbody tr.hl td{background:#FFF3E8}
+  .scroll{overflow-x:auto}
+  .t-note{padding:12px 22px 16px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
+
+  .rev-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px}
+  .score{display:flex;align-items:center;gap:16px;background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 20px}
+  .score b{font:700 38px/1 var(--display)}
+  .score .stars{font-size:17px}
+  .score span{display:block;font-size:13px;color:var(--muted)}
+  .reviews{columns:3 320px;column-gap:18px;margin-top:32px}
+  .review{break-inside:avoid;background:var(--paper);border-radius:var(--radius);padding:20px 22px;margin:0 0 18px;box-shadow:var(--shadow)}
+  .review header{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .avatar{width:40px;height:40px;border-radius:50%;background:var(--asphalt);color:#fff;display:grid;place-items:center;font:700 15px var(--display);flex:none}
+  .review header b{display:block;font-weight:600;line-height:1.2}
+  .review header span{font-size:12.5px;color:var(--muted)}
+  .review header .stars{font-size:13px;margin-left:auto;white-space:nowrap;color:var(--signal)}
+  .review p{margin:0;font-size:15px;white-space:pre-line;overflow-wrap:anywhere}
+  .review.clamp > p{display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;overflow:hidden}
+  .more{margin-top:8px;border:0;background:none;padding:0;color:var(--ink);font-weight:600;font-size:14px;cursor:pointer;text-decoration:underline;text-decoration-color:var(--signal);text-underline-offset:4px}
+  .reply{margin-top:14px;padding:12px 14px;background:#F3F3F4;border-radius:12px}
+  .reply b{display:block;font-size:12.5px;margin-bottom:2px}
+  .reply p{font-size:14px}
+  .rev-actions{display:flex;justify-content:center;margin-top:10px}
+  .ghost{border:1.5px solid var(--asphalt);background:transparent;border-radius:14px;padding:14px 22px;font-weight:600;cursor:pointer}
+  .ghost:hover{background:var(--asphalt);color:#fff}
+
+  .final .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;padding-block:52px}
+  .final h2{margin:0;color:#fff}
+  .final p{margin:8px 0 0;color:var(--muted-dark)}
+  .final .buy-btn{width:auto;min-width:300px}
+
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;padding-block:28px 40px;border-top:1px solid var(--line-dark);font-size:14px;color:var(--muted-dark)}
+  footer img{height:40px;width:auto}
+  footer b{color:#fff;font-weight:600}
+  footer a{text-decoration:none}
+
   .bar{display:none}
 
-  /* Modal */
-  .overlay{position:fixed;inset:0;background:rgba(20,24,18,.5);display:grid;place-items:center;padding:16px;z-index:50;animation:fadein .2s}
-  .modal{background:var(--surface);border-radius:var(--radius-lg);width:100%;max-width:440px;max-height:calc(100vh - 32px);overflow:auto;box-shadow:0 30px 80px -20px rgba(0,0,0,.4);animation:rise .25s ease}
-  .m-head{display:flex;gap:14px;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
-  .m-head img{width:64px;height:64px;border-radius:12px;object-fit:cover;border:1px solid var(--line)}
-  .m-head div{flex:1;min-width:0}
-  .m-head h2{margin:0;font:600 22px/1.05 var(--display);text-transform:uppercase}
-  .m-head p{margin:3px 0 0;font-size:13px;color:var(--muted)}
-  .m-head .m-price{font:600 18px var(--body);color:var(--ink);font-variant-numeric:tabular-nums}
-  .close{width:36px;height:36px;border-radius:50%;border:0;background:var(--ground);cursor:pointer;display:grid;place-items:center;flex:none;align-self:flex-start}
-  .close svg{width:16px;height:16px}
-  form{padding:18px 20px 20px;display:flex;flex-direction:column;gap:14px}
-  .field{display:flex;flex-direction:column;gap:6px}
-  .field label{font-size:13px;font-weight:600}
-  .field input,.field select{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff;font-size:16px;appearance:none;-webkit-appearance:none}
-  .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23646B5E' stroke-width='2'%3E%3Cpath d='M5 8l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:18px;padding-right:40px}
-  .field input:focus,.field select:focus{outline:none;border-color:var(--ink)}
-  .field.invalid input,.field.invalid select{border-color:var(--danger)}
-  .field .err{font-size:12.5px;color:var(--danger);display:none}
-  .field.invalid .err{display:block}
-  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .total{display:flex;justify-content:space-between;align-items:baseline;padding-top:4px;font-size:14px;color:var(--muted)}
-  .total b{font:600 26px var(--display);color:var(--ink);font-variant-numeric:tabular-nums}
-  .demo{font-size:12px;color:var(--muted);text-align:center;margin:0}
-  .success{padding:32px 24px 26px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px}
-  .tick{width:64px;height:64px;border-radius:50%;background:#E3EEDF;color:var(--ok);display:grid;place-items:center}
-  .tick svg{width:30px;height:30px}
-  .success h2{margin:0;font:600 28px/1.05 var(--display);text-transform:uppercase}
-  .success p{margin:0;color:var(--muted);max-width:34ch}
-  .summary{width:100%;background:var(--ground);border-radius:14px;padding:12px 16px;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;text-align:left;font-size:14px}
-  .summary dt{color:var(--muted)}
-  .summary dd{margin:0;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
-  .ghost{border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:13px 20px;font-weight:600;cursor:pointer;width:100%}
-  .ghost:hover{border-color:var(--ink)}
-  @keyframes fadein{from{opacity:0}}
-  @keyframes rise{from{transform:translateY(16px);opacity:0}}
-
-  /* Responsive */
+  /* ---------- Адаптив ---------- */
   @media (max-width:1100px){
-    .specs{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:20px}
-    .spec:nth-child(4){border-left:0;padding-left:0}
+    .own span{display:none}
+    .figures{grid-template-columns:repeat(2,minmax(0,1fr))}
   }
-  @media (max-width:900px){
-    body{padding-inline:16px;padding-bottom:84px}
-    .hero{grid-template-columns:minmax(0,1fr);gap:22px}
-    .gallery{position:static;grid-template-columns:minmax(0,1fr);padding:12px;gap:12px}
-    .thumbs{flex-direction:row;order:2;max-height:none;overflow-x:auto}
-    .thumb{width:64px}
-    .phone small{display:none}
-    .bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));align-items:center;gap:14px}
-    .bar .p{display:flex;flex-direction:column;line-height:1.1}
-    .bar .p b{font:600 24px var(--display);font-variant-numeric:tabular-nums}
-    .bar .p s{font-size:12.5px;color:var(--muted)}
-    .bar .cta{padding:15px 14px;font-size:15px;border-radius:14px;flex:1;white-space:nowrap}
-    .bar .bar-site{padding:13px 12px;font-size:14px;border-radius:14px;gap:6px;flex:none}
+  @media (max-width:960px){
+    .hero{grid-template-columns:minmax(0,1fr);gap:26px}
+    .why-grid,.tables{grid-template-columns:minmax(0,1fr)}
+    .why-photo{aspect-ratio:16/10}
+    .phone > span{display:none}
+    body{padding-bottom:80px}
+    .bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--asphalt);color:#fff;padding:10px 16px calc(10px + env(safe-area-inset-bottom));align-items:center;gap:14px;box-shadow:0 -8px 24px rgba(0,0,0,.18)}
+    .bar .p b{display:block;font:700 20px/1.1 var(--display);font-variant-numeric:tabular-nums}
+    .bar .p s{font-size:12px;color:var(--muted-dark)}
+    .bar .buy-btn{flex:1;padding:15px 12px;font-size:13.5px;box-shadow:none}
   }
-  @media (max-width:560px){
+  @media (max-width:640px){
+    .wrap{padding-inline:16px}
+    .top .wrap{gap:10px}
+    .logo img{height:38px}
+    .own{padding:6px 12px 6px 6px;gap:8px}
+    .own i{width:28px;height:28px}
+    .own b{font-size:10.5px}
+    .phone{display:none}
+    .sw-list{grid-template-columns:repeat(3,minmax(0,1fr))}
     .sizes{grid-template-columns:repeat(4,minmax(0,1fr))}
-    .specs{grid-template-columns:repeat(2,minmax(0,1fr));padding:18px}
-    .spec,.spec:nth-child(4){border-left:0;padding-left:0}
-    .trust{grid-template-columns:minmax(0,1fr);gap:8px}
+    .size span{font-size:11px}
+    .perks,.reasons{grid-template-columns:minmax(0,1fr)}
+    section.block{padding-block:52px}
     .offer{padding:18px}
-    .price-now{font-size:40px}
-    .cell{min-width:46px}
-    .nav{width:36px;height:36px}
-    .brand span{display:none}
-    .actions{grid-template-columns:minmax(0,1fr)}
-    .bar{gap:10px}
-    .bar .p s{display:none}
-    .bar .p b{font-size:21px}
+    .price-now{font-size:36px}
+    .cell{min-width:44px}
+    th,td{padding-inline:16px}
+    .card h3,.t-note{padding-inline:16px}
+    .final .buy-btn{width:100%;min-width:0}
+    .thumb{width:60px}
   }
   @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
     *,*::before,*::after{animation:none!important;transition:none!important}
   }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header class="top">
-    <a class="brand" href="#" aria-label="STIMUL">
-      <b>STIMUL</b><span>український виробник взуття</span>
-    </a>
+<header class="top band-dark">
+  <div class="wrap">
+    <a class="logo" href="https://stimul.in.ua/" target="_blank" rel="noopener"><img src="img/logo.png" alt="STIMUL — Вінницька фабрика" width="520" height="144"></a>
+    <div class="own">
+      <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h20M4 20V9l5 3V9l5 3V5h6v15"/></svg></i>
+      <div><b>Власне виробництво</b><span>Вінницька фабрика STIMUL</span></div>
+    </div>
     <a class="phone" href="tel:+380632000401">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
       <span>063 200 04 01<small>Пн–Пт 9:00–18:00, Сб 10:00–15:00</small></span>
     </a>
-  </header>
+  </div>
+</header>
 
-  <main class="hero">
-    <!-- Галерея -->
-    <section class="gallery" aria-label="Фото товару">
-      <div class="thumbs" id="thumbs" role="list"></div>
+<main>
+  <div class="wrap hero">
+    <!-- Фото + кольори -->
+    <section class="gallery" aria-label="Фото та кольори">
       <div class="stage" id="stage">
-        <img id="mainImg" src="img/koiot-1.jpg" alt="Кросівки Ягуар STIMUL, демісезон, колір Койот" width="1000" height="1000">
-        <span class="sale-tag" id="saleTag">−13%</span>
-        <button class="nav prev" id="prev" type="button" aria-label="Попереднє фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
-        <button class="nav next" id="next" type="button" aria-label="Наступне фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
+        <img id="mainImg" src="img/chornyi-1.jpg" alt="Кросівки Ягуар STIMUL, колір Чорний" width="1000" height="1000">
+        <span class="deal">−400 грн</span>
+        <button class="nav prev" id="prev" type="button" aria-label="Попереднє фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="nav next" id="next" type="button" aria-label="Наступне фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
         <span class="counter" id="counter">1 / 7</span>
+      </div>
+      <div class="thumbs" id="thumbs"></div>
+      <div class="swatches">
+        <div class="sw-head"><span><b>Колір:</b> <span id="colorName">Чорний</span></span><span>6 кольорів</span></div>
+        <div class="sw-list" id="swatches" role="radiogroup" aria-label="Колір"></div>
       </div>
     </section>
 
     <!-- Покупка -->
-    <section class="buy" aria-label="Оформлення">
-      <div class="chips">
-        <span class="chip"><i class="dot"></i>В наявності</span>
-        <span class="chip">Демісезон</span>
-        <span class="chip accent">ТОП-продажів вже 7-й рік поспіль</span>
+    <section class="buy" aria-label="Покупка">
+      <div class="tags">
+        <span class="tag"><i class="dot"></i>В наявності</span>
+        <span class="tag">Демісезон</span>
+        <span class="tag dark">ТОП-продажів 7-й рік поспіль</span>
       </div>
 
-      <div class="title">
-        <span class="eyebrow">STIMUL · Кросівки</span>
-        <h1>Кросівки <em>Ягуар</em> Демі</h1>
-        <p class="lede">Легке, дихаюче і водночас міцне взуття для активного міського ритму, служби чи повсякденного використання. Верх — натуральний нубук і кордура, яка витримує складні погодні умови.</p>
-        <div class="meta"><span>Артикул: <b>1950_2</b></span><span><b>16</b> відгуків</span><span>Вага напівпари: <b>396 г</b></span></div>
+      <div>
+        <div class="eyebrow">STIMUL · Кросівки</div>
+        <h1>Ягуар</h1>
+        <p class="lede">Легкі, дихаючі і водночас міцні кросівки для активного міського ритму. Натуральний нубук, кордура та поліуретанова підошва.</p>
+        <a class="rating" href="#reviews"><span class="stars" aria-hidden="true">★★★★★</span><u>16 відгуків покупців</u></a>
       </div>
 
       <div class="offer">
-        <div class="price">
+        <div>
           <div class="price-row">
             <span class="price-now"><span id="priceNow">2 685</span><small>грн</small></span>
             <span class="price-old" id="priceOld">3 085 грн</span>
           </div>
-          <span class="save" id="priceSave">Економія 400 грн</span>
-          <span class="price-note" id="priceNote">Ціна для розмірів 35–46 · 47 — 2 985 грн · 48–50 — 3 185 грн</span>
+          <div class="price-note" id="priceNote">Розміри 35–46 · <b>47</b> — 2 985 грн · <b>48–50</b> — 3 185 грн</div>
         </div>
-        <div class="timer" aria-live="off">
-          <span class="timer-label">До кінця акції</span>
-          <div class="timer-cells">
+        <div>
+          <div class="timer-label">До кінця акції</div>
+          <div class="cells">
             <div class="cell"><b id="tD">0</b><span>дні</span></div>
             <div class="cell"><b id="tH">00</b><span>год</span></div>
             <div class="cell"><b id="tM">00</b><span>хв</span></div>
@@ -274,204 +309,264 @@
         </div>
       </div>
 
-      <div class="opt">
-        <div class="opt-head"><span><b>Колір:</b> <span class="val" id="colorName">Койот</span></span></div>
-        <div class="colors" id="colors" role="radiogroup" aria-label="Колір"></div>
-      </div>
-
-      <div class="opt">
-        <div class="opt-head"><span><b>Розмір:</b> <span class="val" id="sizeName">оберіть</span></span><span class="hint">довжина устілки, см</span></div>
+      <div id="sizeBlock">
+        <div class="opt-head"><span><b>Розмір:</b> <span class="val" id="sizeName">оберіть</span></span><span class="hint">довжина устілки під розміром</span></div>
         <div class="sizes" id="sizes" role="radiogroup" aria-label="Розмір"></div>
-        <p class="size-err" id="sizeErr" hidden>Оберіть розмір, щоб продовжити</p>
+        <p class="size-err" id="sizeErr" hidden>Оберіть розмір — відкриємо на сайті сторінку саме вашої пари</p>
       </div>
 
-      <div class="actions">
-        <button class="cta" id="orderBtn" type="button">
-          Швидке замовлення
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </button>
-        <a class="site-btn" id="siteBtn" href="https://stimul.in.ua/krosivky-yahuar-koiot-44-28.8-sm-ustilka-demi/" target="_blank" rel="noopener">
-          Купити на сайті
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
-        </a>
-      </div>
+      <a class="buy-btn js-buy" href="https://stimul.in.ua/krosivky-yahuar-chornyi-44-28.8-sm-ustilka-demi/" target="_blank" rel="noopener">
+        Купити на сайті
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+      <p class="buy-sub">Відкриється сторінка stimul.in.ua з обраним кольором і розміром</p>
 
-      <div class="trust">
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg><span><b>Нова пошта</b>по Україні 110–155 грн</span></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><span><b>Оплата</b>при отриманні або частинами</span></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Гарантія</b>від виробника</span></div>
+      <div class="perks">
+        <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V9l5 3V9l5 3V5h6v15"/></svg><span><b>Власне виробництво</b>STIMUL, Вінниця</span></div>
+        <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg><span><b>Нова пошта</b>по Україні 110–155 грн</span></div>
+        <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><span><b>Оплата</b>при отриманні або частинами</span></div>
+        <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Гарантія</b>від виробника</span></div>
       </div>
     </section>
-  </main>
-
-  <dl class="specs" aria-label="Характеристики">
-    <div class="spec"><dt>Верх</dt><dd>Натуральна шкіра (нубук) + тканина кордура</dd></div>
-    <div class="spec"><dt>Підкладка</dt><dd>Дихаюча текстильна сітка</dd></div>
-    <div class="spec"><dt>Підошва</dt><dd>Поліуретан</dd></div>
-    <div class="spec"><dt>Устілка</dt><dd>Анатомічна, вставна</dd></div>
-    <div class="spec"><dt>Розміри</dt><dd>35–50</dd></div>
-    <div class="spec"><dt>Вага напівпари</dt><dd>396 г</dd></div>
-  </dl>
-  <p class="note">* Колір і відтінок може відрізнятися залежно від налаштувань монітора та освітлення.</p>
-</div>
-
-<!-- Мобільна панель -->
-<div class="bar" id="bar">
-  <div class="p"><b id="barPrice">2 685 грн</b><s id="barOld">3 085 грн</s></div>
-  <button class="cta" type="button" id="barBtn">Швидке замовлення</button>
-  <a class="site-btn bar-site" href="https://stimul.in.ua/krosivky-yahuar-koiot-44-28.8-sm-ustilka-demi/" target="_blank" rel="noopener" aria-label="Купити на сайті STIMUL"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>Сайт</a>
-</div>
-
-<!-- Форма замовлення -->
-<div class="overlay" id="overlay" hidden>
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
-    <div id="formView">
-      <div class="m-head">
-        <img id="mImg" src="img/koiot-1-t.jpg" alt="">
-        <div>
-          <h2 id="mTitle">Кросівки Ягуар Демі</h2>
-          <p id="mSub">Койот · розмір не обрано</p>
-          <span class="m-price" id="mPrice">2 685 грн</span>
-        </div>
-        <button class="close" type="button" data-close aria-label="Закрити"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-      </div>
-      <form id="orderForm" novalidate>
-        <div class="field" id="fName">
-          <label for="name">Ім'я</label>
-          <input id="name" name="name" type="text" autocomplete="name" placeholder="Як до вас звертатися">
-          <span class="err">Вкажіть ім'я</span>
-        </div>
-        <div class="field" id="fPhone">
-          <label for="phone">Телефон</label>
-          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+380 __ ___ __ __">
-          <span class="err">Вкажіть номер повністю: +380 і 9 цифр</span>
-        </div>
-        <div class="row2">
-          <div class="field">
-            <label for="fColor">Колір</label>
-            <select id="fColor" name="color"></select>
-          </div>
-          <div class="field" id="fSizeWrap">
-            <label for="fSize">Розмір</label>
-            <select id="fSize" name="size"></select>
-            <span class="err">Оберіть розмір</span>
-          </div>
-        </div>
-        <div class="total"><span>До сплати</span><b id="mTotal">2 685 грн</b></div>
-        <button class="cta" type="submit">Оформити замовлення</button>
-        <p class="demo">Демо-прототип: дані нікуди не надсилаються</p>
-      </form>
-    </div>
-
-    <div class="success" id="successView" hidden>
-      <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
-      <h2>Замовлення прийнято</h2>
-      <p id="sText">Дякуємо! Ми зателефонуємо вам найближчим часом.</p>
-      <dl class="summary" id="summary"></dl>
-      <p class="demo">Це демонстрація — замовлення не створено</p>
-      <button class="ghost" type="button" data-close>Повернутися до товару</button>
-    </div>
   </div>
+
+  <!-- Чому Ягуар -->
+  <section class="block band-dark" id="why">
+    <div class="wrap why-grid">
+      <figure class="why-photo">
+        <img src="img/chornyi-6.jpg" alt="Кросівки Ягуар у чорному кольорі на ногах" loading="lazy" width="1000" height="1000">
+        <figcaption>Ягуар · Чорний</figcaption>
+      </figure>
+      <div class="why-text">
+        <div class="kicker">Чому обирають Ягуар</div>
+        <h2>Кросівки на кожен день у місті</h2>
+        <p class="intro">Ягуар — універсальне рішення для тих, хто шукає легке, дихаюче і водночас міцне взуття. Створені для активного міського ритму та повсякденного використання. Лаконічний силует без зайвого декору, а чорний і сірий кольори — стриманий вигляд на кожен день.</p>
+        <ul class="reasons">
+          <li><h3>Міцний верх</h3><p>Натуральна шкіра нубук і кордура — тканина, яка витримує складні погодні умови.</p></li>
+          <li><h3>Ноги дихають</h3><p>Внутрішня підкладка — дихаюча сітка.</p></li>
+          <li><h3>Легкий крок</h3><p>Підошва з поліуретану: легка, гнучка й зносостійка, амортизує навантаження та зменшує втому при тривалому носінні.</p></li>
+          <li><h3>Зручна посадка</h3><p>Анатомічна вставна устілка і широкий розмірний ряд — від 35 до 50.</p></li>
+        </ul>
+        <div class="figures">
+          <div class="figure"><b>7-й рік</b><span>поспіль у ТОП-продажів</span></div>
+          <div class="figure"><b>396 г</b><span>вага напівпари</span></div>
+          <div class="figure"><b>35–50</b><span>розмірний ряд</span></div>
+          <div class="figure"><b>6</b><span>кольорів на вибір</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Характеристики -->
+  <section class="block" id="specs">
+    <div class="wrap">
+      <div class="kicker">Характеристики</div>
+      <h2>Що всередині Ягуара</h2>
+      <div class="tables">
+        <div class="card">
+          <h3>Характеристики</h3>
+          <div class="scroll">
+            <table class="specs">
+              <tbody>
+                <tr><th scope="row">Виробник</th><td>STIMUL, власне виробництво</td></tr>
+                <tr><th scope="row">Модель</th><td>Кросівки Ягуар, артикул 1950_2</td></tr>
+                <tr><th scope="row">Сезон</th><td>Демісезон</td></tr>
+                <tr><th scope="row">Верх виробу</th><td>Шкіра натуральна (нубук) + тканина Кордура</td></tr>
+                <tr><th scope="row">Підкладка</th><td>Текстильна сітка</td></tr>
+                <tr><th scope="row">Підошва</th><td>Поліуретан</td></tr>
+                <tr><th scope="row">Устілка</th><td>Анатомічна, вставна</td></tr>
+                <tr><th scope="row">Вага напівпари</th><td>396 г</td></tr>
+                <tr><th scope="row">Розмірний ряд</th><td>з 35 по 50</td></tr>
+                <tr><th scope="row">Кольори</th><td>Чорний, Сірий, Какао, Шоколад, Олива, Койот</td></tr>
+                <tr><th scope="row">Упаковка</th><td>Коробка</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="t-note">* Колір і відтінок можуть відрізнятися залежно від налаштувань монітора та освітлення.</div>
+        </div>
+
+        <div class="card">
+          <h3>Розмірна сітка і ціни</h3>
+          <div class="scroll">
+            <table class="sizes-t">
+              <thead><tr><th scope="col">Розмір</th><th scope="col">Устілка, см</th><th scope="col">Ціна</th></tr></thead>
+              <tbody id="sizeTable"></tbody>
+            </table>
+          </div>
+          <div class="t-note">Щоб обрати розмір, виміряйте довжину устілки у взутті, в якому вам зручно, і порівняйте з таблицею.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Відгуки -->
+  <section class="block" id="reviews" style="padding-top:0">
+    <div class="wrap">
+      <div class="rev-head">
+        <div>
+          <div class="kicker">Відгуки</div>
+          <h2>Що кажуть покупці</h2>
+        </div>
+        <div class="score">
+          <b>5,0</b>
+          <div><span class="stars" aria-hidden="true">★★★★★</span><span>16 відгуків на stimul.in.ua</span></div>
+        </div>
+      </div>
+      <div class="reviews" id="reviewList"></div>
+      <div class="rev-actions">
+        <button class="ghost" type="button" id="moreReviews">Показати всі 16 відгуків</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Фінальний заклик -->
+  <section class="final band-dark">
+    <div class="wrap">
+      <div>
+        <h2>Ягуар · <span id="finalColor">Чорний</span></h2>
+        <p id="finalText">від 2 685 грн · оберіть розмір і купуйте на сайті STIMUL</p>
+      </div>
+      <a class="buy-btn js-buy" href="https://stimul.in.ua/krosivky-yahuar-chornyi-44-28.8-sm-ustilka-demi/" target="_blank" rel="noopener">
+        Купити на сайті
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="band-dark">
+  <div class="wrap">
+    <img src="img/logo.png" alt="STIMUL" width="520" height="144" loading="lazy">
+    <div><b>Телефон</b><br><a href="tel:+380632000401">063 200 04 01</a> · <a href="tel:+380977534042">097 753 40 42</a></div>
+    <div><b>Адреса</b><br>Вінниця, Хмельницьке шосе, 82, офіс 607</div>
+    <div><b>Графік</b><br>Пн–Пт 9:00–18:00 · Сб 10:00–15:00</div>
+  </div>
+</footer>
+
+<div class="bar">
+  <div class="p"><b id="barPrice">2 685 грн</b><s id="barOld">3 085 грн</s></div>
+  <a class="buy-btn js-buy" href="https://stimul.in.ua/krosivky-yahuar-chornyi-44-28.8-sm-ustilka-demi/" target="_blank" rel="noopener">Купити на сайті</a>
 </div>
 
 <script>
 (function(){
+  /* Кольори: чорний і сірий першими */
   var COLORS=[
-    {id:'koiot',   name:'Койот',   hex:'#BC8946', n:7},
-    {id:'olyva',   name:'Олива',   hex:'#6E6B45', n:7},
-    {id:'shokolad',name:'Шоколад', hex:'#5A3520', n:7},
-    {id:'chornyi', name:'Чорний',  hex:'#1B1B1B', n:7},
-    {id:'kakao',   name:'Какао',   hex:'#8C7B77', n:5},
-    {id:'siryi',   name:'Сірий',   hex:'#808080', n:5}
+    {id:'chornyi', name:'Чорний',  n:7},
+    {id:'siryi',   name:'Сірий',   n:5},
+    {id:'kakao',   name:'Какао',   n:5},
+    {id:'shokolad',name:'Шоколад', n:7},
+    {id:'olyva',   name:'Олива',   n:7},
+    {id:'koiot',   name:'Койот',   n:7}
   ];
-  var SIZES=[[35,'23'],[36,'23,7'],[37,'24,5'],[38,'25'],[39,'25,7'],[40,'26,5'],[41,'27'],[42,'27,7'],[43,'28,2'],[44,'28,8'],[45,'29,5'],[46,'30,3'],[47,'31'],[48,'31,5'],[49,'32,3'],[50,'33']];
+  /* [розмір, устілка, фрагмент адреси на сайті] */
+  var SIZES=[[35,'23','23'],[36,'23,7','23.7'],[37,'24,5','24.5'],[38,'25','25'],[39,'25,7','25.7'],[40,'26,5','26.5'],[41,'27','27'],[42,'27,7','27.7'],[43,'28,2','28.2'],[44,'28,8','28.8'],[45,'29,5','29.5'],[46,'30,3','30.3'],[47,'31','31'],[48,'31,5','31.5'],[49,'32,3','323'],[50,'33','33']];
+  var REVIEWS=[{"name": "Віталий Цімух", "date": "2026-06-27", "rating": 5, "text": "На перший погляд - звичайні кросівки. Але хай Вас не вводить в оману їх зовнішня простота: якісні матеріали, продумана вентиляція та чудова підошва - це саме те, заради чого варто вкладати в них кошти. Ноги не варяться навіть у тридцятиградусну спеку, шнурівка не намагається розв'язатися під час ходи, а підошва взагалі є взірцем ходової демократії: ноги не відчувають жодної різниці між утрамбованим грунтом та луговиною, а на асфальті чи плитці підошва взагалі надає ногам відчуття польоту. Дякую!"}, {"name": "Олена Ященко", "date": "2024-09-13", "rating": 5, "text": "Замовляла чоловiковi модель Ягуар.Зручнi та якiснi кросiвки! Вперше зустрiли взуття, у якому не пiтнiють ноги. Не дают поганого запаху навiть пiсля тривалого носiння!Чоловiк iз задоволенням носить кроси на роботу кожного дня!!!"}, {"name": "Alexandr Radzievsky", "date": "2026-05-16", "rating": 5, "text": "Придбав цю модель онлайн, трохи не влучив з розміром - замінили на менший розмір без проблем, на розмір менше сіли як рідні.\n\nНошу ці кросівки трішки більше двох місяців , бувають дуже активні дні. Почав носити в досить прохолодну погоду - нога не мерзне, з приходом тепла не потіє, це щось неймовірне! За цей час не втратили вигляду зовсім! Реально як нові, навіть слідів згину не видно!\n\nЗ недоліків, на мою суб’єктивну, відсутність петлі над пʼяткою, доводиться користуватися лопаткою, і якось незрозуміло, що зробити з язичком. Але це не суттєві недоліки в не впливають на якість взуття.\n\nЗайшов написати відгук в обрати пару для заміських умов.", "reply": "Alexandr Radzievsky, Дякуємо за відгук! 😊\n\nРаді, що взуття добре показало себе в носінні та залишилось комфортним у різну погоду. Дякуємо також за зауваження щодо петлі — обов’язково врахуємо. Носіть із задоволенням! 💪"}, {"name": "Ганна Куркіна", "date": "2023-07-20", "rating": null, "text": "Дуже гарне, стильне, якісне взуття. Ношу кросівки “Ягуар” третій місяць, дуже зручно, не втомлюються(!!!) ноги.\n\r\nМої чоловік та син теж взуті у Stimul. Бажаю Вам здоров’я та наснаги, дякую."}, {"name": "Оксана", "date": "2025-12-01", "rating": 5, "text": "Купила модель Ягуар ризикнувши.На роботі підлога різного типу:фарба на бетоні і дереву,лакований паркет,плитка, лінолеум-у попередньому взутті обов'язково на чомусь підсковзнеся,в Ягуарі не сковзаюсь.Маю малу але широку ступню(повздовжньо-поперечне вроджена плоскостопість)-це ще той квест найти взуття,коли37малий,38великий(в цьому магазині мені без проблем зробили заміну взуття на потрібний розмір).Турбує проблема з набряком ніг,але в них я можу ходити .Маю вагу 120кг,черевики прекрасно витримують:не прогибається підошва.Не має дурного запаху,вірніше нема ніякого запаху,що підтверджує якість матеріалу з якого виготовляють взуття.Хотілось,щоб була створена модель із додатковою застібкою-блискавкою для більшого комфорту знімання і одягання.Доречі я вже придбала кросівки і на літо в цьому магазині.Хочу ще придбати і на зиму.Дякую всім хто дає нам можливість носити зручне взуття"}, {"name": "Андрій Володимирович", "date": "2025-10-10", "rating": 5, "text": "Вирішив придбати після того як один з побратимів порадив дану модель демісезонку для цивільних моментів. Взуття просто бомбезне, легке, зручне, дуже комфортне, по нозі лягло одразу. Друга пара літні, теж класні. Одразу замовляйте водозахисний спрей для взуття, відомого українського виробника але дешевше. В майбутньому однозначно віддам перевагу взуттю цього виробника."}, {"name": "Альона Миколаївна", "date": "2025-08-20", "rating": 5, "text": "З виробником Стимул , я познайомилась ще у 2020 році, коли мені порадили знайомі. Я військова. Шукала взуття, в якому не будуть горіти ноги після зміни. Мені порадили обрати кросівки Ягуар. І ось що я вам скажу, я їх носила 4 роки. Уявіть собі, чотири роки. Купила ще собі пару. Стимул, так тримати. Вражена що взуття такої якості можна придбати не тільки за кордоном."}, {"name": "Алексей Бондаренко", "date": "2023-08-30", "rating": 5, "text": "Кросівки \"Ягуар\" літні 1,5 роки і у хвіст і в гриву.\n\r\nПолігон, поля, паркет. Якщо рухатись і недовго, то навіть у мороз до -5 норм.\n\r\nСтельки для моєї зламаної п’ятки – шедевр!\n\r\nЗамовляю нові такі самі."}, {"name": "Макс Дудка", "date": "2023-07-18", "rating": null, "text": "Дякую вам!шкари підійшли!,з розміром вгадав,не без вашої допомоги!вже кілька днів ходжу в них та кайфую,дуже легкі та зручні(єдине :можливо можна буде наступного разу,пошити трохи вужче?,бо в мене нога вузька,хоч і довга!виглядають супер! надіюсь носяться так само!?) Я брав “Ягуар”, у кольорі олива,таки олива і є!(не треба плутати з хакі)! Дякую вам!\n\r\nЯ задоволений!Замовлю ще одну пару! якщо не буде інших моделей мого розміру,то візьму такі ж,але у іншому кольорі!\n\r\nСлава Україні!!!☝️"}, {"name": "Sergey Menchura", "date": "2024-04-18", "rating": 5, "text": "Кросівки просто бомба! Взяв уже 3 пари Ягуар ходжу зимою і літом, настройки і в саду! Замовив ще одні Хаміліон! Розмірна сітка чотко підійшла! Рекомендую)"}, {"name": "Volodymyr Tk", "date": "2023-11-26", "rating": 5, "text": "Замовляв кросівки ягуар, надіслали швидко, попередньо зателефонували та уточнили розмір. Якість супер, розходив за два дні. Дякую за вашу роботу."}, {"name": "Валентина Верьовка", "date": "2024-04-12", "rating": 5, "text": "Купували кросівки ягуар , дуже сподобались, обслуговування супер, швидкий пошив та відправка, дякуємо! 💛💙👍"}, {"name": "Олександр Р.", "date": "2020-01-28", "rating": 5, "text": "Ідеальне співвідношення ціна-якість, замовляю вже другий раз тактичні кросівки (СТІМУЛ), досить крепкі, підошва м'яка в той же час витримує 3 сезона постійної ходьби, з гарною вентиляцією. Продавці дуже чемні і компетентні. Рекомендую"}, {"name": "Олександр", "date": "2026-05-18", "rating": 5, "text": "придбав данну модель, якісно зроблено, поки багато не находив але на нозі сидить добре", "reply": "Олександр, дякуємо за коментар, нехай добре носяться😊"}, {"name": "Бондаренко Микола", "date": "2025-05-30", "rating": 5, "text": "Отримав кросівки які замовляв задоволений дуже сподобалися сподіваюся будуть служити довго і вірно але все одно мабуть такі ще візьму на повсякдень високі берці"}, {"name": "Олійник Любов", "date": "2023-07-07", "rating": 5, "text": "Чудові кросівки ягуар, зручні. Рекомендую всім."}];
 
   var state={color:0,photo:0,size:null};
   var $=function(id){return document.getElementById(id)};
-  var mainImg=$('mainImg'), thumbs=$('thumbs');
-
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   function src(c,i,t){return 'img/'+COLORS[c].id+'-'+(i+1)+(t?'-t':'')+'.jpg'}
+  function sizeRow(s){for(var i=0;i<SIZES.length;i++){if(SIZES[i][0]===s)return SIZES[i]}return null}
+
+  /* Ціни як на сайті */
+  function priceOf(s){return s===47?2985:(s>=48?3185:2685)}
+  function oldOf(s){return s===47?3385:(s>=48?3585:3085)}
+  function money(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' грн'}
+
+  /* Сторінка товару на сайті для кольору й розміру */
+  function productUrl(c,s){
+    var id=COLORS[c].id, row=sizeRow(s||44), ins=row[2];
+    if(id==='siryi'&&row[0]===49) ins='32.3';
+    return 'https://stimul.in.ua/krosivky-yahuar-'+id+'-'+row[0]+'-'+ins+'-sm-ustilka-demi/';
+  }
 
   /* Галерея */
+  var mainImg=$('mainImg'), thumbs=$('thumbs');
   function renderThumbs(){
-    var c=state.color, html='';
+    var c=state.color, h='';
     for(var i=0;i<COLORS[c].n;i++){
-      html+='<button class="thumb" type="button" role="listitem" data-i="'+i+'" aria-label="Фото '+(i+1)+'"'+(i===state.photo?' aria-current="true"':'')+'><img src="'+src(c,i,true)+'" alt="" loading="lazy"></button>';
+      h+='<button class="thumb" type="button" data-i="'+i+'" aria-label="Фото '+(i+1)+'"'+(i===state.photo?' aria-current="true"':'')+'><img src="'+src(c,i,true)+'" alt=""></button>';
+      new Image().src=src(c,i);
     }
-    thumbs.innerHTML=html;
-    for(var j=0;j<COLORS[c].n;j++){ new Image().src=src(c,j); }
+    thumbs.innerHTML=h;
   }
   function showPhoto(i){
-    var n=COLORS[state.color].n;
-    state.photo=(i+n)%n;
+    var n=COLORS[state.color].n; state.photo=(i+n)%n;
+    var next=src(state.color,state.photo), pre=new Image();
     mainImg.classList.add('fade');
-    var next=src(state.color,state.photo);
-    var pre=new Image();
     pre.onload=pre.onerror=function(){
       mainImg.src=next;
-      mainImg.alt='Кросівки Ягуар STIMUL, демісезон, колір '+COLORS[state.color].name+', фото '+(state.photo+1);
+      mainImg.alt='Кросівки Ягуар STIMUL, колір '+COLORS[state.color].name+', фото '+(state.photo+1);
       mainImg.classList.remove('fade');
     };
     pre.src=next;
     $('counter').textContent=(state.photo+1)+' / '+n;
     [].forEach.call(thumbs.children,function(b,k){b.setAttribute('aria-current',k===state.photo?'true':'false')});
-    var t=thumbs.children[state.photo]; if(t&&t.scrollIntoView){t.scrollIntoView({block:'nearest',inline:'nearest'})}
+    var t=thumbs.children[state.photo];
+    if(t&&thumbs.scrollTo) thumbs.scrollTo({left:t.offsetLeft-thumbs.clientWidth/2+t.clientWidth/2,behavior:'smooth'});
   }
   thumbs.addEventListener('click',function(e){var b=e.target.closest('.thumb'); if(b) showPhoto(+b.dataset.i)});
   $('prev').onclick=function(){showPhoto(state.photo-1)};
   $('next').onclick=function(){showPhoto(state.photo+1)};
   var sx=null;
   $('stage').addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
-  $('stage').addEventListener('touchend',function(e){ if(sx===null)return; var dx=e.changedTouches[0].clientX-sx; if(Math.abs(dx)>40) showPhoto(state.photo+(dx<0?1:-1)); sx=null});
+  $('stage').addEventListener('touchend',function(e){if(sx===null)return; var dx=e.changedTouches[0].clientX-sx; if(Math.abs(dx)>40) showPhoto(state.photo+(dx<0?1:-1)); sx=null});
 
-  /* Кольори */
-  var colorsEl=$('colors');
-  colorsEl.innerHTML=COLORS.map(function(c,i){return '<button class="color" type="button" role="radio" data-i="'+i+'" title="'+c.name+'" aria-label="'+c.name+'" aria-checked="'+(i===0)+'"><i style="background:'+c.hex+'"></i></button>'}).join('');
-  function setColor(i){
-    state.color=i; state.photo=0;
-    [].forEach.call(colorsEl.children,function(b,k){b.setAttribute('aria-checked',k===i)});
-    $('colorName').textContent=COLORS[i].name;
-    renderThumbs(); showPhoto(0); syncForm();
-  }
-  colorsEl.addEventListener('click',function(e){var b=e.target.closest('.color'); if(b) setColor(+b.dataset.i)});
+  /* Кольори під фото */
+  var sw=$('swatches');
+  sw.innerHTML=COLORS.map(function(c,i){
+    return '<button class="sw" type="button" role="radio" data-i="'+i+'" aria-checked="'+(i===0)+'"><img src="'+src(i,0,true)+'" alt=""><span>'+c.name+'</span></button>';
+  }).join('');
+  sw.addEventListener('click',function(e){
+    var b=e.target.closest('.sw'); if(!b) return;
+    state.color=+b.dataset.i; state.photo=0;
+    [].forEach.call(sw.children,function(x,k){x.setAttribute('aria-checked',k===state.color)});
+    $('colorName').textContent=COLORS[state.color].name;
+    $('finalColor').textContent=COLORS[state.color].name;
+    renderThumbs(); showPhoto(0); update();
+  });
 
   /* Розміри */
   var sizesEl=$('sizes');
-  sizesEl.innerHTML=SIZES.map(function(s){return '<button class="size" type="button" role="radio" aria-checked="false" data-s="'+s[0]+'" aria-label="Розмір '+s[0]+', устілка '+s[1]+' см"><b>'+s[0]+'</b><span>'+s[1]+'</span></button>'}).join('');
-  function insole(size){for(var i=0;i<SIZES.length;i++){if(SIZES[i][0]===size)return SIZES[i][1]}return ''}
-  function setSize(s){
-    state.size=s;
-    [].forEach.call(sizesEl.children,function(b){b.setAttribute('aria-checked',+b.dataset.s===s)});
-    $('sizeName').textContent=s?s+' (устілка '+insole(s)+' см)':'оберіть';
+  sizesEl.innerHTML=SIZES.map(function(s){return '<button class="size" type="button" role="radio" aria-checked="false" data-s="'+s[0]+'" aria-label="Розмір '+s[0]+', устілка '+s[1]+' см"><b>'+s[0]+'</b><span>'+s[1]+' см</span></button>'}).join('');
+  sizesEl.addEventListener('click',function(e){
+    var b=e.target.closest('.size'); if(!b) return;
+    state.size=+b.dataset.s;
+    [].forEach.call(sizesEl.children,function(x){x.setAttribute('aria-checked',+x.dataset.s===state.size)});
     $('sizeErr').hidden=true;
-    renderPrice();
-    syncForm();
-  }
+    update();
+  });
 
-  /* Ціни за розміром (як на сайті): 35–46 — 2 685 (стара 3 085), 47 — 2 985, 48–50 — 3 185 */
-  function priceOf(s){ return s===47?2985:(s>=48?3185:2685) }
-  function oldPriceOf(s){ return (!s||s<=46)?3085:null }
-  function money(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' грн' }
-  function renderPrice(){
-    var s=state.size, p=priceOf(s), old=oldPriceOf(s);
+  /* Таблиця розмірів */
+  $('sizeTable').innerHTML=SIZES.map(function(s){
+    return '<tr data-s="'+s[0]+'"><td><b>'+s[0]+'</b></td><td>'+s[1]+' см</td><td>'+money(priceOf(s[0]))+'</td></tr>';
+  }).join('');
+
+  /* Ціна та посилання */
+  function update(){
+    var s=state.size, p=priceOf(s), o=oldOf(s), row=s?sizeRow(s):null;
     $('priceNow').textContent=money(p).replace(' грн','');
-    $('priceOld').hidden=!old; $('barOld').hidden=!old;
-    $('saleTag').hidden=!old; $('priceSave').hidden=!old;
-    if(old){
-      $('priceOld').textContent=money(old); $('barOld').textContent=money(old);
-      $('priceSave').textContent='Економія '+money(old-p);
-    }
-    $('priceNote').hidden=!!s;
+    $('priceOld').textContent=money(o);
     $('barPrice').textContent=money(p);
-    $('mPrice').textContent=money(p);
-    $('mTotal').textContent=money(p);
+    $('barOld').textContent=money(o);
+    $('priceNote').hidden=!!s;
+    $('sizeName').textContent=s?s+' · устілка '+row[1]+' см':'оберіть';
+    $('finalText').textContent=s?(money(p)+' · розмір '+s+' · відкриємо сторінку саме цієї пари'):'від 2 685 грн · оберіть розмір і купуйте на сайті STIMUL';
+    var url=productUrl(state.color,s);
+    [].forEach.call(document.querySelectorAll('.js-buy'),function(a){a.href=url});
+    [].forEach.call($('sizeTable').children,function(tr){tr.classList.toggle('hl',+tr.dataset.s===s)});
   }
-  sizesEl.addEventListener('click',function(e){var b=e.target.closest('.size'); if(b) setSize(+b.dataset.s)});
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('.js-buy'); if(!a||state.size) return;
+    e.preventDefault();
+    $('sizeErr').hidden=false;
+    $('sizeBlock').scrollIntoView({behavior:'smooth',block:'center'});
+    sizesEl.classList.remove('shake'); void sizesEl.offsetWidth; sizesEl.classList.add('shake');
+  });
 
-  /* Таймер (демо): до опівночі наступного дня, потім перезапуск */
-  function deadline(){
-    var d=new Date(); d.setHours(24,0,0,0); d.setDate(d.getDate()+1); return d.getTime();
-  }
+  /* Таймер (демо): до опівночі наступного дня */
+  function deadline(){var d=new Date(); d.setHours(24,0,0,0); d.setDate(d.getDate()+1); return d.getTime()}
   var end=deadline();
   function pad(n){return n<10?'0'+n:''+n}
   function tick(){
@@ -484,76 +579,31 @@
   }
   tick(); setInterval(tick,1000);
 
-  /* Форма */
-  var fColor=$('fColor'), fSize=$('fSize');
-  fColor.innerHTML=COLORS.map(function(c,i){return '<option value="'+i+'">'+c.name+'</option>'}).join('');
-  fSize.innerHTML='<option value="">Оберіть</option>'+SIZES.map(function(s){return '<option value="'+s[0]+'">'+s[0]+' — '+s[1]+' см</option>'}).join('');
-  function syncForm(){
-    fColor.value=state.color;
-    fSize.value=state.size||'';
-    $('mImg').src=src(state.color,0,true);
-    $('mSub').textContent=COLORS[state.color].name+' · '+(state.size?'розмір '+state.size:'розмір не обрано');
-    if(state.size) $('fSizeWrap').classList.remove('invalid');
-  }
-  fColor.onchange=function(){setColor(+fColor.value)};
-  fSize.onchange=function(){setSize(fSize.value?+fSize.value:null)};
-
-  var overlay=$('overlay'), lastFocus=null;
-  function openForm(){
-    lastFocus=document.activeElement;
-    syncForm();
-    $('formView').hidden=false; $('successView').hidden=true;
-    overlay.hidden=false; document.body.style.overflow='hidden';
-    setTimeout(function(){ (state.size?$('name'):fSize).focus() },60);
-    if(!state.size){
-      $('sizeErr').hidden=false;
-    }
-  }
-  function closeForm(){
-    overlay.hidden=true; document.body.style.overflow='';
-    if(lastFocus&&lastFocus.focus) lastFocus.focus();
-  }
-  $('orderBtn').onclick=openForm;
-  $('barBtn').onclick=openForm;
-  overlay.addEventListener('click',function(e){ if(e.target===overlay||e.target.closest('[data-close]')) closeForm() });
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!overlay.hidden) closeForm() });
-
-  /* Маска телефону */
-  var phone=$('phone');
-  function digits(v){var d=v.replace(/\D/g,''); if(d.indexOf('380')===0)d=d.slice(3); else if(d.charAt(0)==='0')d=d.slice(1); return d.slice(0,9)}
-  function fmt(d){
-    var out='+380';
-    if(d.length) out+=' '+d.slice(0,2);
-    if(d.length>2) out+=' '+d.slice(2,5);
-    if(d.length>5) out+=' '+d.slice(5,7);
-    if(d.length>7) out+=' '+d.slice(7,9);
-    return out;
-  }
-  phone.addEventListener('focus',function(){ if(!phone.value) phone.value='+380 ' });
-  phone.addEventListener('input',function(){ phone.value=fmt(digits(phone.value)); $('fPhone').classList.remove('invalid') });
-  phone.addEventListener('blur',function(){ if(!digits(phone.value).length) phone.value='' });
-  $('name').addEventListener('input',function(){ $('fName').classList.remove('invalid') });
-
-  $('orderForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    var name=$('name').value.trim(), ph=digits(phone.value), ok=true, first=null;
-    $('fName').classList.toggle('invalid',!name); if(!name){ok=false;first=first||$('name')}
-    $('fPhone').classList.toggle('invalid',ph.length!==9); if(ph.length!==9){ok=false;first=first||phone}
-    $('fSizeWrap').classList.toggle('invalid',!state.size); if(!state.size){ok=false;first=first||fSize}
-    if(!ok){first.focus();return}
-    var c=COLORS[state.color];
-    $('sText').textContent='Дякуємо, '+name+'! Ми зателефонуємо вам найближчим часом.';
-    $('summary').innerHTML=
-      '<dt>Товар</dt><dd>Кросівки Ягуар Демі</dd>'+
-      '<dt>Колір</dt><dd>'+c.name+'</dd>'+
-      '<dt>Розмір</dt><dd>'+state.size+' ('+insole(state.size)+' см)</dd>'+
-      '<dt>Телефон</dt><dd>'+fmt(ph)+'</dd>'+
-      '<dt>Сума</dt><dd>'+money(priceOf(state.size))+'</dd>';
-    $('formView').hidden=true; $('successView').hidden=false;
-    $('successView').querySelector('.ghost').focus();
+  /* Відгуки з сайту */
+  var list=$('reviewList'), SHOW=6;
+  function fmtDate(d){var p=d.split('-'); return p[2]+'.'+p[1]+'.'+p[0]}
+  list.innerHTML=REVIEWS.map(function(r,i){
+    var long=r.text.length>330;
+    return '<article class="review'+(long?' clamp':'')+'"'+(i>=SHOW?' hidden':'')+'>'+
+      '<header><span class="avatar" aria-hidden="true">'+esc(r.name.charAt(0))+'</span><div><b>'+esc(r.name)+'</b><span>'+fmtDate(r.date)+'</span></div>'+
+      (r.rating?'<span class="stars" aria-label="Оцінка '+r.rating+' з 5">'+'★★★★★'.slice(0,r.rating)+'</span>':'')+'</header>'+
+      '<p>'+esc(r.text)+'</p>'+
+      (long?'<button class="more" type="button">Читати повністю</button>':'')+
+      (r.reply?'<div class="reply"><b>Відповідь STIMUL</b><p>'+esc(r.reply)+'</p></div>':'')+
+      '</article>';
+  }).join('');
+  list.addEventListener('click',function(e){
+    var b=e.target.closest('.more'); if(!b) return;
+    var closed=b.closest('.review').classList.toggle('clamp');
+    b.textContent=closed?'Читати повністю':'Згорнути';
   });
+  $('moreReviews').onclick=function(){
+    [].forEach.call(list.children,function(a){a.hidden=false});
+    this.hidden=true;
+  };
 
   renderThumbs();
+  update();
 })();
 </script>
 </body>
