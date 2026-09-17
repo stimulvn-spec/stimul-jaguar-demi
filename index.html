@@ -41,14 +41,19 @@
   /* ---------- Шапка ---------- */
   .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:14px}
   .logo img{height:52px;width:auto}
-  .own{display:flex;align-items:center;gap:12px;border:1px solid var(--line-dark);border-radius:999px;padding:8px 18px 8px 10px}
-  .own i{width:34px;height:34px;border-radius:50%;background:var(--signal);color:var(--asphalt);display:grid;place-items:center;flex:none}
-  .own svg{width:18px;height:18px}
-  .own b{display:block;font:700 13px/1.1 var(--display);letter-spacing:.02em;text-transform:uppercase}
-  .own span{display:block;font-size:12.5px;color:var(--muted-dark)}
   .phone{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
   .phone svg{width:18px;height:18px;color:var(--signal)}
   .phone small{display:block;font-weight:400;font-size:12px;color:var(--muted-dark)}
+
+  /* ---------- Переваги під шапкою ---------- */
+  .hooks{border-top:1px solid var(--line-dark)}
+  .hooks ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .hooks li{display:flex;align-items:center;gap:14px;padding-block:18px;padding-inline:24px;border-left:1px solid var(--line-dark)}
+  .hooks li:first-child{border-left:0;padding-left:0}
+  .hooks i{width:44px;height:44px;border-radius:12px;background:var(--signal);color:var(--asphalt);display:grid;place-items:center;flex:none}
+  .hooks svg{width:22px;height:22px}
+  .hooks b{display:block;font:700 17px/1.15 var(--display);letter-spacing:-.01em}
+  .hooks span{display:block;font-size:13.5px;color:var(--muted-dark);margin-top:3px}
 
   /* ---------- Перший екран ---------- */
   .hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:32px;align-items:start;padding-block:28px 56px}
@@ -119,6 +124,7 @@
   .shake{animation:shake .35s}
   @keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 
+  button.buy-btn{border:0;cursor:pointer}
   .buy-btn{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;border-radius:14px;background:var(--signal);color:var(--asphalt);font:700 17px/1 var(--display);letter-spacing:.01em;text-transform:uppercase;padding:22px 24px;text-decoration:none;box-shadow:0 12px 26px -12px rgba(252,115,1,.7);transition:background .15s,transform .15s}
   .buy-btn:hover{background:var(--signal-hover)}
   .buy-btn:active{transform:translateY(1px)}
@@ -148,7 +154,9 @@
   .figure b{display:block;font:700 30px/1 var(--display);color:var(--signal);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
   .figure span{display:block;margin-top:6px;font-size:13px;color:var(--muted-dark);line-height:1.3}
 
-  .tables{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:24px;margin-top:32px;align-items:start}
+  .specs-card{margin-top:32px}
+  .specs-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .specs-cols table + table{border-left:1px solid #ECEDEE}
   .card{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
   .card h3{margin:0;padding:18px 22px;font:700 16px/1.2 var(--display);border-bottom:1px solid var(--line)}
   table{width:100%;border-collapse:collapse;font-size:15px}
@@ -156,11 +164,6 @@
   tr:last-child th,tr:last-child td{border-bottom:0}
   .specs th{width:40%;font-weight:500;color:var(--muted)}
   .specs td{font-weight:500}
-  .sizes-t{font-variant-numeric:tabular-nums}
-  .sizes-t thead th{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:#F5F5F6;padding-block:10px}
-  .sizes-t td{padding-block:9px}
-  .sizes-t td:last-child,.sizes-t th:last-child{text-align:right}
-  .sizes-t tbody tr.hl td{background:#FFF3E8}
   .scroll{overflow-x:auto}
   .t-note{padding:12px 22px 16px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
 
@@ -196,16 +199,87 @@
   footer b{color:#fff;font-weight:600}
   footer a{text-decoration:none}
 
+  /* ---------- Підробки ---------- */
+  .fake-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:40px;align-items:start;margin-top:32px}
+  .fake-intro{margin:16px 0 0;font-size:17px;color:#3E4146;max-width:62ch}
+  .video{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:var(--asphalt);box-shadow:var(--shadow)}
+  .video button{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;cursor:pointer;background:#000}
+  .video button img{width:100%;height:100%;object-fit:cover;opacity:.8;transition:opacity .2s}
+  .video button:hover img{opacity:1}
+  .video .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:var(--signal);color:var(--asphalt);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .video .play svg{width:30px;height:30px;margin-left:4px}
+  .video .v-cap{position:absolute;left:14px;right:14px;bottom:14px;color:#fff;font-weight:600;font-size:14.5px;text-align:left;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .fake-photo{margin:22px 0 0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:var(--paper)}
+  .fake-photo img{width:100%;aspect-ratio:16/10;object-fit:cover}
+  .fake-photo figcaption{padding:12px 16px;font-size:13.5px;color:var(--muted)}
+  .checks-title{margin:0 0 14px;font:700 18px/1.2 var(--display)}
+  .checks{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .checks li{display:flex;gap:12px;align-items:flex-start;background:var(--paper);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow);font-size:15px}
+  .checks li b{display:block;font-weight:600}
+  .checks li span{color:var(--muted);font-size:14px}
+  .checks svg{flex:none;width:22px;height:22px;color:#2E9E5B;margin-top:1px}
+  .warn{margin-top:18px;display:flex;gap:14px;align-items:flex-start;background:var(--asphalt);color:#fff;border-radius:var(--radius);padding:18px 20px}
+  .warn svg{flex:none;width:24px;height:24px;color:var(--signal)}
+  .warn p{margin:0;font-size:15px;color:#C6C8CC}
+  .warn b{color:#fff}
+  .fake-cta{margin-top:18px}
+
+  /* ---------- Форма замовлення ---------- */
+  .overlay{position:fixed;inset:0;z-index:60;background:rgba(10,11,12,.62);display:grid;place-items:center;padding:16px;animation:fadein .2s}
+  .modal{background:var(--paper);border-radius:22px;width:100%;max-width:480px;max-height:calc(100vh - 32px);overflow:auto;box-shadow:0 30px 80px -20px rgba(0,0,0,.5);animation:rise .25s ease}
+  .m-head{display:flex;gap:14px;align-items:center;padding:18px 20px;background:var(--asphalt);color:#fff}
+  .m-head img{width:62px;height:62px;border-radius:12px;object-fit:cover;background:#fff}
+  .m-head div{flex:1;min-width:0}
+  .m-head h2{margin:0;font:700 19px/1.15 var(--display);color:#fff}
+  .m-head p{margin:3px 0 0;font-size:13px;color:var(--muted-dark)}
+  .close{width:38px;height:38px;border-radius:50%;border:0;background:var(--graphite);color:#fff;cursor:pointer;display:grid;place-items:center;flex:none;align-self:flex-start}
+  .close svg{width:16px;height:16px}
+  .order-form{padding:18px 20px 20px;display:flex;flex-direction:column;gap:14px}
+  .field{display:flex;flex-direction:column;gap:6px;min-width:0}
+  .field label{font-size:13px;font-weight:600}
+  .field label small{font-weight:400;color:var(--muted);font-size:12.5px}
+  .field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff;font:inherit;font-size:16px;color:var(--ink);appearance:none;-webkit-appearance:none}
+  .field input[readonly]{background:#F3F3F4;color:#3E4146}
+  .field textarea{resize:vertical;min-height:70px}
+  .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%236A6D73' stroke-width='2'%3E%3Cpath d='M5 8l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:18px;padding-right:40px}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--asphalt)}
+  .field .err{display:none;font-size:12.5px;color:var(--danger)}
+  .field.invalid input,.field.invalid select{border-color:var(--danger)}
+  .field.invalid .err{display:block}
+  .row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .qty{display:grid;grid-template-columns:48px minmax(0,1fr) 48px;border:1.5px solid var(--line);border-radius:12px;overflow:hidden}
+  .qty button{border:0;background:#F3F3F4;font-size:20px;cursor:pointer}
+  .qty button:hover{background:var(--line)}
+  .field .qty input{border:0;border-radius:0;text-align:center;font-weight:600;padding:12px 4px;font-variant-numeric:tabular-nums}
+  .total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-top:12px;border-top:1px solid var(--line)}
+  .total span{font-size:14px;color:var(--muted)}
+  .total b{font:700 26px var(--display);font-variant-numeric:tabular-nums}
+  .form-note{margin:0;text-align:center;font-size:12.5px;color:var(--muted)}
+  .success{padding:32px 24px 26px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px}
+  .tick{width:66px;height:66px;border-radius:50%;background:var(--signal);color:var(--asphalt);display:grid;place-items:center}
+  .tick svg{width:32px;height:32px}
+  .success h2{margin:0;font:700 24px/1.1 var(--display)}
+  .success > p{margin:0;color:var(--muted);max-width:36ch}
+  .summary{width:100%;margin:6px 0 0;background:#F3F3F4;border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;text-align:left;font-size:14px}
+  .summary dt{color:var(--muted)}
+  .summary dd{margin:0;font-weight:600;text-align:right;overflow-wrap:anywhere}
+  .ghost-wide{width:100%}
+  @keyframes fadein{from{opacity:0}}
+  @keyframes rise{from{transform:translateY(16px);opacity:0}}
+
   .bar{display:none}
 
   /* ---------- Адаптив ---------- */
   @media (max-width:1100px){
-    .own span{display:none}
-    .figures{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .hooks li{padding-inline:16px}
+    .hooks b{font-size:15px}
+      .figures{grid-template-columns:repeat(2,minmax(0,1fr))}
   }
   @media (max-width:960px){
     .hero{grid-template-columns:minmax(0,1fr);gap:26px}
-    .why-grid,.tables{grid-template-columns:minmax(0,1fr)}
+    .why-grid,.specs-cols,.fake-grid{grid-template-columns:minmax(0,1fr)}
+    .specs-cols table + table{border-left:0;border-top:1px solid #ECEDEE}
     .why-photo{aspect-ratio:16/10}
     .phone > span{display:none}
     body{padding-bottom:80px}
@@ -218,10 +292,15 @@
     .wrap{padding-inline:16px}
     .top .wrap{gap:10px}
     .logo img{height:38px}
-    .own{padding:6px 12px 6px 6px;gap:8px}
-    .own i{width:28px;height:28px}
-    .own b{font-size:10.5px}
-    .phone{display:none}
+          .phone{display:none}
+    .hooks ul{padding-inline:8px}
+    .hooks li{flex-direction:column;align-items:center;text-align:center;gap:8px;padding:14px 6px}
+    .hooks li:first-child{padding-left:6px}
+    .hooks i{width:36px;height:36px;border-radius:10px}
+    .hooks svg{width:18px;height:18px}
+    .hooks b{font-size:12px}
+    .hooks span{font-size:11.5px;margin-top:2px}
+    .row2{grid-template-columns:minmax(0,1fr)}
     .sw-list{grid-template-columns:repeat(3,minmax(0,1fr))}
     .sizes{grid-template-columns:repeat(4,minmax(0,1fr))}
     .size span{font-size:11px}
@@ -246,14 +325,17 @@
 <header class="top band-dark">
   <div class="wrap">
     <a class="logo" href="https://stimul.in.ua/" target="_blank" rel="noopener"><img src="img/logo.png" alt="STIMUL — Вінницька фабрика" width="520" height="144"></a>
-    <div class="own">
-      <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h20M4 20V9l5 3V9l5 3V5h6v15"/></svg></i>
-      <div><b>Власне виробництво</b><span>Вінницька фабрика STIMUL</span></div>
-    </div>
     <a class="phone" href="tel:+380632000401">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
       <span>063 200 04 01<small>Пн–Пт 9:00–18:00, Сб 10:00–15:00</small></span>
     </a>
+  </div>
+  <div class="hooks">
+    <ul class="wrap">
+      <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h20M4 20V9l5 3V9l5 3V5h6v15"/></svg></i><div><b>Власне виробництво</b><span>купуйте напряму у виробника</span></div></li>
+      <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 15h3"/></svg></i><div><b>Понад 22 роки</b><span>виробляємо взуття</span></div></li>
+      <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></i><div><b>Гарантія 1 рік</b><span>від виробника</span></div></li>
+    </ul>
   </div>
 </header>
 
@@ -312,20 +394,19 @@
       <div id="sizeBlock">
         <div class="opt-head"><span><b>Розмір:</b> <span class="val" id="sizeName">оберіть</span></span><span class="hint">довжина устілки під розміром</span></div>
         <div class="sizes" id="sizes" role="radiogroup" aria-label="Розмір"></div>
-        <p class="size-err" id="sizeErr" hidden>Оберіть розмір — відкриємо на сайті сторінку саме вашої пари</p>
       </div>
 
-      <a class="buy-btn js-buy" href="https://stimul.in.ua/krosivky-yahuar-chornyi-44-28.8-sm-ustilka-demi/" target="_blank" rel="noopener">
-        Купити на сайті
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
-      </a>
-      <p class="buy-sub">Відкриється сторінка stimul.in.ua з обраним кольором і розміром</p>
+      <button class="buy-btn js-order" type="button">
+        Замовити зараз
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <p class="buy-sub">Оформлення тут, без переходу на інший сайт</p>
 
       <div class="perks">
-        <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V9l5 3V9l5 3V5h6v15"/></svg><span><b>Власне виробництво</b>STIMUL, Вінниця</span></div>
+        <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V9l5 3V9l5 3V5h6v15"/></svg><span><b>Понад 22 роки</b>виробляємо взуття у Вінниці</span></div>
         <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg><span><b>Нова пошта</b>по Україні 110–155 грн</span></div>
         <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><span><b>Оплата</b>при отриманні або частинами</span></div>
-        <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Гарантія</b>від виробника</span></div>
+        <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Гарантія 1 рік</b>від виробника</span></div>
       </div>
     </section>
   </div>
@@ -362,39 +443,30 @@
     <div class="wrap">
       <div class="kicker">Характеристики</div>
       <h2>Що всередині Ягуара</h2>
-      <div class="tables">
-        <div class="card">
-          <h3>Характеристики</h3>
-          <div class="scroll">
-            <table class="specs">
-              <tbody>
-                <tr><th scope="row">Виробник</th><td>STIMUL, власне виробництво</td></tr>
-                <tr><th scope="row">Модель</th><td>Кросівки Ягуар, артикул 1950_2</td></tr>
-                <tr><th scope="row">Сезон</th><td>Демісезон</td></tr>
-                <tr><th scope="row">Верх виробу</th><td>Шкіра натуральна (нубук) + тканина Кордура</td></tr>
-                <tr><th scope="row">Підкладка</th><td>Текстильна сітка</td></tr>
-                <tr><th scope="row">Підошва</th><td>Поліуретан</td></tr>
-                <tr><th scope="row">Устілка</th><td>Анатомічна, вставна</td></tr>
-                <tr><th scope="row">Вага напівпари</th><td>396 г</td></tr>
-                <tr><th scope="row">Розмірний ряд</th><td>з 35 по 50</td></tr>
-                <tr><th scope="row">Кольори</th><td>Чорний, Сірий, Какао, Шоколад, Олива, Койот</td></tr>
-                <tr><th scope="row">Упаковка</th><td>Коробка</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="t-note">* Колір і відтінок можуть відрізнятися залежно від налаштувань монітора та освітлення.</div>
+      <div class="card specs-card">
+        <div class="specs-cols">
+          <table class="specs">
+            <tbody>
+              <tr><th scope="row">Виробник</th><td>STIMUL, власне виробництво</td></tr>
+              <tr><th scope="row">Модель</th><td>Кросівки Ягуар</td></tr>
+              <tr><th scope="row">Сезон</th><td>Демісезон</td></tr>
+              <tr><th scope="row">Верх виробу</th><td>Шкіра натуральна (нубук) + тканина Кордура</td></tr>
+              <tr><th scope="row">Підкладка</th><td>Текстильна сітка</td></tr>
+              <tr><th scope="row">Підошва</th><td>Поліуретан</td></tr>
+            </tbody>
+          </table>
+          <table class="specs">
+            <tbody>
+              <tr><th scope="row">Устілка</th><td>Анатомічна, вставна</td></tr>
+              <tr><th scope="row">Вага напівпари</th><td>396 г</td></tr>
+              <tr><th scope="row">Розмірний ряд</th><td>з 35 по 50</td></tr>
+              <tr><th scope="row">Кольори</th><td>Чорний, Сірий, Какао, Шоколад, Олива, Койот</td></tr>
+              <tr><th scope="row">Гарантія</th><td>1 рік від виробника</td></tr>
+              <tr><th scope="row">Упаковка</th><td>Коробка</td></tr>
+            </tbody>
+          </table>
         </div>
-
-        <div class="card">
-          <h3>Розмірна сітка і ціни</h3>
-          <div class="scroll">
-            <table class="sizes-t">
-              <thead><tr><th scope="col">Розмір</th><th scope="col">Устілка, см</th><th scope="col">Ціна</th></tr></thead>
-              <tbody id="sizeTable"></tbody>
-            </table>
-          </div>
-          <div class="t-note">Щоб обрати розмір, виміряйте довжину устілки у взутті, в якому вам зручно, і порівняйте з таблицею.</div>
-        </div>
+        <div class="t-note">* Колір і відтінок можуть відрізнятися залежно від налаштувань монітора та освітлення.</div>
       </div>
     </div>
   </section>
@@ -419,17 +491,56 @@
     </div>
   </section>
 
+  <!-- Оригінал чи підробка -->
+  <section class="block" id="original" style="padding-top:0">
+    <div class="wrap">
+      <div class="kicker">Оригінал чи підробка</div>
+      <h2>Як відрізнити оригінальний Ягуар від підробки</h2>
+      <p class="fake-intro">На жаль, у мережі з’явилися недобросовісні продавці, які під виглядом бренду STIMUL продають підробки — особливо на OLX, маркетплейсах без перевірки продавців або через фейкові Instagram-сторінки. Вони часто використовують фото з нашого сайту, але надсилають взуття, яке навіть близько не відповідає нашій якості: дешеві матеріали, інші підошви, криве пошиття і відсутність гарантії.</p>
+      <div class="fake-grid">
+        <div>
+          <div class="video" id="video">
+            <button type="button" id="videoBtn" aria-label="Дивитися відео: Обережно, підробка на кросівки Ягуар STIMUL">
+              <img src="https://i.ytimg.com/vi/WRaBbQu3KHw/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+              <span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+              <span class="v-cap">Відео STIMUL: обережно, підробка на кросівки Ягуар</span>
+            </button>
+          </div>
+          <figure class="fake-photo">
+            <img src="img/original-vs-fake.jpg" alt="Порівняння брендування: оригінал STIMUL і підробка" loading="lazy" width="900" height="900">
+            <figcaption>Порівняйте брендування: оригінал STIMUL зверху, підробка знизу</figcaption>
+          </figure>
+        </div>
+        <div>
+          <h3 class="checks-title">Оригінальне взуття STIMUL — це:</h3>
+          <ul class="checks">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><div><b>Преміальні матеріали</b><span>Натуральна шкіра, Cordura, EVA/PU підошва</span></div></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><div><b>Чітке брендування STIMUL</b><span>Всередині та ззовні</span></div></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><div><b>Упаковка з логотипом та гарантією</b><span>Гарантія 1 рік від виробника</span></div></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><div><b>Можливість обміну та повернення</b><span>Коли купуєте напряму у STIMUL</span></div></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><div><b>Офіційний сайт — stimul.in.ua</b><span>Купуйте напряму у виробника</span></div></li>
+          </ul>
+          <div class="warn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+            <p><b>Не ризикуйте — купуйте напряму у виробника.</b> На цій сторінці ви замовляєте оригінальні кросівки Ягуар від STIMUL.</p>
+          </div>
+          <button class="buy-btn js-order fake-cta" type="button">Замовити оригінал</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Фінальний заклик -->
   <section class="final band-dark">
     <div class="wrap">
       <div>
         <h2>Ягуар · <span id="finalColor">Чорний</span></h2>
-        <p id="finalText">від 2 685 грн · оберіть розмір і купуйте на сайті STIMUL</p>
+        <p id="finalText">від 2 685 грн · оригінал напряму від виробника · гарантія 1 рік</p>
       </div>
-      <a class="buy-btn js-buy" href="https://stimul.in.ua/krosivky-yahuar-chornyi-44-28.8-sm-ustilka-demi/" target="_blank" rel="noopener">
-        Купити на сайті
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
-      </a>
+      <button class="buy-btn js-order" type="button">
+        Замовити зараз
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
     </div>
   </section>
 </main>
@@ -445,7 +556,73 @@
 
 <div class="bar">
   <div class="p"><b id="barPrice">2 685 грн</b><s id="barOld">3 085 грн</s></div>
-  <a class="buy-btn js-buy" href="https://stimul.in.ua/krosivky-yahuar-chornyi-44-28.8-sm-ustilka-demi/" target="_blank" rel="noopener">Купити на сайті</a>
+  <button class="buy-btn js-order" type="button">Замовити зараз</button>
+</div>
+
+<div class="overlay" id="overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <div id="formView">
+      <div class="m-head">
+        <img id="mImg" src="img/chornyi-1-t.jpg" alt="">
+        <div>
+          <h2 id="mTitle">Оформлення замовлення</h2>
+          <p>Кросівки Ягуар · оригінал від STIMUL</p>
+        </div>
+        <button class="close" type="button" data-close aria-label="Закрити"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <form class="order-form" id="orderForm" novalidate>
+        <div class="field">
+          <label for="fModel">Модель</label>
+          <input id="fModel" name="model" type="text" value="Кросівки Ягуар, демісезон" readonly>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="fColor">Колір</label>
+            <select id="fColor" name="color"></select>
+          </div>
+          <div class="field" id="fSizeWrap">
+            <label for="fSize">Розмір</label>
+            <select id="fSize" name="size"></select>
+            <span class="err">Оберіть розмір</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fQty">Кількість пар</label>
+          <div class="qty">
+            <button type="button" id="qtyMinus" aria-label="Зменшити кількість">−</button>
+            <input id="fQty" name="quantity" type="text" inputmode="numeric" value="1">
+            <button type="button" id="qtyPlus" aria-label="Збільшити кількість">+</button>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field" id="fNameWrap">
+            <label for="fName">Ім'я</label>
+            <input id="fName" name="name" type="text" autocomplete="name" placeholder="Ваше ім'я">
+            <span class="err">Вкажіть ім'я</span>
+          </div>
+          <div class="field" id="fPhoneWrap">
+            <label for="fPhone">Телефон</label>
+            <input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+380 __ ___ __ __">
+            <span class="err">Вкажіть номер: +380 і 9 цифр</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fComment">Коментар <small>(необов’язково)</small></label>
+          <textarea id="fComment" name="comment" rows="2" placeholder="Наприклад, зручний час для дзвінка"></textarea>
+        </div>
+        <div class="total"><span>До сплати</span><b id="mTotal">2 685 грн</b></div>
+        <button class="buy-btn" type="submit">Оформити замовлення</button>
+        <p class="form-note">Оплата при отриманні або частинами · Демо-версія: заявка поки нікуди не надсилається</p>
+      </form>
+    </div>
+    <div class="success" id="successView" hidden>
+      <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      <h2>Замовлення прийнято</h2>
+      <p id="sText">Дякуємо! Ми зателефонуємо вам найближчим часом, щоб підтвердити замовлення.</p>
+      <dl class="summary" id="summary"></dl>
+      <button class="ghost ghost-wide" type="button" data-close>Повернутися на сторінку</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -463,7 +640,7 @@
   var SIZES=[[35,'23','23'],[36,'23,7','23.7'],[37,'24,5','24.5'],[38,'25','25'],[39,'25,7','25.7'],[40,'26,5','26.5'],[41,'27','27'],[42,'27,7','27.7'],[43,'28,2','28.2'],[44,'28,8','28.8'],[45,'29,5','29.5'],[46,'30,3','30.3'],[47,'31','31'],[48,'31,5','31.5'],[49,'32,3','323'],[50,'33','33']];
   var REVIEWS=[{"name": "Віталий Цімух", "date": "2026-06-27", "rating": 5, "text": "На перший погляд - звичайні кросівки. Але хай Вас не вводить в оману їх зовнішня простота: якісні матеріали, продумана вентиляція та чудова підошва - це саме те, заради чого варто вкладати в них кошти. Ноги не варяться навіть у тридцятиградусну спеку, шнурівка не намагається розв'язатися під час ходи, а підошва взагалі є взірцем ходової демократії: ноги не відчувають жодної різниці між утрамбованим грунтом та луговиною, а на асфальті чи плитці підошва взагалі надає ногам відчуття польоту. Дякую!"}, {"name": "Олена Ященко", "date": "2024-09-13", "rating": 5, "text": "Замовляла чоловiковi модель Ягуар.Зручнi та якiснi кросiвки! Вперше зустрiли взуття, у якому не пiтнiють ноги. Не дают поганого запаху навiть пiсля тривалого носiння!Чоловiк iз задоволенням носить кроси на роботу кожного дня!!!"}, {"name": "Alexandr Radzievsky", "date": "2026-05-16", "rating": 5, "text": "Придбав цю модель онлайн, трохи не влучив з розміром - замінили на менший розмір без проблем, на розмір менше сіли як рідні.\n\nНошу ці кросівки трішки більше двох місяців , бувають дуже активні дні. Почав носити в досить прохолодну погоду - нога не мерзне, з приходом тепла не потіє, це щось неймовірне! За цей час не втратили вигляду зовсім! Реально як нові, навіть слідів згину не видно!\n\nЗ недоліків, на мою суб’єктивну, відсутність петлі над пʼяткою, доводиться користуватися лопаткою, і якось незрозуміло, що зробити з язичком. Але це не суттєві недоліки в не впливають на якість взуття.\n\nЗайшов написати відгук в обрати пару для заміських умов.", "reply": "Alexandr Radzievsky, Дякуємо за відгук! 😊\n\nРаді, що взуття добре показало себе в носінні та залишилось комфортним у різну погоду. Дякуємо також за зауваження щодо петлі — обов’язково врахуємо. Носіть із задоволенням! 💪"}, {"name": "Ганна Куркіна", "date": "2023-07-20", "rating": null, "text": "Дуже гарне, стильне, якісне взуття. Ношу кросівки “Ягуар” третій місяць, дуже зручно, не втомлюються(!!!) ноги.\n\r\nМої чоловік та син теж взуті у Stimul. Бажаю Вам здоров’я та наснаги, дякую."}, {"name": "Оксана", "date": "2025-12-01", "rating": 5, "text": "Купила модель Ягуар ризикнувши.На роботі підлога різного типу:фарба на бетоні і дереву,лакований паркет,плитка, лінолеум-у попередньому взутті обов'язково на чомусь підсковзнеся,в Ягуарі не сковзаюсь.Маю малу але широку ступню(повздовжньо-поперечне вроджена плоскостопість)-це ще той квест найти взуття,коли37малий,38великий(в цьому магазині мені без проблем зробили заміну взуття на потрібний розмір).Турбує проблема з набряком ніг,але в них я можу ходити .Маю вагу 120кг,черевики прекрасно витримують:не прогибається підошва.Не має дурного запаху,вірніше нема ніякого запаху,що підтверджує якість матеріалу з якого виготовляють взуття.Хотілось,щоб була створена модель із додатковою застібкою-блискавкою для більшого комфорту знімання і одягання.Доречі я вже придбала кросівки і на літо в цьому магазині.Хочу ще придбати і на зиму.Дякую всім хто дає нам можливість носити зручне взуття"}, {"name": "Андрій Володимирович", "date": "2025-10-10", "rating": 5, "text": "Вирішив придбати після того як один з побратимів порадив дану модель демісезонку для цивільних моментів. Взуття просто бомбезне, легке, зручне, дуже комфортне, по нозі лягло одразу. Друга пара літні, теж класні. Одразу замовляйте водозахисний спрей для взуття, відомого українського виробника але дешевше. В майбутньому однозначно віддам перевагу взуттю цього виробника."}, {"name": "Альона Миколаївна", "date": "2025-08-20", "rating": 5, "text": "З виробником Стимул , я познайомилась ще у 2020 році, коли мені порадили знайомі. Я військова. Шукала взуття, в якому не будуть горіти ноги після зміни. Мені порадили обрати кросівки Ягуар. І ось що я вам скажу, я їх носила 4 роки. Уявіть собі, чотири роки. Купила ще собі пару. Стимул, так тримати. Вражена що взуття такої якості можна придбати не тільки за кордоном."}, {"name": "Алексей Бондаренко", "date": "2023-08-30", "rating": 5, "text": "Кросівки \"Ягуар\" літні 1,5 роки і у хвіст і в гриву.\n\r\nПолігон, поля, паркет. Якщо рухатись і недовго, то навіть у мороз до -5 норм.\n\r\nСтельки для моєї зламаної п’ятки – шедевр!\n\r\nЗамовляю нові такі самі."}, {"name": "Макс Дудка", "date": "2023-07-18", "rating": null, "text": "Дякую вам!шкари підійшли!,з розміром вгадав,не без вашої допомоги!вже кілька днів ходжу в них та кайфую,дуже легкі та зручні(єдине :можливо можна буде наступного разу,пошити трохи вужче?,бо в мене нога вузька,хоч і довга!виглядають супер! надіюсь носяться так само!?) Я брав “Ягуар”, у кольорі олива,таки олива і є!(не треба плутати з хакі)! Дякую вам!\n\r\nЯ задоволений!Замовлю ще одну пару! якщо не буде інших моделей мого розміру,то візьму такі ж,але у іншому кольорі!\n\r\nСлава Україні!!!☝️"}, {"name": "Sergey Menchura", "date": "2024-04-18", "rating": 5, "text": "Кросівки просто бомба! Взяв уже 3 пари Ягуар ходжу зимою і літом, настройки і в саду! Замовив ще одні Хаміліон! Розмірна сітка чотко підійшла! Рекомендую)"}, {"name": "Volodymyr Tk", "date": "2023-11-26", "rating": 5, "text": "Замовляв кросівки ягуар, надіслали швидко, попередньо зателефонували та уточнили розмір. Якість супер, розходив за два дні. Дякую за вашу роботу."}, {"name": "Валентина Верьовка", "date": "2024-04-12", "rating": 5, "text": "Купували кросівки ягуар , дуже сподобались, обслуговування супер, швидкий пошив та відправка, дякуємо! 💛💙👍"}, {"name": "Олександр Р.", "date": "2020-01-28", "rating": 5, "text": "Ідеальне співвідношення ціна-якість, замовляю вже другий раз тактичні кросівки (СТІМУЛ), досить крепкі, підошва м'яка в той же час витримує 3 сезона постійної ходьби, з гарною вентиляцією. Продавці дуже чемні і компетентні. Рекомендую"}, {"name": "Олександр", "date": "2026-05-18", "rating": 5, "text": "придбав данну модель, якісно зроблено, поки багато не находив але на нозі сидить добре", "reply": "Олександр, дякуємо за коментар, нехай добре носяться😊"}, {"name": "Бондаренко Микола", "date": "2025-05-30", "rating": 5, "text": "Отримав кросівки які замовляв задоволений дуже сподобалися сподіваюся будуть служити довго і вірно але все одно мабуть такі ще візьму на повсякдень високі берці"}, {"name": "Олійник Любов", "date": "2023-07-07", "rating": 5, "text": "Чудові кросівки ягуар, зручні. Рекомендую всім."}];
 
-  var state={color:0,photo:0,size:null};
+  var state={color:0,photo:0,size:null,qty:1};
   var $=function(id){return document.getElementById(id)};
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   function src(c,i,t){return 'img/'+COLORS[c].id+'-'+(i+1)+(t?'-t':'')+'.jpg'}
@@ -474,12 +651,6 @@
   function oldOf(s){return s===47?3385:(s>=48?3585:3085)}
   function money(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' грн'}
 
-  /* Сторінка товару на сайті для кольору й розміру */
-  function productUrl(c,s){
-    var id=COLORS[c].id, row=sizeRow(s||44), ins=row[2];
-    if(id==='siryi'&&row[0]===49) ins='32.3';
-    return 'https://stimul.in.ua/krosivky-yahuar-'+id+'-'+row[0]+'-'+ins+'-sm-ustilka-demi/';
-  }
 
   /* Галерея */
   var mainImg=$('mainImg'), thumbs=$('thumbs');
@@ -520,28 +691,29 @@
   }).join('');
   sw.addEventListener('click',function(e){
     var b=e.target.closest('.sw'); if(!b) return;
-    state.color=+b.dataset.i; state.photo=0;
+    setColor(+b.dataset.i);
+  });
+  function setColor(i){
+    state.color=i; state.photo=0;
     [].forEach.call(sw.children,function(x,k){x.setAttribute('aria-checked',k===state.color)});
     $('colorName').textContent=COLORS[state.color].name;
     $('finalColor').textContent=COLORS[state.color].name;
     renderThumbs(); showPhoto(0); update();
-  });
+  }
 
   /* Розміри */
   var sizesEl=$('sizes');
   sizesEl.innerHTML=SIZES.map(function(s){return '<button class="size" type="button" role="radio" aria-checked="false" data-s="'+s[0]+'" aria-label="Розмір '+s[0]+', устілка '+s[1]+' см"><b>'+s[0]+'</b><span>'+s[1]+' см</span></button>'}).join('');
   sizesEl.addEventListener('click',function(e){
     var b=e.target.closest('.size'); if(!b) return;
-    state.size=+b.dataset.s;
-    [].forEach.call(sizesEl.children,function(x){x.setAttribute('aria-checked',+x.dataset.s===state.size)});
-    $('sizeErr').hidden=true;
-    update();
+    setSize(+b.dataset.s);
   });
+  function setSize(s){
+    state.size=s;
+    [].forEach.call(sizesEl.children,function(x){x.setAttribute('aria-checked',+x.dataset.s===state.size)});
+    update();
+  }
 
-  /* Таблиця розмірів */
-  $('sizeTable').innerHTML=SIZES.map(function(s){
-    return '<tr data-s="'+s[0]+'"><td><b>'+s[0]+'</b></td><td>'+s[1]+' см</td><td>'+money(priceOf(s[0]))+'</td></tr>';
-  }).join('');
 
   /* Ціна та посилання */
   function update(){
@@ -552,18 +724,80 @@
     $('barOld').textContent=money(o);
     $('priceNote').hidden=!!s;
     $('sizeName').textContent=s?s+' · устілка '+row[1]+' см':'оберіть';
-    $('finalText').textContent=s?(money(p)+' · розмір '+s+' · відкриємо сторінку саме цієї пари'):'від 2 685 грн · оберіть розмір і купуйте на сайті STIMUL';
-    var url=productUrl(state.color,s);
-    [].forEach.call(document.querySelectorAll('.js-buy'),function(a){a.href=url});
-    [].forEach.call($('sizeTable').children,function(tr){tr.classList.toggle('hl',+tr.dataset.s===s)});
+    syncForm();
   }
-  document.addEventListener('click',function(e){
-    var a=e.target.closest('.js-buy'); if(!a||state.size) return;
+
+  /* Форма замовлення */
+  var fColor=$('fColor'), fSize=$('fSize'), fQty=$('fQty'), fPhone=$('fPhone'), overlay=$('overlay'), lastFocus=null;
+  fColor.innerHTML=COLORS.map(function(c,i){return '<option value="'+i+'">'+c.name+'</option>'}).join('');
+  fSize.innerHTML='<option value="">Оберіть</option>'+SIZES.map(function(s){return '<option value="'+s[0]+'">'+s[0]+' · '+s[1]+' см</option>'}).join('');
+  function syncForm(){
+    fColor.value=state.color;
+    fSize.value=state.size||'';
+    fQty.value=state.qty;
+    $('mImg').src=src(state.color,0,true);
+    $('mTotal').textContent=money(priceOf(state.size)*state.qty);
+    if(state.size) $('fSizeWrap').classList.remove('invalid');
+  }
+  fColor.onchange=function(){setColor(+fColor.value)};
+  fSize.onchange=function(){
+    if(fSize.value){ setSize(+fSize.value); return }
+    state.size=null;
+    [].forEach.call(sizesEl.children,function(x){x.setAttribute('aria-checked','false')});
+    update();
+  };
+  function setQty(n){ state.qty=Math.max(1,Math.min(10,n||1)); syncForm() }
+  $('qtyMinus').onclick=function(){setQty(state.qty-1)};
+  $('qtyPlus').onclick=function(){setQty(state.qty+1)};
+  fQty.addEventListener('change',function(){setQty(parseInt(fQty.value.replace(/\D/g,''),10))});
+
+  function openOrder(){
+    lastFocus=document.activeElement;
+    $('formView').hidden=false; $('successView').hidden=true;
+    syncForm();
+    overlay.hidden=false; document.body.style.overflow='hidden';
+    setTimeout(function(){ (state.size?$('fName'):fSize).focus() },60);
+  }
+  function closeOrder(){
+    overlay.hidden=true; document.body.style.overflow='';
+    if(lastFocus&&lastFocus.focus) lastFocus.focus();
+  }
+  document.addEventListener('click',function(e){ if(e.target.closest('.js-order')) openOrder() });
+  overlay.addEventListener('click',function(e){ if(e.target===overlay||e.target.closest('[data-close]')) closeOrder() });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!overlay.hidden) closeOrder() });
+
+  function digits(v){var d=v.replace(/\D/g,''); if(d.indexOf('380')===0)d=d.slice(3); else if(d.charAt(0)==='0')d=d.slice(1); return d.slice(0,9)}
+  function fmtPhone(d){var o='+380'; if(d.length)o+=' '+d.slice(0,2); if(d.length>2)o+=' '+d.slice(2,5); if(d.length>5)o+=' '+d.slice(5,7); if(d.length>7)o+=' '+d.slice(7,9); return o}
+  fPhone.addEventListener('focus',function(){ if(!fPhone.value) fPhone.value='+380 ' });
+  fPhone.addEventListener('input',function(){ fPhone.value=fmtPhone(digits(fPhone.value)); $('fPhoneWrap').classList.remove('invalid') });
+  fPhone.addEventListener('blur',function(){ if(!digits(fPhone.value).length) fPhone.value='' });
+  $('fName').addEventListener('input',function(){ $('fNameWrap').classList.remove('invalid') });
+
+  $('orderForm').addEventListener('submit',function(e){
     e.preventDefault();
-    $('sizeErr').hidden=false;
-    $('sizeBlock').scrollIntoView({behavior:'smooth',block:'center'});
-    sizesEl.classList.remove('shake'); void sizesEl.offsetWidth; sizesEl.classList.add('shake');
+    var name=$('fName').value.trim(), ph=digits(fPhone.value), ok=true, first=null;
+    $('fSizeWrap').classList.toggle('invalid',!state.size); if(!state.size){ok=false;first=first||fSize}
+    $('fNameWrap').classList.toggle('invalid',!name); if(!name){ok=false;first=first||$('fName')}
+    $('fPhoneWrap').classList.toggle('invalid',ph.length!==9); if(ph.length!==9){ok=false;first=first||fPhone}
+    if(!ok){first.focus();return}
+    var row=sizeRow(state.size), comment=$('fComment').value.trim(), q=state.qty;
+    $('sText').textContent='Дякуємо, '+name+'! Ми зателефонуємо вам найближчим часом, щоб підтвердити замовлення.';
+    $('summary').innerHTML=
+      '<dt>Модель</dt><dd>Кросівки Ягуар, демісезон</dd>'+
+      '<dt>Колір</dt><dd>'+COLORS[state.color].name+'</dd>'+
+      '<dt>Розмір</dt><dd>'+state.size+' · '+row[1]+' см</dd>'+
+      '<dt>Кількість</dt><dd>'+q+' '+(q===1?'пара':(q<5?'пари':'пар'))+'</dd>'+
+      '<dt>Телефон</dt><dd>'+fmtPhone(ph)+'</dd>'+
+      (comment?'<dt>Коментар</dt><dd>'+esc(comment)+'</dd>':'')+
+      '<dt>Сума</dt><dd>'+money(priceOf(state.size)*q)+'</dd>';
+    $('formView').hidden=true; $('successView').hidden=false;
+    $('successView').querySelector('.ghost').focus();
   });
+
+  /* Відео про підробки: плеєр вантажиться лише після натискання */
+  $('videoBtn').onclick=function(){
+    $('video').innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/WRaBbQu3KHw?autoplay=1&rel=0" title="Обережно, підробка на кросівки Ягуар STIMUL" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+  };
 
   /* Таймер (демо): до опівночі наступного дня */
   function deadline(){var d=new Date(); d.setHours(24,0,0,0); d.setDate(d.getDate()+1); return d.getTime()}
