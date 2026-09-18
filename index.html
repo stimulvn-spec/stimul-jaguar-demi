@@ -229,48 +229,27 @@
   .video .v-cap{position:absolute;left:16px;right:16px;bottom:16px;color:#fff;font-weight:600;font-size:15px;text-align:left;text-shadow:0 1px 8px rgba(0,0,0,.8)}
   .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
-  /* ---------- Форма замовлення ---------- */
-  .overlay{position:fixed;inset:0;z-index:60;background:rgba(10,11,12,.62);display:grid;place-items:center;padding:16px;animation:fadein .2s}
-  .modal{background:var(--paper);border-radius:22px;width:100%;max-width:480px;max-height:calc(100vh - 32px);overflow:auto;box-shadow:0 30px 80px -20px rgba(0,0,0,.5);animation:rise .25s ease}
-  .m-head{display:flex;gap:14px;align-items:center;padding:18px 20px;background:var(--asphalt);color:#fff}
-  .m-head img{width:62px;height:62px;border-radius:12px;object-fit:cover;background:#fff}
-  .m-head div{flex:1;min-width:0}
-  .m-head h2{margin:0;font:700 19px/1.15 var(--display);color:#fff}
-  .m-head p{margin:3px 0 0;font-size:13px;color:var(--muted-dark)}
-  .close{width:38px;height:38px;border-radius:50%;border:0;background:var(--graphite);color:#fff;cursor:pointer;display:grid;place-items:center;flex:none;align-self:flex-start}
-  .close svg{width:16px;height:16px}
-  .order-form{padding:18px 20px 20px;display:flex;flex-direction:column;gap:14px}
-  .field{display:flex;flex-direction:column;gap:6px;min-width:0}
-  .field label{font-size:13px;font-weight:600}
-  .field label small{font-weight:400;color:var(--muted);font-size:12.5px}
-  .field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff;font:inherit;font-size:16px;color:var(--ink);appearance:none;-webkit-appearance:none}
-  .field input[readonly]{background:#F3F3F4;color:#3E4146}
-  .field textarea{resize:vertical;min-height:70px}
-  .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%236A6D73' stroke-width='2'%3E%3Cpath d='M5 8l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:18px;padding-right:40px}
-  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--asphalt)}
-  .field .err{display:none;font-size:12.5px;color:var(--danger)}
-  .field.invalid input,.field.invalid select{border-color:var(--danger)}
-  .field.invalid .err{display:block}
-  .row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-  .qty{display:grid;grid-template-columns:48px minmax(0,1fr) 48px;border:1.5px solid var(--line);border-radius:12px;overflow:hidden}
-  .qty button{border:0;background:#F3F3F4;font-size:20px;cursor:pointer}
-  .qty button:hover{background:var(--line)}
-  .field .qty input{border:0;border-radius:0;text-align:center;font-weight:600;padding:12px 4px;font-variant-numeric:tabular-nums}
-  .total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-top:12px;border-top:1px solid var(--line)}
-  .total span{font-size:14px;color:var(--muted)}
-  .total b{font:700 26px var(--display);font-variant-numeric:tabular-nums}
-  .form-note{margin:0;text-align:center;font-size:12.5px;color:var(--muted)}
-  .success{padding:32px 24px 26px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px}
-  .tick{width:66px;height:66px;border-radius:50%;background:var(--signal);color:var(--asphalt);display:grid;place-items:center}
-  .tick svg{width:32px;height:32px}
-  .success h2{margin:0;font:700 24px/1.1 var(--display)}
-  .success > p{margin:0;color:var(--muted);max-width:36ch}
-  .summary{width:100%;margin:6px 0 0;background:#F3F3F4;border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;text-align:left;font-size:14px}
-  .summary dt{color:var(--muted)}
-  .summary dd{margin:0;font-weight:600;text-align:right;overflow-wrap:anywhere}
-  .ghost-wide{width:100%}
+  @keyframes rise{from{transform:translateY(16px);opacity:0}}
   @keyframes fadein{from{opacity:0}}
   @keyframes rise{from{transform:translateY(16px);opacity:0}}
+
+  .actions{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:10px}
+  .add-btn{display:flex;align-items:center;justify-content:center;gap:8px;border:2px solid var(--asphalt);background:var(--paper);color:var(--ink);border-radius:14px;font:600 15px/1.15 var(--body);padding:20px 16px;cursor:pointer;text-align:center;transition:background .15s,color .15s}
+  .add-btn:hover{background:var(--asphalt);color:#fff}
+  .add-btn svg{width:18px;height:18px;flex:none}
+
+  .cart-strip{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;background:var(--asphalt);color:#fff;border-radius:14px;padding:14px 16px 14px 18px}
+  .cart-strip span{font-size:14.5px;color:#C6C8CC}
+  .cart-strip b{color:#fff;font-weight:600;font-variant-numeric:tabular-nums}
+  .cart-strip button{border:0;border-radius:10px;background:var(--signal);color:var(--asphalt);font:700 13px/1 var(--display);text-transform:uppercase;padding:12px 16px;cursor:pointer}
+  .cart-strip button:hover{background:var(--signal-hover)}
+
+  .toast{position:fixed;left:16px;right:16px;bottom:16px;z-index:70;margin:0 auto;max-width:420px;background:var(--asphalt);color:#fff;border-radius:16px;padding:16px 18px;box-shadow:0 18px 40px -16px rgba(0,0,0,.6);display:flex;flex-direction:column;gap:10px;animation:stl-rise .25s ease}
+  .toast p{margin:0;font-size:14.5px}
+  .toast p b{font-weight:600}
+  .toast-row{display:flex;gap:8px}
+  .toast-row button{flex:1;border-radius:10px;padding:11px 12px;font:600 14px var(--body);cursor:pointer;border:1px solid var(--line-dark);background:transparent;color:#fff}
+  .toast-row button.primary{background:var(--signal);color:var(--asphalt);border-color:var(--signal);font-weight:700}
 
   .bar{display:none}
 
@@ -290,6 +269,7 @@
     .bar .p b{display:block;font:700 20px/1.1 var(--display);font-variant-numeric:tabular-nums}
     .bar .p s{font-size:12px;color:var(--muted-dark)}
     .bar .buy-btn{flex:1;padding:15px 12px;font-size:13.5px;box-shadow:none}
+    .bar .bar-cart{border:1px solid var(--line-dark);background:transparent;color:#fff;border-radius:12px;padding:12px 14px;font:600 13px var(--body);cursor:pointer;white-space:nowrap}
   }
   @media (max-width:640px){
     .wrap{padding-inline:16px}
@@ -302,7 +282,8 @@
     .hooks svg{width:20px;height:20px}
     .hooks b{font-size:16px}
     .hooks span{font-size:13.5px}
-                  .row2{grid-template-columns:minmax(0,1fr)}
+                  .actions{grid-template-columns:minmax(0,1fr)}
+    .add-btn{padding:16px}
     .beware .wrap{padding-block:56px 60px}
     .beware-lead{font-size:16px}
     .video .play{width:68px;height:68px}
@@ -404,6 +385,7 @@
           <select id="sizeSelect" aria-label="Оберіть розмір"></select>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </div>
+        <p class="size-err" id="sizeErr" hidden>Оберіть розмір, щоб додати пару в кошик</p>
       </div>
 
       <div class="qty-row">
@@ -418,11 +400,21 @@
         <div class="qty-sum" id="qSum" hidden></div>
       </div>
 
-      <button class="buy-btn js-order" type="button">
-        Замовити зараз
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </button>
-      <p class="buy-sub">Оформлення тут, без переходу на інший сайт</p>
+      <div class="actions">
+        <button class="buy-btn js-order" type="button">
+          Замовити зараз
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <button class="add-btn js-add" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          Додати ще пару
+        </button>
+      </div>
+      <div class="cart-strip" id="cartStrip" hidden>
+        <span>У кошику: <b id="cartCount"></b> · <b id="cartSum"></b></span>
+        <button type="button" class="js-checkout">Оформити замовлення</button>
+      </div>
+      <p class="buy-sub">Можна додати кілька пар різних кольорів і розмірів</p>
 
       <div class="perks">
         <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V9l5 3V9l5 3V5h6v15"/></svg><span><b>Понад 22 роки</b>виробляємо взуття у Вінниці</span></div>
@@ -552,75 +544,18 @@
   </div>
 </footer>
 
-<div class="bar">
-  <div class="p"><b id="barPrice">2 685 грн</b><s id="barOld">3 085 грн</s></div>
-  <button class="buy-btn js-order" type="button">Замовити зараз</button>
+<div class="toast" id="toast" hidden>
+  <p id="toastText"></p>
+  <div class="toast-row">
+    <button type="button" id="toastMore">Обрати ще пару</button>
+    <button type="button" class="primary js-checkout">Оформити замовлення</button>
+  </div>
 </div>
 
-<div class="overlay" id="overlay" hidden>
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
-    <div id="formView">
-      <div class="m-head">
-        <img id="mImg" src="img/chornyi-1-t.jpg" alt="">
-        <div>
-          <h2 id="mTitle">Оформлення замовлення</h2>
-          <p>Кросівки Ягуар · оригінал від STIMUL</p>
-        </div>
-        <button class="close" type="button" data-close aria-label="Закрити"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-      </div>
-      <form class="order-form" id="orderForm" novalidate>
-        <div class="field">
-          <label for="fModel">Модель</label>
-          <input id="fModel" name="model" type="text" value="Кросівки Ягуар, демісезон" readonly>
-        </div>
-        <div class="row2">
-          <div class="field">
-            <label for="fColor">Колір</label>
-            <select id="fColor" name="color"></select>
-          </div>
-          <div class="field" id="fSizeWrap">
-            <label for="fSize">Розмір</label>
-            <select id="fSize" name="size"></select>
-            <span class="err">Оберіть розмір</span>
-          </div>
-        </div>
-        <div class="field">
-          <label for="fQty">Кількість пар</label>
-          <div class="qty">
-            <button type="button" id="qtyMinus" aria-label="Зменшити кількість">−</button>
-            <input id="fQty" name="quantity" type="text" inputmode="numeric" value="1">
-            <button type="button" id="qtyPlus" aria-label="Збільшити кількість">+</button>
-          </div>
-        </div>
-        <div class="row2">
-          <div class="field" id="fNameWrap">
-            <label for="fName">Ім'я</label>
-            <input id="fName" name="name" type="text" autocomplete="name" placeholder="Ваше ім'я">
-            <span class="err">Вкажіть ім'я</span>
-          </div>
-          <div class="field" id="fPhoneWrap">
-            <label for="fPhone">Телефон</label>
-            <input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+380 __ ___ __ __">
-            <span class="err">Вкажіть номер: +380 і 9 цифр</span>
-          </div>
-        </div>
-        <div class="field">
-          <label for="fComment">Коментар <small>(необов’язково)</small></label>
-          <textarea id="fComment" name="comment" rows="2" placeholder="Наприклад, зручний час для дзвінка"></textarea>
-        </div>
-        <div class="total"><span>До сплати</span><b id="mTotal">2 685 грн</b></div>
-        <button class="buy-btn" type="submit">Оформити замовлення</button>
-        <p class="form-note">Оплата при отриманні або частинами · Демо-версія: заявка поки нікуди не надсилається</p>
-      </form>
-    </div>
-    <div class="success" id="successView" hidden>
-      <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
-      <h2>Замовлення прийнято</h2>
-      <p id="sText">Дякуємо! Ми зателефонуємо вам найближчим часом, щоб підтвердити замовлення.</p>
-      <dl class="summary" id="summary"></dl>
-      <button class="ghost ghost-wide" type="button" data-close>Повернутися на сторінку</button>
-    </div>
-  </div>
+<div class="bar">
+  <div class="p"><b id="barPrice">2 685 грн</b><s id="barOld">3 085 грн</s></div>
+  <button type="button" class="bar-cart js-checkout" id="barCart" hidden>Кошик</button>
+  <button class="buy-btn js-order" type="button">Замовити зараз</button>
 </div>
 
 <script>
@@ -738,68 +673,77 @@
     syncForm();
   }
 
-  /* Форма замовлення */
-  var fColor=$('fColor'), fSize=$('fSize'), fQty=$('fQty'), fPhone=$('fPhone'), overlay=$('overlay'), lastFocus=null;
-  fColor.innerHTML=COLORS.map(function(c,i){return '<option value="'+i+'">'+c.name+'</option>'}).join('');
-  fSize.innerHTML='<option value="">Оберіть</option>'+SIZES.map(function(s){return '<option value="'+s[0]+'">'+s[0]+' · '+s[1]+' см</option>'}).join('');
-  function syncForm(){
-    fColor.value=state.color;
-    fSize.value=state.size||'';
-    fQty.value=state.qty;
-    $('mImg').src=src(state.color,0,true);
-    $('mTotal').textContent=money(priceOf(state.size)*state.qty);
-    if(state.size) $('fSizeWrap').classList.remove('invalid');
-  }
-  fColor.onchange=function(){setColor(+fColor.value)};
-  fSize.onchange=function(){
-    setSize(fSize.value?+fSize.value:null);
-  };
-  $('qtyMinus').onclick=function(){setQty(state.qty-1)};
-  $('qtyPlus').onclick=function(){setQty(state.qty+1)};
-  fQty.addEventListener('change',function(){setQty(parseInt(fQty.value.replace(/\D/g,''),10))});
+  /* Кошик: у Tilda — справжній ST100, на тестовій сторінці — демонстраційний */
+  var ED={"koiot": {"35": {"uid": "309784089882", "sku": "1941", "price": 2685.0, "label": "35 - 23 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "36": {"uid": "371321944012", "sku": "1942", "price": 2685.0, "label": "36 - 23.7 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "37": {"uid": "219324492552", "sku": "1943", "price": 2685.0, "label": "37 - 24.5 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "38": {"uid": "883450334592", "sku": "1944", "price": 2685.0, "label": "38 - 25 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "39": {"uid": "931052020882", "sku": "1945", "price": 2685.0, "label": "39 - 25.7 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "40": {"uid": "325612823112", "sku": "1946", "price": 2685.0, "label": "40 - 26.5 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "41": {"uid": "299276496442", "sku": "1947", "price": 2685.0, "label": "41 - 27 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "42": {"uid": "449990846182", "sku": "1948", "price": 2685.0, "label": "42 - 27.7 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "43": {"uid": "645859418422", "sku": "1949", "price": 2685.0, "label": "43 - 28.2 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "44": {"uid": "272009733552", "sku": "1950", "price": 2685.0, "label": "44 - 28.8 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "45": {"uid": "924939447062", "sku": "1951", "price": 2685.0, "label": "45 - 29.5 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "46": {"uid": "353198964662", "sku": "1952", "price": 2685.0, "label": "46 - 30.3 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "47": {"uid": "210360534092", "sku": "2064", "price": 2985.0, "label": "47 - 31 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "48": {"uid": "234707318962", "sku": "2232", "price": 3185.0, "label": "48 - 31.5 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "49": {"uid": "149989700012", "sku": "2239", "price": 3185.0, "label": "49 - 32,3 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "50": {"uid": "277928108122", "sku": "3097", "price": 3185.0, "label": "50 - 33 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}}, "olyva": {"35": {"uid": "230546101972", "sku": "2282", "price": 2685.0, "label": "35 - 23 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "36": {"uid": "101577611562", "sku": "1972", "price": 2685.0, "label": "36 - 23.7 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "37": {"uid": "884103328492", "sku": "1973", "price": 2685.0, "label": "37 - 24.5 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "38": {"uid": "133990659282", "sku": "1974", "price": 2685.0, "label": "38 - 25 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "39": {"uid": "949289426842", "sku": "1975", "price": 2685.0, "label": "39 - 25.7 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "40": {"uid": "781327463672", "sku": "1976", "price": 2685.0, "label": "40 - 26.5 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "41": {"uid": "631445278752", "sku": "1977", "price": 2685.0, "label": "41 - 27 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "42": {"uid": "360185345482", "sku": "1978", "price": 2685.0, "label": "42 - 27.7 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "43": {"uid": "694856860392", "sku": "1979", "price": 2685.0, "label": "43 - 28.2 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "44": {"uid": "217997631912", "sku": "1980", "price": 2685.0, "label": "44 - 28.8 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "45": {"uid": "470697697202", "sku": "1981", "price": 2685.0, "label": "45 - 29.5 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "46": {"uid": "937291843112", "sku": "1982", "price": 2685.0, "label": "46 - 30.3 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "47": {"uid": "571475794942", "sku": "2249", "price": 2985.0, "label": "47 - 31 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "48": {"uid": "328217322822", "sku": "2465", "price": 3185.0, "label": "48 - 31.5 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "49": {"uid": "581738886352", "sku": "1983", "price": 3185.0, "label": "49 - 32,3 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "50": {"uid": "507747218542", "sku": "2596", "price": 3185.0, "label": "50 - 33 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}}, "shokolad": {"35": {"uid": "852398107792", "sku": "2018", "price": 2685.0, "label": "35 - 23 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "36": {"uid": "993409643392", "sku": "2019", "price": 2685.0, "label": "36 - 23.7 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "37": {"uid": "920930091802", "sku": "2020", "price": 2685.0, "label": "37 - 24.5 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "38": {"uid": "501043941762", "sku": "2021", "price": 2685.0, "label": "38 - 25 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "39": {"uid": "670686610292", "sku": "2022", "price": 2685.0, "label": "39 - 25.7 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "40": {"uid": "786920369832", "sku": "2023", "price": 2685.0, "label": "40 - 26.5 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "41": {"uid": "729621233102", "sku": "2024", "price": 2685.0, "label": "41 - 27 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "42": {"uid": "587812823082", "sku": "2025", "price": 2685.0, "label": "42 - 27.7 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "43": {"uid": "623362875512", "sku": "2026", "price": 2685.0, "label": "43 - 28.2 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "44": {"uid": "968344865702", "sku": "2027", "price": 2685.0, "label": "44 - 28.8 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "45": {"uid": "842881271872", "sku": "2028", "price": 2685.0, "label": "45 - 29.5 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "46": {"uid": "468216457012", "sku": "2029", "price": 2685.0, "label": "46 - 30.3 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "47": {"uid": "794569971872", "sku": "2463", "price": 2985.0, "label": "47 - 31 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "48": {"uid": "932095204702", "sku": "2165", "price": 3185.0, "label": "48 - 31.5 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "49": {"uid": "417541909422", "sku": "2560", "price": 3185.0, "label": "49 - 32,3 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "50": {"uid": "621009709982", "sku": "4715", "price": 3185.0, "label": "50 - 33 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}}, "chornyi": {"35": {"uid": "516977120072", "sku": "2126", "price": 2685.0, "label": "35 - 23 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor3061-6631-4330-b833-633530393035/55723433.jpg"}, "36": {"uid": "136897426712", "sku": "1996", "price": 2685.0, "label": "36 - 23.7 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor3061-6631-4330-b833-633530393035/55723433.jpg"}, "37": {"uid": "336043112152", "sku": "1997", "price": 2685.0, "label": "37 - 24.5 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor3061-6631-4330-b833-633530393035/55723433.jpg"}, "38": {"uid": "455721265972", "sku": "1998", "price": 2685.0, "label": "38 - 25 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor3061-6631-4330-b833-633530393035/55723433.jpg"}, "39": {"uid": "212619023682", "sku": "1999", "price": 2685.0, "label": "39 - 25.7 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor3061-6631-4330-b833-633530393035/55723433.jpg"}, "40": {"uid": "903518618172", "sku": "2000", "price": 2685.0, "label": "40 - 26.5 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor3061-6631-4330-b833-633530393035/55723433.jpg"}, "41": {"uid": "463970092092", "sku": "2001", "price": 2685.0, "label": "41 - 27 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor3061-6631-4330-b833-633530393035/55723433.jpg"}, "42": {"uid": "378543109872", "sku": "2002", "price": 2685.0, "label": "42 - 27.7 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor3061-6631-4330-b833-633530393035/55723433.jpg"}, "43": {"uid": "762866654562", "sku": "2003", "price": 2685.0, "label": "43 - 28.2 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor3061-6631-4330-b833-633530393035/55723433.jpg"}, "44": {"uid": "910279151342", "sku": "2004", "price": 2685.0, "label": "44 - 28.8 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor3061-6631-4330-b833-633530393035/55723433.jpg"}, "45": {"uid": "114584440302", "sku": "2005", "price": 2685.0, "label": "45 - 29.5 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor3061-6631-4330-b833-633530393035/55723433.jpg"}, "46": {"uid": "627999646072", "sku": "2006", "price": 2685.0, "label": "46 - 30.3 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor3061-6631-4330-b833-633530393035/55723433.jpg"}, "47": {"uid": "400732638102", "sku": "2388", "price": 2985.0, "label": "47 - 31 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor3061-6631-4330-b833-633530393035/55723433.jpg"}, "48": {"uid": "249637514072", "sku": "2540", "price": 3185.0, "label": "48 - 31.5 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor3061-6631-4330-b833-633530393035/55723433.jpg"}, "49": {"uid": "737802856502", "sku": "2464", "price": 3185.0, "label": "49 - 32,3 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor3061-6631-4330-b833-633530393035/55723433.jpg"}, "50": {"uid": "685237087602", "sku": "2441", "price": 3185.0, "label": "50 - 33 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor3061-6631-4330-b833-633530393035/55723433.jpg"}}, "kakao": {"35": {"uid": "984116292132", "sku": "4717", "price": 2685.0, "label": "35 - 23 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "36": {"uid": "917303035742", "sku": "4716", "price": 2685.0, "label": "36 - 23.7 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "37": {"uid": "601718938462", "sku": "3054", "price": 2685.0, "label": "37 - 24.5 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "38": {"uid": "627006018232", "sku": "4718", "price": 2685.0, "label": "38 - 25 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "39": {"uid": "978474271212", "sku": "3001", "price": 2685.0, "label": "39 - 25.7 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "40": {"uid": "227134307082", "sku": "4719", "price": 2685.0, "label": "40 - 26.5 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "41": {"uid": "347627870432", "sku": "4720", "price": 2685.0, "label": "41 - 27 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "42": {"uid": "872054184622", "sku": "2936", "price": 2685.0, "label": "42 - 27.7 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "43": {"uid": "637845303482", "sku": "3051", "price": 2685.0, "label": "43 - 28.2 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "44": {"uid": "259465859262", "sku": "3069", "price": 2685.0, "label": "44 - 28.8 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "45": {"uid": "455100994232", "sku": "4721", "price": 2685.0, "label": "45 - 29.5 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "46": {"uid": "773681756762", "sku": "4722", "price": 2685.0, "label": "46 - 30.3 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "47": {"uid": "273365500972", "sku": "4723", "price": 2985.0, "label": "47 - 31 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "48": {"uid": "960490467992", "sku": "4724", "price": 3185.0, "label": "48 - 31.5 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "49": {"uid": "544647165772", "sku": "4725", "price": 3185.0, "label": "49 - 32,3 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "50": {"uid": "100759190902", "sku": "4726", "price": 3185.0, "label": "50 - 33 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}}, "siryi": {"35": {"uid": "933326964092", "sku": "5221", "price": 2685.0, "label": "35 - 23 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "36": {"uid": "217676603582", "sku": "5222", "price": 2685.0, "label": "36 - 23.7 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "37": {"uid": "375506775722", "sku": "5223", "price": 2685.0, "label": "37 - 24.5 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "38": {"uid": "543233383082", "sku": "5224", "price": 2685.0, "label": "38 - 25 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "39": {"uid": "532792612272", "sku": "5225", "price": 2685.0, "label": "39 - 25.7 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "40": {"uid": "343467589792", "sku": "5226", "price": 2685.0, "label": "40 - 26.5 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "41": {"uid": "461721255872", "sku": "5227", "price": 2685.0, "label": "41 - 27 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "42": {"uid": "149203606822", "sku": "5228", "price": 2685.0, "label": "42 - 27.7 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "43": {"uid": "667262939412", "sku": "5229", "price": 2685.0, "label": "43 - 28.2 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "44": {"uid": "563527072182", "sku": "5230", "price": 2685.0, "label": "44 - 28.8 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "45": {"uid": "679954031032", "sku": "5231", "price": 2685.0, "label": "45 - 29.5 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "46": {"uid": "936262875992", "sku": "5232", "price": 2685.0, "label": "46 - 30.3 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "47": {"uid": "123376795992", "sku": "5233", "price": 2985.0, "label": "47 - 31 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "48": {"uid": "984364905622", "sku": "5234", "price": 3185.0, "label": "48 - 31.5 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "49": {"uid": "847518408462", "sku": "5235", "price": 3185.0, "label": "49 - 32,3 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "50": {"uid": "472539044132", "sku": "5236", "price": 3185.0, "label": "50 - 33 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}}};
+  var PRODUCT_NAME='Кросівки Ягуар';
+  var PRODUCT_URL='https://stimul.vn.ua/tactical-sneakers/tproduct/215336730-323732815942-krosvki-yaguar';
+  var demoCart=[];
+  function hasCart(){return typeof window.tcart__addProduct==='function'}
+  function edition(){var c=ED[COLORS[state.color].id]; return c?c[String(state.size)]:null}
+  function pairsWord(n){return n===1?'пара':(n>1&&n<5?'пари':'пар')}
 
-  function openOrder(){
-    lastFocus=document.activeElement;
-    $('formView').hidden=false; $('successView').hidden=true;
-    syncForm();
-    overlay.hidden=false; document.body.style.overflow='hidden';
-    setTimeout(function(){ (state.size?$('fName'):fSize).focus() },60);
+  function addPair(openCart){
+    if(!state.size){
+      $('sizeErr').hidden=false;
+      $('sizeBlock').scrollIntoView({behavior:'smooth',block:'center'});
+      var w=$('sizeSelectWrap'); w.classList.remove('shake'); void w.offsetWidth; w.classList.add('shake');
+      setTimeout(function(){ $('sizeSelect').focus({preventScroll:true}) },450);
+      return false;
+    }
+    var e=edition();
+    if(!e){ alert('Цього розміру немає в каталозі. Зателефонуйте нам: 063 200 04 01'); return false }
+    if(hasCart()){
+      window.tcart__addProduct({
+        name:PRODUCT_NAME, price:e.price, img:e.img, url:PRODUCT_URL,
+        uid:e.uid, sku:e.sku, quantity:state.qty,
+        options:[{option:'Сезон',variant:'Демі'},{option:'Доступні кольори',variant:e.cname},{option:'Розмір',variant:e.label}]
+      });
+    }else{
+      demoCart.push({price:e.price,quantity:state.qty});
+    }
+    renderCart();
+    if(openCart) openCheckout();
+    else showToast(COLORS[state.color].name+' · розмір '+state.size+' · '+state.qty+' '+pairsWord(state.qty));
+    return true;
   }
-  function closeOrder(){
-    overlay.hidden=true; document.body.style.overflow='';
-    if(lastFocus&&lastFocus.focus) lastFocus.focus();
+  function openCheckout(){
+    if(hasCart()&&typeof window.tcart__openCart==='function'){ window.tcart__openCart(); return }
+    alert('Демо-версія сторінки: тут відкриється кошик Tilda з оформленням замовлення.');
   }
-  document.addEventListener('click',function(e){ if(e.target.closest('.js-order')) openOrder() });
-  overlay.addEventListener('click',function(e){ if(e.target===overlay||e.target.closest('[data-close]')) closeOrder() });
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!overlay.hidden) closeOrder() });
-
-  function digits(v){var d=v.replace(/\D/g,''); if(d.indexOf('380')===0)d=d.slice(3); else if(d.charAt(0)==='0')d=d.slice(1); return d.slice(0,9)}
-  function fmtPhone(d){var o='+380'; if(d.length)o+=' '+d.slice(0,2); if(d.length>2)o+=' '+d.slice(2,5); if(d.length>5)o+=' '+d.slice(5,7); if(d.length>7)o+=' '+d.slice(7,9); return o}
-  fPhone.addEventListener('focus',function(){ if(!fPhone.value) fPhone.value='+380 ' });
-  fPhone.addEventListener('input',function(){ fPhone.value=fmtPhone(digits(fPhone.value)); $('fPhoneWrap').classList.remove('invalid') });
-  fPhone.addEventListener('blur',function(){ if(!digits(fPhone.value).length) fPhone.value='' });
-  $('fName').addEventListener('input',function(){ $('fNameWrap').classList.remove('invalid') });
-
-  $('orderForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    var name=$('fName').value.trim(), ph=digits(fPhone.value), ok=true, first=null;
-    $('fSizeWrap').classList.toggle('invalid',!state.size); if(!state.size){ok=false;first=first||fSize}
-    $('fNameWrap').classList.toggle('invalid',!name); if(!name){ok=false;first=first||$('fName')}
-    $('fPhoneWrap').classList.toggle('invalid',ph.length!==9); if(ph.length!==9){ok=false;first=first||fPhone}
-    if(!ok){first.focus();return}
-    var row=sizeRow(state.size), comment=$('fComment').value.trim(), q=state.qty;
-    $('sText').textContent='Дякуємо, '+name+'! Ми зателефонуємо вам найближчим часом, щоб підтвердити замовлення.';
-    $('summary').innerHTML=
-      '<dt>Модель</dt><dd>Кросівки Ягуар, демісезон</dd>'+
-      '<dt>Колір</dt><dd>'+COLORS[state.color].name+'</dd>'+
-      '<dt>Розмір</dt><dd>'+state.size+' · '+row[1]+' см</dd>'+
-      '<dt>Кількість</dt><dd>'+q+' '+(q===1?'пара':(q<5?'пари':'пар'))+'</dd>'+
-      '<dt>Телефон</dt><dd>'+fmtPhone(ph)+'</dd>'+
-      (comment?'<dt>Коментар</dt><dd>'+esc(comment)+'</dd>':'')+
-      '<dt>Сума</dt><dd>'+money(priceOf(state.size)*q)+'</dd>';
-    $('formView').hidden=true; $('successView').hidden=false;
-    $('successView').querySelector('.ghost').focus();
+  function cartSummary(){
+    var n=0,sum=0,list=(hasCart()&&window.tcart&&window.tcart.products)?window.tcart.products:demoCart;
+    for(var i=0;i<list.length;i++){
+      var p=list[i]; if(!p||p.deleted==='yes') continue;
+      var q=parseInt(p.quantity,10)||0; n+=q; sum+=q*(parseFloat(p.price)||0);
+    }
+    return {n:n,sum:sum};
+  }
+  function renderCart(){
+    var c=cartSummary();
+    $('cartStrip').hidden=c.n<1;
+    $('barCart').hidden=c.n<1;
+    if(c.n){
+      $('cartCount').textContent=c.n+' '+pairsWord(c.n);
+      $('cartSum').textContent=money(c.sum);
+      $('barCart').textContent='Кошик · '+c.n;
+    }
+  }
+  var toastTimer=null;
+  function showToast(text){
+    $('toastText').innerHTML='Додано в кошик: <b>'+esc(text)+'</b>';
+    $('toast').hidden=false;
+    clearTimeout(toastTimer); toastTimer=setTimeout(function(){ $('toast').hidden=true },9000);
+  }
+  $('toastMore').onclick=function(){ $('toast').hidden=true };
+  document.addEventListener('click',function(e){
+    if(!e.target.closest) return;
+    if(e.target.closest('.js-order')){ e.preventDefault(); addPair(true); return }
+    if(e.target.closest('.js-add')){ e.preventDefault(); addPair(false); return }
+    if(e.target.closest('.js-checkout')){ e.preventDefault(); $('toast').hidden=true; openCheckout(); }
   });
+  sizeSelect.addEventListener('change',function(){ if(sizeSelect.value) $('sizeErr').hidden=true });
+  setInterval(renderCart,1500);
+  renderCart();
 
   /* Відео про підробки: плеєр вантажиться лише після натискання */
   $('videoBtn').onclick=function(){
