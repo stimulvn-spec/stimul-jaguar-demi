@@ -117,6 +117,14 @@
   .opt-head b{font-weight:600}
   .opt-head .val{color:var(--muted)}
   .opt-head .hint{font-size:12.5px;color:var(--muted)}
+  .qty-row{display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px}
+  .qty-box{display:grid;grid-template-columns:52px 64px 52px;border:2px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper)}
+  .qty-box button{border:0;background:#F3F3F4;font-size:22px;line-height:1;cursor:pointer;color:var(--ink)}
+  .qty-box button:hover{background:var(--line)}
+  .qty-box input{border:0;text-align:center;font:600 17px var(--body);color:var(--ink);padding:14px 2px;font-variant-numeric:tabular-nums;background:var(--paper);min-width:0}
+  .qty-box input:focus{outline:none}
+  .qty-sum{font-size:14px;color:var(--muted);padding-bottom:4px}
+  .qty-sum b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
   .size-err{margin:10px 0 0;color:var(--danger);font-size:13.5px;font-weight:500}
   .size-select{position:relative}
   .size-select select{width:100%;appearance:none;-webkit-appearance:none;border:2px solid var(--line);border-radius:14px;background:var(--paper);padding:16px 52px 16px 18px;font:600 17px/1.2 var(--body);color:var(--ink);cursor:pointer;font-variant-numeric:tabular-nums;transition:border-color .15s}
@@ -396,6 +404,18 @@
           <select id="sizeSelect" aria-label="Оберіть розмір"></select>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </div>
+      </div>
+
+      <div class="qty-row">
+        <div>
+          <div class="opt-head"><label for="qInput"><b>Кількість пар</b></label></div>
+          <div class="qty-box">
+            <button type="button" id="qMinus" aria-label="Зменшити кількість">−</button>
+            <input id="qInput" type="text" inputmode="numeric" value="1" aria-label="Кількість пар">
+            <button type="button" id="qPlus" aria-label="Збільшити кількість">+</button>
+          </div>
+        </div>
+        <div class="qty-sum" id="qSum" hidden></div>
       </div>
 
       <button class="buy-btn js-order" type="button">
@@ -694,6 +714,17 @@
   }
 
 
+  /* Кількість пар */
+  var qInput=$('qInput');
+  function setQty(n){
+    state.qty=Math.max(1,Math.min(20,n||1));
+    qInput.value=state.qty;
+    update();
+  }
+  $('qMinus').onclick=function(){setQty(state.qty-1)};
+  $('qPlus').onclick=function(){setQty(state.qty+1)};
+  qInput.addEventListener('change',function(){setQty(parseInt(qInput.value.replace(/\D/g,''),10))});
+
   /* Ціна та посилання */
   function update(){
     var s=state.size, p=priceOf(s), o=oldOf(s), row=s?sizeRow(s):null;
@@ -702,6 +733,8 @@
     $('barPrice').textContent=money(p);
     $('barOld').textContent=money(o);
     $('priceNote').hidden=!!s;
+    $('qSum').hidden=state.qty<2;
+    if(state.qty>1) $('qSum').innerHTML=state.qty+' пар'+(state.qty<5?'и':'')+' — <b>'+money(p*state.qty)+'</b>';
     syncForm();
   }
 
@@ -721,7 +754,6 @@
   fSize.onchange=function(){
     setSize(fSize.value?+fSize.value:null);
   };
-  function setQty(n){ state.qty=Math.max(1,Math.min(10,n||1)); syncForm() }
   $('qtyMinus').onclick=function(){setQty(state.qty-1)};
   $('qtyPlus').onclick=function(){setQty(state.qty+1)};
   fQty.addEventListener('change',function(){setQty(parseInt(fQty.value.replace(/\D/g,''),10))});
