@@ -233,16 +233,11 @@
   @keyframes fadein{from{opacity:0}}
   @keyframes rise{from{transform:translateY(16px);opacity:0}}
 
-  .actions{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:10px}
-  .add-btn{display:flex;align-items:center;justify-content:center;gap:8px;border:2px solid var(--asphalt);background:var(--paper);color:var(--ink);border-radius:14px;font:600 15px/1.15 var(--body);padding:20px 16px;cursor:pointer;text-align:center;transition:background .15s,color .15s}
-  .add-btn:hover{background:var(--asphalt);color:#fff}
-  .add-btn svg{width:18px;height:18px;flex:none}
-
-  .cart-strip{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;background:var(--asphalt);color:#fff;border-radius:14px;padding:14px 16px 14px 18px}
-  .cart-strip span{font-size:14.5px;color:#C6C8CC}
-  .cart-strip b{color:#fff;font-weight:600;font-variant-numeric:tabular-nums}
-  .cart-strip button{border:0;border-radius:10px;background:var(--signal);color:var(--asphalt);font:700 13px/1 var(--display);text-transform:uppercase;padding:12px 16px;cursor:pointer}
-  .cart-strip button:hover{background:var(--signal-hover)}
+  .actions{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:stretch}
+  .cart-btn{display:flex;align-items:center;justify-content:center;gap:8px;border:2px solid var(--asphalt);background:var(--paper);color:var(--ink);border-radius:14px;font:600 15px/1.15 var(--body);padding:18px 20px;cursor:pointer;white-space:nowrap;transition:background .15s,color .15s}
+  .cart-btn:hover{background:var(--asphalt);color:#fff}
+  .cart-btn svg{width:20px;height:20px;flex:none}
+  .cart-btn .count{background:var(--signal);color:var(--asphalt);border-radius:99px;min-width:22px;padding:2px 7px;font:700 12px/1.5 var(--body);text-align:center}
 
   .toast{position:fixed;left:16px;right:16px;bottom:16px;z-index:70;margin:0 auto;max-width:420px;background:var(--asphalt);color:#fff;border-radius:16px;padding:16px 18px;box-shadow:0 18px 40px -16px rgba(0,0,0,.6);display:flex;flex-direction:column;gap:10px;animation:stl-rise .25s ease}
   .toast p{margin:0;font-size:14.5px}
@@ -401,20 +396,16 @@
       </div>
 
       <div class="actions">
-        <button class="buy-btn js-order" type="button">
-          Замовити зараз
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <button class="buy-btn js-add" type="button">
+          Додати в кошик!
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>
         </button>
-        <button class="add-btn js-add" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-          Додати ще пару
+        <button class="cart-btn js-checkout" id="cartBtn" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>
+          Кошик<span class="count" id="cartCount" hidden></span>
         </button>
       </div>
-      <div class="cart-strip" id="cartStrip" hidden>
-        <span>У кошику: <b id="cartCount"></b> · <b id="cartSum"></b></span>
-        <button type="button" class="js-checkout">Оформити замовлення</button>
-      </div>
-      <p class="buy-sub">Можна додати кілька пар різних кольорів і розмірів</p>
+      <p class="buy-sub">Можна додати кілька пар різних кольорів і розмірів, а тоді оформити замовлення в кошику</p>
 
       <div class="perks">
         <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V9l5 3V9l5 3V5h6v15"/></svg><span><b>Понад 22 роки</b>виробляємо взуття у Вінниці</span></div>
@@ -527,9 +518,9 @@
         <h2>Ягуар · <span id="finalColor">Чорний</span></h2>
         <p id="finalText">від 2 685 грн · оригінал напряму від виробника · гарантія 1 рік</p>
       </div>
-      <button class="buy-btn js-order" type="button">
-        Замовити зараз
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <button class="buy-btn js-add" type="button">
+        Додати в кошик!
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>
       </button>
     </div>
   </section>
@@ -554,8 +545,8 @@
 
 <div class="bar">
   <div class="p"><b id="barPrice">2 685 грн</b><s id="barOld">3 085 грн</s></div>
-  <button type="button" class="bar-cart js-checkout" id="barCart" hidden>Кошик</button>
-  <button class="buy-btn js-order" type="button">Замовити зараз</button>
+  <button class="buy-btn js-add" type="button">Додати в кошик!</button>
+  <button type="button" class="bar-cart js-checkout" id="barCart">Кошик</button>
 </div>
 
 <script>
@@ -703,7 +694,7 @@
     }
     renderCart();
     if(openCart) openCheckout();
-    else showToast(COLORS[state.color].name+' · розмір '+state.size+' · '+state.qty+' '+pairsWord(state.qty));
+    else showToast(COLORS[state.color].name+' · розмір '+state.size+' · '+state.qty+' '+pairsWord(state.qty),cartSummary());
     return true;
   }
   function openCheckout(){
@@ -720,24 +711,21 @@
   }
   function renderCart(){
     var c=cartSummary();
-    $('cartStrip').hidden=c.n<1;
-    $('barCart').hidden=c.n<1;
-    if(c.n){
-      $('cartCount').textContent=c.n+' '+pairsWord(c.n);
-      $('cartSum').textContent=money(c.sum);
-      $('barCart').textContent='Кошик · '+c.n;
-    }
+    $('cartCount').hidden=c.n<1;
+    $('cartCount').textContent=c.n;
+    $('barCart').textContent=c.n?('Кошик · '+c.n):'Кошик';
+    $('cartBtn').title=c.n?('У кошику '+c.n+' '+pairsWord(c.n)+' на '+money(c.sum)):'Кошик порожній';
   }
   var toastTimer=null;
-  function showToast(text){
-    $('toastText').innerHTML='Додано в кошик: <b>'+esc(text)+'</b>';
+  function showToast(text,c){
+    $('toastText').innerHTML='Додано в кошик: <b>'+esc(text)+'</b>'+
+      (c&&c.n>1?'<br>Разом у кошику: '+c.n+' '+pairsWord(c.n)+' · '+money(c.sum):'');
     $('toast').hidden=false;
     clearTimeout(toastTimer); toastTimer=setTimeout(function(){ $('toast').hidden=true },9000);
   }
   $('toastMore').onclick=function(){ $('toast').hidden=true };
   document.addEventListener('click',function(e){
     if(!e.target.closest) return;
-    if(e.target.closest('.js-order')){ e.preventDefault(); addPair(true); return }
     if(e.target.closest('.js-add')){ e.preventDefault(); addPair(false); return }
     if(e.target.closest('.js-checkout')){ e.preventDefault(); $('toast').hidden=true; openCheckout(); }
   });
