@@ -51,13 +51,12 @@
   .hooks{padding-block:6px 30px}
   .hooks-title{margin:0 0 16px;font:700 13px/1.2 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--signal)}
   .hooks ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-  .hooks li{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);padding:22px 22px 24px;display:flex;flex-direction:column;gap:12px;transition:border-color .2s,transform .2s}
+  .hooks li{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);padding:24px 22px 26px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s,transform .2s}
   .hooks li:hover{border-color:var(--signal);transform:translateY(-2px)}
-  .hooks i{width:48px;height:48px;border-radius:14px;background:var(--signal);color:var(--asphalt);display:grid;place-items:center}
-  .hooks svg{width:24px;height:24px}
-  .hooks b{display:block;font:800 clamp(20px,2vw,26px)/1.1 var(--display);letter-spacing:-.02em;color:var(--ink);text-transform:uppercase}
+  .hooks i{width:52px;height:52px;border-radius:14px;background:var(--signal);color:var(--asphalt);display:grid;place-items:center}
+  .hooks svg{width:26px;height:26px}
+  .hooks b{display:block;font:800 clamp(22px,2.5vw,32px)/1.05 var(--display);letter-spacing:-.025em;color:var(--ink);text-transform:uppercase}
   .hooks b em{font-style:normal;color:var(--signal)}
-  .hooks span{display:block;font-size:15px;line-height:1.4;color:var(--muted)}
 
   /* ---------- Перший екран ---------- */
   .hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:32px;align-items:start;padding-block:28px 56px}
@@ -275,8 +274,7 @@
     .hooks li{padding:16px 14px 18px;gap:10px}
     .hooks i{width:40px;height:40px;border-radius:12px}
     .hooks svg{width:20px;height:20px}
-    .hooks b{font-size:16px}
-    .hooks span{font-size:13.5px}
+    .hooks b{font-size:18px}
                   .actions{grid-template-columns:minmax(0,1fr)}
     .add-btn{padding:16px}
     .beware .wrap{padding-block:56px 60px}
@@ -313,10 +311,10 @@
     <div class="wrap">
       <p class="hooks-title">Чому купують у STIMUL</p>
       <ul>
-        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h20M4 20V9l5 3V9l5 3V5h6v15"/></svg></i><b>Ціна <em>від фабрики</em></b><span>Власне виробництво — купуєте напряму у виробника, без посередників</span></li>
-        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15l-3.5 2 1-4-3-2.6 4-.3L12 6l1.5 4.1 4 .3-3 2.6 1 4z"/><circle cx="12" cy="12" r="10"/></svg></i><b><em>22+ роки</em> досвіду</b><span>Понад 22 роки виробляємо взуття, яке носять щодня</span></li>
-        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></i><b>Гарантія <em>1 рік</em></b><span>Відповідаємо за якість кожної пари</span></li>
-        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><circle cx="7" cy="7" r="1.5"/></svg></i><b><em>Преміум</em> матеріали</b><span>Натуральний нубук, Cordura та легка поліуретанова підошва</span></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h20M4 20V9l5 3V9l5 3V5h6v15"/></svg></i><b>Ціна <em>від фабрики</em></b></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15l-3.5 2 1-4-3-2.6 4-.3L12 6l1.5 4.1 4 .3-3 2.6 1 4z"/><circle cx="12" cy="12" r="10"/></svg></i><b><em>22+ роки</em> досвіду</b></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></i><b>Гарантія <em>1 рік</em></b></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><circle cx="7" cy="7" r="1.5"/></svg></i><b><em>Преміум</em> матеріали</b></li>
       </ul>
     </div>
   </div>
@@ -361,7 +359,6 @@
             <span class="price-now"><span id="priceNow">2 685</span><small>грн</small></span>
             <span class="price-old" id="priceOld">3 085 грн</span>
           </div>
-          <div class="price-note" id="priceNote">Розміри 35–46 · <b>47</b> — 2 985 грн · <b>48–50</b> — 3 185 грн</div>
         </div>
         <div>
           <div class="timer-label">До кінця акції</div>
@@ -409,9 +406,9 @@
 
       <div class="perks">
         <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V9l5 3V9l5 3V5h6v15"/></svg><span><b>Понад 22 роки</b>виробляємо взуття у Вінниці</span></div>
-        <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg><span><b>Нова пошта</b>по Україні 110–155 грн</span></div>
-        <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><span><b>Оплата</b>при отриманні або частинами</span></div>
-        <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Гарантія 1 рік</b>від виробника</span></div>
+        <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg><span><b>Доставка</b>по всій Україні</span></div>
+        <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><span><b>Оплата</b>безготівкова або накладений платіж з мінімальною передоплатою</span></div>
+        <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Гарантія від виробника</b>1 рік на підошву та 60 днів на верх</span></div>
       </div>
     </section>
   </div>
@@ -481,7 +478,7 @@
               <tr><th scope="row">Вага напівпари</th><td>396 г</td></tr>
               <tr><th scope="row">Розмірний ряд</th><td>з 35 по 50</td></tr>
               <tr><th scope="row">Кольори</th><td>Чорний, Сірий, Какао, Шоколад, Олива, Койот</td></tr>
-              <tr><th scope="row">Гарантія</th><td>1 рік від виробника</td></tr>
+              <tr><th scope="row">Гарантія</th><td>1 рік на підошву, 60 днів на верх</td></tr>
               <tr><th scope="row">Упаковка</th><td>Коробка</td></tr>
             </tbody>
           </table>
@@ -658,7 +655,6 @@
     $('priceOld').textContent=money(o);
     $('barPrice').textContent=money(p);
     $('barOld').textContent=money(o);
-    $('priceNote').hidden=!!s;
     $('qSum').hidden=state.qty<2;
     if(state.qty>1) $('qSum').innerHTML=state.qty+' пар'+(state.qty<5?'и':'')+' — <b>'+money(p*state.qty)+'</b>';
     syncForm();
