@@ -77,13 +77,11 @@
   .hero-media{position:absolute;inset:0;overflow:hidden}
   .hero-media img.cover{width:100%;height:100%;object-fit:cover}
   .hero-media iframe{position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100%;min-width:177.78vh;transform:translate(-50%,-50%);border:0;pointer-events:none}
-  .hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.15) 45%,rgba(0,0,0,.78) 100%)}
-  .hero-inner{position:relative;width:100%;padding-block:48px calc(56px + env(safe-area-inset-bottom,0px))}
-  .hero h1{max-width:680px;color:#fff}
-  .hero-sub{margin-top:16px;max-width:680px;font-size:20px;line-height:28px;color:rgba(255,255,255,.88)}
+  .intro{padding-block:48px 8px}
+  .intro h1{max-width:680px}
+  .intro-sub{margin-top:16px;max-width:680px;font-size:20px;line-height:28px;color:var(--ink-2)}
   .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-  .hero-proof{display:flex;align-items:center;gap:12px;margin-top:24px;font-size:14px;line-height:20px;color:rgba(255,255,255,.8)}
-  .hero-proof .btn{color:#fff;border-color:rgba(255,255,255,.5);background:transparent}
+  .intro-proof{display:flex;align-items:center;gap:12px;margin-top:24px;font-size:14px;line-height:20px;color:var(--muted)}
   .stars{color:var(--brand);letter-spacing:2px}
   .hero-tools{position:absolute;right:24px;top:24px;display:flex;gap:8px;z-index:2}
   .hero-tools .btn{background:rgba(0,0,0,.45);color:#fff;border:1px solid rgba(255,255,255,.45)}
@@ -161,8 +159,18 @@
   .tagline span{color:rgba(0,0,0,.28);transition:color 600ms var(--ease-out)}
   .tagline span.lit{color:var(--ink)}
 
+  /* Відео покупців у місті */
+  .clips{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
+  .clip{position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:#000;border:1px solid var(--line)}
+  .clip video,.clip img{width:100%;height:100%;object-fit:cover}
+  .clip video{position:absolute;inset:0}
+  .clip-play{position:absolute;inset:0;width:100%;height:100%;border:0;background:none;cursor:pointer;display:grid;place-items:center}
+  .clip-play span{width:56px;height:56px;border-radius:9999px;background:var(--brand);display:grid;place-items:center;transition:transform 160ms var(--ease-out)}
+  .clip-play:active span{transform:scale(.94)}
+  .clip-play svg{width:22px;height:22px;margin-left:3px;color:#fff}
+
   /* Докази носіння */
-  .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px}
+  .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
   .proof-card{border:1px solid var(--line);border-radius:16px;padding:24px}
   .proof-card b{display:block;font-size:30px;line-height:36px;font-weight:700;letter-spacing:-.02em}
   .proof-card p{margin-top:8px;font-size:14px;line-height:20px;color:var(--ink-2)}
@@ -235,6 +243,7 @@
     h2{font-size:30px;line-height:36px}
     .hero-grid,.product{grid-template-columns:minmax(0,1fr);gap:32px}
     .proof-grid,.benefits,.steps{grid-template-columns:repeat(2,1fr)}
+    .clips{grid-template-columns:repeat(2,1fr)}
     .tagline p{font-size:36px}
     .tagline .wrap{padding-block:64px}
     .section{padding-block:56px}
@@ -248,6 +257,7 @@
   }
   @media (max-width:560px){
     .proof-grid,.benefits,.steps,.pair{grid-template-columns:minmax(0,1fr)}
+    .clips{grid-template-columns:repeat(2,1fr);gap:12px}
     .swatches{grid-template-columns:repeat(3,1fr)}
     .tagline p{font-size:30px;line-height:36px}
     footer .wrap{grid-template-columns:minmax(0,1fr)}
@@ -281,20 +291,20 @@
         <span class="stage-knob"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
       </button>
     </div>
-    <div class="hero-veil"></div>
     <div class="hero-tools">
       <button class="btn btn--sm" type="button" id="filmSound">Увімкнути звук</button>
     </div>
-    <div class="hero-inner">
-      <div class="wrap">
-        <h1>Міські кросівки,<br>у яких минає цілий день</h1>
-        <p class="hero-sub">Ягуар, демісезон. Нубук і кордура, поліуретанова підошва, 396 грамів на нозі. Лаконічний силует без зайвого декору. Шиємо самі у Вінниці, це наш цех на відео.</p>
-        <div class="hero-cta">
-          <button class="btn js-scroll" type="button" data-target="product">Обрати розмір і колір</button>
-          <button class="btn btn--ghost js-scroll" type="button" data-target="reviews">Читати відгуки</button>
-        </div>
-        <p class="hero-proof"><span class="stars" aria-hidden="true">★★★★★</span> 16 відгуків покупців, оцінка 5 з 5</p>
+  </section>
+
+  <section class="intro">
+    <div class="wrap">
+      <h1>Міські кросівки, у яких минає цілий день</h1>
+      <p class="intro-sub">Ягуар, демісезон. Нубук і кордура, поліуретанова підошва, 396 грамів на нозі. Лаконічний силует без зайвого декору. Шиємо самі у Вінниці.</p>
+      <div class="hero-cta">
+        <button class="btn js-scroll" type="button" data-target="product">Обрати розмір і колір</button>
+        <button class="btn btn--ghost js-scroll" type="button" data-target="reviews">Читати відгуки</button>
       </div>
+      <p class="intro-proof"><span class="stars" aria-hidden="true">★★★★★</span> 16 відгуків покупців, оцінка 5 з 5</p>
     </div>
   </section>
 
@@ -373,8 +383,28 @@
       <div class="proof-grid">
         <article class="proof-card"><b>4 роки</b><p>Носила чотири роки й купила ще одну пару.</p><cite>Альона Миколаївна, військова</cite></article>
         <article class="proof-card"><b>1,5 роки</b><p>Полігон, поля, паркет. Стельки для моєї зламаної п'ятки просто шедевр.</p><cite>Алексей Бондаренко</cite></article>
-        <article class="proof-card"><b>2 місяці</b><p>За цей час не втратили вигляду зовсім. Реально як нові.</p><cite>Alexandr Radzievsky</cite></article>
         <article class="proof-card"><b>3 пари</b><p>Ходжу зимою і літом, і в саду. Розмірна сітка чітко підійшла.</p><cite>Sergey Menchura</cite></article>
+      </div>
+
+      <h3 style="margin-top:56px;font-size:24px;line-height:32px">Ягуар у місті, зняте покупцями</h3>
+      <p class="eyebrow" style="margin-top:8px">Бруківка, сходи, трава, звичайний день у Вінниці.</p>
+      <div class="clips" id="clips">
+        <figure class="clip" style="margin:0">
+          <video src="../media/city-1.mp4" poster="../media/city-1.jpg" muted loop playsinline preload="none" aria-label="Кросівки Ягуар під час ходьби містом"></video>
+          <button class="clip-play" type="button" aria-label="Відтворити відео"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
+        </figure>
+        <figure class="clip" style="margin:0">
+          <video src="../media/city-2.mp4" poster="../media/city-2.jpg" muted loop playsinline preload="none" aria-label="Шнурування кросівок Ягуар"></video>
+          <button class="clip-play" type="button" aria-label="Відтворити відео"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
+        </figure>
+        <figure class="clip" style="margin:0">
+          <video src="../media/city-3.mp4" poster="../media/city-3.jpg" muted loop playsinline preload="none" aria-label="Кросівки Ягуар на траві та бруківці"></video>
+          <button class="clip-play" type="button" aria-label="Відтворити відео"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
+        </figure>
+        <figure class="clip" style="margin:0">
+          <video src="../media/city-4.mp4" poster="../media/city-4.jpg" muted loop playsinline preload="none" aria-label="Прогулянка в кросівках Ягуар вулицею міста"></video>
+          <button class="clip-play" type="button" aria-label="Відтворити відео"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
+        </figure>
       </div>
     </div>
   </section>
@@ -703,6 +733,33 @@
       });
     },{threshold:.35});
     io.observe(p);
+  })();
+
+  /* Відео «у місті»: вмикаються, коли потрапляють на екран, і ставляться на паузу, коли зникають */
+  (function(){
+    var box=$('clips'); if(!box) return;
+    var clips=[].slice.call(box.querySelectorAll('.clip'));
+    var saver=(navigator.connection&&navigator.connection.saveData)||
+              window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    clips.forEach(function(fig){
+      var v=fig.querySelector('video'), btn=fig.querySelector('.clip-play');
+      btn.addEventListener('click',function(){
+        if(v.paused){ v.play(); btn.hidden=true } else { v.pause(); btn.hidden=false }
+      });
+      v.addEventListener('click',function(){ v.pause(); btn.hidden=false });
+    });
+    if(saver||!('IntersectionObserver' in window)) return;
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        var v=en.target.querySelector('video'), btn=en.target.querySelector('.clip-play');
+        if(en.isIntersecting){
+          if(v.preload==='none'){ v.preload='auto'; v.load() }
+          var p=v.play();
+          if(p&&p.then) p.then(function(){ btn.hidden=true })['catch'](function(){ btn.hidden=false });
+        }else{ v.pause() }
+      });
+    },{threshold:.4});
+    clips.forEach(function(c){io.observe(c)});
   })();
 
   drawStrip(); update(); drawCart();
