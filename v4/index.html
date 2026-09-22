@@ -51,8 +51,8 @@
   h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
   p{margin:0}
   .wrap{max-width:1200px;margin:0 auto;padding-inline:24px}
-  .section{padding-block:clamp(72px,9vw,128px)}
-  .section--tight{padding-block:clamp(48px,6vw,80px)}
+  .section{padding-block:clamp(48px,6vw,88px)}
+  .section--tight{padding-block:clamp(32px,4vw,56px)}
   .lead{font-size:19px;line-height:1.6;color:var(--ink-soft);max-width:62ch}
   .note{font-size:15px;line-height:1.5;color:var(--muted)}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;border-radius:999px;background:var(--surface);padding:7px 14px;font-size:12.5px;font-weight:600;letter-spacing:.06em;color:var(--ink-soft)}
@@ -97,7 +97,7 @@
 
 
   /* Вступ */
-  .intro{padding-block:clamp(48px,6vw,88px)}
+  .intro{padding-block:clamp(32px,4vw,56px)}
   .intro-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:48px;align-items:end}
   .intro h1{max-width:14ch}
   .facts{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
@@ -107,7 +107,7 @@
   .stars{color:var(--brand);letter-spacing:2px}
 
   /* Товар */
-  .product{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(24px,4vw,56px);align-items:start}
+  .product{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(20px,3vw,40px);align-items:start}
   .gal-main{position:relative;aspect-ratio:1}
   .gal-main img{width:100%;height:100%;object-fit:cover;transition:opacity .35s var(--ease)}
   .gal-main img.swap{opacity:0}
@@ -126,7 +126,7 @@
   .gal-strip button[aria-current="true"]{box-shadow:0 0 0 2px var(--ink)}
   .gal-strip img{width:100%;height:100%;object-fit:cover}
 
-  .panel{display:flex;flex-direction:column;gap:28px}
+  .panel{display:flex;flex-direction:column;gap:22px}
   .panel h2{font-size:clamp(26px,3vw,38px);max-width:20ch}
   .stock{display:inline-flex;align-items:center;gap:8px;font-size:15px;color:var(--muted);margin-top:12px}
   .stock i{width:8px;height:8px;border-radius:999px;background:#2E9E5B}
@@ -159,24 +159,24 @@
   .terms dd{margin:0;color:var(--ink-soft)}
 
   /* Відео покупців */
-  .cityclips{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
-  .cityclip{position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:var(--surface-2);box-shadow:var(--soft-sm)}
+  .cityclips{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px;max-width:760px}
+  .cityclip{position:relative;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:var(--surface-2);box-shadow:var(--soft-sm)}
   .cityclip video,.cityclip img{width:100%;height:100%;object-fit:cover}
   .cityclip video{position:absolute;inset:0}
   .cityclip-play{position:absolute;inset:0;width:100%;height:100%;border:0;background:none;cursor:pointer;display:grid;place-items:center}
-  .cityclip-play span{width:56px;height:56px;border-radius:999px;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--soft-sm);transition:transform .4s var(--ease)}
+  .cityclip-play span{width:46px;height:46px;border-radius:999px;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:var(--soft-sm);transition:transform .4s var(--ease)}
   .cityclip-play:active span{transform:scale(.93)}
   .cityclip-play svg{width:20px;height:20px;margin-left:3px;color:var(--ink)}
 
   /* Терміни носіння */
-  .wear{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  .wear{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
   .wear article{background:var(--surface);border-radius:var(--r-shell);padding:28px 26px 30px}
   .wear b{display:block;font-size:clamp(28px,3.2vw,40px);font-weight:800;letter-spacing:-.04em;line-height:1}
   .wear p{margin-top:14px;font-size:16px;line-height:1.5;color:var(--ink-soft)}
   .wear cite{display:block;margin-top:16px;font-size:14px;color:var(--muted);font-style:normal}
 
   /* Бенто: чому працює в місті */
-  .bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:40px}
+  .bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:28px}
   .cell{border-radius:var(--r-shell);padding:26px 26px 28px;background:var(--surface);display:flex;flex-direction:column;align-self:start}
   .cell ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px}
   .cell li{position:relative;padding-left:20px;font-size:16px;line-height:1.5;color:var(--ink-soft)}
@@ -186,10 +186,10 @@
 
   /* Смуга з фото */
   .band{border-radius:var(--r-shell);overflow:hidden;box-shadow:var(--soft)}
-  .band img{width:100%;height:clamp(260px,40vw,440px);object-fit:cover;object-position:center 65%}
+  .band img{width:100%;height:clamp(220px,32vw,380px);object-fit:cover;object-position:center 65%}
 
   /* Розмір */
-  .size-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:40px}
+  .size-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:center;margin-top:28px}
   .measure{margin:0;background:var(--surface);border-radius:var(--r-shell);padding:12px}
   .measure img{width:100%;height:auto;border-radius:var(--r-core);background:#fff}
   .measure figcaption{padding:16px 14px 8px;font-size:15.5px;line-height:1.5;color:var(--ink-soft)}
@@ -216,18 +216,34 @@
   .stage-knob svg{width:24px;height:24px;margin-left:4px;color:var(--ink)}
 
   /* Відгуки */
-  .rev-grid{columns:3 320px;column-gap:16px;margin-top:40px}
-  .rev{break-inside:avoid;background:var(--surface);border-radius:var(--r-shell);padding:26px;margin-bottom:16px}
+  .carousel{position:relative;margin-top:28px}
+  .rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;
+    padding:2px 2px 14px;scrollbar-width:thin;scroll-behavior:smooth}
+  .rail::-webkit-scrollbar{height:6px}
+  .rail::-webkit-scrollbar-thumb{background:var(--surface-2);border-radius:999px}
+  .rail::-webkit-scrollbar-track{background:transparent}
+  .rail-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border:0;border-radius:999px;
+    background:rgba(255,255,255,.96);box-shadow:var(--soft);display:grid;place-items:center;cursor:pointer;z-index:2;
+    transition:transform .4s var(--ease),opacity .3s var(--ease)}
+  .rail-nav:active{transform:translateY(-50%) scale(.92)}
+  .rail-nav[disabled]{opacity:0;pointer-events:none}
+  .rail-nav svg{width:18px;height:18px}
+  .rail-prev{left:-10px}.rail-next{right:-10px}
+  .rail-hint{display:flex;align-items:center;gap:8px;margin-top:6px;font-size:14.5px;color:var(--muted)}
+  .rail-hint svg{width:18px;height:18px}
+  @media (max-width:980px){.rail-nav{display:none}}
+
+  .rev{flex:0 0 min(340px,80%);scroll-snap-align:start;background:var(--surface);border-radius:var(--r-shell);padding:24px;margin:0}
   .rev-top{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--muted)}
   .rev-top b{color:var(--ink);font-weight:700}
   .rev p{margin-top:12px;font-size:16px;line-height:1.55;white-space:pre-line;overflow-wrap:anywhere;color:var(--ink-soft)}
   .rev.clip > p{display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
   .rev button{margin-top:14px;border:0;background:none;padding:0;font-size:14.5px;font-weight:700;cursor:pointer;color:var(--brand-ink)}
-  .shots{columns:3 300px;column-gap:16px;margin-top:24px}
-  .shots img{width:100%;height:auto;border-radius:var(--r-core);margin-bottom:16px;break-inside:avoid;box-shadow:var(--soft-sm)}
+  .shots img{flex:0 0 min(320px,76%);scroll-snap-align:start;width:auto;max-width:none;height:auto;align-self:flex-start;
+    border-radius:var(--r-core);box-shadow:var(--soft-sm)}
 
   /* Питання */
-  .faq{margin-top:40px;display:grid;gap:8px}
+  .faq{margin-top:28px;display:grid;gap:8px}
   .faq details{background:var(--surface);border-radius:var(--r-core);padding:4px 24px}
   .faq summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;position:relative;font-size:18px;font-weight:700;letter-spacing:-.01em}
   .faq summary::-webkit-details-marker{display:none}
@@ -269,7 +285,7 @@
     .bento{grid-template-columns:repeat(2,1fr)}
     .cell--half,.cell--third{grid-column:span 1}
     .wear{grid-template-columns:1fr}
-    .cityclips{grid-template-columns:repeat(2,1fr)}
+    .cityclips{gap:10px;max-width:100%}
     body{padding-bottom:86px}
     .dock{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:50;gap:12px;align-items:center;justify-content:space-between;
       background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-radius:999px;padding:10px 10px 10px 22px;box-shadow:var(--soft)}
@@ -282,10 +298,18 @@
     .head-phone{display:none}
     .swatches{grid-template-columns:repeat(3,1fr)}
     .bento{grid-template-columns:1fr}
-    .cityclips{grid-template-columns:repeat(2,1fr);gap:12px}
+    .cityclips{gap:6px}
+    .cityclip{border-radius:12px}
+    .cityclip-play span{width:34px;height:34px}
+    .cityclip-play svg{width:14px;height:14px}
     .terms div{grid-template-columns:minmax(0,1fr);gap:2px}
     .final .btn{font-size:14px;padding:12px 12px 12px 16px}
     .final .btn i{display:none}
+  }
+  @media (max-width:430px){
+    .cityclips{display:flex;overflow-x:auto;gap:8px;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;padding-bottom:4px}
+    .cityclips::-webkit-scrollbar{display:none}
+    .cityclip{flex:0 0 132px;scroll-snap-align:start}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -479,18 +503,27 @@
     <div class="wrap">
       <div class="reveal"><h2>Відгуки покупців</h2>
       <p class="note" style="margin-top:14px">16 відгуків із сайту stimul.in.ua, середня оцінка 5 з 5.</p></div>
-      <div class="rev-grid" id="revGrid"></div>
-      <button class="btn btn--quiet btn--plain" type="button" id="revMore" style="margin-top:8px">Показати всі 16 відгуків</button>
+      <div class="carousel">
+        <div class="rail" id="revGrid" data-rail></div>
+        <button class="rail-nav rail-prev" type="button" data-rail-prev="revGrid" aria-label="Попередні відгуки"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="rail-nav rail-next" type="button" data-rail-next="revGrid" aria-label="Наступні відгуки"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+      <p class="rail-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg>Гортайте вбік, тут усі 16 відгуків</p>
 
-      <h3 class="reveal" style="margin-top:64px">Пишуть у соцмережах</h3>
-      <div class="shots reveal" data-delay="1">
+      <h3 class="reveal" style="margin-top:44px">Пишуть у соцмережах</h3>
+      <div class="carousel">
+        <div class="rail shots" id="shotRail" data-rail>
         <img src="../media/rev-1.jpg" alt="Відгук покупця у Facebook про кросівки Ягуар" loading="lazy" width="900" height="760">
         <img src="../media/rev-2.jpg" alt="Відгук покупчині про кросівки Ягуар" loading="lazy" width="900" height="551">
         <img src="../media/rev-3.jpg" alt="Відгук покупця: ноги увечері не гудуть" loading="lazy" width="900" height="401">
         <img src="../media/rev-4.jpg" alt="Відгук: весна, літо, осінь — вони впорались" loading="lazy" width="623" height="196">
         <img src="../media/rev-5.jpg" alt="Відгук покупця, який носить Ягуар з 2018 року" loading="lazy" width="406" height="118">
         <img src="../media/rev-6.jpg" alt="Відгук: ношу майже нонстоп дев'ять місяців" loading="lazy" width="421" height="174">
+        </div>
+        <button class="rail-nav rail-prev" type="button" data-rail-prev="shotRail" aria-label="Попередні скріншоти"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="rail-nav rail-next" type="button" data-rail-next="shotRail" aria-label="Наступні скріншоти"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></button>
       </div>
+      <p class="rail-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg>Гортайте вбік, щоб побачити більше</p>
     </div>
   </section>
 
@@ -793,7 +826,7 @@
   },1000);
 
   /* Відгуки */
-  var grid=$('revGrid'),SHOW=6;
+  var grid=$('revGrid'),SHOW=99;
   function fmt(d){var p=d.split('-');return p[2]+'.'+p[1]+'.'+p[0]}
   grid.innerHTML=REVIEWS.map(function(r,i){
     var long=r.text.length>300;
@@ -808,7 +841,6 @@
     var card=b.closest('.rev'), closed=card.classList.toggle('clip');
     b.textContent=closed?'Читати повністю':'Згорнути';
   });
-  $('revMore').onclick=function(){[].forEach.call(grid.children,function(a){a.hidden=false});this.hidden=true};
 
   /* Відео «у місті»: вмикаються, коли потрапляють на екран, і ставляться на паузу, коли зникають */
   (function(){
@@ -856,6 +888,28 @@
       });
     },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
     els.forEach(function(el){io.observe(el)});
+  })();
+
+  /* Каруселі: стрілки й стан кнопок */
+  (function(){
+    var rails=[].slice.call(document.querySelectorAll('[data-rail]'));
+    rails.forEach(function(rail){
+      var prev=document.querySelector('[data-rail-prev="'+rail.id+'"]');
+      var next=document.querySelector('[data-rail-next="'+rail.id+'"]');
+      function step(dir){ rail.scrollBy({left:dir*Math.round(rail.clientWidth*.8),behavior:'smooth'}) }
+      if(prev) prev.onclick=function(){step(-1)};
+      if(next) next.onclick=function(){step(1)};
+      function state(){
+        if(prev) prev.disabled = rail.scrollLeft < 8;
+        if(next) next.disabled = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 8;
+      }
+      rail.addEventListener('scroll',state,{passive:true});
+      window.addEventListener('resize',state);
+      window.addEventListener('load',state);
+      if(window.ResizeObserver){ new ResizeObserver(state).observe(rail) }
+      [].forEach.call(rail.querySelectorAll('img'),function(im){ im.addEventListener('load',state) });
+      setTimeout(state,300); setTimeout(state,1200); state();
+    });
   })();
 
 })();
