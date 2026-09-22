@@ -568,7 +568,6 @@
 <div class="dock">
   <span class="dock-price" id="dockPrice">2 685 грн</span>
   <button class="btn js-add" type="button">Додати в кошик</button>
-  <button class="btn btn--ghost js-cart" type="button">Кошик<span id="dockCount" hidden></span></button>
 </div>
 
 <div class="callback" id="callback" hidden>
@@ -753,7 +752,6 @@
   }
   function drawCart(){
     var c=summary();
-    $('dockCount').hidden=c.n<1; $('dockCount').textContent=' '+c.n;
   }
   document.addEventListener('click',function(e){
     if(!e.target.closest) return;
