@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кросівки Ягуар — STIMUL</title>
+<meta name="description" content="Кросівки Ягуар від STIMUL: нубук і кордура, поліуретанова підошва, розміри 35–50. Власне виробництво у Вінниці.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@500;600;700&family=Golos+Text:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --paper:#FFFFFF;
+    --ink:#000000;
+    --muted:#5C6067;
+    --rule:#DCDEE1;
+    --orange:#FC7301;
+    --orange-deep:#D85F00;
+    --orange-tint:#FFF0E3;
+    --shade:#F5F6F7;
+    --display:"Geologica","Arial Narrow",Arial,sans-serif;
+    --text:"Golos Text",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--text)}
+  img{max-width:100%;display:block}
+  button{font:inherit;color:inherit}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+  .wrap{max-width:1200px;margin:0 auto;padding-inline:28px}
+  h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.02em;margin:0}
+  h2{font-size:clamp(26px,3.2vw,40px);line-height:1.08;max-width:22ch}
+  p{margin:0}
+  .lead{font-size:19px;line-height:1.5;max-width:62ch;color:#222}
+  .note{font-size:14.5px;color:var(--muted)}
+
+  /* Шапка */
+  .top{border-bottom:1px solid var(--rule)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:16px}
+  .top img{height:46px;width:auto}
+  .phone{display:flex;flex-direction:column;text-decoration:none;text-align:right;line-height:1.25}
+  .phone b{font-weight:600;font-variant-numeric:tabular-nums}
+  .phone span{font-size:13.5px;color:var(--muted)}
+
+  /* Смуга фактів */
+  .facts{border-bottom:1px solid var(--rule);background:var(--shade)}
+  .facts ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}
+  .facts li{padding:14px 0 15px;font-size:15.5px;border-left:1px solid var(--rule);padding-left:20px}
+  .facts li:first-child{border-left:0;padding-left:0}
+  .facts b{display:block;font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.01em}
+  .facts span{color:var(--muted);font-size:14.5px}
+
+  /* Перший екран */
+  .hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:44px;padding-block:36px 46px;align-items:start}
+  .shot{position:relative;background:var(--paper);border:1px solid var(--rule)}
+  .shot .frame{position:relative;aspect-ratio:1;overflow:hidden}
+  .shot img.main{width:100%;height:100%;object-fit:cover;transition:opacity .2s}
+  .shot img.main.fade{opacity:0}
+  .shot .sale{position:absolute;left:0;top:0;background:var(--orange);color:#fff;font:600 14px/1 var(--display);padding:10px 12px}
+  .shot .count{position:absolute;right:12px;bottom:12px;background:rgba(0,0,0,.72);color:#fff;font-size:13px;padding:4px 9px;font-variant-numeric:tabular-nums}
+  .arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:60px;border:0;background:rgba(255,255,255,.9);cursor:pointer;display:grid;place-items:center}
+  .arrow:hover{background:#fff}
+  .arrow.prev{left:0}.arrow.next{right:0}
+  .arrow svg{width:20px;height:20px}
+  .strip{display:flex;gap:6px;overflow-x:auto;border-top:1px solid var(--rule);padding:6px;scrollbar-width:none}
+  .strip::-webkit-scrollbar{display:none}
+  .strip button{flex:none;width:74px;aspect-ratio:1;padding:0;border:1px solid transparent;background:none;cursor:pointer}
+  .strip button[aria-current="true"]{border-color:var(--ink)}
+  .strip img{width:100%;height:100%;object-fit:cover}
+
+  .buy{display:flex;flex-direction:column;gap:26px;position:sticky;top:20px}
+  .title h1{font-size:clamp(34px,4.4vw,52px);line-height:1}
+  .title p{margin-top:10px;font-size:17.5px;color:var(--muted);max-width:34ch}
+  .stock{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;color:var(--muted);margin-top:12px}
+  .stock i{width:8px;height:8px;background:#2E9E5B;border-radius:50%}
+
+  .price{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);padding-block:16px}
+  .price b{font-family:var(--display);font-weight:700;font-size:40px;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .price s{color:var(--muted);font-size:17px;font-variant-numeric:tabular-nums}
+  .price em{font-style:normal;font-size:14.5px;color:var(--orange-deep);font-weight:600}
+  .deadline{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;font-size:14.5px;color:var(--muted)}
+  .clock{font-family:var(--display);font-weight:600;font-size:19px;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+
+  .pick{display:flex;flex-direction:column;gap:12px}
+  .pick > p{font-size:15px}
+  .pick > p b{font-weight:600}
+  .colors{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+  .colors button{padding:0;border:1px solid var(--rule);background:none;cursor:pointer;line-height:0}
+  .colors button[aria-checked="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+  .colors img{width:100%;aspect-ratio:1;object-fit:cover}
+  .row{display:grid;grid-template-columns:minmax(0,1fr) 128px;gap:10px}
+  select,.qty{width:100%;height:56px;border:1px solid var(--ink);background:var(--paper);font:500 16px var(--text);color:var(--ink)}
+  select{appearance:none;-webkit-appearance:none;padding:0 42px 0 14px;cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23000' stroke-width='1.6'%3E%3Cpath d='M5 8l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 14px center;background-size:18px}
+  .qty{display:grid;grid-template-columns:40px minmax(0,1fr) 40px;align-items:stretch}
+  .qty button{border:0;background:none;cursor:pointer;font-size:20px}
+  .qty button:hover{background:var(--shade)}
+  .qty input{border:0;text-align:center;font:600 16px var(--text);font-variant-numeric:tabular-nums;min-width:0;background:none}
+  .qty input:focus{outline:none}
+  .err{color:#B3261E;font-size:14.5px}
+
+  .act{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
+  .add{border:0;background:var(--orange);color:#fff;font:600 18px/1 var(--display);letter-spacing:-.01em;padding:22px 20px;cursor:pointer;transition:background .15s}
+  .add:hover{background:var(--orange-deep)}
+  .cart{border:1px solid var(--ink);background:var(--paper);padding:0 20px;font:500 15px var(--text);cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:8px}
+  .cart:hover{background:var(--ink);color:#fff}
+  .cart span{font-variant-numeric:tabular-nums;font-weight:600}
+  .terms{border-top:1px solid var(--rule)}
+  .terms div{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--rule);font-size:15px}
+  .terms dt{width:104px;flex:none;color:var(--muted);margin:0}
+  .terms dd{margin:0}
+
+  /* Журнал носіння */
+  .log{border-block:1px solid var(--ink);padding-block:34px 38px}
+  .log h2{font-size:clamp(22px,2.4vw,30px);margin-bottom:6px}
+  .log > .wrap > p{color:var(--muted);font-size:15.5px;margin-bottom:22px}
+  .log ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+  .log li{border-top:2px solid var(--orange);padding-top:14px}
+  .log b{display:block;font-family:var(--display);font-weight:700;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;line-height:1.05}
+  .log p{margin-top:8px;font-size:15px;color:#222}
+  .log cite{display:block;margin-top:10px;font-style:normal;font-size:13.5px;color:var(--muted)}
+
+  /* Відео */
+  .film{padding-block:54px}
+  .film-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:20px;flex-wrap:wrap}
+  .player{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
+  .player button.play{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;background:none;cursor:pointer}
+  .player img{width:100%;height:100%;object-fit:cover;opacity:.9;transition:opacity .2s}
+  .player button.play:hover img{opacity:1}
+  .player .knob{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:84px;height:84px;border-radius:50%;background:var(--orange);display:grid;place-items:center}
+  .player .knob svg{width:30px;height:30px;margin-left:5px;color:#fff}
+  .player .cap{position:absolute;left:0;bottom:0;background:#fff;color:var(--ink);font-size:14.5px;padding:10px 14px}
+  .player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  /* Опис і матеріали */
+  .about{padding-block:54px;border-top:1px solid var(--rule)}
+  .about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+  .about .lead{margin-top:18px}
+  .mats{list-style:none;margin:0;padding:0}
+  .mats li{display:grid;grid-template-columns:132px minmax(0,1fr);gap:20px;padding:16px 0;border-top:1px solid var(--rule)}
+  .mats li:last-child{border-bottom:1px solid var(--rule)}
+  .mats h3{font-size:16px;font-weight:600;letter-spacing:-.01em}
+  .mats p{font-size:15.5px;color:#222}
+
+  /* Характеристики */
+  .specs{padding-block:54px;border-top:1px solid var(--rule)}
+  table{width:100%;border-collapse:collapse;font-size:16px;margin-top:22px}
+  th,td{text-align:left;padding:13px 0;border-top:1px solid var(--rule);vertical-align:top}
+  th{width:230px;font-weight:400;color:var(--muted)}
+  td{font-weight:500}
+  .specs-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
+
+  /* Підробки */
+  .fake{background:var(--orange);color:#fff}
+  .fake .wrap{padding-block:52px 58px}
+  .fake h2{color:#fff;font-size:clamp(28px,3.6vw,46px);max-width:18ch}
+  .fake p{max-width:64ch;margin-top:16px;font-size:17px;color:#FFF0E3}
+  .fake .player{margin-top:26px;max-width:860px;border:6px solid #fff}
+  .fake .player .knob{background:#fff}
+  .fake .player .knob svg{color:var(--orange)}
+
+  /* Відгуки */
+  .reviews{padding-block:54px}
+  .rev-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .rev-head p{color:var(--muted);font-size:15.5px}
+  .rev-list{columns:3 300px;column-gap:28px;margin-top:26px}
+  .rev{break-inside:avoid;border-top:1px solid var(--rule);padding:18px 0 22px;margin:0}
+  .rev .who{display:flex;justify-content:space-between;gap:12px;font-size:14.5px;color:var(--muted)}
+  .rev .who b{color:var(--ink);font-weight:600}
+  .rev p{margin-top:10px;font-size:15.5px;white-space:pre-line;overflow-wrap:anywhere}
+  .rev.clip > p{display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
+  .rev button{margin-top:8px;border:0;background:none;padding:0;font:600 14.5px var(--text);cursor:pointer;border-bottom:1px solid var(--orange)}
+  .answer{margin-top:14px;background:var(--shade);padding:12px 14px;font-size:15px}
+  .answer b{display:block;font-size:13.5px;color:var(--muted);font-weight:600;margin-bottom:4px}
+  .more-wrap{margin-top:22px}
+  .more{border:1px solid var(--ink);background:none;padding:14px 22px;font:500 15.5px var(--text);cursor:pointer}
+  .more:hover{background:var(--ink);color:#fff}
+
+  /* Фінал */
+  .close-cta{border-top:1px solid var(--ink);padding-block:50px 56px}
+  .close-cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
+  .close-cta h2{max-width:20ch}
+  .close-cta p{color:var(--muted);margin-top:8px;font-size:16px}
+  .close-cta .add{padding:22px 40px}
+
+  footer{border-top:1px solid var(--rule);padding-block:30px 44px;font-size:15px;color:var(--muted)}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between}
+  footer img{height:38px;width:auto}
+  footer b{display:block;color:var(--ink);font-weight:600;margin-bottom:4px}
+  footer a{text-decoration:none}
+
+  /* Підказка після додавання */
+  .toast{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:440px;margin:0 auto;background:var(--ink);color:#fff;padding:16px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+  .toast p{font-size:15px}
+  .toast button{border:1px solid #fff;background:none;color:#fff;padding:9px 14px;font:500 14.5px var(--text);cursor:pointer}
+  .toast button.go{background:var(--orange);border-color:var(--orange)}
+
+  .dock{display:none}
+
+  @media (max-width:1000px){
+    .hero{grid-template-columns:minmax(0,1fr);gap:26px}
+    .buy{position:static}
+    .about-grid,.specs-two{grid-template-columns:minmax(0,1fr);gap:26px}
+    .log ul{grid-template-columns:repeat(2,1fr);gap:20px}
+    .facts ul{grid-template-columns:repeat(2,1fr)}
+    .facts li:nth-child(3){border-left:0;padding-left:0}
+    .facts li{padding-block:12px}
+    body{padding-bottom:78px}
+    .dock{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(255,255,255,.97);border-top:1px solid var(--ink);padding:10px 16px calc(10px + env(safe-area-inset-bottom));gap:12px;align-items:center}
+    .dock .sum{font-family:var(--display);font-weight:700;font-size:19px;font-variant-numeric:tabular-nums}
+    .dock .add{flex:1;padding:15px 12px;font-size:15px}
+    .dock .cart{padding:0 14px;font-size:14px}
+    .toast{bottom:88px}
+  }
+  @media (max-width:640px){
+    .wrap{padding-inline:18px}
+    .top img{height:38px}
+    .phone span{display:none}
+    .colors{grid-template-columns:repeat(3,1fr)}
+    .row{grid-template-columns:minmax(0,1fr)}
+    .mats li{grid-template-columns:minmax(0,1fr);gap:4px}
+    .log ul{grid-template-columns:minmax(0,1fr)}
+    .facts ul{grid-template-columns:minmax(0,1fr)}
+    .facts li{border-left:0;padding-left:0;border-top:1px solid var(--rule)}
+    .facts li:first-child{border-top:0}
+    .strip button{width:60px}
+    th{width:auto;display:block;padding-bottom:0;border:0}
+    td{display:block;padding-top:4px;border:0}
+    tr{display:block;border-top:1px solid var(--rule);padding-block:10px}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .intro{animation:rise .5s ease both}
+    .intro-2{animation:rise .5s .08s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="https://stimul.vn.ua/" target="_blank" rel="noopener"><img src="../img/logo.png" alt="STIMUL, взуттєва фабрика у Вінниці" width="720" height="200"></a>
+    <a class="phone" href="tel:+380632000401"><b>063 200 04 01</b><span>Пн–Пт 9:00–18:00, Сб 10:00–15:00</span></a>
+  </div>
+</header>
+
+<section class="facts">
+  <div class="wrap">
+    <ul>
+      <li><b>Власне виробництво</b><span>шиємо у Вінниці, продаємо напряму</span></li>
+      <li><b>22 роки у взутті</b><span>шиємо взуття понад два десятиліття</span></li>
+      <li><b>Гарантія від виробника</b><span>1 рік на підошву, 60 днів на верх</span></li>
+      <li><b>Нубук і кордура</b><span>поліуретанова підошва, анатомічна устілка</span></li>
+    </ul>
+  </div>
+</section>
+
+<main>
+  <div class="wrap hero">
+    <section class="shot intro" aria-label="Фото кросівок">
+      <div class="frame" id="frame">
+        <img class="main" id="mainImg" src="../img/chornyi-1.jpg" alt="Кросівки Ягуар STIMUL, колір Чорний" width="1000" height="1000">
+        <span class="sale">−400 грн</span>
+        <button class="arrow prev" id="prev" type="button" aria-label="Попереднє фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="arrow next" id="next" type="button" aria-label="Наступне фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5l7 7-7 7"/></svg></button>
+        <span class="count" id="counter">1 / 10</span>
+      </div>
+      <div class="strip" id="strip"></div>
+    </section>
+
+    <section class="buy intro-2" aria-label="Вибір і замовлення">
+      <div class="title">
+        <h1>Кросівки Ягуар</h1>
+        <p>Демісезонні, для тих, хто на ногах цілий день: служба, робота, місто.</p>
+        <span class="stock"><i></i>Є в наявності, розміри 35–50</span>
+      </div>
+
+      <div>
+        <div class="price">
+          <b><span id="priceNow">2 685</span> грн</b>
+          <s id="priceOld">3 085 грн</s>
+          <em>знижка 400 грн</em>
+        </div>
+        <div class="deadline" style="padding-top:12px">
+          <span>До кінця акції</span>
+          <span class="clock" id="clock">00:00:00</span>
+        </div>
+      </div>
+
+      <div class="pick">
+        <p>Колір: <b id="colorName">Чорний</b></p>
+        <div class="colors" id="colors" role="radiogroup" aria-label="Колір"></div>
+      </div>
+
+      <div class="pick" id="sizeBlock">
+        <p>Розмір і кількість</p>
+        <div class="row">
+          <select id="sizeSelect" aria-label="Розмір"></select>
+          <div class="qty">
+            <button type="button" id="qMinus" aria-label="Менше">−</button>
+            <input id="qInput" type="text" inputmode="numeric" value="1" aria-label="Кількість пар">
+            <button type="button" id="qPlus" aria-label="Більше">+</button>
+          </div>
+        </div>
+        <p class="err" id="sizeErr" hidden>Оберіть розмір, щоб додати пару в кошик</p>
+      </div>
+
+      <div class="act">
+        <button class="add js-add" type="button">Додати в кошик</button>
+        <button class="cart js-checkout" type="button">Кошик<span id="cartCount" hidden></span></button>
+      </div>
+
+      <dl class="terms">
+        <div><dt>Доставка</dt><dd>по всій Україні</dd></div>
+        <div><dt>Оплата</dt><dd>безготівкова або накладений платіж з мінімальною передоплатою</dd></div>
+        <div><dt>Гарантія</dt><dd>1 рік на підошву та 60 днів на верх</dd></div>
+      </dl>
+    </section>
+  </div>
+
+  <section class="log">
+    <div class="wrap">
+      <h2>Скільки їх носять</h2>
+      <p>Цифри з відгуків покупців на нашому сайті. Це не обіцянки, а те, що люди написали самі.</p>
+      <ul>
+        <li><b>4 роки</b><p>Носила й купила ще одну пару.</p><cite>Альона Миколаївна, військова</cite></li>
+        <li><b>1,5 роки</b><p>Полігон, поля, паркет. Стельки для зламаної п'ятки — шедевр.</p><cite>Алексей Бондаренко</cite></li>
+        <li><b>2 місяці</b><p>За цей час не втратили вигляду зовсім. Реально як нові.</p><cite>Alexandr Radzievsky</cite></li>
+        <li><b>3 пари</b><p>Ходжу зимою і літом, і в саду. Розмірна сітка чітко підійшла.</p><cite>Sergey Menchura</cite></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="film">
+    <div class="wrap">
+      <div class="film-head">
+        <h2>Як ми їх шиємо</h2>
+        <p class="note">Наша фабрика у Вінниці, без посередників</p>
+      </div>
+      <div class="player" id="filmBox">
+        <button class="play" type="button" id="filmBtn" aria-label="Дивитися відео про виробництво STIMUL">
+          <img src="https://i.ytimg.com/vi/p3rggrCux6A/hqdefault.jpg" alt="" width="480" height="360">
+          <span class="knob"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="cap">Виробництво STIMUL</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="wrap about-grid">
+      <div>
+        <h2>Чому Ягуар носять роками</h2>
+        <p class="lead">Ягуар — універсальне рішення для тих, хто шукає легке, дихаюче і водночас міцне взуття. Створені для активного міського ритму та повсякденного використання. Стриманий силует без зайвого декору, тож пара однаково доречна на службі, на роботі й на вихідних.</p>
+        <p class="lead" style="margin-top:14px">Вага напівпари — 396 грамів. Це приблизно як склянка води: нога не втомлюється навіть у довгу зміну.</p>
+      </div>
+      <ul class="mats">
+        <li><h3>Верх</h3><p>Натуральна шкіра нубук і тканина кордура, яка витримує складні погодні умови.</p></li>
+        <li><h3>Підкладка</h3><p>Вологовідвідна мембранна тканина.</p></li>
+        <li><h3>Підошва</h3><p>Поліуретан: легка, гнучка й зносостійка, амортизує навантаження та зменшує втому при тривалому носінні.</p></li>
+        <li><h3>Устілка</h3><p>Анатомічна, вставна — можна замінити на власну.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="specs">
+    <div class="wrap">
+      <h2>Характеристики</h2>
+      <div class="specs-two">
+        <table>
+          <tbody>
+            <tr><th scope="row">Виробник</th><td>STIMUL, власне виробництво</td></tr>
+            <tr><th scope="row">Модель</th><td>Кросівки Ягуар</td></tr>
+            <tr><th scope="row">Сезон</th><td>Демісезон</td></tr>
+            <tr><th scope="row">Верх виробу</th><td>Шкіра натуральна (нубук) + тканина Кордура</td></tr>
+            <tr><th scope="row">Підкладка</th><td>Вологовідвідна мембранна тканина</td></tr>
+            <tr><th scope="row">Підошва</th><td>Поліуретан</td></tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <tr><th scope="row">Устілка</th><td>Анатомічна, вставна</td></tr>
+            <tr><th scope="row">Вага напівпари</th><td>396 г</td></tr>
+            <tr><th scope="row">Розмірний ряд</th><td>з 35 по 50</td></tr>
+            <tr><th scope="row">Кольори</th><td>Чорний, Сірий, Какао, Шоколад, Олива, Койот</td></tr>
+            <tr><th scope="row">Гарантія</th><td>1 рік на підошву, 60 днів на верх</td></tr>
+            <tr><th scope="row">Упаковка</th><td>Коробка</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:18px">Колір і відтінок можуть відрізнятися залежно від налаштувань монітора та освітлення.</p>
+    </div>
+  </section>
+
+  <section class="fake">
+    <div class="wrap">
+      <h2>Обережно, підробки Ягуара</h2>
+      <p>У мережі з'явилися продавці, які під виглядом STIMUL продають підробки — на OLX, маркетплейсах без перевірки продавців і через фейкові Instagram-сторінки. Вони беруть фото з нашого сайту, а надсилають взуття з дешевих матеріалів, з іншою підошвою, кривим пошиттям і без гарантії. У відео показуємо, як відрізнити оригінал.</p>
+      <div class="player" id="fakeBox">
+        <button class="play" type="button" id="fakeBtn" aria-label="Дивитися відео про підробки кросівок Ягуар">
+          <img src="https://i.ytimg.com/vi/WRaBbQu3KHw/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+          <span class="knob"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="cap">Оригінал і підробка: що перевірити</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <div class="rev-head">
+        <h2>Відгуки покупців</h2>
+        <p>16 відгуків із сайту stimul.in.ua, оцінка 5 з 5</p>
+      </div>
+      <div class="rev-list" id="revList"></div>
+      <div class="more-wrap"><button class="more" type="button" id="moreBtn">Показати всі 16 відгуків</button></div>
+    </div>
+  </section>
+
+  <section class="close-cta">
+    <div class="wrap">
+      <div>
+        <h2>Зберіть пару під себе</h2>
+        <p id="closeText">Шість кольорів, розміри 35–50, від 2 685 грн</p>
+      </div>
+      <button class="add js-add" type="button">Додати в кошик</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="../img/logo.png" alt="STIMUL" width="720" height="200" loading="lazy">
+    <div><b>Телефон</b><a href="tel:+380632000401">063 200 04 01</a>, <a href="tel:+380977534042">097 753 40 42</a></div>
+    <div><b>Адреса</b>Вінниця, Хмельницьке шосе, 82, офіс 607</div>
+    <div><b>Графік</b>Пн–Пт 9:00–18:00, Сб 10:00–15:00</div>
+  </div>
+</footer>
+
+<div class="dock">
+  <span class="sum" id="dockPrice">2 685 грн</span>
+  <button class="add js-add" type="button">Додати в кошик</button>
+  <button class="cart js-checkout" type="button">Кошик<span id="dockCount" hidden></span></button>
+</div>
+
+<div class="toast" id="toast" hidden>
+  <p id="toastText"></p>
+  <span style="display:flex;gap:8px">
+    <button type="button" id="toastClose">Обрати ще пару</button>
+    <button type="button" class="go js-checkout">До кошика</button>
+  </span>
+</div>
+
+<script>
+(function(){
+  var COLORS=[{"id": "chornyi", "name": "Чорний", "n": 10}, {"id": "siryi", "name": "Сірий", "n": 5}, {"id": "kakao", "name": "Какао", "n": 5}, {"id": "shokolad", "name": "Шоколад", "n": 8}, {"id": "olyva", "name": "Олива", "n": 7}, {"id": "koiot", "name": "Койот", "n": 8}];
+  var SIZES=[[35,'23'],[36,'23,7'],[37,'24,5'],[38,'25'],[39,'25,7'],[40,'26,5'],[41,'27'],[42,'27,7'],[43,'28,2'],[44,'28,8'],[45,'29,5'],[46,'30,3'],[47,'31'],[48,'31,5'],[49,'32,3'],[50,'33']];
+  var REVIEWS=[{"name": "Віталий Цімух", "date": "2026-06-27", "text": "На перший погляд - звичайні кросівки. Але хай Вас не вводить в оману їх зовнішня простота: якісні матеріали, продумана вентиляція та чудова підошва - це саме те, заради чого варто вкладати в них кошти. Ноги не варяться навіть у тридцятиградусну спеку, шнурівка не намагається розв'язатися під час ходи, а підошва взагалі є взірцем ходової демократії: ноги не відчувають жодної різниці між утрамбованим грунтом та луговиною, а на асфальті чи плитці підошва взагалі надає ногам відчуття польоту. Дякую!"}, {"name": "Олена Ященко", "date": "2024-09-13", "text": "Замовляла чоловiковi модель Ягуар.Зручнi та якiснi кросiвки! Вперше зустрiли взуття, у якому не пiтнiють ноги. Не дают поганого запаху навiть пiсля тривалого носiння!Чоловiк iз задоволенням носить кроси на роботу кожного дня!!!"}, {"name": "Alexandr Radzievsky", "date": "2026-05-16", "text": "Придбав цю модель онлайн, трохи не влучив з розміром - замінили на менший розмір без проблем, на розмір менше сіли як рідні.\n\nНошу ці кросівки трішки більше двох місяців , бувають дуже активні дні. Почав носити в досить прохолодну погоду - нога не мерзне, з приходом тепла не потіє, це щось неймовірне! За цей час не втратили вигляду зовсім! Реально як нові, навіть слідів згину не видно!\n\nЗ недоліків, на мою суб’єктивну, відсутність петлі над пʼяткою, доводиться користуватися лопаткою, і якось незрозуміло, що зробити з язичком. Але це не суттєві недоліки в не впливають на якість взуття.\n\nЗайшов написати відгук в обрати пару для заміських умов.", "reply": "Alexandr Radzievsky, Дякуємо за відгук! 😊\n\nРаді, що взуття добре показало себе в носінні та залишилось комфортним у різну погоду. Дякуємо також за зауваження щодо петлі — обов’язково врахуємо. Носіть із задоволенням! 💪"}, {"name": "Ганна Куркіна", "date": "2023-07-20", "text": "Дуже гарне, стильне, якісне взуття. Ношу кросівки “Ягуар” третій місяць, дуже зручно, не втомлюються(!!!) ноги.\n\r\nМої чоловік та син теж взуті у Stimul. Бажаю Вам здоров’я та наснаги, дякую."}, {"name": "Оксана", "date": "2025-12-01", "text": "Купила модель Ягуар ризикнувши.На роботі підлога різного типу:фарба на бетоні і дереву,лакований паркет,плитка, лінолеум-у попередньому взутті обов'язково на чомусь підсковзнеся,в Ягуарі не сковзаюсь.Маю малу але широку ступню(повздовжньо-поперечне вроджена плоскостопість)-це ще той квест найти взуття,коли37малий,38великий(в цьому магазині мені без проблем зробили заміну взуття на потрібний розмір).Турбує проблема з набряком ніг,але в них я можу ходити .Маю вагу 120кг,черевики прекрасно витримують:не прогибається підошва.Не має дурного запаху,вірніше нема ніякого запаху,що підтверджує якість матеріалу з якого виготовляють взуття.Хотілось,щоб була створена модель із додатковою застібкою-блискавкою для більшого комфорту знімання і одягання.Доречі я вже придбала кросівки і на літо в цьому магазині.Хочу ще придбати і на зиму.Дякую всім хто дає нам можливість носити зручне взуття"}, {"name": "Андрій Володимирович", "date": "2025-10-10", "text": "Вирішив придбати після того як один з побратимів порадив дану модель демісезонку для цивільних моментів. Взуття просто бомбезне, легке, зручне, дуже комфортне, по нозі лягло одразу. Друга пара літні, теж класні. Одразу замовляйте водозахисний спрей для взуття, відомого українського виробника але дешевше. В майбутньому однозначно віддам перевагу взуттю цього виробника."}, {"name": "Альона Миколаївна", "date": "2025-08-20", "text": "З виробником Стимул , я познайомилась ще у 2020 році, коли мені порадили знайомі. Я військова. Шукала взуття, в якому не будуть горіти ноги після зміни. Мені порадили обрати кросівки Ягуар. І ось що я вам скажу, я їх носила 4 роки. Уявіть собі, чотири роки. Купила ще собі пару. Стимул, так тримати. Вражена що взуття такої якості можна придбати не тільки за кордоном."}, {"name": "Алексей Бондаренко", "date": "2023-08-30", "text": "Кросівки \"Ягуар\" літні 1,5 роки і у хвіст і в гриву.\n\r\nПолігон, поля, паркет. Якщо рухатись і недовго, то навіть у мороз до -5 норм.\n\r\nСтельки для моєї зламаної п’ятки – шедевр!\n\r\nЗамовляю нові такі самі."}, {"name": "Макс Дудка", "date": "2023-07-18", "text": "Дякую вам!шкари підійшли!,з розміром вгадав,не без вашої допомоги!вже кілька днів ходжу в них та кайфую,дуже легкі та зручні(єдине :можливо можна буде наступного разу,пошити трохи вужче?,бо в мене нога вузька,хоч і довга!виглядають супер! надіюсь носяться так само!?) Я брав “Ягуар”, у кольорі олива,таки олива і є!(не треба плутати з хакі)! Дякую вам!\n\r\nЯ задоволений!Замовлю ще одну пару! якщо не буде інших моделей мого розміру,то візьму такі ж,але у іншому кольорі!\n\r\nСлава Україні!!!☝️"}, {"name": "Sergey Menchura", "date": "2024-04-18", "text": "Кросівки просто бомба! Взяв уже 3 пари Ягуар ходжу зимою і літом, настройки і в саду! Замовив ще одні Хаміліон! Розмірна сітка чотко підійшла! Рекомендую)"}, {"name": "Volodymyr Tk", "date": "2023-11-26", "text": "Замовляв кросівки ягуар, надіслали швидко, попередньо зателефонували та уточнили розмір. Якість супер, розходив за два дні. Дякую за вашу роботу."}, {"name": "Валентина Верьовка", "date": "2024-04-12", "text": "Купували кросівки ягуар , дуже сподобались, обслуговування супер, швидкий пошив та відправка, дякуємо! 💛💙👍"}, {"name": "Олександр Р.", "date": "2020-01-28", "text": "Ідеальне співвідношення ціна-якість, замовляю вже другий раз тактичні кросівки (СТІМУЛ), досить крепкі, підошва м'яка в той же час витримує 3 сезона постійної ходьби, з гарною вентиляцією. Продавці дуже чемні і компетентні. Рекомендую"}, {"name": "Олександр", "date": "2026-05-18", "text": "придбав данну модель, якісно зроблено, поки багато не находив але на нозі сидить добре", "reply": "Олександр, дякуємо за коментар, нехай добре носяться😊"}, {"name": "Бондаренко Микола", "date": "2025-05-30", "text": "Отримав кросівки які замовляв задоволений дуже сподобалися сподіваюся будуть служити довго і вірно але все одно мабуть такі ще візьму на повсякдень високі берці"}, {"name": "Олійник Любов", "date": "2023-07-07", "text": "Чудові кросівки ягуар, зручні. Рекомендую всім."}];
+  var ED={"koiot": {"35": {"uid": "309784089882", "sku": "1941", "price": 2685.0, "label": "35 - 23 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "36": {"uid": "371321944012", "sku": "1942", "price": 2685.0, "label": "36 - 23.7 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "37": {"uid": "219324492552", "sku": "1943", "price": 2685.0, "label": "37 - 24.5 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "38": {"uid": "883450334592", "sku": "1944", "price": 2685.0, "label": "38 - 25 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "39": {"uid": "931052020882", "sku": "1945", "price": 2685.0, "label": "39 - 25.7 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "40": {"uid": "325612823112", "sku": "1946", "price": 2685.0, "label": "40 - 26.5 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "41": {"uid": "299276496442", "sku": "1947", "price": 2685.0, "label": "41 - 27 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "42": {"uid": "449990846182", "sku": "1948", "price": 2685.0, "label": "42 - 27.7 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "43": {"uid": "645859418422", "sku": "1949", "price": 2685.0, "label": "43 - 28.2 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "44": {"uid": "272009733552", "sku": "1950", "price": 2685.0, "label": "44 - 28.8 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "45": {"uid": "924939447062", "sku": "1951", "price": 2685.0, "label": "45 - 29.5 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "46": {"uid": "353198964662", "sku": "1952", "price": 2685.0, "label": "46 - 30.3 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "47": {"uid": "210360534092", "sku": "2064", "price": 2985.0, "label": "47 - 31 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "48": {"uid": "234707318962", "sku": "2232", "price": 3185.0, "label": "48 - 31.5 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "49": {"uid": "149989700012", "sku": "2239", "price": 3185.0, "label": "49 - 32,3 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}, "50": {"uid": "277928108122", "sku": "3097", "price": 3185.0, "label": "50 - 33 см устілка", "cname": "койот", "img": "https://static.tildacdn.one/stor3237-3939-4537-a638-656131396161/73185920.jpg"}}, "olyva": {"35": {"uid": "230546101972", "sku": "2282", "price": 2685.0, "label": "35 - 23 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "36": {"uid": "101577611562", "sku": "1972", "price": 2685.0, "label": "36 - 23.7 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "37": {"uid": "884103328492", "sku": "1973", "price": 2685.0, "label": "37 - 24.5 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "38": {"uid": "133990659282", "sku": "1974", "price": 2685.0, "label": "38 - 25 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "39": {"uid": "949289426842", "sku": "1975", "price": 2685.0, "label": "39 - 25.7 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "40": {"uid": "781327463672", "sku": "1976", "price": 2685.0, "label": "40 - 26.5 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "41": {"uid": "631445278752", "sku": "1977", "price": 2685.0, "label": "41 - 27 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "42": {"uid": "360185345482", "sku": "1978", "price": 2685.0, "label": "42 - 27.7 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "43": {"uid": "694856860392", "sku": "1979", "price": 2685.0, "label": "43 - 28.2 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "44": {"uid": "217997631912", "sku": "1980", "price": 2685.0, "label": "44 - 28.8 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "45": {"uid": "470697697202", "sku": "1981", "price": 2685.0, "label": "45 - 29.5 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "46": {"uid": "937291843112", "sku": "1982", "price": 2685.0, "label": "46 - 30.3 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "47": {"uid": "571475794942", "sku": "2249", "price": 2985.0, "label": "47 - 31 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "48": {"uid": "328217322822", "sku": "2465", "price": 3185.0, "label": "48 - 31.5 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "49": {"uid": "581738886352", "sku": "1983", "price": 3185.0, "label": "49 - 32,3 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}, "50": {"uid": "507747218542", "sku": "2596", "price": 3185.0, "label": "50 - 33 см устілка", "cname": "олива", "img": "https://static.tildacdn.one/stor6661-3164-4965-a137-376366393965/15892249.jpg"}}, "shokolad": {"35": {"uid": "852398107792", "sku": "2018", "price": 2685.0, "label": "35 - 23 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "36": {"uid": "993409643392", "sku": "2019", "price": 2685.0, "label": "36 - 23.7 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "37": {"uid": "920930091802", "sku": "2020", "price": 2685.0, "label": "37 - 24.5 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "38": {"uid": "501043941762", "sku": "2021", "price": 2685.0, "label": "38 - 25 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "39": {"uid": "670686610292", "sku": "2022", "price": 2685.0, "label": "39 - 25.7 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "40": {"uid": "786920369832", "sku": "2023", "price": 2685.0, "label": "40 - 26.5 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "41": {"uid": "729621233102", "sku": "2024", "price": 2685.0, "label": "41 - 27 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "42": {"uid": "587812823082", "sku": "2025", "price": 2685.0, "label": "42 - 27.7 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "43": {"uid": "623362875512", "sku": "2026", "price": 2685.0, "label": "43 - 28.2 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "44": {"uid": "968344865702", "sku": "2027", "price": 2685.0, "label": "44 - 28.8 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "45": {"uid": "842881271872", "sku": "2028", "price": 2685.0, "label": "45 - 29.5 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "46": {"uid": "468216457012", "sku": "2029", "price": 2685.0, "label": "46 - 30.3 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "47": {"uid": "794569971872", "sku": "2463", "price": 2985.0, "label": "47 - 31 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "48": {"uid": "932095204702", "sku": "2165", "price": 3185.0, "label": "48 - 31.5 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "49": {"uid": "417541909422", "sku": "2560", "price": 3185.0, "label": "49 - 32,3 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}, "50": {"uid": "621009709982", "sku": "4715", "price": 3185.0, "label": "50 - 33 см устілка", "cname": "шоколад", "img": "https://static.tildacdn.one/stor6465-3537-4162-b438-373966313339/41808743.jpg"}}, "chornyi": {"35": {"uid": "516977120072", "sku": "2126", "price": 2685.0, "label": "35 - 23 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor6533-6531-4831-b839-323137393463/9c1683a54d8dd3794e62726edadd8204.png"}, "36": {"uid": "136897426712", "sku": "1996", "price": 2685.0, "label": "36 - 23.7 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor6533-6531-4831-b839-323137393463/9c1683a54d8dd3794e62726edadd8204.png"}, "37": {"uid": "336043112152", "sku": "1997", "price": 2685.0, "label": "37 - 24.5 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor6533-6531-4831-b839-323137393463/9c1683a54d8dd3794e62726edadd8204.png"}, "38": {"uid": "455721265972", "sku": "1998", "price": 2685.0, "label": "38 - 25 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor6533-6531-4831-b839-323137393463/9c1683a54d8dd3794e62726edadd8204.png"}, "39": {"uid": "212619023682", "sku": "1999", "price": 2685.0, "label": "39 - 25.7 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor6533-6531-4831-b839-323137393463/9c1683a54d8dd3794e62726edadd8204.png"}, "40": {"uid": "903518618172", "sku": "2000", "price": 2685.0, "label": "40 - 26.5 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor6533-6531-4831-b839-323137393463/9c1683a54d8dd3794e62726edadd8204.png"}, "41": {"uid": "463970092092", "sku": "2001", "price": 2685.0, "label": "41 - 27 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor6533-6531-4831-b839-323137393463/9c1683a54d8dd3794e62726edadd8204.png"}, "42": {"uid": "378543109872", "sku": "2002", "price": 2685.0, "label": "42 - 27.7 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor6533-6531-4831-b839-323137393463/9c1683a54d8dd3794e62726edadd8204.png"}, "43": {"uid": "762866654562", "sku": "2003", "price": 2685.0, "label": "43 - 28.2 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor6533-6531-4831-b839-323137393463/9c1683a54d8dd3794e62726edadd8204.png"}, "44": {"uid": "910279151342", "sku": "2004", "price": 2685.0, "label": "44 - 28.8 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor6533-6531-4831-b839-323137393463/9c1683a54d8dd3794e62726edadd8204.png"}, "45": {"uid": "114584440302", "sku": "2005", "price": 2685.0, "label": "45 - 29.5 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor6533-6531-4831-b839-323137393463/9c1683a54d8dd3794e62726edadd8204.png"}, "46": {"uid": "627999646072", "sku": "2006", "price": 2685.0, "label": "46 - 30.3 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor6533-6531-4831-b839-323137393463/9c1683a54d8dd3794e62726edadd8204.png"}, "47": {"uid": "400732638102", "sku": "2388", "price": 2985.0, "label": "47 - 31 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor6533-6531-4831-b839-323137393463/9c1683a54d8dd3794e62726edadd8204.png"}, "48": {"uid": "249637514072", "sku": "2540", "price": 3185.0, "label": "48 - 31.5 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor6533-6531-4831-b839-323137393463/9c1683a54d8dd3794e62726edadd8204.png"}, "49": {"uid": "737802856502", "sku": "2464", "price": 3185.0, "label": "49 - 32,3 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor6533-6531-4831-b839-323137393463/9c1683a54d8dd3794e62726edadd8204.png"}, "50": {"uid": "685237087602", "sku": "2441", "price": 3185.0, "label": "50 - 33 см устілка", "cname": "чорний", "img": "https://static.tildacdn.one/stor6533-6531-4831-b839-323137393463/9c1683a54d8dd3794e62726edadd8204.png"}}, "kakao": {"35": {"uid": "984116292132", "sku": "4717", "price": 2685.0, "label": "35 - 23 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "36": {"uid": "917303035742", "sku": "4716", "price": 2685.0, "label": "36 - 23.7 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "37": {"uid": "601718938462", "sku": "3054", "price": 2685.0, "label": "37 - 24.5 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "38": {"uid": "627006018232", "sku": "4718", "price": 2685.0, "label": "38 - 25 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "39": {"uid": "978474271212", "sku": "3001", "price": 2685.0, "label": "39 - 25.7 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "40": {"uid": "227134307082", "sku": "4719", "price": 2685.0, "label": "40 - 26.5 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "41": {"uid": "347627870432", "sku": "4720", "price": 2685.0, "label": "41 - 27 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "42": {"uid": "872054184622", "sku": "2936", "price": 2685.0, "label": "42 - 27.7 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "43": {"uid": "637845303482", "sku": "3051", "price": 2685.0, "label": "43 - 28.2 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "44": {"uid": "259465859262", "sku": "3069", "price": 2685.0, "label": "44 - 28.8 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "45": {"uid": "455100994232", "sku": "4721", "price": 2685.0, "label": "45 - 29.5 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "46": {"uid": "773681756762", "sku": "4722", "price": 2685.0, "label": "46 - 30.3 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "47": {"uid": "273365500972", "sku": "4723", "price": 2985.0, "label": "47 - 31 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "48": {"uid": "960490467992", "sku": "4724", "price": 3185.0, "label": "48 - 31.5 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "49": {"uid": "544647165772", "sku": "4725", "price": 3185.0, "label": "49 - 32,3 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}, "50": {"uid": "100759190902", "sku": "4726", "price": 3185.0, "label": "50 - 33 см устілка", "cname": "какао", "img": "https://static.tildacdn.one/stor3461-3030-4337-b530-346335393434/91497120.jpg"}}, "siryi": {"35": {"uid": "933326964092", "sku": "5221", "price": 2685.0, "label": "35 - 23 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "36": {"uid": "217676603582", "sku": "5222", "price": 2685.0, "label": "36 - 23.7 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "37": {"uid": "375506775722", "sku": "5223", "price": 2685.0, "label": "37 - 24.5 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "38": {"uid": "543233383082", "sku": "5224", "price": 2685.0, "label": "38 - 25 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "39": {"uid": "532792612272", "sku": "5225", "price": 2685.0, "label": "39 - 25.7 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "40": {"uid": "343467589792", "sku": "5226", "price": 2685.0, "label": "40 - 26.5 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "41": {"uid": "461721255872", "sku": "5227", "price": 2685.0, "label": "41 - 27 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "42": {"uid": "149203606822", "sku": "5228", "price": 2685.0, "label": "42 - 27.7 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "43": {"uid": "667262939412", "sku": "5229", "price": 2685.0, "label": "43 - 28.2 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "44": {"uid": "563527072182", "sku": "5230", "price": 2685.0, "label": "44 - 28.8 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "45": {"uid": "679954031032", "sku": "5231", "price": 2685.0, "label": "45 - 29.5 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "46": {"uid": "936262875992", "sku": "5232", "price": 2685.0, "label": "46 - 30.3 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "47": {"uid": "123376795992", "sku": "5233", "price": 2985.0, "label": "47 - 31 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "48": {"uid": "984364905622", "sku": "5234", "price": 3185.0, "label": "48 - 31.5 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "49": {"uid": "847518408462", "sku": "5235", "price": 3185.0, "label": "49 - 32,3 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}, "50": {"uid": "472539044132", "sku": "5236", "price": 3185.0, "label": "50 - 33 см устілка", "cname": "сірий", "img": "https://static.tildacdn.one/stor6431-3039-4335-a537-383162363532/25943386.jpg"}}};
+  var IMG=function(id,i,small){return '../img/'+id+'-'+(i+1)+(small?'-t':'')+'.jpg'};
+  var PRODUCT_NAME='Кросівки Ягуар';
+  var PRODUCT_URL='https://stimul.vn.ua/tactical-sneakers/tproduct/215336730-323732815942-krosvki-yaguar';
+
+  var state={color:0,photo:0,size:null,qty:1};
+  var $=function(id){return document.getElementById(id)};
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function src(c,i,small){return IMG(COLORS[c].id,i,small)}
+  function money(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' грн'}
+  function priceOf(s){return s===47?2985:(s>=48?3185:2685)}
+  function oldOf(s){return s===47?3385:(s>=48?3585:3085)}
+  function sizeRow(s){for(var i=0;i<SIZES.length;i++){if(SIZES[i][0]===s)return SIZES[i]}return null}
+  function pairs(n){return n===1?'пара':(n>1&&n<5?'пари':'пар')}
+
+  /* Фото */
+  var mainImg=$('mainImg'), strip=$('strip');
+  function drawStrip(){
+    var c=state.color,h='';
+    for(var i=0;i<COLORS[c].n;i++){
+      h+='<button type="button" data-i="'+i+'" aria-label="Фото '+(i+1)+'"'+(i===state.photo?' aria-current="true"':'')+'><img src="'+src(c,i,true)+'" alt=""></button>';
+      new Image().src=src(c,i);
+    }
+    strip.innerHTML=h;
+  }
+  function show(i){
+    var n=COLORS[state.color].n; state.photo=(i+n)%n;
+    var next=src(state.color,state.photo), pre=new Image();
+    mainImg.classList.add('fade');
+    pre.onload=pre.onerror=function(){
+      mainImg.src=next;
+      mainImg.alt='Кросівки Ягуар STIMUL, колір '+COLORS[state.color].name+', фото '+(state.photo+1);
+      mainImg.classList.remove('fade');
+    };
+    pre.src=next;
+    $('counter').textContent=(state.photo+1)+' / '+n;
+    [].forEach.call(strip.children,function(b,k){b.setAttribute('aria-current',k===state.photo?'true':'false')});
+    var t=strip.children[state.photo];
+    if(t&&strip.scrollTo) strip.scrollTo({left:t.offsetLeft-strip.clientWidth/2+t.clientWidth/2,behavior:'smooth'});
+  }
+  strip.addEventListener('click',function(e){var b=e.target.closest('button'); if(b) show(+b.dataset.i)});
+  $('prev').onclick=function(){show(state.photo-1)};
+  $('next').onclick=function(){show(state.photo+1)};
+  var sx=null;
+  $('frame').addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  $('frame').addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)show(state.photo+(dx<0?1:-1));sx=null});
+
+  /* Кольори */
+  var colorsEl=$('colors');
+  colorsEl.innerHTML=COLORS.map(function(c,i){
+    return '<button type="button" role="radio" data-i="'+i+'" aria-checked="'+(i===0)+'" title="'+c.name+'"><img src="'+src(i,0,true)+'" alt="'+c.name+'"></button>';
+  }).join('');
+  colorsEl.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    state.color=+b.dataset.i; state.photo=0;
+    [].forEach.call(colorsEl.children,function(x,k){x.setAttribute('aria-checked',k===state.color)});
+    $('colorName').textContent=COLORS[state.color].name;
+    drawStrip(); show(0); update();
+  });
+
+  /* Розмір і кількість */
+  var sizeSel=$('sizeSelect'), qInput=$('qInput');
+  sizeSel.innerHTML='<option value="">Оберіть розмір</option>'+SIZES.map(function(s){
+    var extra=s[0]>=47?', '+money(priceOf(s[0])):'';
+    return '<option value="'+s[0]+'">'+s[0]+' — устілка '+s[1]+' см'+extra+'</option>';
+  }).join('');
+  sizeSel.addEventListener('change',function(){
+    state.size=sizeSel.value?+sizeSel.value:null;
+    if(state.size) $('sizeErr').hidden=true;
+    update();
+  });
+  function setQty(n){state.qty=Math.max(1,Math.min(20,n||1));qInput.value=state.qty;update()}
+  $('qMinus').onclick=function(){setQty(state.qty-1)};
+  $('qPlus').onclick=function(){setQty(state.qty+1)};
+  qInput.addEventListener('change',function(){setQty(parseInt(qInput.value.replace(/\D/g,''),10))});
+
+  function update(){
+    var s=state.size,p=priceOf(s),o=oldOf(s);
+    $('priceNow').textContent=money(p).replace(' грн','');
+    $('priceOld').textContent=money(o);
+    $('dockPrice').textContent=state.qty>1?money(p*state.qty):money(p);
+    $('closeText').textContent=s?('Розмір '+s+', '+money(p)+' за пару'):'Шість кольорів, розміри 35–50, від 2 685 грн';
+  }
+
+  /* Кошик Tilda, на тестовій сторінці — демонстраційний */
+  var demo=[];
+  function hasCart(){return typeof window.tcart__addProduct==='function'}
+  function edition(){var c=ED[COLORS[state.color].id];return c?c[String(state.size)]:null}
+  function addPair(){
+    if(!state.size){
+      $('sizeErr').hidden=false;
+      $('sizeBlock').scrollIntoView({behavior:'smooth',block:'center'});
+      sizeSel.focus({preventScroll:true});
+      return;
+    }
+    var e=edition();
+    if(!e){alert('Цього розміру немає в каталозі. Зателефонуйте нам: 063 200 04 01');return}
+    if(hasCart()){
+      window.tcart__addProduct({
+        name:PRODUCT_NAME,price:e.price,img:e.img,url:PRODUCT_URL,uid:e.uid,sku:e.sku,quantity:state.qty,
+        options:[{option:'Сезон',variant:'Демі'},{option:'Доступні кольори',variant:e.cname},{option:'Розмір',variant:e.label}]
+      });
+    }else{
+      demo.push({price:e.price,quantity:state.qty});
+    }
+    drawCart();
+    var c=summary();
+    $('toastText').innerHTML='У кошику: <b>'+esc(COLORS[state.color].name)+', розмір '+state.size+'</b>'+(c.n>state.qty?(', разом '+c.n+' '+pairs(c.n)+' на '+money(c.sum)):'');
+    $('toast').hidden=false;
+    clearTimeout(window.__t); window.__t=setTimeout(function(){$('toast').hidden=true},9000);
+  }
+  function openCart(){
+    if(hasCart()&&typeof window.tcart__openCart==='function'){window.tcart__openCart();return}
+    alert('Демонстраційна сторінка: у Tilda тут відкривається кошик з оформленням замовлення.');
+  }
+  function summary(){
+    var list=(hasCart()&&window.tcart&&window.tcart.products)?window.tcart.products:demo,n=0,sum=0;
+    for(var i=0;i<list.length;i++){
+      var p=list[i]; if(!p||p.deleted==='yes') continue;
+      var q=parseInt(p.quantity,10)||0; n+=q; sum+=q*(parseFloat(p.price)||0);
+    }
+    return {n:n,sum:sum};
+  }
+  function drawCart(){
+    var c=summary();
+    $('cartCount').hidden=c.n<1; $('cartCount').textContent=c.n;
+    $('dockCount').hidden=c.n<1; $('dockCount').textContent=c.n;
+  }
+  document.addEventListener('click',function(e){
+    if(!e.target.closest) return;
+    if(e.target.closest('.js-add')){e.preventDefault();addPair();return}
+    if(e.target.closest('.js-checkout')){e.preventDefault();$('toast').hidden=true;openCart()}
+  });
+  $('toastClose').onclick=function(){$('toast').hidden=true};
+  setInterval(drawCart,1500);
+
+  /* Таймер акції */
+  function deadline(){var d=new Date();d.setHours(24,0,0,0);d.setDate(d.getDate()+1);return d.getTime()}
+  var end=deadline();
+  function pad(n){return n<10?'0'+n:''+n}
+  setInterval(function(){
+    var left=Math.floor((end-Date.now())/1000);
+    if(left<=0){end=deadline();left=Math.floor((end-Date.now())/1000)}
+    var d=Math.floor(left/86400);
+    $('clock').textContent=(d?d+' дн ':'')+pad(Math.floor(left%86400/3600))+':'+pad(Math.floor(left%3600/60))+':'+pad(left%60);
+  },1000);
+
+  /* Відгуки */
+  var list=$('revList'),SHOW=6;
+  function date(d){var p=d.split('-');return p[2]+'.'+p[1]+'.'+p[0]}
+  list.innerHTML=REVIEWS.map(function(r,i){
+    var long=r.text.length>300;
+    return '<article class="rev'+(long?' clip':'')+'"'+(i>=SHOW?' hidden':'')+'>'+
+      '<div class="who"><b>'+esc(r.name)+'</b><span>'+date(r.date)+'</span></div>'+
+      '<p>'+esc(r.text)+'</p>'+
+      (long?'<button type="button">Читати повністю</button>':'')+
+      (r.reply?'<div class="answer"><b>Відповідь STIMUL</b>'+esc(r.reply)+'</div>':'')+
+      '</article>';
+  }).join('');
+  list.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var card=b.closest('.rev'), closed=card.classList.toggle('clip');
+    b.textContent=closed?'Читати повністю':'Згорнути';
+  });
+  $('moreBtn').onclick=function(){[].forEach.call(list.children,function(a){a.hidden=false});this.hidden=true};
+
+  /* Відео вантажиться лише після натискання */
+  function film(box,id,title){
+    $(box+'Btn').onclick=function(){
+      $(box+'Box').innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0" title="'+title+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    };
+  }
+  film('film','p3rggrCux6A','Виробництво STIMUL');
+  film('fake','WRaBbQu3KHw','Обережно, підробка на кросівки Ягуар STIMUL');
+
+  drawStrip(); update(); drawCart();
+})();
+</script>
+</body>
+</html>
