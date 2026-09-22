@@ -233,7 +233,8 @@
 
   /* Фінал */
   .final{background:var(--white);border-top:1px solid var(--line)}
-  .final .wrap{padding-block:40px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center}
+  .final .wrap{padding-block:28px;display:flex;flex-wrap:nowrap;gap:8px;align-items:stretch;justify-content:center}
+  .final .btn{flex:1 1 0;min-width:0;padding:14px 10px;font-size:15px;line-height:20px;text-align:center}
 
   footer{border-top:1px solid var(--line)}
   footer .wrap{padding-block:20px 24px;display:grid;grid-template-columns:auto repeat(3,auto);gap:12px 32px;align-items:start;justify-content:space-between;font-size:13px;line-height:18px;color:var(--muted)}
@@ -284,6 +285,7 @@
     .swatches{grid-template-columns:repeat(3,1fr)}
     footer .wrap{grid-template-columns:minmax(0,1fr)}
     .head-phone span{display:none}
+    .final .btn{font-size:13px;padding:12px 8px}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
