@@ -66,7 +66,7 @@
   }
 
   /* Шапка */
-  .head{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .head{background:var(--white);border-bottom:1px solid var(--line)}
   .head .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
   .head img{height:40px;width:auto}
   .head-right{display:flex;align-items:center;gap:12px}
@@ -79,7 +79,8 @@
   .hero-media iframe{position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100%;min-width:177.78vh;transform:translate(-50%,-50%);border:0;pointer-events:none}
   .intro{padding-block:48px 8px}
   .intro h1{max-width:680px}
-  .intro-sub{margin-top:16px;max-width:680px;font-size:20px;line-height:28px;color:var(--ink-2)}
+  .intro-facts{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 12px;max-width:680px}
+  .intro-facts li{font-size:16px;line-height:24px;color:var(--ink-2);border:1px solid var(--line);border-radius:9999px;padding:6px 14px}
   .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
   .intro-proof{display:flex;align-items:center;gap:12px;margin-top:24px;font-size:14px;line-height:20px;color:var(--muted)}
   .stars{color:var(--brand);letter-spacing:2px}
@@ -172,13 +173,15 @@
 
   /* Користь: фото поруч зі списком */
   .why{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:48px;align-items:start;margin-top:40px}
-  .why-photo{position:sticky;top:88px;border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:#F4F4F5}
+  .why-photo{position:sticky;top:24px;border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:#F4F4F5}
   .why-photo img{width:100%;height:100%;object-fit:cover}
   .benefits{display:grid;gap:0}
   .benefit{padding:24px 0;border-top:1px solid var(--line)}
   .benefit:last-child{border-bottom:1px solid var(--line)}
   .benefit h3{font-size:20px;line-height:28px}
-  .benefit p{margin-top:8px;font-size:16px;line-height:24px;color:var(--ink-2);max-width:60ch}
+  .benefit ul{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:6px}
+  .benefit li{position:relative;padding-left:20px;font-size:16px;line-height:24px;color:var(--ink-2)}
+  .benefit li::before{content:"";position:absolute;left:0;top:10px;width:8px;height:8px;border-radius:9999px;background:var(--brand)}
 
   /* Фото на всю ширину між блоками */
   .band{margin-top:0}
@@ -192,11 +195,19 @@
   .step h3{font-size:18px;line-height:28px}
   .step p{margin-top:8px;font-size:16px;line-height:24px;color:var(--ink-2)}
 
+  .measure{border:1px solid var(--line);border-radius:16px;padding:16px;max-width:760px}
+  .measure img{width:100%;height:auto;border-radius:8px}
+  .measure figcaption{margin-top:12px;font-size:15px;line-height:22px;color:var(--ink-2)}
+
   /* Підробки */
   .warn{background:var(--brand-soft);border-block:1px solid #FFD9BC}
   .warn .wrap{padding-block:64px}
   .warn h2{max-width:680px}
   .warn p{margin-top:16px;max-width:680px;font-size:18px;line-height:28px;color:var(--ink-2)}
+  .fake-list{margin:20px 0 0;padding:0;list-style:none;display:grid;gap:8px;max-width:680px}
+  .fake-list li{position:relative;padding-left:28px;font-size:17px;line-height:26px;color:var(--ink)}
+  .fake-list li::before{content:"×";position:absolute;left:6px;top:0;color:#B91C1C;font-weight:700;font-size:20px}
+  .fake-punch{font-weight:700;font-size:20px!important;line-height:28px!important;color:var(--ink)!important}
   .warn .stage{margin-top:32px;max-width:800px}
 
   /* Відгуки */
@@ -207,6 +218,9 @@
   .rev p{margin-top:12px;font-size:16px;line-height:24px;white-space:pre-line;overflow-wrap:anywhere}
   .rev.clip > p{display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
   .rev button{margin-top:12px;border:0;background:none;padding:0;font-size:14px;line-height:20px;font-weight:600;cursor:pointer;color:var(--brand-press)}
+
+  .shots{columns:3 280px;column-gap:16px;margin-top:24px}
+  .shots img{width:100%;height:auto;border:1px solid var(--line);border-radius:12px;margin-bottom:16px;break-inside:avoid}
 
   /* Питання */
   .faq{margin-top:40px;border-top:1px solid var(--line)}
@@ -219,13 +233,12 @@
 
   /* Фінал */
   .final{background:var(--white);border-top:1px solid var(--line)}
-  .final .wrap{padding-block:64px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
-  .final p{margin-top:12px;font-size:18px;line-height:28px;color:var(--ink-2)}
+  .final .wrap{padding-block:40px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center}
 
   footer{border-top:1px solid var(--line)}
-  footer .wrap{padding-block:32px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;font-size:14px;line-height:20px;color:var(--muted)}
-  footer img{height:36px;width:auto}
-  footer b{display:block;color:var(--ink);font-weight:600;margin-bottom:8px}
+  footer .wrap{padding-block:20px 24px;display:grid;grid-template-columns:auto repeat(3,auto);gap:12px 32px;align-items:start;justify-content:space-between;font-size:13px;line-height:18px;color:var(--muted)}
+  footer img{height:28px;width:auto}
+  footer b{display:block;color:var(--ink);font-weight:600;margin-bottom:2px}
   footer a{text-decoration:none}
   footer a:hover{text-decoration:underline}
 
@@ -236,6 +249,15 @@
   .toast p{font-size:14px;line-height:20px}
   .toast .btn{padding:8px 12px;font-size:14px}
   .toast .btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+
+  .callback{position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.5);display:grid;place-items:center;padding:16px}
+  .callback-card{position:relative;background:var(--white);border-radius:16px;padding:24px;width:100%;max-width:400px}
+  .callback-x{position:absolute;right:12px;top:8px;border:0;background:none;font-size:28px;line-height:1;cursor:pointer;color:var(--muted)}
+  .cb-sub{margin-top:8px;font-size:15px;line-height:22px;color:var(--ink-2)}
+  .cb-label{display:block;margin-top:16px;font-size:14px;line-height:20px;color:var(--muted)}
+  .cb-note{margin-top:12px;font-size:14px;line-height:20px;color:var(--muted)}
+  #cbPhone{width:100%;height:56px;margin-top:8px;border:1px solid var(--ink);border-radius:12px;padding:0 16px;font:500 16px var(--font)}
+  #cbPhone:focus{outline:2px solid var(--brand);outline-offset:2px}
 
   .dock{display:none}
 
@@ -298,7 +320,13 @@
   <section class="intro">
     <div class="wrap">
       <h1>Міські кросівки, у яких минає цілий день</h1>
-      <p class="intro-sub">Ягуар, демісезон. Нубук і кордура, поліуретанова підошва, 396 грамів на нозі. Лаконічний силует без зайвого декору. Власне виробництво у Вінниці.</p>
+      <ul class="intro-facts">
+        <li>Демісезон</li>
+        <li>Нубук і кордура</li>
+        <li>Поліуретанова підошва</li>
+        <li>396 грамів на нозі</li>
+        <li>Власне виробництво у Вінниці</li>
+      </ul>
       <div class="hero-cta">
         <button class="btn js-scroll" type="button" data-target="product">Обрати розмір і колір</button>
         <button class="btn btn--ghost js-scroll" type="button" data-target="reviews">Читати відгуки</button>
@@ -343,27 +371,22 @@
         </div>
 
         <div class="field" id="sizeField">
-          <span>Розмір і кількість пар</span>
-          <div class="pair">
-            <select id="sizeSelect" aria-label="Розмір"></select>
-            <div class="stepper">
-              <button type="button" id="qtyMinus" aria-label="Менше">−</button>
-              <input id="qtyInput" type="text" inputmode="numeric" value="1" aria-label="Кількість пар">
-              <button type="button" id="qtyPlus" aria-label="Більше">+</button>
-            </div>
-          </div>
+          <span>Розмір</span>
+          <select id="sizeSelect" aria-label="Розмір"></select>
           <p class="hint-error" id="sizeError" hidden>Оберіть розмір, щоб додати пару в кошик</p>
         </div>
 
         <div class="actions">
           <button class="btn js-add" type="button">Додати в кошик</button>
-          <button class="btn btn--ghost js-cart" type="button">Кошик<span id="cartCount" hidden></span></button>
+          <button class="btn btn--ghost js-call" type="button">Подзвоніть мені</button>
         </div>
 
         <dl class="terms">
+          <div><dt>Гарантія</dt><dd>1 рік гарантії на підошву та 60 днів на верх взуття</dd></div>
+          <div><dt>Відправка</dt><dd>у день замовлення, якщо ваш розмір на складі</dd></div>
+          <div><dt>Немає розміру</dt><dd>відшиваємо на власному виробництві за 3 дні</dd></div>
           <div><dt>Доставка</dt><dd>по всій Україні</dd></div>
           <div><dt>Оплата</dt><dd>безготівкова або накладений платіж з мінімальною передоплатою</dd></div>
-          <div><dt>Гарантія</dt><dd>рік на підошву та 60 днів на верх</dd></div>
         </dl>
       </div>
     </div>
@@ -398,9 +421,9 @@
       <h2>Скільки їх носять насправді</h2>
       <p class="eyebrow" style="margin-top:12px">Строки з відгуків покупців на нашому сайті, без правок.</p>
       <div class="proof-grid">
-        <article class="proof-card"><b>4 роки</b><p>Носила чотири роки й купила ще одну пару.</p><cite>Альона Миколаївна, військова</cite></article>
-        <article class="proof-card"><b>1,5 роки</b><p>Полігон, поля, паркет. Стельки для моєї зламаної п'ятки просто шедевр.</p><cite>Алексей Бондаренко</cite></article>
+        <article class="proof-card"><b>4 роки</b><p>Носила чотири роки й купила ще одну пару.</p><cite>Альона Миколаївна</cite></article>
         <article class="proof-card"><b>3 пари</b><p>Ходжу зимою і літом, і в саду. Розмірна сітка чітко підійшла.</p><cite>Sergey Menchura</cite></article>
+        <article class="proof-card"><b>Щодня на роботу</b><p>Вперше зустріли взуття, у якому не пітніють ноги. Чоловік із задоволенням носить на роботу кожного дня.</p><cite>Олена Ященко</cite></article>
       </div>
 
     </div>
@@ -416,12 +439,11 @@
           <img src="../img/chornyi-5.jpg" alt="Чорні кросівки Ягуар на нозі, вигляд збоку" loading="lazy" width="1000" height="1000">
         </figure>
         <div class="benefits">
-        <article class="benefit"><h3>Спокійний вигляд на щодень</h3><p>Стриманий силует без зайвого декору й шість кольорів від чорного до койота. Пара однаково доречна в місті, на роботі й на вихідних.</p></article>
-        <article class="benefit"><h3>396 грамів на нозі</h3><p>Поліуретанова підошва легка й гнучка, амортизує крок і зменшує втому при тривалому носінні.</p></article>
-        <article class="benefit"><h3>Нога залишається сухою</h3><p>Підкладка з вологовідвідної мембранної тканини. Покупці пишуть, що ноги не пітніють навіть після цілого дня.</p></article>
-        <article class="benefit"><h3>Верх тримає форму</h3><p>Натуральний нубук із тканиною кордура витримує складні погодні умови й не втрачає вигляду.</p></article>
-        <article class="benefit"><h3>Устілку можна замінити</h3><p>Устілка анатомічна і вставна, тож можна покласти власну ортопедичну.</p></article>
-        <article class="benefit"><h3>Асфальт, плитка, сходи</h3><p>Покупці пишуть, що підошва не сковзає ні на плитці, ні на паркеті, ні на мокрому асфальті.</p></article>
+        <article class="benefit"><h3>396 грамів на нозі</h3><ul><li>легка поліуретанова підошва</li><li>амортизує крок</li><li>менше втоми ввечері</li></ul></article>
+        <article class="benefit"><h3>Нога залишається сухою</h3><ul><li>вологовідвідна мембранна підкладка</li><li>ноги не пітніють</li><li>взуття не дає запаху</li></ul></article>
+        <article class="benefit"><h3>Верх тримає форму</h3><ul><li>натуральна шкіра нубук</li><li>тканина кордура</li><li>не боїться дощу й багнюки</li></ul></article>
+        <article class="benefit"><h3>Устілка під себе</h3><ul><li>анатомічна, вставна</li><li>можна покласти свою ортопедичну</li></ul></article>
+        <article class="benefit"><h3>Не сковзає</h3><ul><li>плитка, паркет, мокрий асфальт</li><li>глибокий протектор</li></ul></article>
         </div>
       </div>
     </div>
@@ -438,6 +460,10 @@
   <section class="section section--tight">
     <div class="wrap">
       <h2>Як не помилитися з розміром</h2>
+      <figure class="measure" style="margin:24px 0 0">
+        <img src="../img/measure.jpg" alt="Як виміряти стопу: обвести стопу олівцем і виміряти довжину в сантиметрах" loading="lazy" width="700" height="285">
+        <figcaption>Поставте стопу на аркуш, обведіть олівцем і виміряйте довжину в сантиметрах. Або виміряйте устілку взуття, у якому вам зручно.</figcaption>
+      </figure>
       <div class="steps">
         <article class="step"><b>1</b><div><h3>Візьміть зручне взуття</h3><p>Те, у якому вам добре ходити зараз.</p></div></article>
         <article class="step"><b>2</b><div><h3>Виміряйте устілку</h3><p>Довжину до загину, у сантиметрах.</p></div></article>
@@ -449,7 +475,17 @@
   <section class="warn">
     <div class="wrap">
       <h2>Обережно: підробки Ягуара</h2>
-      <p>У мережі з'явилися продавці, які під виглядом STIMUL продають підробки: на OLX, маркетплейсах без перевірки продавців і через фейкові сторінки в Instagram. Вони беруть фото з нашого сайту, а надсилають взуття з дешевих матеріалів, з іншою підошвою, кривим пошиттям і без гарантії. У відео показуємо, як відрізнити оригінал.</p>
+      <p>Під виглядом STIMUL на OLX, маркетплейсах і фейкових сторінках в Instagram продають копії. Фото беруть з нашого сайту, а в коробці ви отримуєте зовсім інше взуття.</p>
+      <ul class="fake-list">
+        <li>дешевий кожзам замість натурального нубуку</li>
+        <li>китайська підкладка, у якій нога пітніє з першої години</li>
+        <li>різкий запах клею, який не вивітрюється</li>
+        <li>сліди клею на швах і криве пошиття</li>
+        <li>підошва, що відклеюється за місяць</li>
+        <li>жодної гарантії: продавець зникає після оплати</li>
+      </ul>
+      <p class="fake-punch">Ви готові взути це на свої ноги та ходити в цьому щодня?</p>
+      <p>Оригінал ви можете купити напряму у виробника. У відео показуємо, як відрізнити його від підробки.</p>
       <div class="stage" id="fakeStage">
         <button class="stage-poster" type="button" id="fakePlay" aria-label="Дивитися відео про підробки кросівок Ягуар">
           <img src="https://i.ytimg.com/vi/WRaBbQu3KHw/hqdefault.jpg" alt="Порівняння оригінальних кросівок Ягуар і підробки" loading="lazy" width="480" height="360">
@@ -466,6 +502,16 @@
       <p class="eyebrow" style="margin-top:12px">16 відгуків із сайту stimul.in.ua, середня оцінка 5 з 5.</p>
       <div class="rev-grid" id="revGrid"></div>
       <button class="btn btn--ghost" type="button" id="revMore" style="margin-top:16px">Показати всі 16 відгуків</button>
+
+      <h3 style="margin-top:56px;font-size:24px;line-height:32px">Пишуть у соцмережах</h3>
+      <div class="shots">
+        <img src="../media/rev-1.jpg" alt="Відгук покупця у Facebook про кросівки Ягуар" loading="lazy" width="900" height="760">
+        <img src="../media/rev-2.jpg" alt="Відгук покупчині про кросівки Ягуар" loading="lazy" width="900" height="551">
+        <img src="../media/rev-3.jpg" alt="Відгук покупця: ноги увечері не гудуть" loading="lazy" width="900" height="401">
+        <img src="../media/rev-4.jpg" alt="Відгук: весна, літо, осінь — вони впорались" loading="lazy" width="623" height="196">
+        <img src="../media/rev-5.jpg" alt="Відгук покупця, який носить Ягуар з 2018 року" loading="lazy" width="406" height="118">
+        <img src="../media/rev-6.jpg" alt="Відгук: ношу майже нонстоп дев'ять місяців" loading="lazy" width="421" height="174">
+      </div>
     </div>
   </section>
 
@@ -481,7 +527,7 @@
         </details>
         <details>
           <summary>А якщо розмір усе одно не підійде?</summary>
-          <p>Напишіть або зателефонуйте нам за номером 063 200 04 01, і ми домовимося про обмін.</p>
+          <p>Якщо розмір не підійде, ми без проблем обміняємо. Напишіть або зателефонуйте за номером 063 200 04 01.</p>
         </details>
         <details>
           <summary>Як переконатися, що це оригінал, а не підробка?</summary>
@@ -489,7 +535,12 @@
         </details>
         <details>
           <summary>Яка гарантія?</summary>
-          <p>Гарантія від виробника: рік на підошву та 60 днів на верх.</p>
+          <p>Гарантія 1 рік на підошву та 60 днів на верх взуття. Гарантія поширюється лише на виробничий брак.</p>
+          <p style="margin-top:12px">Вона не покриває механічні пошкодження та природний знос: пошкодження, що виникли під час експлуатації, від зовнішнього впливу або природного зношування матеріалів. На устілку та шнурки гарантія не поширюється.</p>
+        </details>
+        <details>
+          <summary>Коли ви відправите замовлення?</summary>
+          <p>Якщо ваш розмір є на складі, відправляємо в день замовлення. Якщо розміру немає, відшиваємо пару на власному виробництві за 3 дні.</p>
         </details>
       </div>
     </div>
@@ -497,11 +548,8 @@
 
   <section class="final">
     <div class="wrap">
-      <div>
-        <h2>Оберіть пару для міста</h2>
-        <p id="finalLine">Шість кольорів, розміри 35 до 50, від 2 685 грн</p>
-      </div>
       <button class="btn js-scroll" type="button" data-target="product">Обрати розмір і колір</button>
+      <button class="btn btn--ghost js-call" type="button">Подзвоніть мені</button>
     </div>
   </section>
 </main>
@@ -519,6 +567,26 @@
   <span class="dock-price" id="dockPrice">2 685 грн</span>
   <button class="btn js-add" type="button">Додати в кошик</button>
   <button class="btn btn--ghost js-cart" type="button">Кошик<span id="dockCount" hidden></span></button>
+</div>
+
+<div class="callback" id="callback" hidden>
+  <div class="callback-card" role="dialog" aria-modal="true" aria-labelledby="cbTitle">
+    <button class="callback-x" type="button" id="cbClose" aria-label="Закрити">×</button>
+    <div id="cbForm">
+      <h3 id="cbTitle">Подзвоніть мені</h3>
+      <p class="cb-sub">Залиште номер, ми передзвонимо й допоможемо з розміром</p>
+      <label class="cb-label" for="cbPhone">Телефон</label>
+      <input id="cbPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+380 __ ___ __ __">
+      <p class="hint-error" id="cbError" hidden>Вкажіть номер: +380 і 9 цифр</p>
+      <button class="btn btn--wide" type="button" id="cbSend" style="margin-top:16px">Передзвоніть мені</button>
+      <p class="cb-note">Або наберіть самі: <a href="tel:+380632000401">063 200 04 01</a></p>
+    </div>
+    <div id="cbDone" hidden>
+      <h3>Дякуємо</h3>
+      <p class="cb-sub">Ми зателефонуємо вам найближчим часом.</p>
+      <p class="cb-note">Демонстраційна сторінка: заявка поки нікуди не надсилається.</p>
+    </div>
+  </div>
 </div>
 
 <div class="toast" id="toast" hidden>
@@ -624,7 +692,7 @@
   });
 
   /* Розмір і кількість */
-  var sizeSel=$('sizeSelect'), qty=$('qtyInput');
+  var sizeSel=$('sizeSelect');
   sizeSel.innerHTML='<option value="">Оберіть розмір</option>'+SIZES.map(function(s){
     var extra=s[0]>=47?', '+money(priceOf(s[0])):'';
     return '<option value="'+s[0]+'">'+s[0]+', устілка '+s[1]+' см'+extra+'</option>';
@@ -634,17 +702,12 @@
     if(state.size) $('sizeError').hidden=true;
     update();
   });
-  function setQty(n){state.qty=Math.max(1,Math.min(20,n||1));qty.value=state.qty;update()}
-  $('qtyMinus').onclick=function(){setQty(state.qty-1)};
-  $('qtyPlus').onclick=function(){setQty(state.qty+1)};
-  qty.addEventListener('change',function(){setQty(parseInt(qty.value.replace(/\D/g,''),10))});
 
   function update(){
     var s=state.size,p=priceOf(s);
     $('priceNow').textContent=money(p).replace(' грн','');
     $('priceOld').textContent=money(oldOf(s));
     $('dockPrice').textContent=money(p*state.qty);
-    $('finalLine').textContent=s?('Розмір '+s+', '+money(p)+' за пару'):'Шість кольорів, розміри 35 до 50, від 2 685 грн';
   }
 
   /* Кошик */
@@ -688,15 +751,31 @@
   }
   function drawCart(){
     var c=summary();
-    $('cartCount').hidden=c.n<1; $('cartCount').textContent=' '+c.n;
     $('dockCount').hidden=c.n<1; $('dockCount').textContent=' '+c.n;
   }
   document.addEventListener('click',function(e){
     if(!e.target.closest) return;
     if(e.target.closest('.js-add')){e.preventDefault();addPair();return}
-    if(e.target.closest('.js-cart')){e.preventDefault();$('toast').hidden=true;openCart()}
+    if(e.target.closest('.js-cart')){e.preventDefault();$('toast').hidden=true;openCart();return}
+    if(e.target.closest('.js-call')){e.preventDefault();openCb()}
   });
   $('toastClose').onclick=function(){$('toast').hidden=true};
+
+  /* Подзвоніть мені */
+  function digits(v){var d=v.replace(/\D/g,''); if(d.indexOf('380')===0)d=d.slice(3); else if(d.charAt(0)==='0')d=d.slice(1); return d.slice(0,9)}
+  function fmtPhone(d){var o='+380'; if(d.length)o+=' '+d.slice(0,2); if(d.length>2)o+=' '+d.slice(2,5); if(d.length>5)o+=' '+d.slice(5,7); if(d.length>7)o+=' '+d.slice(7,9); return o}
+  var cbPhone=$('cbPhone');
+  cbPhone.addEventListener('focus',function(){ if(!cbPhone.value) cbPhone.value='+380 ' });
+  cbPhone.addEventListener('input',function(){ cbPhone.value=fmtPhone(digits(cbPhone.value)); $('cbError').hidden=true });
+  function openCb(){ $('callback').hidden=false; $('cbForm').hidden=false; $('cbDone').hidden=true; setTimeout(function(){cbPhone.focus()},60) }
+  function closeCb(){ $('callback').hidden=true }
+  $('cbClose').onclick=closeCb;
+  $('callback').addEventListener('click',function(e){ if(e.target===$('callback')) closeCb() });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeCb() });
+  $('cbSend').onclick=function(){
+    if(digits(cbPhone.value).length!==9){ $('cbError').hidden=false; cbPhone.focus(); return }
+    $('cbForm').hidden=true; $('cbDone').hidden=false;
+  };
   setInterval(drawCart,1500);
 
   /* Таймер */
