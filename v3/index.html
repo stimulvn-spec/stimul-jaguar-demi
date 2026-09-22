@@ -152,22 +152,16 @@
   .terms dt{color:var(--muted);margin:0}
   .terms dd{margin:0}
 
-  /* Гасло */
-  .tagline{background:var(--white);border-block:1px solid var(--line)}
-  .tagline .wrap{padding-block:96px}
-  .tagline p{max-width:680px;font-size:48px;line-height:1.05;font-weight:700;letter-spacing:-.03em}
-  .tagline span{color:rgba(0,0,0,.28);transition:color 600ms var(--ease-out)}
-  .tagline span.lit{color:var(--ink)}
 
   /* Відео покупців у місті */
-  .clips{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
-  .clip{position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:#000;border:1px solid var(--line)}
-  .clip video,.clip img{width:100%;height:100%;object-fit:cover}
-  .clip video{position:absolute;inset:0}
-  .clip-play{position:absolute;inset:0;width:100%;height:100%;border:0;background:none;cursor:pointer;display:grid;place-items:center}
-  .clip-play span{width:56px;height:56px;border-radius:9999px;background:var(--brand);display:grid;place-items:center;transition:transform 160ms var(--ease-out)}
-  .clip-play:active span{transform:scale(.94)}
-  .clip-play svg{width:22px;height:22px;margin-left:3px;color:#fff}
+  .cityclips{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
+  .cityclip{position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:#000;border:1px solid var(--line)}
+  .cityclip video,.cityclip img{width:100%;height:100%;object-fit:cover}
+  .cityclip video{position:absolute;inset:0}
+  .cityclip-play{position:absolute;inset:0;width:100%;height:100%;border:0;background:none;cursor:pointer;display:grid;place-items:center}
+  .cityclip-play span{width:56px;height:56px;border-radius:9999px;background:var(--brand);display:grid;place-items:center;transition:transform 160ms var(--ease-out)}
+  .cityclip-play:active span{transform:scale(.94)}
+  .cityclip-play svg{width:22px;height:22px;margin-left:3px;color:#fff}
 
   /* Докази носіння */
   .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
@@ -176,17 +170,26 @@
   .proof-card p{margin-top:8px;font-size:14px;line-height:20px;color:var(--ink-2)}
   .proof-card cite{display:block;margin-top:12px;font-size:14px;line-height:20px;color:var(--muted);font-style:normal}
 
-  /* Користь */
-  .benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px}
-  .benefit{border:1px solid var(--line);border-radius:16px;padding:24px}
-  .benefit h3{font-size:18px;line-height:28px}
-  .benefit p{margin-top:8px;font-size:16px;line-height:24px;color:var(--ink-2)}
+  /* Користь: фото поруч зі списком */
+  .why{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:48px;align-items:start;margin-top:40px}
+  .why-photo{position:sticky;top:88px;border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:#F4F4F5}
+  .why-photo img{width:100%;height:100%;object-fit:cover}
+  .benefits{display:grid;gap:0}
+  .benefit{padding:24px 0;border-top:1px solid var(--line)}
+  .benefit:last-child{border-bottom:1px solid var(--line)}
+  .benefit h3{font-size:20px;line-height:28px}
+  .benefit p{margin-top:8px;font-size:16px;line-height:24px;color:var(--ink-2);max-width:60ch}
+
+  /* Фото на всю ширину між блоками */
+  .band{margin-top:0}
+  .band img{width:100%;height:clamp(240px,42vw,460px);object-fit:cover;object-position:center 65%;border-radius:16px}
+  .band figcaption{margin-top:12px;font-size:14px;line-height:20px;color:var(--muted)}
 
   /* Як обрати розмір */
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;counter-reset:step}
-  .step{border:1px solid var(--line);border-radius:16px;padding:24px}
-  .step b{display:block;font-size:14px;line-height:20px;color:var(--brand-press);font-weight:600}
-  .step h3{margin-top:8px;font-size:18px;line-height:28px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:40px}
+  .step{display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px;align-items:start}
+  .step b{width:48px;height:48px;border-radius:9999px;background:var(--brand);color:#fff;display:grid;place-items:center;font-size:20px;font-weight:700}
+  .step h3{font-size:18px;line-height:28px}
   .step p{margin-top:8px;font-size:16px;line-height:24px;color:var(--ink-2)}
 
   /* Підробки */
@@ -204,8 +207,6 @@
   .rev p{margin-top:12px;font-size:16px;line-height:24px;white-space:pre-line;overflow-wrap:anywhere}
   .rev.clip > p{display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
   .rev button{margin-top:12px;border:0;background:none;padding:0;font-size:14px;line-height:20px;font-weight:600;cursor:pointer;color:var(--brand-press)}
-  .rev-answer{margin-top:16px;background:#F4F4F5;border-radius:12px;padding:12px;font-size:14px;line-height:20px}
-  .rev-answer b{display:block;color:var(--muted);font-weight:600}
 
   /* Питання */
   .faq{margin-top:40px;border-top:1px solid var(--line)}
@@ -242,10 +243,10 @@
     h1{font-size:36px;line-height:40px}
     h2{font-size:30px;line-height:36px}
     .hero-grid,.product{grid-template-columns:minmax(0,1fr);gap:32px}
-    .proof-grid,.benefits,.steps{grid-template-columns:repeat(2,1fr)}
-    .clips{grid-template-columns:repeat(2,1fr)}
-    .tagline p{font-size:36px}
-    .tagline .wrap{padding-block:64px}
+    .proof-grid,.steps{grid-template-columns:repeat(2,1fr)}
+    .why{grid-template-columns:minmax(0,1fr);gap:24px}
+    .why-photo{position:static;aspect-ratio:16/10}
+    .cityclips{grid-template-columns:repeat(2,1fr)}
     .section{padding-block:56px}
     footer .wrap{grid-template-columns:repeat(2,1fr)}
     body{padding-bottom:80px}
@@ -256,17 +257,15 @@
     .toast{bottom:calc(88px + env(safe-area-inset-bottom,0px))}
   }
   @media (max-width:560px){
-    .proof-grid,.benefits,.steps,.pair{grid-template-columns:minmax(0,1fr)}
-    .clips{grid-template-columns:repeat(2,1fr);gap:12px}
+    .proof-grid,.steps,.pair{grid-template-columns:minmax(0,1fr)}
+    .cityclips{grid-template-columns:repeat(2,1fr);gap:12px}
     .swatches{grid-template-columns:repeat(3,1fr)}
-    .tagline p{font-size:30px;line-height:36px}
     footer .wrap{grid-template-columns:minmax(0,1fr)}
     .head-phone span{display:none}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     *{transition-duration:.01ms!important;animation-duration:.01ms!important}
-    .tagline span{color:var(--ink)}
   }
 </style>
 </head>
@@ -299,7 +298,7 @@
   <section class="intro">
     <div class="wrap">
       <h1>Міські кросівки, у яких минає цілий день</h1>
-      <p class="intro-sub">Ягуар, демісезон. Нубук і кордура, поліуретанова підошва, 396 грамів на нозі. Лаконічний силует без зайвого декору. Шиємо самі у Вінниці.</p>
+      <p class="intro-sub">Ягуар, демісезон. Нубук і кордура, поліуретанова підошва, 396 грамів на нозі. Лаконічний силует без зайвого декору. Власне виробництво у Вінниці.</p>
       <div class="hero-cta">
         <button class="btn js-scroll" type="button" data-target="product">Обрати розмір і колір</button>
         <button class="btn btn--ghost js-scroll" type="button" data-target="reviews">Читати відгуки</button>
@@ -370,13 +369,31 @@
     </div>
   </section>
 
-  <section class="tagline" id="tagline">
+  <section class="section">
     <div class="wrap">
-      <p id="taglineText">У місті взуття має бути зручним зранку до ночі й мати нормальний вигляд. Ягуар поєднує і те, і те.</p>
+      <h2>Ягуар у місті</h2>
+      <div class="cityclips" id="cityclips" style="margin-top:32px">
+        <figure class="cityclip" style="margin:0">
+          <video src="../media/city-1.mp4" poster="../media/city-1.jpg" muted loop playsinline preload="none" aria-label="Кросівки Ягуар під час ходьби містом"></video>
+          <button class="clip-play" type="button" aria-label="Відтворити відео"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
+        </figure>
+        <figure class="cityclip" style="margin:0">
+          <video src="../media/city-2.mp4" poster="../media/city-2.jpg" muted loop playsinline preload="none" aria-label="Шнурування кросівок Ягуар"></video>
+          <button class="clip-play" type="button" aria-label="Відтворити відео"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
+        </figure>
+        <figure class="cityclip" style="margin:0">
+          <video src="../media/city-3.mp4" poster="../media/city-3.jpg" muted loop playsinline preload="none" aria-label="Кросівки Ягуар на траві та бруківці"></video>
+          <button class="clip-play" type="button" aria-label="Відтворити відео"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
+        </figure>
+        <figure class="cityclip" style="margin:0">
+          <video src="../media/city-4.mp4" poster="../media/city-4.jpg" muted loop playsinline preload="none" aria-label="Прогулянка в кросівках Ягуар вулицею міста"></video>
+          <button class="clip-play" type="button" aria-label="Відтворити відео"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
+        </figure>
+      </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section--tight">
     <div class="wrap">
       <h2>Скільки їх носять насправді</h2>
       <p class="eyebrow" style="margin-top:12px">Строки з відгуків покупців на нашому сайті, без правок.</p>
@@ -386,26 +403,6 @@
         <article class="proof-card"><b>3 пари</b><p>Ходжу зимою і літом, і в саду. Розмірна сітка чітко підійшла.</p><cite>Sergey Menchura</cite></article>
       </div>
 
-      <h3 style="margin-top:56px;font-size:24px;line-height:32px">Ягуар у місті, зняте покупцями</h3>
-      <p class="eyebrow" style="margin-top:8px">Бруківка, сходи, трава, звичайний день у Вінниці.</p>
-      <div class="clips" id="clips">
-        <figure class="clip" style="margin:0">
-          <video src="../media/city-1.mp4" poster="../media/city-1.jpg" muted loop playsinline preload="none" aria-label="Кросівки Ягуар під час ходьби містом"></video>
-          <button class="clip-play" type="button" aria-label="Відтворити відео"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
-        </figure>
-        <figure class="clip" style="margin:0">
-          <video src="../media/city-2.mp4" poster="../media/city-2.jpg" muted loop playsinline preload="none" aria-label="Шнурування кросівок Ягуар"></video>
-          <button class="clip-play" type="button" aria-label="Відтворити відео"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
-        </figure>
-        <figure class="clip" style="margin:0">
-          <video src="../media/city-3.mp4" poster="../media/city-3.jpg" muted loop playsinline preload="none" aria-label="Кросівки Ягуар на траві та бруківці"></video>
-          <button class="clip-play" type="button" aria-label="Відтворити відео"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
-        </figure>
-        <figure class="clip" style="margin:0">
-          <video src="../media/city-4.mp4" poster="../media/city-4.jpg" muted loop playsinline preload="none" aria-label="Прогулянка в кросівках Ягуар вулицею міста"></video>
-          <button class="clip-play" type="button" aria-label="Відтворити відео"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
-        </figure>
-      </div>
     </div>
   </section>
 
@@ -414,14 +411,27 @@
   <section class="section">
     <div class="wrap">
       <h2>Чому Ягуар працює в місті</h2>
-      <div class="benefits">
+      <div class="why">
+        <figure class="why-photo" style="margin:0">
+          <img src="../img/chornyi-5.jpg" alt="Чорні кросівки Ягуар на нозі, вигляд збоку" loading="lazy" width="1000" height="1000">
+        </figure>
+        <div class="benefits">
         <article class="benefit"><h3>Спокійний вигляд на щодень</h3><p>Стриманий силует без зайвого декору й шість кольорів від чорного до койота. Пара однаково доречна в місті, на роботі й на вихідних.</p></article>
         <article class="benefit"><h3>396 грамів на нозі</h3><p>Поліуретанова підошва легка й гнучка, амортизує крок і зменшує втому при тривалому носінні.</p></article>
         <article class="benefit"><h3>Нога залишається сухою</h3><p>Підкладка з вологовідвідної мембранної тканини. Покупці пишуть, що ноги не пітніють навіть після цілого дня.</p></article>
         <article class="benefit"><h3>Верх тримає форму</h3><p>Натуральний нубук із тканиною кордура витримує складні погодні умови й не втрачає вигляду.</p></article>
         <article class="benefit"><h3>Устілку можна замінити</h3><p>Устілка анатомічна і вставна, тож можна покласти власну ортопедичну.</p></article>
         <article class="benefit"><h3>Асфальт, плитка, сходи</h3><p>Покупці пишуть, що підошва не сковзає ні на плитці, ні на паркеті, ні на мокрому асфальті.</p></article>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="wrap">
+      <figure class="band" style="margin:0">
+        <img src="../img/chornyi-1.jpg" alt="Людина йде містом у чорних кросівках Ягуар" loading="lazy" width="1000" height="1000">
+      </figure>
     </div>
   </section>
 
@@ -429,9 +439,9 @@
     <div class="wrap">
       <h2>Як не помилитися з розміром</h2>
       <div class="steps">
-        <article class="step"><b>Крок 1</b><h3>Візьміть зручне взуття</h3><p>Те, у якому вам добре ходити зараз.</p></article>
-        <article class="step"><b>Крок 2</b><h3>Виміряйте устілку</h3><p>Довжину до загину, у сантиметрах.</p></article>
-        <article class="step"><b>Крок 3</b><h3>Знайдіть її у списку</h3><p>У виборі розміру поряд із кожним номером указана довжина устілки.</p></article>
+        <article class="step"><b>1</b><div><h3>Візьміть зручне взуття</h3><p>Те, у якому вам добре ходити зараз.</p></div></article>
+        <article class="step"><b>2</b><div><h3>Виміряйте устілку</h3><p>Довжину до загину, у сантиметрах.</p></div></article>
+        <article class="step"><b>3</b><div><h3>Знайдіть її у списку</h3><p>У виборі розміру поряд із кожним номером указана довжина устілки.</p></div></article>
       </div>
     </div>
   </section>
@@ -709,7 +719,6 @@
       '<div class="rev-top"><b>'+esc(r.name)+'</b><span>'+fmt(r.date)+'</span></div>'+
       '<p>'+esc(r.text)+'</p>'+
       (long?'<button type="button">Читати повністю</button>':'')+
-      (r.reply?'<div class="rev-answer"><b>Відповідь STIMUL</b>'+esc(r.reply)+'</div>':'')+
       '</article>';
   }).join('');
   grid.addEventListener('click',function(e){
@@ -719,30 +728,14 @@
   });
   $('revMore').onclick=function(){[].forEach.call(grid.children,function(a){a.hidden=false});this.hidden=true};
 
-  /* Гасло: слова засвічуються одне за одним */
-  (function(){
-    var p=$('taglineText'), words=p.textContent.split(' ');
-    p.innerHTML=words.map(function(w){return '<span>'+esc(w)+'</span>'}).join(' ');
-    var spans=p.querySelectorAll('span');
-    if(!('IntersectionObserver' in window)){[].forEach.call(spans,function(s){s.classList.add('lit')});return}
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(!en.isIntersecting) return;
-        [].forEach.call(spans,function(s,i){setTimeout(function(){s.classList.add('lit')},i*60)});
-        io.disconnect();
-      });
-    },{threshold:.35});
-    io.observe(p);
-  })();
-
   /* Відео «у місті»: вмикаються, коли потрапляють на екран, і ставляться на паузу, коли зникають */
   (function(){
-    var box=$('clips'); if(!box) return;
-    var clips=[].slice.call(box.querySelectorAll('.clip'));
+    var box=$('cityclips'); if(!box) return;
+    var clips=[].slice.call(box.querySelectorAll('.cityclip'));
     var saver=(navigator.connection&&navigator.connection.saveData)||
               window.matchMedia('(prefers-reduced-motion:reduce)').matches;
     clips.forEach(function(fig){
-      var v=fig.querySelector('video'), btn=fig.querySelector('.clip-play');
+      var v=fig.querySelector('video'), btn=fig.querySelector('.cityclip-play');
       btn.addEventListener('click',function(){
         if(v.paused){ v.play(); btn.hidden=true } else { v.pause(); btn.hidden=false }
       });
@@ -751,7 +744,7 @@
     if(saver||!('IntersectionObserver' in window)) return;
     var io=new IntersectionObserver(function(entries){
       entries.forEach(function(en){
-        var v=en.target.querySelector('video'), btn=en.target.querySelector('.clip-play');
+        var v=en.target.querySelector('video'), btn=en.target.querySelector('.cityclip-play');
         if(en.isIntersecting){
           if(v.preload==='none'){ v.preload='auto'; v.load() }
           var p=v.play();
