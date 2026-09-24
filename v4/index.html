@@ -96,6 +96,21 @@
   .head-phone{font-weight:700;text-decoration:none;font-variant-numeric:tabular-nums;white-space:nowrap}
 
 
+  /* Відео виробництва на початку */
+  .factory{padding-top:18px}
+  .factory-card{position:relative;max-width:980px;margin:0 auto;border-radius:var(--r-shell);overflow:hidden;background:#0F1012;box-shadow:var(--soft)}
+  .factory-card video,.factory-card img.poster{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+  .factory-veil{position:absolute;inset:auto 0 0 0;height:38%;background:linear-gradient(180deg,rgba(15,16,18,0),rgba(15,16,18,.55));pointer-events:none}
+  .factory-cap{position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.94);
+    border-radius:999px;padding:9px 16px;font-size:14px;font-weight:700;box-shadow:var(--soft-sm)}
+  .factory-cap i{width:7px;height:7px;border-radius:999px;background:var(--brand)}
+  .factory-sound{position:absolute;right:16px;bottom:16px;border:0;border-radius:999px;background:rgba(255,255,255,.94);color:var(--ink);
+    padding:10px 18px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:var(--soft-sm);transition:transform .4s var(--ease)}
+  .factory-sound:active{transform:scale(.96)}
+  .factory-play{position:absolute;inset:0;width:100%;height:100%;border:0;background:none;cursor:pointer;display:grid;place-items:center}
+  .factory-play span{width:74px;height:74px;border-radius:999px;background:rgba(255,255,255,.94);display:grid;place-items:center;box-shadow:var(--soft)}
+  .factory-play svg{width:24px;height:24px;margin-left:4px;color:var(--ink)}
+
   /* Вступ */
   .intro{padding-block:clamp(32px,4vw,56px)}
   .intro-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:48px;align-items:end}
@@ -336,6 +351,19 @@
 </header>
 
 <main id="main">
+  <section class="factory">
+    <div class="wrap">
+      <div class="factory-card" id="factoryCard">
+        <video id="factoryVideo" src="../media/factory.mp4" poster="../media/factory.jpg" muted loop playsinline preload="metadata"
+               aria-label="Як шиють кросівки Ягуар на фабриці STIMUL у Вінниці"></video>
+        <div class="factory-veil"></div>
+        <button class="factory-play" type="button" id="factoryPlay" hidden aria-label="Дивитися відео про виробництво"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
+        <span class="factory-cap"><i></i>Наше виробництво, Вінниця</span>
+        <button class="factory-sound" type="button" id="factorySound">Увімкнути звук</button>
+      </div>
+    </div>
+  </section>
+
   <section class="intro">
     <div class="wrap intro-grid">
       <div class="reveal">
@@ -589,6 +617,11 @@
           <summary>Яка гарантія?</summary>
           <p>Гарантія 1 рік на підошву та 60 днів на верх взуття. Гарантія поширюється лише на виробничий брак.</p>
           <p style="margin-top:12px">Вона не покриває механічні пошкодження та природний знос: пошкодження, що виникли під час експлуатації, від зовнішнього впливу або природного зношування матеріалів. На устілку та шнурки гарантія не поширюється.</p>
+        </details>
+        <details>
+          <summary>Як відбувається доставка?</summary>
+          <p>Доставка замовлень здійснюється за допомогою логістичних компаній.</p>
+          <p style="margin-top:12px">Вартість доставки не входить у вартість товару та оплачується покупцем окремо відповідно до тарифів обраної логістичної компанії.</p>
         </details>
         <details>
           <summary>Коли ви відправите замовлення?</summary>
@@ -912,6 +945,31 @@
       [].forEach.call(rail.querySelectorAll('img'),function(im){ im.addEventListener('load',state) });
       setTimeout(state,300); setTimeout(state,1200); state();
     });
+  })();
+
+  /* Відео виробництва: тихий автозапуск, кнопка звуку */
+  (function(){
+    var v=$('factoryVideo'), sound=$('factorySound'), play=$('factoryPlay');
+    if(!v) return;
+    var lite=(navigator.connection&&navigator.connection.saveData)||
+             window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    function start(){
+      var p=v.play();
+      if(p&&p.then) p.then(function(){ play.hidden=true })['catch'](function(){ play.hidden=false });
+    }
+    play.onclick=function(){ v.muted=false; sound.textContent='Вимкнути звук'; start() };
+    sound.onclick=function(){
+      v.muted=!v.muted;
+      sound.textContent=v.muted?'Увімкнути звук':'Вимкнути звук';
+      if(v.paused) start();
+    };
+    if(lite){ play.hidden=false; return }
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(list){
+        list.forEach(function(en){ if(en.isIntersecting){ start() } else { v.pause() } });
+      },{threshold:.25});
+      io.observe(v);
+    } else { start() }
   })();
 
 })();
