@@ -101,9 +101,6 @@
   .factory-card{position:relative;max-width:980px;margin:0 auto;border-radius:var(--r-shell);overflow:hidden;background:#0F1012;box-shadow:var(--soft)}
   .factory-card video,.factory-card img.poster{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
   .factory-veil{position:absolute;inset:auto 0 0 0;height:38%;background:linear-gradient(180deg,rgba(15,16,18,0),rgba(15,16,18,.55));pointer-events:none}
-  .factory-cap{position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.94);
-    border-radius:999px;padding:9px 16px;font-size:14px;font-weight:700;box-shadow:var(--soft-sm)}
-  .factory-cap i{width:7px;height:7px;border-radius:999px;background:var(--brand)}
   .factory-sound{position:absolute;right:16px;bottom:16px;border:0;border-radius:999px;background:rgba(255,255,255,.94);color:var(--ink);
     padding:10px 18px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:var(--soft-sm);transition:transform .4s var(--ease)}
   .factory-sound:active{transform:scale(.96)}
@@ -111,15 +108,16 @@
   .factory-play span{width:74px;height:74px;border-radius:999px;background:rgba(255,255,255,.94);display:grid;place-items:center;box-shadow:var(--soft)}
   .factory-play svg{width:24px;height:24px;margin-left:4px;color:var(--ink)}
 
+  .factory-trigger{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:16px;
+    font-size:clamp(17px,2vw,20px);font-weight:700;letter-spacing:-.01em}
+  .factory-trigger i{width:9px;height:9px;border-radius:999px;background:var(--brand)}
+
   /* Вступ */
-  .intro{padding-block:clamp(32px,4vw,56px)}
-  .intro-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:48px;align-items:end}
-  .intro h1{max-width:14ch}
-  .facts{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-  .facts li{font-size:15px;font-weight:500;color:var(--ink-soft);background:var(--surface);border-radius:999px;padding:8px 16px}
-  .intro-shots{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px;max-width:560px}
-  .intro-shots img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:18px;box-shadow:var(--soft-sm)}
-  .intro-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .intro{padding-block:clamp(24px,3vw,40px)}
+  .after-buy{padding-block:clamp(16px,2vw,24px)}
+  .after-buy .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+  .after-buy .intro-proof{margin-top:0}
+  .intro h1{max-width:18ch}
   .intro-proof{display:flex;align-items:center;gap:10px;margin-top:24px;font-size:15px;color:var(--muted)}
   .stars{color:var(--brand);letter-spacing:2px}
 
@@ -169,10 +167,12 @@
     background-repeat:no-repeat;background-position:right 18px center;background-size:18px}
   .hint-error{font-size:14.5px;color:#B3261E}
   .actions{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
+  .actions .btn{white-space:nowrap;justify-content:center}
+  @media (max-width:420px){.actions .btn{padding-left:16px;padding-right:16px;font-size:15px}}
   .terms{margin:0;display:grid;gap:2px}
-  .terms div{display:grid;grid-template-columns:132px minmax(0,1fr);gap:14px;padding:12px 0;border-top:1px solid var(--hairline);font-size:15px}
+  .terms div{display:grid;grid-template-columns:172px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--hairline);font-size:15.5px}
   .terms div:last-child{border-bottom:1px solid var(--hairline)}
-  .terms dt{color:var(--muted);margin:0}
+  .terms dt{margin:0;color:var(--ink);font-size:17px;font-weight:800;letter-spacing:-.02em}
   .terms dd{margin:0;color:var(--ink-soft)}
 
   /* Відео покупців */
@@ -299,7 +299,7 @@
   #cbPhone{width:100%;height:58px;margin-top:8px;border:0;border-radius:18px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--hairline);padding:0 18px;font:600 16px var(--font)}
 
   @media (max-width:980px){
-    .intro-grid,.product,.size-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+    .product,.size-grid{grid-template-columns:minmax(0,1fr);gap:28px}
     .bento{grid-template-columns:repeat(2,1fr)}
     .cell--half,.cell--third{grid-column:span 1}
     .wear{grid-template-columns:1fr}
@@ -360,38 +360,15 @@
                aria-label="Як шиють кросівки Ягуар на фабриці STIMUL у Вінниці"></video>
         <div class="factory-veil"></div>
         <button class="factory-play" type="button" id="factoryPlay" hidden aria-label="Дивитися відео про виробництво"><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button>
-        <span class="factory-cap"><i></i>Наше виробництво, Вінниця</span>
         <button class="factory-sound" type="button" id="factorySound">Увімкнути звук</button>
       </div>
+      <p class="factory-trigger"><i></i>Власне виробництво у Вінниці</p>
     </div>
   </section>
 
   <section class="intro">
-    <div class="wrap intro-grid">
-      <div class="reveal">
-        <h1>Міські кросівки, у яких минає цілий день</h1>
-        <div class="intro-shots">
-          <img src="../img/chornyi-1.jpg" alt="Чорні кросівки Ягуар на нозі під час ходьби містом" loading="eager" width="1000" height="1000">
-          <img src="../img/chornyi-5.jpg" alt="Чорні кросівки Ягуар на нозі, вигляд збоку" loading="eager" width="1000" height="1000">
-          <img src="../img/chornyi-3.jpg" alt="Кросівки Ягуар під час шнурування" loading="lazy" width="1000" height="1000">
-        </div>
-        <div class="intro-cta">
-          <button class="btn js-scroll" type="button" data-target="product">Обрати розмір і колір
-            <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></i>
-          </button>
-          <button class="btn btn--quiet js-scroll" type="button" data-target="reviews">Читати відгуки
-            <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></i>
-          </button>
-        </div>
-        <p class="intro-proof"><span class="stars" aria-hidden="true">★★★★★</span> 16 відгуків покупців, оцінка 5 з 5</p>
-      </div>
-      <ul class="facts reveal" data-delay="1">
-        <li>Демісезон</li>
-        <li>Нубук і кордура</li>
-        <li>Поліуретанова підошва</li>
-        <li>396 грамів на нозі</li>
-        <li>Власне виробництво у Вінниці</li>
-      </ul>
+    <div class="wrap">
+      <h1 class="reveal">Кросівки для міста,<br>у яких ноги не гудуть увечері</h1>
     </div>
   </section>
 
@@ -447,12 +424,20 @@
         <dl class="terms">
           <div><dt>Гарантія</dt><dd>1 рік гарантії на підошву та 60 днів на верх взуття</dd></div>
           <div><dt>Відправка</dt><dd>у день замовлення</dd></div>
-          <div><dt>Наявність</dt><dd>усе взуття є в наявності</dd></div>
-          <div><dt>Немає розміру</dt><dd>відшиваємо на власному виробництві за 3 дні</dd></div>
+          <div><dt>Наявність</dt><dd>усе взуття в наявності, а якщо розкупили, швидко відшиваємо за 3 дні</dd></div>
           <div><dt>Доставка</dt><dd>по всій Україні, оплачується покупцем</dd></div>
           <div><dt>Оплата</dt><dd>безготівкова або накладений платіж з мінімальною передоплатою</dd></div>
         </dl>
       </div>
+    </div>
+  </section>
+
+  <section class="after-buy">
+    <div class="wrap">
+      <button class="btn btn--quiet js-scroll" type="button" data-target="reviews">Читати відгуки
+        <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></i>
+      </button>
+      <p class="intro-proof"><span class="stars" aria-hidden="true">★★★★★</span> 16 відгуків покупців, оцінка 5 з 5</p>
     </div>
   </section>
 
