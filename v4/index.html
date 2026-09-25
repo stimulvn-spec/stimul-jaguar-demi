@@ -117,7 +117,9 @@
   .intro h1{max-width:14ch}
   .facts{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
   .facts li{font-size:15px;font-weight:500;color:var(--ink-soft);background:var(--surface);border-radius:999px;padding:8px 16px}
-  .intro-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .intro-shots{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px;max-width:560px}
+  .intro-shots img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:18px;box-shadow:var(--soft-sm)}
+  .intro-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
   .intro-proof{display:flex;align-items:center;gap:10px;margin-top:24px;font-size:15px;color:var(--muted)}
   .stars{color:var(--brand);letter-spacing:2px}
 
@@ -368,6 +370,11 @@
     <div class="wrap intro-grid">
       <div class="reveal">
         <h1>Міські кросівки, у яких минає цілий день</h1>
+        <div class="intro-shots">
+          <img src="../img/chornyi-1.jpg" alt="Чорні кросівки Ягуар на нозі під час ходьби містом" loading="eager" width="1000" height="1000">
+          <img src="../img/chornyi-5.jpg" alt="Чорні кросівки Ягуар на нозі, вигляд збоку" loading="eager" width="1000" height="1000">
+          <img src="../img/chornyi-3.jpg" alt="Кросівки Ягуар під час шнурування" loading="lazy" width="1000" height="1000">
+        </div>
         <div class="intro-cta">
           <button class="btn js-scroll" type="button" data-target="product">Обрати розмір і колір
             <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></i>
@@ -442,7 +449,7 @@
           <div><dt>Відправка</dt><dd>у день замовлення</dd></div>
           <div><dt>Наявність</dt><dd>усе взуття є в наявності</dd></div>
           <div><dt>Немає розміру</dt><dd>відшиваємо на власному виробництві за 3 дні</dd></div>
-          <div><dt>Доставка</dt><dd>по всій Україні</dd></div>
+          <div><dt>Доставка</dt><dd>по всій Україні, оплачується покупцем</dd></div>
           <div><dt>Оплата</dt><dd>безготівкова або накладений платіж з мінімальною передоплатою</dd></div>
         </dl>
       </div>
