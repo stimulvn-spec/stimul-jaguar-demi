@@ -65,7 +65,7 @@
   .core{background:var(--paper);border-radius:var(--r-core);overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
 
   /* Кнопки */
-  .btn{position:relative;display:inline-flex;align-items:center;gap:10px;border:0;border-radius:999px;background:var(--brand);color:#fff;
+  .btn{position:relative;display:inline-flex;align-items:center;gap:10px;text-decoration:none;max-width:100%;border:0;border-radius:999px;background:var(--brand);color:#fff;
     font-size:16px;font-weight:700;letter-spacing:-.01em;padding:14px 14px 14px 26px;cursor:pointer;
     box-shadow:0 18px 34px -20px rgba(252,115,1,.85);transition:transform .4s var(--ease),background .4s var(--ease),box-shadow .4s var(--ease)}
   .btn i{width:34px;height:34px;border-radius:999px;background:rgba(255,255,255,.18);display:grid;place-items:center;transition:transform .4s var(--ease),background .4s var(--ease)}
@@ -93,7 +93,9 @@
     background:var(--surface);border-radius:999px;padding:10px 10px 10px 20px;max-width:1160px}
   .head img{height:34px;width:auto}
   .head-right{display:flex;align-items:center;gap:14px}
-  .head-phone{font-weight:700;text-decoration:none;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .btn--call{white-space:nowrap}
+  .btn--call .call-num{font-variant-numeric:tabular-nums}
+  .btn--call .call-word{margin-right:6px}
 
 
   /* Відео виробництва на початку */
@@ -167,8 +169,23 @@
     background-repeat:no-repeat;background-position:right 18px center;background-size:18px}
   .hint-error{font-size:14.5px;color:#B3261E}
   .actions{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
-  .actions .btn{white-space:nowrap;justify-content:center}
-  @media (max-width:420px){.actions .btn{padding-left:16px;padding-right:16px;font-size:15px}}
+  .actions .btn{white-space:nowrap;justify-content:center;min-width:0}
+  @media (max-width:430px){
+    .actions .btn{padding-left:16px;padding-right:16px;font-size:15px}
+    .btn--call .call-word{display:none}
+    .head img{height:30px}
+  }
+  @media (max-width:340px){
+    .btn--call{padding:10px 14px;font-size:13.5px}
+    .btn--call i{display:none}
+  }
+  @media (max-width:380px){
+    .actions{grid-template-columns:minmax(0,1fr)}
+    .actions .btn{width:100%}
+    .dock{padding-left:16px}
+    .dock .btn{padding-left:16px}
+    .dock .btn i{display:none}
+  }
   .terms{margin:0;display:grid;gap:2px}
   .terms div{display:grid;grid-template-columns:172px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--hairline);font-size:15.5px}
   .terms div:last-child{border-bottom:1px solid var(--hairline)}
@@ -313,7 +330,6 @@
   @media (max-width:640px){
     .wrap{padding-inline:16px}
     .head .wrap{padding:8px 8px 8px 16px}
-    .head-phone{display:none}
     footer .wrap{flex-direction:column;gap:16px}
     .swatches{grid-template-columns:repeat(3,1fr)}
     .bento{grid-template-columns:1fr}
@@ -344,10 +360,10 @@
   <div class="wrap">
     <a href="https://stimul.vn.ua/" target="_blank" rel="noopener"><img src="../img/logo.png" alt="STIMUL, взуттєва фабрика у Вінниці" width="720" height="200"></a>
     <div class="head-right">
-      <a class="head-phone" href="tel:+380632000401">063 200 04 01</a>
-      <button class="btn btn--sm js-scroll" type="button" data-target="product">Обрати розмір
-        <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></i>
-      </button>
+      <a class="btn btn--sm btn--call" href="tel:+380632000401" aria-label="Зателефонувати нам: 063 200 04 01">
+        <span class="call-word">Зателефонувати нам</span><span class="call-num">063 200 04 01</span>
+        <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 3.5 9 8l-2 1.6a13 13 0 0 0 6.4 6.4L15 14l4.5 2.4a1.6 1.6 0 0 1 .8 1.7l-.4 2a1.7 1.7 0 0 1-1.9 1.3C9.7 20.3 3.7 14.3 2.6 6a1.7 1.7 0 0 1 1.3-1.9l2-.4a1.6 1.6 0 0 1 1.7.8Z"/></svg></i>
+      </a>
     </div>
   </div>
 </header>
