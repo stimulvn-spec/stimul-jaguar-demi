@@ -116,8 +116,16 @@
 
   /* Вступ */
   .intro{padding-block:clamp(24px,3vw,40px)}
-  .after-buy{padding-block:clamp(16px,2vw,24px)}
-  .after-buy .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+  .triggers-section{padding-block:clamp(8px,1.5vw,16px)}
+  .triggers{list-style:none;margin:0;padding:0;display:grid;gap:10px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  @media (min-width:1024px){.triggers{grid-template-columns:repeat(5,1fr);gap:12px}}
+  .triggers li{display:flex;align-items:center;gap:12px;background:var(--surface);border-radius:18px;padding:12px 16px}
+  .triggers i{flex:0 0 auto;width:36px;height:36px;border-radius:999px;background:var(--paper);color:var(--brand);display:grid;place-items:center}
+  .triggers svg{width:19px;height:19px}
+  .triggers b{display:block;font-size:15.5px;letter-spacing:-.01em}
+  .triggers span{min-width:0;font-size:14px;color:var(--muted);line-height:1.35}
+  .after-buy{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:20px}
   .after-buy .intro-proof{margin-top:0}
   .intro h1{max-width:18ch}
   .intro-proof{display:flex;align-items:center;gap:10px;margin-top:24px;font-size:15px;color:var(--muted)}
@@ -189,7 +197,10 @@
   .terms{margin:0;display:grid;gap:2px}
   .terms div{display:grid;grid-template-columns:172px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--hairline);font-size:15.5px}
   .terms div:last-child{border-bottom:1px solid var(--hairline)}
-  .terms dt{margin:0;color:var(--ink);font-size:17px;font-weight:800;letter-spacing:-.02em}
+  .terms dt{margin:0;color:var(--ink);font-size:17px;font-weight:800;letter-spacing:-.02em;
+    display:flex;align-items:center;gap:9px}
+  .terms dt i{flex:0 0 auto;width:26px;height:26px;border-radius:999px;background:var(--surface);color:var(--brand);display:grid;place-items:center}
+  .terms dt svg{width:16px;height:16px}
   .terms dd{margin:0;color:var(--ink-soft)}
 
   /* Відео покупців */
@@ -211,13 +222,6 @@
   .wear cite{display:block;margin-top:16px;font-size:14px;color:var(--muted);font-style:normal}
 
   /* Бенто: чому працює в місті */
-  .bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:28px}
-  .cell{border-radius:var(--r-shell);padding:26px 26px 28px;background:var(--surface);display:flex;flex-direction:column;align-self:start}
-  .cell ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px}
-  .cell li{position:relative;padding-left:20px;font-size:16px;line-height:1.5;color:var(--ink-soft)}
-  .cell li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:7px;border-radius:999px;background:var(--brand)}
-  .cell--half{grid-column:span 6}
-  .cell--third{grid-column:span 4}
 
   /* Смуга з фото */
   .band{border-radius:var(--r-shell);overflow:hidden;box-shadow:var(--soft)}
@@ -317,8 +321,6 @@
 
   @media (max-width:980px){
     .product,.size-grid{grid-template-columns:minmax(0,1fr);gap:28px}
-    .bento{grid-template-columns:repeat(2,1fr)}
-    .cell--half,.cell--third{grid-column:span 1}
     .wear{grid-template-columns:1fr}
     .cityclips{gap:10px;max-width:100%}
     body{padding-bottom:86px}
@@ -332,7 +334,6 @@
     .head .wrap{padding:8px 8px 8px 16px}
     footer .wrap{flex-direction:column;gap:16px}
     .swatches{grid-template-columns:repeat(3,1fr)}
-    .bento{grid-template-columns:1fr}
     .cityclips{gap:6px}
     .cityclip{border-radius:12px}
     .cityclip-play span{width:34px;height:34px}
@@ -388,6 +389,24 @@
     </div>
   </section>
 
+  <section class="triggers-section">
+    <div class="wrap">
+      <ul class="triggers reveal">
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 12.2a6 6 0 0 0-8.5-8.5L5 10.5V19h8.5z"/><path d="M16 8 2 22"/><path d="M17.5 15H9"/></svg></i><span><b>396 грамів на нозі</b>нога не втомлюється за день</span></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.7 6.9 8.3a7.2 7.2 0 1 0 10.2 0z"/></svg></i><span><b>Нога залишається сухою</b>мембрана, без запаху</span></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg></i><span><b>Не сковзає</b>плитка, паркет, мокрий асфальт</span></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 4.5 6v6c0 4.8 3.2 8.3 7.5 9.5 4.3-1.2 7.5-4.7 7.5-9.5V6z"/></svg></i><span><b>Нубук і кордура</b>тримають форму в дощ</span></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></i><span><b>Устілка виймається</b>можна свою ортопедичну</span></li>
+      </ul>
+      <div class="after-buy">
+        <button class="btn btn--quiet js-scroll" type="button" data-target="reviews">Читати відгуки
+          <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></i>
+        </button>
+        <p class="intro-proof"><span class="stars" aria-hidden="true">★★★★★</span> 16 відгуків покупців, оцінка 5 з 5</p>
+      </div>
+    </div>
+  </section>
+
   <section class="section--tight" id="product">
     <div class="wrap product">
       <div class="shell reveal">
@@ -438,22 +457,13 @@
         </div>
 
         <dl class="terms">
-          <div><dt>Гарантія</dt><dd>1 рік гарантії на підошву та 60 днів на верх взуття</dd></div>
-          <div><dt>Відправка</dt><dd>у день замовлення</dd></div>
-          <div><dt>Наявність</dt><dd>усе взуття в наявності, а якщо розкупили, швидко відшиваємо за 3 дні</dd></div>
-          <div><dt>Доставка</dt><dd>по всій Україні, оплачується покупцем</dd></div>
-          <div><dt>Оплата</dt><dd>безготівкова або накладений платіж з мінімальною передоплатою</dd></div>
+          <div><dt><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 4.5 6v6c0 4.8 3.2 8.3 7.5 9.5 4.3-1.2 7.5-4.7 7.5-9.5V6z"/><path d="m9 12 2 2 4-4"/></svg></i>Гарантія</dt><dd>1 рік гарантії на підошву та 60 днів на верх взуття</dd></div>
+          <div><dt><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6.5h10v9H3z"/><path d="M13 10h4l3.5 3.5v2H13z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg></i>Відправка</dt><dd>у день замовлення</dd></div>
+          <div><dt><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 3.5 7v10l8.5 4.5L20.5 17V7z"/><path d="m3.5 7 8.5 4.5L20.5 7"/><path d="M12 11.5v10"/></svg></i>Наявність</dt><dd>усе взуття в наявності, а якщо розкупили, швидко відшиваємо за 3 дні</dd></div>
+          <div><dt><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21.5s7-5.8 7-11a7 7 0 1 0-14 0c0 5.2 7 11 7 11z"/><circle cx="12" cy="10.5" r="2.6"/></svg></i>Доставка</dt><dd>по всій Україні, оплачується покупцем</dd></div>
+          <div><dt><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="3"/><path d="M2.5 10h19"/><path d="M6.5 15h4"/></svg></i>Оплата</dt><dd>безготівкова або накладений платіж з мінімальною передоплатою</dd></div>
         </dl>
       </div>
-    </div>
-  </section>
-
-  <section class="after-buy">
-    <div class="wrap">
-      <button class="btn btn--quiet js-scroll" type="button" data-target="reviews">Читати відгуки
-        <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></i>
-      </button>
-      <p class="intro-proof"><span class="stars" aria-hidden="true">★★★★★</span> 16 відгуків покупців, оцінка 5 з 5</p>
     </div>
   </section>
 
@@ -497,42 +507,6 @@
     <div class="wrap">
       <figure class="band reveal" style="margin:0">
         <img src="../img/chornyi-5.jpg" alt="Чорні кросівки Ягуар на нозі, вигляд збоку" loading="lazy" width="1000" height="1000">
-      </figure>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="reveal"><h2>Чому Ягуар працює в місті</h2></div>
-      <div class="bento">
-        <article class="cell cell--half reveal">
-          <h3>396 грамів на нозі</h3>
-          <ul><li>легка поліуретанова підошва</li><li>амортизує крок</li><li>менше втоми ввечері</li></ul>
-        </article>
-        <article class="cell cell--half reveal" data-delay="1">
-          <h3>Нога залишається сухою</h3>
-          <ul><li>вологовідвідна мембранна підкладка</li><li>ноги не пітніють</li><li>взуття не дає запаху</li></ul>
-        </article>
-        <article class="cell cell--third reveal" data-delay="1">
-          <h3>Верх тримає форму</h3>
-          <ul><li>натуральна шкіра нубук</li><li>тканина кордура</li><li>не боїться дощу й багнюки</li></ul>
-        </article>
-        <article class="cell cell--third reveal" data-delay="2">
-          <h3>Устілка під себе</h3>
-          <ul><li>анатомічна, вставна</li><li>можна покласти свою ортопедичну</li></ul>
-        </article>
-        <article class="cell cell--third reveal">
-          <h3>Не сковзає</h3>
-          <ul><li>плитка, паркет, мокрий асфальт</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section--tight">
-    <div class="wrap">
-      <figure class="band reveal" style="margin:0">
-        <img src="../img/chornyi-3.jpg" alt="Кросівки Ягуар під час шнурування" loading="lazy" width="1000" height="1000">
       </figure>
     </div>
   </section>
@@ -585,6 +559,14 @@
           <span class="stage-knob"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
         </button>
       </div>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="wrap">
+      <figure class="band reveal" style="margin:0">
+        <img src="../img/chornyi-3.jpg" alt="Кросівки Ягуар під час шнурування" loading="lazy" width="1000" height="1000">
+      </figure>
     </div>
   </section>
 
