@@ -123,7 +123,7 @@
   .triggers li{display:flex;align-items:center;gap:12px;background:var(--surface);border-radius:18px;padding:12px 16px}
   .triggers i{flex:0 0 auto;width:36px;height:36px;border-radius:999px;background:var(--paper);color:var(--brand);display:grid;place-items:center}
   .triggers svg{width:19px;height:19px}
-  .triggers b{display:block;font-size:15.5px;letter-spacing:-.01em}
+  .triggers b{display:block;font-size:16px;font-weight:800;color:var(--ink);letter-spacing:-.02em;margin-bottom:1px}
   .triggers span{min-width:0;font-size:14px;color:var(--muted);line-height:1.35}
   .after-buy{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:20px}
   .after-buy .intro-proof{margin-top:0}
@@ -496,7 +496,7 @@
         <button class="rail-nav rail-prev" type="button" data-rail-prev="cityclips" aria-label="Попередні відео"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></button>
         <button class="rail-nav rail-next" type="button" data-rail-next="cityclips" aria-label="Наступні відео"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></button>
       </div>
-      <p class="rail-hint cityclips-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg> Гортайте вбік, тут 4 відео від покупців</p>
+      <p class="rail-hint cityclips-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg> Гортайте вбік</p>
     </div>
   </section>
 
@@ -551,6 +551,12 @@
   <section class="section--tight warn">
     <div class="wrap reveal">
       <h2>Обережно: підробки Ягуара</h2>
+      <div class="stage" id="fakeStage">
+        <button class="stage-poster" type="button" id="fakePlay" aria-label="Дивитися відео про підробки кросівок Ягуар">
+          <img src="https://i.ytimg.com/vi/WRaBbQu3KHw/hqdefault.jpg" alt="Порівняння оригінальних кросівок Ягуар і підробки" loading="lazy" width="480" height="360">
+          <span class="stage-knob"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+        </button>
+      </div>
       <p class="fake-lead">На OLX і фейкових сторінках продають копії під нашими фото. У коробці — зовсім інше взуття.</p>
       <ul class="fake-chips">
         <li>кожзам замість нубуку</li>
@@ -560,12 +566,6 @@
         <li>без гарантії: продавець зникає</li>
       </ul>
       <p class="fake-punch">Оригінал — тільки напряму з фабрики. У відео показуємо, як відрізнити за 30 секунд.</p>
-      <div class="stage" id="fakeStage">
-        <button class="stage-poster" type="button" id="fakePlay" aria-label="Дивитися відео про підробки кросівок Ягуар">
-          <img src="https://i.ytimg.com/vi/WRaBbQu3KHw/hqdefault.jpg" alt="Порівняння оригінальних кросівок Ягуар і підробки" loading="lazy" width="480" height="360">
-          <span class="stage-knob"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
-        </button>
-      </div>
     </div>
   </section>
 
