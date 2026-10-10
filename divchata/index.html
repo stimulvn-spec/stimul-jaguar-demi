@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#000000">
 <meta property="og:title" content="Дівчата, ця модель для вас · Кросівки Ягуар STIMUL">
 <meta property="og:description" content="Перевірені чоловіками. Тепер у ваших розмірах від 35. 2 685 грн.">
-<meta property="og:image" content="media/hero.jpg">
+<meta property="og:image" content="../img/olyva-3.jpg">
 <link rel="icon" href="../img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,7 +61,13 @@
   /* герой */
   .hero{background:var(--black);color:var(--white);padding:24px 0 48px}
   .hero-grid{display:grid;gap:32px}
-  .hero-media{position:relative;border-radius:24px;overflow:hidden;background:var(--dark2);aspect-ratio:1/1}
+  .hero-media{position:relative;border-radius:24px;overflow:hidden;background:var(--white);aspect-ratio:1/1}
+  .hero-media img{object-fit:contain!important;padding:16px}
+  .hero-media video{background:var(--black)}
+  .replay{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:8px 12px;border:0;background:transparent;color:#BDBDBD;font-size:14px;line-height:20px;font-weight:600;cursor:pointer;border-radius:12px;transition:color .5s var(--ease),background .5s var(--ease)}
+  .replay svg{width:16px;height:16px;fill:var(--orange)}
+  .replay:hover{color:var(--white);background:rgba(255,255,255,.08)}
+  .replay:active{transform:scale(0.98)}
   .hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover}
   .play{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-start;padding:16px;border:0;background:transparent;cursor:pointer}
   .play span{display:inline-flex;align-items:center;gap:8px;background:rgba(0,0,0,.72);color:var(--white);border-radius:999px;padding:8px 16px 8px 8px;
@@ -254,10 +260,7 @@
 <section class="hero" aria-labelledby="h1">
   <div class="wrap hero-grid">
     <div class="hero-media" id="heroMedia">
-      <img src="media/hero.jpg" alt="Кадр із ролика: кросівки Ягуар у кольорі олива" width="720" height="720">
-      <button class="play" id="playBtn" type="button" aria-label="Подивитися ролик ще раз">
-        <span><i><svg viewBox="0 0 24 24"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg></i>Подивитися ролик ще раз · 35 с</span>
-      </button>
+      <img src="../img/olyva-3.jpg" alt="Кросівки Ягуар у кольорі олива" width="1000" height="1000">
     </div>
     <div>
       <span class="eyebrow">Кросівки Ягуар для жінок</span>
@@ -267,6 +270,7 @@
       <div class="hero-cta">
         <a class="btn js-go" href="#order">Обрати колір і розмір
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <button class="replay" id="playBtn" type="button"><svg viewBox="0 0 24 24"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>Подивитися ролик ще раз · 35 с</button>
       </div>
       <div class="proof">
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Понад 30 000 покупців</span>
@@ -307,16 +311,6 @@
         <p>Розміри від 35 з точною довжиною устілки. Підберемо за сантиметрами і перепитаємо перед відправкою.</p>
         <q>«Це ще той квест найти взуття, коли 37 малий, 38 великий. Мені без проблем зробили заміну на потрібний розмір»<b>Оксана</b></q>
       </article>
-    </div>
-    <div class="life">
-      <figure class="reveal">
-        <img src="media/woman.jpg" alt="Жінка взуває чорні кросівки Ягуар" width="720" height="720" loading="lazy">
-        <figcaption>Кадр із ролика: Ягуар у чорному кольорі на жіночій нозі.</figcaption>
-      </figure>
-      <figure class="reveal">
-        <img src="media/factory.jpg" alt="Пошиття кросівок Ягуар на фабриці STIMUL у Вінниці" width="720" height="720" loading="lazy">
-        <figcaption>Шиємо самі, на власній фабриці у Вінниці.</figcaption>
-      </figure>
     </div>
   </div>
 </section>
@@ -497,7 +491,8 @@
   /* ролик */
   $('playBtn').onclick=function(){
     var m=$('heroMedia');
-    m.innerHTML='<video src="media/divchata.mp4" poster="media/hero.jpg" controls autoplay playsinline></video>';
+    m.innerHTML='<video src="media/divchata.mp4" controls autoplay playsinline></video>';
+    m.scrollIntoView({behavior:'smooth',block:'center'});
   };
 
   /* галерея */
