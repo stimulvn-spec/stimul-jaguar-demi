@@ -145,7 +145,7 @@
   .street button{flex:none;width:72%;max-width:320px;scroll-snap-align:center;border:0;padding:0;background:var(--soft);border-radius:24px;overflow:hidden;
     cursor:pointer;text-align:left;position:relative;transition:transform .5s var(--ease)}
   .street button:active{transform:scale(0.98)}
-  .street img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 85%}
+  .street img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
   .street span{position:absolute;left:12px;bottom:12px;display:inline-flex;align-items:center;gap:8px;background:rgba(0,0,0,.72);color:var(--white);
     border-radius:999px;padding:4px 12px;font-size:14px;line-height:20px;font-weight:600;backdrop-filter:blur(8px)}
 
@@ -294,8 +294,8 @@
 <section class="hero" aria-labelledby="h1">
   <div class="wrap hero-grid">
     <div class="hero-media">
-      <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="img/city-walk.jpg" aria-label="Кросівки Ягуар койот у русі на вулицях міста">
-        <source src="media/city-walk.mp4" type="video/mp4">
+      <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="img/hero-loop.jpg" aria-label="Жінки в кросівках Ягуар на вулиці і в шоурумі STIMUL">
+        <source src="media/hero-loop.mp4" type="video/mp4">
       </video>
       <span class="from-ad"><img src="img/kadr.jpg" alt="" width="32" height="32">Та сама пара, що в ролику</span>
     </div>
@@ -327,7 +327,7 @@
     <p class="lead reveal">У ролику койот і олива. Є ще чотири кольори, усі на фото наживо</p>
     <div class="order">
       <div class="gal reveal" id="gal">
-        <img id="galImg" src="../img/koiot-1.jpg" alt="Кросівки Ягуар, колір койот" width="1000" height="1000">
+        <img id="galImg" src="img/w-koiot-1.jpg" alt="Кросівки Ягуар, колір койот" width="1000" height="1000">
         <button class="gal-nav gal-prev" type="button" id="galPrev" aria-label="Попереднє фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
         <button class="gal-nav gal-next" type="button" id="galNext" aria-label="Наступне фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
         <div class="gal-dots" id="galDots"></div>
@@ -387,7 +387,7 @@
 <section class="section" aria-labelledby="h-street">
   <div class="wrap">
     <span class="eyebrow reveal">Не на білому фоні</span>
-    <h2 class="h2 reveal" id="h-street">Так Ягуар виглядає на вулиці</h2>
+    <h2 class="h2 reveal" id="h-street">Так Ягуар виглядає на жінках</h2>
     <p class="lead reveal">Гортайте і натискайте на колір, який сподобався</p>
   </div>
   <div class="street" id="street" role="list"></div>
@@ -556,8 +556,10 @@
 
 <script>
 (function(){
-  /* ph: спершу фото на нозі на вулиці, потім предметні; sw: фото для кнопки кольору */
-  var COLORS=[{id:'koiot',name:'Койот',ph:[1,2,3,4,5,8],sw:4,st:2,ad:1},{id:'olyva',name:'Олива',ph:[1,2,3,4,6],sw:3,st:2,ad:1},{id:'chornyi',name:'Чорний',ph:[1,2,4,3,6,7],sw:6,st:1},{id:'siryi',name:'Сірий',ph:[1,2,3,4,5],sw:2,st:1},{id:'kakao',name:'Какао',ph:[1,2,3,4,5],sw:2,st:1},{id:'shokolad',name:'Шоколад',ph:[1,2,3,4,5],sw:3,st:1}];
+  /* ph: спершу кадри з жінками ('w-…' з цієї папки), потім предметні фото без чоловічих ніг і рук; sw: фото для кнопки кольору */
+  var COLORS=[{id:'koiot',name:'Койот',ph:['w-koiot-1',4,5,8,6,7],sw:4,ad:1},{id:'olyva',name:'Олива',ph:['w-olyva-1','w-olyva-2','w-olyva-3',3,4,6,5,7],sw:3,ad:1},{id:'chornyi',name:'Чорний',ph:['w-chornyi-1',6,7,8,9,10],sw:6},{id:'siryi',name:'Сірий',ph:[2,3,4,5,6],sw:2},{id:'kakao',name:'Какао',ph:[2,3,4,5,6],sw:2},{id:'shokolad',name:'Шоколад',ph:[3,4,5,6,7],sw:3}];
+  /* стрічка «на жінках»: кадр і колір, який він обирає */
+  var STREET=[{f:'w-olyva-2',c:1},{f:'w-koiot-1',c:0},{f:'w-olyva-3',c:1},{f:'w-chornyi-1',c:2},{f:'w-olyva-1',c:1,n:'Олива і койот'}];
   var SIZES=[[35,'23'],[36,'23,7'],[37,'24,5'],[38,'25'],[39,'25,7'],[40,'26,5'],[41,'27'],[42,'27,7'],[43,'28,2'],[44,'28,8'],[45,'29,5'],[46,'30,3'],[47,'31'],[48,'31,5'],[49,'32,3'],[50,'33']];
   var MAIN=[35,36,37,38,39,40,41,42];
   var REVIEWS=[
@@ -573,7 +575,7 @@
   var PRODUCT_URL='https://stimul.vn.ua/female-models/tproduct/215455300-969665693384-krosvki-yaguar';
   var state={c:0,p:0,size:null};
   var $=function(id){return document.getElementById(id)};
-  function img(c,i,t){return '../img/'+COLORS[c].id+'-'+COLORS[c].ph[i]+(t?'-t':'')+'.jpg'}
+  function img(c,i,t){var p=COLORS[c].ph[i];return (typeof p==='string'?'img/'+p:'../img/'+COLORS[c].id+'-'+p)+(t?'-t':'')+'.jpg'}
   function money(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' грн'}
   function priceOf(s){return s===47?2985:(s>=48?3185:2685)}
   function cm(s){for(var i=0;i<SIZES.length;i++)if(SIZES[i][0]===s)return SIZES[i][1];return ''}
@@ -606,8 +608,8 @@
     [].forEach.call($('swatches').children,function(x){x.setAttribute('aria-pressed',+x.dataset.c===i)});$('colorName').textContent=COLORS[i].name;drawGal();drawSum()}
   $('swatches').onclick=function(e){var b=e.target.closest('button');if(b)pickColor(+b.dataset.c)};
 
-  /* живі фото: другий кадр кожного кольору, натиск обирає колір */
-  var st='';COLORS.forEach(function(c,i){st+='<button type="button" role="listitem" data-c="'+i+'" aria-label="Обрати колір '+c.name.toLowerCase()+'"><img src="../img/'+c.id+'-'+c.st+'.jpg" alt="Кросівки Ягуар '+c.name.toLowerCase()+' на нозі" width="1000" height="1000" loading="lazy"><span>'+c.name+' · обрати</span></button>'});
+  /* живі кадри з жінками, натиск обирає колір */
+  var st='';STREET.forEach(function(s){var c=COLORS[s.c];st+='<button type="button" role="listitem" data-c="'+s.c+'" aria-label="Обрати колір '+c.name.toLowerCase()+'"><img src="img/'+s.f+'.jpg" alt="Кросівки Ягуар '+c.name.toLowerCase()+' на жінці" width="1000" height="1000" loading="lazy"><span>'+(s.n||c.name)+' · обрати</span></button>'});
   $('street').innerHTML=st;
   $('street').onclick=function(e){var b=e.target.closest('button');if(!b)return;pickColor(+b.dataset.c);$('order').scrollIntoView({behavior:'smooth',block:'start'})};
 
