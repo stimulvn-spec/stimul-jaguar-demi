@@ -582,7 +582,7 @@
     if(!st.touched||!st.size){$('err').hidden=false;$('range').focus();return}
     var e=ed()[String(st.size)];
     if(typeof window.tcart__addProduct==='function'){
-      window.tcart__addProduct({name:PRODUCT_NAME,price:e.price,img:e.img,url:PRODUCT_URL,uid:e.uid,sku:e.sku,quantity:1,
+      window.tcart__addProduct({name:PRODUCT_NAME,price:e.price,img:IMG[COLORS[st.c].id][0],url:PRODUCT_URL,uid:e.uid,sku:e.sku,quantity:1,
         options:[{option:'Сезон',variant:st.s},{option:'Доступні кольори',variant:e.cname},{option:'Розмір',variant:e.label}]});
       if(typeof window.tcart__openCart==='function')window.tcart__openCart();return}
     var d=$('done');d.hidden=false;
