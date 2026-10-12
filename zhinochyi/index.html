@@ -65,8 +65,8 @@
   /* 1. Hero: одна думка, одне фото, дві дії */
   .hero{background:var(--black);color:var(--white);padding:24px 0 56px}
   .hero-grid{display:grid;gap:24px}
-  .hero-media{position:relative;border-radius:24px;overflow:hidden;background:var(--white);aspect-ratio:1/1}
-  .hero-media img{width:100%;height:100%;object-fit:contain;padding:16px}
+  .hero-media{position:relative;border-radius:24px;overflow:hidden;background:var(--dark2);aspect-ratio:1/1}
+  .hero-media video{width:100%;height:100%;object-fit:cover}
   .from-ad{position:absolute;left:12px;top:12px;display:flex;align-items:center;gap:8px;background:rgba(0,0,0,.8);color:var(--white);
     border-radius:999px;padding:4px 12px 4px 4px;font-size:12px;line-height:16px;font-weight:600;backdrop-filter:blur(8px)}
   .from-ad img{width:32px;height:32px;border-radius:999px;object-fit:cover;padding:0}
@@ -137,6 +137,17 @@
   .get li{display:grid;grid-template-columns:20px 1fr;gap:12px}
   .get li svg{width:20px;height:20px;color:var(--orange-ink);margin-top:2px}
   .get li span{color:var(--muted);font-size:14px;line-height:20px;display:block}
+
+  /* 3а. Живі фото стрічкою */
+  .street{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:32px;padding:0 16px 8px;scrollbar-width:none;
+    -webkit-overflow-scrolling:touch}
+  .street::-webkit-scrollbar{display:none}
+  .street button{flex:none;width:72%;max-width:320px;scroll-snap-align:center;border:0;padding:0;background:var(--soft);border-radius:24px;overflow:hidden;
+    cursor:pointer;text-align:left;position:relative;transition:transform .5s var(--ease)}
+  .street button:active{transform:scale(0.98)}
+  .street img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 85%}
+  .street span{position:absolute;left:12px;bottom:12px;display:inline-flex;align-items:center;gap:8px;background:rgba(0,0,0,.72);color:var(--white);
+    border-radius:999px;padding:4px 12px;font-size:14px;line-height:20px;font-weight:600;backdrop-filter:blur(8px)}
 
   /* 4. Сумніви */
   .key{margin-top:32px;border-radius:24px;padding:24px;background:var(--white);box-shadow:inset 0 0 0 2px var(--orange);display:grid;gap:24px}
@@ -262,6 +273,8 @@
     .step{grid-template-columns:1fr}
     .terms{grid-template-columns:1fr 1fr}
     .review{width:340px}
+    .street{padding:0 max(16px,calc((100vw - 1040px)/2 + 16px)) 8px}
+    .street button{width:300px}
   }
 </style>
 </head>
@@ -281,7 +294,9 @@
 <section class="hero" aria-labelledby="h1">
   <div class="wrap hero-grid">
     <div class="hero-media">
-      <img src="../img/koiot-4.jpg" alt="Кросівки Ягуар у кольорі койот" width="1000" height="1000" fetchpriority="high">
+      <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="img/city-walk.jpg" aria-label="Кросівки Ягуар койот у русі на вулицях міста">
+        <source src="media/city-walk.mp4" type="video/mp4">
+      </video>
       <span class="from-ad"><img src="img/kadr.jpg" alt="" width="32" height="32">Та сама пара, що в ролику</span>
     </div>
     <div>
@@ -312,7 +327,7 @@
     <p class="lead reveal">У ролику койот і олива. Є ще чотири кольори, усі на фото наживо</p>
     <div class="order">
       <div class="gal reveal" id="gal">
-        <img id="galImg" src="../img/koiot-4.jpg" alt="Кросівки Ягуар, колір койот" width="1000" height="1000">
+        <img id="galImg" src="../img/koiot-1.jpg" alt="Кросівки Ягуар, колір койот" width="1000" height="1000">
         <button class="gal-nav gal-prev" type="button" id="galPrev" aria-label="Попереднє фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
         <button class="gal-nav gal-next" type="button" id="galNext" aria-label="Наступне фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
         <div class="gal-dots" id="galDots"></div>
@@ -366,6 +381,16 @@
       </div>
     </div>
   </div>
+</section>
+
+<!-- 3а. Живі фото: як Ягуар виглядає на вулиці -->
+<section class="section" aria-labelledby="h-street">
+  <div class="wrap">
+    <span class="eyebrow reveal">Не на білому фоні</span>
+    <h2 class="h2 reveal" id="h-street">Так Ягуар виглядає на вулиці</h2>
+    <p class="lead reveal">Гортайте і натискайте на колір, який сподобався</p>
+  </div>
+  <div class="street" id="street" role="list"></div>
 </section>
 
 <!-- 4. Закриваємо сумніви: головний окремо, решта короткими блоками -->
@@ -531,7 +556,8 @@
 
 <script>
 (function(){
-  var COLORS=[{id:'koiot',name:'Койот',ph:[4,5,8,6,7],ad:1},{id:'olyva',name:'Олива',ph:[3,4,6,5,7],ad:1},{id:'chornyi',name:'Чорний',ph:[6,7,8,9,10]},{id:'siryi',name:'Сірий',ph:[2,3,4,5,6]},{id:'kakao',name:'Какао',ph:[2,3,4,5,6]},{id:'shokolad',name:'Шоколад',ph:[3,4,5,6,7]}];
+  /* ph: спершу фото на нозі на вулиці, потім предметні; sw: фото для кнопки кольору */
+  var COLORS=[{id:'koiot',name:'Койот',ph:[1,2,3,4,5,8],sw:4,st:2,ad:1},{id:'olyva',name:'Олива',ph:[1,2,3,4,6],sw:3,st:2,ad:1},{id:'chornyi',name:'Чорний',ph:[1,2,4,3,6,7],sw:6,st:1},{id:'siryi',name:'Сірий',ph:[1,2,3,4,5],sw:2,st:1},{id:'kakao',name:'Какао',ph:[1,2,3,4,5],sw:2,st:1},{id:'shokolad',name:'Шоколад',ph:[1,2,3,4,5],sw:3,st:1}];
   var SIZES=[[35,'23'],[36,'23,7'],[37,'24,5'],[38,'25'],[39,'25,7'],[40,'26,5'],[41,'27'],[42,'27,7'],[43,'28,2'],[44,'28,8'],[45,'29,5'],[46,'30,3'],[47,'31'],[48,'31,5'],[49,'32,3'],[50,'33']];
   var MAIN=[35,36,37,38,39,40,41,42];
   var REVIEWS=[
@@ -574,10 +600,16 @@
     var n=COLORS[state.c].ph.length;state.p=(state.p+(dx<0?1:-1)+n)%n;drawGal()},{passive:true});
 
   /* кольори: перші два як у ролику */
-  var sw='';COLORS.forEach(function(c,i){sw+='<button type="button" data-c="'+i+'" aria-pressed="'+(i===0)+'"><img src="'+img(i,0,true)+'" alt="" width="40" height="40">'+c.name+(c.ad?' <small>з ролика</small>':'')+'</button>'});
+  var sw='';COLORS.forEach(function(c,i){sw+='<button type="button" data-c="'+i+'" aria-pressed="'+(i===0)+'"><img src="../img/'+c.id+'-'+c.sw+'-t.jpg" alt="" width="40" height="40">'+c.name+(c.ad?' <small>з ролика</small>':'')+'</button>'});
   $('swatches').innerHTML=sw;
-  $('swatches').onclick=function(e){var b=e.target.closest('button');if(!b)return;state.c=+b.dataset.c;state.p=0;
-    [].forEach.call($('swatches').children,function(x){x.setAttribute('aria-pressed',x===b)});$('colorName').textContent=COLORS[state.c].name;drawGal();drawSum()};
+  function pickColor(i){state.c=i;state.p=0;
+    [].forEach.call($('swatches').children,function(x){x.setAttribute('aria-pressed',+x.dataset.c===i)});$('colorName').textContent=COLORS[i].name;drawGal();drawSum()}
+  $('swatches').onclick=function(e){var b=e.target.closest('button');if(b)pickColor(+b.dataset.c)};
+
+  /* живі фото: другий кадр кожного кольору, натиск обирає колір */
+  var st='';COLORS.forEach(function(c,i){st+='<button type="button" role="listitem" data-c="'+i+'" aria-label="Обрати колір '+c.name.toLowerCase()+'"><img src="../img/'+c.id+'-'+c.st+'.jpg" alt="Кросівки Ягуар '+c.name.toLowerCase()+' на нозі" width="1000" height="1000" loading="lazy"><span>'+c.name+' · обрати</span></button>'});
+  $('street').innerHTML=st;
+  $('street').onclick=function(e){var b=e.target.closest('button');if(!b)return;pickColor(+b.dataset.c);$('order').scrollIntoView({behavior:'smooth',block:'start'})};
 
   /* розміри */
   var sz='';MAIN.forEach(function(s){sz+='<button type="button" data-s="'+s+'" aria-pressed="false"><b>'+s+'</b><small>'+cm(s)+' см</small></button>'});
