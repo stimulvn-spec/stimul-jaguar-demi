@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Кросівки Гольф · STIMUL</title>
+<meta name="description" content="Кеди Гольф: зовні натуральна замша, всередині натуральна шкіра і перфорована шкіряна устілка. Нога не пріє. 2 995 грн, оплата при отриманні.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Кеди, в яких нога не пріє · Гольф STIMUL">
+<meta property="og:description" content="Натуральна замша зовні, натуральна шкіра всередині. 2 995 грн.">
+<meta property="og:image" content="img/life-walk.jpg">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+  :root{
+    --black:#000000; --ink:#111111; --white:#FFFFFF; --orange:#FF7900; --orange-ink:#C25A00;
+    --muted:#6B6B6B; --line:#E7E7E7; --soft:#F5F5F5; --dark2:#181818; --dark3:#272727;
+    --ease:cubic-bezier(0.32,0.72,0,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:Manrope,system-ui,sans-serif;background:var(--white);color:var(--ink);font-size:16px;line-height:24px;
+    -webkit-font-smoothing:antialiased;padding-bottom:80px}
+  img,video{display:block;max-width:100%}
+  h1,h2,h3{text-wrap:balance;font-weight:700;letter-spacing:-0.02em}
+  p,li{text-wrap:pretty}
+  a{color:inherit}
+  button{font:inherit;color:inherit}
+  .skip{position:absolute;left:16px;top:-48px;background:var(--orange);color:var(--black);padding:8px 12px;border-radius:8px;z-index:50;font-weight:600}
+  .skip:focus{top:16px}
+  :focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+  .section{padding:64px 0}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;line-height:20px;font-weight:600;color:var(--orange)}
+  .eyebrow::before{content:"";width:24px;height:2px;background:var(--orange);border-radius:2px}
+  .h2{font-size:30px;line-height:36px;margin-top:12px;max-width:680px}
+  .lead{font-size:18px;line-height:28px;color:var(--muted);margin-top:16px;max-width:680px}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:48px;padding:8px 24px;border-radius:12px;border:0;
+    background:var(--orange);color:var(--black);font-size:16px;line-height:24px;font-weight:600;text-decoration:none;cursor:pointer;
+    transition:transform .5s var(--ease),background .5s var(--ease)}
+  .btn:hover{background:#FF8A1F;transform:translateY(-2px)}
+  .btn:active{transform:scale(0.98)}
+  .btn svg{width:20px;height:20px}
+  .btn-dark{background:var(--black);color:var(--white)}
+  .btn-dark:hover{background:var(--dark3)}
+  .btn-block{width:100%}
+
+  .top{position:sticky;top:0;z-index:30;background:rgba(0,0,0,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .top img{height:32px;width:auto}
+  .top .btn{min-height:40px;padding:8px 12px;font-size:14px;line-height:20px}
+
+  .hero{background:var(--black);color:var(--white);padding:24px 0 48px}
+  .hero-grid{display:grid;gap:32px}
+  .hero-media{position:relative;border-radius:24px;overflow:hidden;background:var(--dark2);aspect-ratio:4/5}
+  .hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover}
+  .hero-media video{background:var(--black);object-fit:contain}
+  .hero-tag{position:absolute;left:16px;bottom:16px;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    color:var(--white);border-radius:999px;padding:8px 16px;font-size:14px;line-height:20px;font-weight:600}
+  .replay{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:8px 12px;border:0;background:transparent;color:#BDBDBD;font-size:14px;line-height:20px;font-weight:600;cursor:pointer;border-radius:12px;transition:color .5s var(--ease),background .5s var(--ease)}
+  .replay svg{width:16px;height:16px;fill:var(--orange)}
+  .replay:hover{color:var(--white);background:rgba(255,255,255,.08)}
+  .hero h1{font-size:36px;line-height:40px;margin-top:16px;max-width:680px;
+    background:linear-gradient(90deg,#FFFFFF,#9B9B9B);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero h1 em{font-style:normal;color:var(--orange);-webkit-text-fill-color:var(--orange)}
+  .hero .sub{font-size:18px;line-height:28px;color:#BDBDBD;margin-top:16px;max-width:680px}
+  .hero-price{display:flex;align-items:baseline;gap:12px;margin-top:24px;flex-wrap:wrap}
+  .hero-price b{font-size:36px;line-height:40px;font-weight:700;letter-spacing:-0.02em}
+  .hero-price s{font-size:18px;line-height:28px;color:#8A8A8A}
+  .hero-price span{font-size:14px;line-height:20px;color:#BDBDBD;flex-basis:100%}
+  .hero-cta{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+  .proof{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:24px;font-size:14px;line-height:20px;color:#BDBDBD}
+  .proof span{display:inline-flex;align-items:center;gap:8px}
+  .proof svg{width:16px;height:16px;color:var(--orange)}
+
+  /* всередині */
+  .inside{display:grid;gap:16px;margin-top:32px}
+  .card{background:var(--soft);border-radius:24px;overflow:hidden}
+  .card img{width:100%;aspect-ratio:1/1;object-fit:cover}
+  .card>div{padding:24px}
+  .card h3{font-size:20px;line-height:28px}
+  .card p{color:var(--muted);margin-top:8px}
+  .card.dark{background:var(--black);color:var(--white)}
+  .card.dark p{color:#BDBDBD}
+  .card .big{font-size:60px;line-height:1;font-weight:700;letter-spacing:-0.02em;color:var(--orange)}
+  .vs{display:grid;gap:12px;margin-top:24px}
+  .vs div{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;font-size:16px;line-height:24px}
+  .vs svg{width:24px;height:24px}
+  .vs .no svg{color:#B42318}.vs .yes svg{color:var(--orange)}
+  .vs .no{color:var(--muted)}
+
+  /* на нозі */
+  .life{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
+  .life figure{border-radius:24px;overflow:hidden;background:var(--soft);position:relative}
+  .life img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+  .life figcaption{position:absolute;left:12px;bottom:12px;right:12px;background:rgba(0,0,0,.64);color:var(--white);border-radius:12px;padding:8px 12px;
+    font-size:14px;line-height:20px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+
+  .tagline{background:var(--black);color:var(--white);padding:96px 0}
+  .tagline p{font-size:36px;line-height:40px;font-weight:700;letter-spacing:-0.02em;max-width:680px;text-wrap:balance}
+  .tagline .w{color:rgba(255,255,255,.3);transition:color .7s var(--ease)}
+  .tagline .w.on{color:var(--white)}
+  .tagline .w.acc.on{color:var(--orange)}
+
+  .order{display:grid;gap:24px;margin-top:32px}
+  .gal{border-radius:24px;overflow:hidden;background:var(--white);aspect-ratio:1/1;position:relative;box-shadow:inset 0 0 0 1px var(--line)}
+  .gal img{width:100%;height:100%;object-fit:contain}
+  .gal-dots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:8px}
+  .gal-dots button{width:8px;height:8px;border-radius:999px;border:0;background:rgba(0,0,0,.24);cursor:pointer;padding:0;transition:width .5s var(--ease),background .5s var(--ease)}
+  .gal-dots button[aria-current="true"]{width:24px;background:var(--black)}
+  .gal-nav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:999px;border:0;background:rgba(255,255,255,.92);
+    box-shadow:0 1px 4px rgba(0,0,0,.12);display:grid;place-items:center;cursor:pointer}
+  .gal-nav:active{transform:translateY(-50%) scale(0.94)}
+  .gal-nav svg{width:20px;height:20px}
+  .gal-prev{left:12px}.gal-next{right:12px}
+  .panel{background:var(--soft);border-radius:24px;padding:24px}
+  .label{font-size:14px;line-height:20px;font-weight:600;display:flex;justify-content:space-between;gap:8px}
+  .label span{color:var(--muted);font-weight:500}
+  .swatches{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+  .swatches button{display:flex;align-items:center;gap:8px;border:0;background:var(--white);border-radius:12px;padding:4px 12px 4px 4px;cursor:pointer;
+    box-shadow:inset 0 0 0 1px var(--line);font-size:14px;line-height:20px;font-weight:600;text-align:left;transition:box-shadow .5s var(--ease)}
+  .swatches button img{width:40px;height:40px;border-radius:8px;object-fit:cover;flex:none}
+  .swatches button[aria-pressed="true"]{box-shadow:inset 0 0 0 2px var(--orange)}
+  .swatches button:active{transform:scale(0.98)}
+  .sizes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+  .sizes button{border:0;background:var(--white);border-radius:12px;padding:8px 4px;cursor:pointer;box-shadow:inset 0 0 0 1px var(--line);
+    transition:box-shadow .5s var(--ease),background .5s var(--ease)}
+  .sizes button b{display:block;font-size:18px;line-height:28px}
+  .sizes button small{display:block;font-size:12px;line-height:16px;color:var(--muted)}
+  .sizes button[aria-pressed="true"]{background:var(--black);color:var(--white);box-shadow:none}
+  .sizes button[aria-pressed="true"] small{color:#BDBDBD}
+  .sizes button:active{transform:scale(0.98)}
+  .err{margin-top:8px;font-size:14px;line-height:20px;color:#B42318;font-weight:600}
+  .sum{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-top:24px;padding-top:16px;border-top:1px solid var(--line)}
+  .sum b{font-size:30px;line-height:36px}
+  .sum span{font-size:14px;line-height:20px;color:var(--muted);text-align:right}
+  .order-actions{display:grid;gap:8px;margin-top:16px}
+  .note{margin-top:12px;font-size:14px;line-height:20px;color:var(--muted)}
+  .done{margin-top:12px;background:var(--white);border-radius:12px;padding:12px 16px;font-size:14px;line-height:20px;box-shadow:inset 0 0 0 1px var(--orange)}
+
+  .steps{display:grid;gap:16px;margin-top:32px;counter-reset:s}
+  .step{display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start}
+  .step::before{counter-increment:s;content:counter(s);width:48px;height:48px;border-radius:12px;background:var(--orange);color:var(--black);
+    display:grid;place-items:center;font-size:20px;line-height:28px;font-weight:700}
+  .step h3{font-size:18px;line-height:28px}
+  .step p{color:var(--muted);margin-top:4px}
+  .measure{margin-top:24px;border-radius:24px;overflow:hidden;background:var(--white)}
+  .tip{margin-top:24px;background:var(--black);color:var(--white);border-radius:24px;padding:24px}
+  .tip b{color:var(--orange)}
+  .tip p{margin-top:8px;color:#D6D6D6}
+  table.grid{width:100%;border-collapse:collapse;margin-top:24px;font-size:14px;line-height:20px}
+  table.grid th,table.grid td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line)}
+  table.grid th{font-weight:600;color:var(--muted)}
+  table.grid td:first-child{font-weight:700}
+
+  .gift{display:grid;gap:24px;margin-top:32px;background:var(--soft);border-radius:24px;padding:24px}
+  .gift h3{font-size:24px;line-height:32px}
+  .gift p{color:var(--muted);margin-top:8px}
+  .gift ol{margin-top:16px;padding-left:20px;display:grid;gap:8px}
+
+  .review{background:var(--soft);border-radius:24px;padding:24px;margin-top:32px;max-width:680px}
+  .review .who{display:flex;align-items:center;gap:12px}
+  .review .av{width:40px;height:40px;border-radius:999px;display:grid;place-items:center;font-weight:700;color:var(--white);background:var(--orange-ink);flex:none}
+  .review .who b{display:block}
+  .review .who span{display:block;font-size:12px;line-height:16px;color:var(--muted)}
+  .review p{margin-top:12px}
+  .review mark{background:transparent;color:var(--orange-ink);font-weight:700}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;max-width:680px}
+  .stats div{background:var(--black);color:var(--white);border-radius:16px;padding:16px}
+  .stats b{display:block;font-size:24px;line-height:32px;color:var(--orange)}
+  .stats span{display:block;font-size:12px;line-height:16px;color:#BDBDBD;margin-top:4px}
+  .all-reviews{margin-top:16px;font-size:14px;line-height:20px}
+
+  .terms{display:grid;gap:12px;margin-top:32px}
+  .term{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;background:var(--soft);border-radius:16px;padding:16px}
+  .term i{width:40px;height:40px;border-radius:12px;background:var(--white);display:grid;place-items:center;color:var(--orange)}
+  .term i svg{width:20px;height:20px}
+  .term b{display:block}
+  .term span{display:block;color:var(--muted);font-size:14px;line-height:20px;margin-top:2px}
+
+  .faq{margin-top:32px}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{list-style:none;cursor:pointer;padding:16px 40px 16px 0;font-weight:600;position:relative}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"";position:absolute;right:8px;top:22px;width:10px;height:10px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
+    transform:rotate(45deg);transition:transform .5s var(--ease)}
+  .faq details[open] summary::after{transform:rotate(-135deg)}
+  .faq p{padding:0 0 16px;color:var(--muted)}
+
+  .final{background:var(--black);color:var(--white)}
+  .final .lead{color:#BDBDBD}
+
+  footer{background:var(--black);color:#9B9B9B;font-size:14px;line-height:20px;padding:32px 0 48px;border-top:1px solid var(--dark3)}
+  footer .wrap{display:grid;gap:12px}
+  footer a{color:var(--white);text-decoration:none}
+  footer img{height:28px;width:auto}
+
+  .dock{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    box-shadow:0 -1px 0 var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:12px;
+    transition:transform .7s var(--ease)}
+  .dock.hide{transform:translateY(120%)}
+  .dock .p{flex:1;min-width:0}
+  .dock .p b{display:block;font-size:18px;line-height:28px}
+  .dock .p span{display:block;font-size:12px;line-height:16px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+  .reveal{opacity:0;transform:translateY(64px);filter:blur(12px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease)}
+  .reveal.in{opacity:1;transform:none;filter:none}
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none;filter:none}
+    .tagline .w{color:var(--white)}
+  }
+  @media (min-width:768px){
+    body{padding-bottom:0}
+    .dock{display:none}
+    .section{padding:96px 0}
+    .hero{padding:48px 0 80px}
+    .hero-grid{grid-template-columns:5fr 6fr;align-items:center;gap:48px}
+    .hero h1{font-size:52px;line-height:1.05}
+    .hero-cta{flex-direction:row;align-items:center}
+    .h2{font-size:36px;line-height:40px}
+    .inside{grid-template-columns:repeat(3,1fr)}
+    .life{grid-template-columns:repeat(4,1fr)}
+    .order{grid-template-columns:1fr 1fr;align-items:start}
+    .steps{grid-template-columns:repeat(3,1fr)}
+    .step{grid-template-columns:1fr}
+    .gift{grid-template-columns:1fr 1fr;padding:48px}
+    .terms{grid-template-columns:1fr 1fr}
+    .tagline p{font-size:60px;line-height:1}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Перейти до змісту</a>
+
+<header class="top">
+  <div class="wrap">
+    <img src="img/logo.png" alt="STIMUL, Вінницька фабрика взуття" width="116" height="32">
+    <a class="btn js-go" href="#order">Обрати розмір</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- 1. Герой: продовження ролика -->
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div class="hero-media" id="heroMedia">
+      <img src="img/life-walk.jpg" alt="Кросівки Гольф на нозі, міська вулиця" width="900" height="1125">
+      <span class="hero-tag">Гольф · демі / літо</span>
+    </div>
+    <div>
+      <span class="eyebrow">Повсякденні кросівки Гольф</span>
+      <h1 id="h1">Кеди, в яких нога <em>не пріє</em></h1>
+      <p class="sub">Зовні натуральна замша. Всередині натуральна шкіра і перфорована шкіряна устілка. Взув зранку і пішов у своїх справах.</p>
+      <div class="hero-price"><b>2 995 грн</b><s>3 749 грн</s><span>оплата при отриманні або частинами на 3 місяці</span></div>
+      <div class="hero-cta">
+        <a class="btn js-go" href="#order">Обрати колір і розмір
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <button class="replay" id="playBtn" type="button"><svg viewBox="0 0 24 24"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>Подивитися ролик ще раз · 20 с</button>
+      </div>
+      <div class="proof">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Понад 30 000 покупців</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Шиємо у Вінниці 22 роки</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>14 днів на обмін</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Що всередині -->
+<section class="section" aria-labelledby="h-inside">
+  <div class="wrap">
+    <span class="eyebrow reveal">Зазирніть усередину</span>
+    <h2 class="h2 reveal" id="h-inside">Всередині не синтетика, а шкіра</h2>
+    <p class="lead reveal">У синтетиці нога пріє вже до обіду. У Гольфі все, чого торкається стопа, натуральне.</p>
+    <div class="inside">
+      <article class="card reveal">
+        <img src="img/f-inside.jpg" alt="Всередині кросівок Гольф натуральна шкіра" width="800" height="800" loading="lazy">
+        <div><h3>Натуральна шкіра всередині</h3><p>Підкладка зі шкіри, а не з тканини чи поролону. Нога дихає і не пітніє.</p></div>
+      </article>
+      <article class="card reveal">
+        <img src="img/f-insole.jpg" alt="Перфорована шкіряна устілка кросівок Гольф" width="800" height="640" loading="lazy">
+        <div><h3>Перфорована шкіряна устілка</h3><p>Дрібні отвори по всій устілці пропускають повітря. Вона вставна: можна дістати й просушити.</p></div>
+      </article>
+      <article class="card dark reveal">
+        <div>
+          <span class="big">EVA</span>
+          <h3 style="margin-top:16px">Легка пружна підошва</h3>
+          <p>Амортизує крок і майже не відчувається на нозі, тож увечері ноги не гудуть.</p>
+          <div class="vs">
+            <div class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>Синтетика всередині, нога пріє</div>
+            <div class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Замша зовні, шкіра всередині</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 3. На нозі -->
+<section class="section" aria-labelledby="h-life" style="background:var(--soft)">
+  <div class="wrap">
+    <span class="eyebrow reveal">На нозі</span>
+    <h2 class="h2 reveal" id="h-life">Без зайвих деталей і кричущого дизайну</h2>
+    <p class="lead reveal">Пасують до джинсів, брюк і спортивного одягу. На роботу, на каву, на прогулянку.</p>
+    <div class="life">
+      <figure class="reveal"><img src="img/life-city.jpg" alt="Чоловік у кросівках Гольф іде містом" width="900" height="1125" loading="lazy"><figcaption>Місто</figcaption></figure>
+      <figure class="reveal"><img src="img/life-close.jpg" alt="Натуральна замша і логотип STIMUL на кросівках Гольф" width="900" height="1125" loading="lazy"><figcaption>Натуральна замша</figcaption></figure>
+      <figure class="reveal"><img src="img/life-lace.jpg" alt="Шнурівка і рівні шви кросівок Гольф" width="900" height="1125" loading="lazy"><figcaption>Акуратні шви</figcaption></figure>
+      <figure class="reveal"><img src="img/life-walk.jpg" alt="Кросівки Гольф з білою підошвою" width="900" height="1125" loading="lazy"><figcaption>Біла підошва EVA</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Слоган -->
+<section class="tagline" aria-label="Головне">
+  <div class="wrap">
+    <p id="tagline">Взув зранку. Забув до вечора. <span class="acc">Нога дихає.</span></p>
+  </div>
+</section>
+
+<!-- 5. Замовлення -->
+<section class="section" id="order" aria-labelledby="h-order">
+  <div class="wrap">
+    <span class="eyebrow reveal">Замовлення</span>
+    <h2 class="h2 reveal" id="h-order">Оберіть колір і розмір</h2>
+    <p class="lead reveal">Чотири кольори, розміри з 40 по 45. Під кожним розміром довжина устілки в сантиметрах.</p>
+    <div class="order">
+      <div class="gal reveal" id="gal">
+        <img id="galImg" src="img/siryi-1.jpg" alt="Кросівки Гольф" width="1000" height="1000">
+        <button class="gal-nav gal-prev" type="button" id="galPrev" aria-label="Попереднє фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
+        <button class="gal-nav gal-next" type="button" id="galNext" aria-label="Наступне фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
+        <div class="gal-dots" id="galDots"></div>
+      </div>
+      <div class="panel reveal">
+        <div class="label">Колір <span id="colorName"></span></div>
+        <div class="swatches" id="swatches" role="group" aria-label="Колір"></div>
+
+        <div class="label" style="margin-top:24px">Розмір <span>довжина устілки</span></div>
+        <div class="sizes" id="sizes" role="group" aria-label="Розмір"></div>
+        <p class="err" id="sizeErr" hidden>Оберіть розмір. Не знаєте свій? Нижче інструкція на 1 хвилину.</p>
+
+        <div class="sum"><b>2 995 грн</b><span id="sumNote"></span></div>
+        <div class="order-actions">
+          <button class="btn btn-block" type="button" id="addBtn">Оформити замовлення
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <a class="btn btn-dark btn-block js-go" href="#size">Не знаю свій розмір</a>
+        </div>
+        <div class="done" id="done" hidden></div>
+        <p class="note">Оплата при отриманні з мінімальною передоплатою або частинами на 3 місяці. Менеджер зателефонує, перепитає розмір і лише тоді відправить.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Розмір -->
+<section class="section" id="size" aria-labelledby="h-size" style="background:var(--soft)">
+  <div class="wrap">
+    <span class="eyebrow reveal">Розмір без примірки</span>
+    <h2 class="h2 reveal" id="h-size">Як не помилитися з розміром за 1 хвилину</h2>
+    <div class="steps">
+      <div class="step reveal"><div><h3>Дістаньте устілку</h3><p>Зі взуття, яке добре сидить на нозі.</p></div></div>
+      <div class="step reveal"><div><h3>Виміряйте довжину</h3><p>Лінійкою, від п'яти до носка, у сантиметрах.</p></div></div>
+      <div class="step reveal"><div><h3>Знайдіть у таблиці</h3><p>Або напишіть нам довжину, і ми підберемо розмір.</p></div></div>
+    </div>
+    <div class="measure reveal"><img src="img/measure.jpg" alt="Як виміряти довжину устілки лінійкою" width="700" height="285" loading="lazy"></div>
+    <table class="grid reveal" aria-label="Розміри Гольфа і довжина устілки">
+      <thead><tr><th>Розмір</th><th>Довжина устілки</th></tr></thead>
+      <tbody id="sizeTable"></tbody>
+    </table>
+    <div class="tip reveal">
+      <b>Звіряйте сантиметри, а не цифру розміру</b>
+      <p>У різних моделей той самий розмір може мати різну устілку. У Гольфа 42 розмір має устілку 28,4 см. Якщо сумніваєтеся між двома, напишіть нам довжину устілки.</p>
+    </div>
+
+    <div class="gift reveal">
+      <div>
+        <span class="eyebrow">Купуєте чоловікові чи синові?</span>
+        <h3 style="margin-top:12px">Розмір можна дізнатися без питань і сюрпризу не зіпсувати</h3>
+        <p>Сам собі він кросівки не купить, поки старі не розваляться. Подаруйте пару, в якій ногам добре цілий день.</p>
+      </div>
+      <ol>
+        <li>Тихо дістаньте устілку з його кросівок, які добре сидять.</li>
+        <li>Виміряйте лінійкою від п'яти до носка.</li>
+        <li>Оберіть розмір у таблиці вище. Не підійде: є 14 днів на обмін.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Відгук і цифри -->
+<section class="section" aria-labelledby="h-rev">
+  <div class="wrap">
+    <span class="eyebrow reveal">Відгуки</span>
+    <h2 class="h2 reveal" id="h-rev">Що кажуть ті, хто вже носить</h2>
+    <article class="review reveal">
+      <div class="who"><span class="av">А</span><div><b>Артем Антоненко</b><span>відгук на Гольф, stimul.in.ua, 17.06.2026</span></div></div>
+      <p>Придбав на ярмарці кросівки Гольф із чорної замші на білій підошві. Дуже задоволений покупкою! Взуття зручне, легке та якісно пошите. <mark>Ношу практично щодня, ноги не втомлюються навіть після тривалого ходіння.</mark> Окремо сподобався стильний зовнішній вигляд, кросівки чудово поєднуються з повсякденним одягом.</p>
+    </article>
+    <div class="stats reveal">
+      <div><b>4,98</b><span>середня оцінка, 105 відгуків</span></div>
+      <div><b>30 258+</b><span>покупців STIMUL</span></div>
+      <div><b>22 роки</b><span>шиємо взуття</span></div>
+    </div>
+    <p class="all-reviews reveal"><a href="https://stimul.in.ua/vidhuky/" target="_blank" rel="noopener">Усі відгуки на сайті STIMUL</a></p>
+  </div>
+</section>
+
+<!-- 8. Умови -->
+<section class="section" aria-labelledby="h-terms" style="background:var(--soft)">
+  <div class="wrap">
+    <span class="eyebrow reveal">Без ризику</span>
+    <h2 class="h2 reveal" id="h-terms">Купуєте онлайн, але спокійно</h2>
+    <div class="terms">
+      <div class="term reveal"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></i><div><b>14 днів на обмін</b><span>Не підійшов розмір: обміняємо неношену пару. Доставку при обміні оплачує покупець.</span></div></div>
+      <div class="term reveal"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/></svg></i><div><b>Гарантія 1 рік на підошву</b><span>І 60 днів на верх. Фабрика у Вінниці, тож є куди звернутися.</span></div></div>
+      <div class="term reveal"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg></i><div><b>Оплата при отриманні</b><span>З мінімальною передоплатою, повністю на рахунок, або частинами на 3 місяці.</span></div></div>
+      <div class="term reveal"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12 3 21l9-4 9 4-2-9"/><circle cx="12" cy="7" r="4"/></svg></i><div><b>Перепитаємо розмір</b><span>Менеджер зателефонує перед відправкою і звірить довжину устілки.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Питання -->
+<section class="section" aria-labelledby="h-faq">
+  <div class="wrap">
+    <span class="eyebrow reveal">Питання</span>
+    <h2 class="h2 reveal" id="h-faq">Часті питання</h2>
+    <div class="faq reveal">
+      <details><summary>На яку погоду ці кросівки?</summary><p>Гольф для сухої погоди: тепла осінь, весна і літо. Замша не любить калюж і сльоти. На дощ і мокрий сніг краще взяти Ягуар демі або Хамелеон, менеджер підкаже.</p></details>
+      <details><summary>Чи не буде жарко влітку?</summary><p>Шкіра всередині і перфорована устілка пропускають повітря, тому нога не пітніє навіть у теплий день.</p></details>
+      <details><summary>Які є розміри?</summary><p>З 40 по 45. Під кожним розміром вказана довжина устілки, звіряйте сантиметри.</p></details>
+      <details><summary>Як підібрати розмір, якщо не можу приміряти?</summary><p>Виміряйте устілку взуття, яке добре сидить, і порівняйте з таблицею. Або напишіть нам довжину: ми підберемо розмір і перепитаємо перед відправкою.</p></details>
+      <details><summary>А якщо все одно не підійде?</summary><p>Є 14 днів на обмін неношеної пари. Доставку при обміні оплачує покупець.</p></details>
+      <details><summary>Як оплатити?</summary><p>При отриманні на Новій пошті з мінімальною передоплатою, повністю на рахунок, або частинами на 3 місяці.</p></details>
+      <details><summary>Яка гарантія?</summary><p>1 рік на підошву і 60 днів на верх. Якщо щось трапиться, звертайтеся: фабрика у Вінниці.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Фінал -->
+<section class="section final" aria-labelledby="h-final">
+  <div class="wrap">
+    <span class="eyebrow">Гольф</span>
+    <h2 class="h2" id="h-final">Кеди, в яких нога не пріє</h2>
+    <p class="lead">2 995 грн. Розміри 40–45. Оплата при отриманні, 14 днів на обмін.</p>
+    <div class="hero-cta"><a class="btn js-go" href="#order">Обрати колір і розмір
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.png" alt="STIMUL" width="101" height="28">
+    <span>Вінницька фабрика взуття STIMUL · 22 роки</span>
+    <span>Телефон: <a href="tel:+380632000401">063 200 04 01</a></span>
+    <span><a href="https://stimul.in.ua/" target="_blank" rel="noopener">Увесь каталог на stimul.in.ua</a></span>
+  </div>
+</footer>
+
+<div class="dock" id="dock">
+  <div class="p"><b>2 995 грн</b><span>Гольф · розміри 40–45</span></div>
+  <a class="btn js-go" href="#order">Обрати розмір</a>
+</div>
+
+<script>
+(function(){
+  var ED={"siryi":{"40":{"uid":"935956074334","sku":"6140","price":2995,"label":"40-27см","cname":"Світло/сірий","img":"https://static.tildacdn.one/stor6561-3861-4337-b538-353833373161/dfbf314c2bd3e66008a9b4d8f6fa6445.jpg"},"41":{"uid":"133427722204","sku":"6141","price":2995,"label":"41-27.6см","cname":"Світло/сірий","img":"https://static.tildacdn.one/stor6561-3861-4337-b538-353833373161/dfbf314c2bd3e66008a9b4d8f6fa6445.jpg"},"42":{"uid":"438704850694","sku":"6142","price":2995,"label":"42-28,4см","cname":"Світло/сірий","img":"https://static.tildacdn.one/stor6561-3861-4337-b538-353833373161/dfbf314c2bd3e66008a9b4d8f6fa6445.jpg"},"43":{"uid":"462486830794","sku":"6143","price":2995,"label":"43-29см","cname":"Світло/сірий","img":"https://static.tildacdn.one/stor6561-3861-4337-b538-353833373161/dfbf314c2bd3e66008a9b4d8f6fa6445.jpg"},"44":{"uid":"172435065824","sku":"6144","price":2995,"label":"44-29,6см","cname":"Світло/сірий","img":"https://static.tildacdn.one/stor6561-3861-4337-b538-353833373161/dfbf314c2bd3e66008a9b4d8f6fa6445.jpg"},"45":{"uid":"678244890734","sku":"6145","price":2995,"label":"45-30,2см","cname":"Світло/сірий","img":"https://static.tildacdn.one/stor6561-3861-4337-b538-353833373161/dfbf314c2bd3e66008a9b4d8f6fa6445.jpg"}},"chornyi":{"40":{"uid":"991004808834","sku":"6158","price":2995,"label":"40 - 27 см устілка","cname":"Чорний","img":"https://static.tildacdn.one/stor3065-6563-4538-a633-636137396436/44a0865a1cca61133a478cfb1832558e.jpg"},"41":{"uid":"435202182394","sku":"6159","price":2995,"label":"41-27,6 см устілка","cname":"Чорний","img":"https://static.tildacdn.one/stor3065-6563-4538-a633-636137396436/44a0865a1cca61133a478cfb1832558e.jpg"},"42":{"uid":"641462081464","sku":"6160","price":2995,"label":"42-28,4 см устілка","cname":"Чорний","img":"https://static.tildacdn.one/stor3065-6563-4538-a633-636137396436/44a0865a1cca61133a478cfb1832558e.jpg"},"43":{"uid":"890173823434","sku":"6161","price":2995,"label":"43-29 см устілка","cname":"Чорний","img":"https://static.tildacdn.one/stor3065-6563-4538-a633-636137396436/44a0865a1cca61133a478cfb1832558e.jpg"},"44":{"uid":"742381865674","sku":"6162","price":2995,"label":"44-29,6см устілка","cname":"Чорний","img":"https://static.tildacdn.one/stor3065-6563-4538-a633-636137396436/44a0865a1cca61133a478cfb1832558e.jpg"},"45":{"uid":"476410197174","sku":"6163","price":2995,"label":"45-30,2см устілка","cname":"Чорний","img":"https://static.tildacdn.one/stor3065-6563-4538-a633-636137396436/44a0865a1cca61133a478cfb1832558e.jpg"}},"popel":{"40":{"uid":"598487064554","sku":"6134","price":2995,"label":"40-27см устілка","cname":"Попелястий","img":"https://static.tildacdn.one/stor3764-3531-4361-a535-393433313935/9f8c28445f2ee520aafe3c8e39a90f56.jpg"},"41":{"uid":"452175753574","sku":"6135","price":2995,"label":"41-27,6см устілка","cname":"Попелястий","img":"https://static.tildacdn.one/stor3764-3531-4361-a535-393433313935/9f8c28445f2ee520aafe3c8e39a90f56.jpg"},"42":{"uid":"713819672644","sku":"6136","price":2995,"label":"42-28,4см устілка","cname":"Попелястий","img":"https://static.tildacdn.one/stor3764-3531-4361-a535-393433313935/9f8c28445f2ee520aafe3c8e39a90f56.jpg"},"43":{"uid":"141922898434","sku":"6137","price":2995,"label":"43-29см устілка","cname":"Попелястий","img":"https://static.tildacdn.one/stor3764-3531-4361-a535-393433313935/9f8c28445f2ee520aafe3c8e39a90f56.jpg"},"44":{"uid":"675300821974","sku":"6138","price":2995,"label":"44-29,6см устілка","cname":"Попелястий","img":"https://static.tildacdn.one/stor3764-3531-4361-a535-393433313935/9f8c28445f2ee520aafe3c8e39a90f56.jpg"},"45":{"uid":"203362520624","sku":"6139","price":2995,"label":"45-30,2см устілка","cname":"Попелястий","img":"https://static.tildacdn.one/stor3764-3531-4361-a535-393433313935/9f8c28445f2ee520aafe3c8e39a90f56.jpg"}},"kakao":{"40":{"uid":"984740063044","sku":"6122","price":2995,"label":"40-27см устілка","cname":"Какао","img":"https://static.tildacdn.one/stor3036-6433-4063-a535-336363393466/0fdf04ef375d59fad93182452fb0d340.jpg"},"41":{"uid":"370686657284","sku":"6123","price":2995,"label":"41-27,6см устілка","cname":"Какао","img":"https://static.tildacdn.one/stor3036-6433-4063-a535-336363393466/0fdf04ef375d59fad93182452fb0d340.jpg"},"42":{"uid":"889199817374","sku":"6124","price":2995,"label":"42-28,4см устілка","cname":"Какао","img":"https://static.tildacdn.one/stor3036-6433-4063-a535-336363393466/0fdf04ef375d59fad93182452fb0d340.jpg"},"43":{"uid":"974441215914","sku":"6125","price":2995,"label":"43-29см устілка","cname":"Какао","img":"https://static.tildacdn.one/stor3036-6433-4063-a535-336363393466/0fdf04ef375d59fad93182452fb0d340.jpg"},"44":{"uid":"961207256564","sku":"6126","price":2995,"label":"44-29,6см устілка","cname":"Какао","img":"https://static.tildacdn.one/stor3036-6433-4063-a535-336363393466/0fdf04ef375d59fad93182452fb0d340.jpg"},"45":{"uid":"217003368754","sku":"6127","price":2995,"label":"45-30,2см устілка","cname":"Какао","img":"https://static.tildacdn.one/stor3036-6433-4063-a535-336363393466/0fdf04ef375d59fad93182452fb0d340.jpg"}}};
+  var COLORS=[{id:'siryi',name:'Світло-сірий',n:5},{id:'chornyi',name:'Чорний',n:4},{id:'popel',name:'Попелястий',n:1},{id:'kakao',name:'Какао',n:5}];
+  var SIZES=[[40,'27'],[41,'27,6'],[42,'28,4'],[43,'29'],[44,'29,6'],[45,'30,2']];
+  var PRODUCT_NAME='Повсякденні кросівки Гольф';
+  var PRODUCT_URL='https://stimul.vn.ua/litni_modeli/tproduct/2020659623-258687208424-povsyakdenn-krosvki-golf';
+  var state={c:0,p:0,size:null};
+  var $=function(id){return document.getElementById(id)};
+  function img(c,i,t){return 'img/'+COLORS[c].id+'-'+(i+1)+(t?'-t':'')+'.jpg'}
+  function cm(s){for(var i=0;i<SIZES.length;i++)if(SIZES[i][0]===s)return SIZES[i][1];return ''}
+
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('.js-go'); if(!a) return;
+    var el=document.querySelector(a.getAttribute('href')); if(!el) return;
+    e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+
+  $('playBtn').onclick=function(){
+    var m=$('heroMedia');
+    m.innerHTML='<video src="media/golf.mp4" controls autoplay playsinline></video>';
+    m.scrollIntoView({behavior:'smooth',block:'center'});
+  };
+
+  function drawGal(){
+    var c=COLORS[state.c]; $('galImg').src=img(state.c,state.p); $('galImg').alt='Кросівки Гольф, колір '+c.name.toLowerCase()+', фото '+(state.p+1);
+    var one=c.n<2; $('galPrev').hidden=one; $('galNext').hidden=one;
+    var d='';if(!one)for(var i=0;i<c.n;i++)d+='<button type="button" aria-label="Фото '+(i+1)+'" aria-current="'+(i===state.p)+'" data-p="'+i+'"></button>';
+    $('galDots').innerHTML=d;
+  }
+  $('galDots').onclick=function(e){var b=e.target.closest('button');if(!b)return;state.p=+b.dataset.p;drawGal()};
+  $('galPrev').onclick=function(){var n=COLORS[state.c].n;state.p=(state.p-1+n)%n;drawGal()};
+  $('galNext').onclick=function(){state.p=(state.p+1)%COLORS[state.c].n;drawGal()};
+  var x0=null;
+  $('gal').addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  $('gal').addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)<40)return;
+    var n=COLORS[state.c].n;state.p=(state.p+(dx<0?1:-1)+n)%n;drawGal()},{passive:true});
+
+  var sw='';COLORS.forEach(function(c,i){sw+='<button type="button" data-c="'+i+'" aria-pressed="'+(i===0)+'"><img src="'+img(i,0,true)+'" alt="" width="40" height="40">'+c.name+'</button>'});
+  $('swatches').innerHTML=sw;
+  $('swatches').onclick=function(e){var b=e.target.closest('button');if(!b)return;state.c=+b.dataset.c;state.p=0;
+    [].forEach.call($('swatches').children,function(x){x.setAttribute('aria-pressed',x===b)});drawGal();drawSum()};
+
+  var sz='';SIZES.forEach(function(s){sz+='<button type="button" data-s="'+s[0]+'" aria-pressed="false"><b>'+s[0]+'</b><small>'+s[1]+' см</small></button>'});
+  $('sizes').innerHTML=sz;
+  $('sizes').onclick=function(e){var b=e.target.closest('button');if(!b)return;state.size=+b.dataset.s;$('sizeErr').hidden=true;
+    [].forEach.call($('sizes').children,function(x){x.setAttribute('aria-pressed',x===b)});drawSum()};
+  var tb='';SIZES.forEach(function(s){tb+='<tr><td>'+s[0]+'</td><td>'+s[1]+' см</td></tr>'});
+  $('sizeTable').innerHTML=tb;
+
+  function drawSum(){
+    $('colorName').textContent=COLORS[state.c].name;
+    $('sumNote').textContent='колір '+COLORS[state.c].name.toLowerCase()+(state.size?', розмір '+state.size+' ('+cm(state.size)+' см)':'');
+  }
+
+  $('addBtn').onclick=function(){
+    if(!state.size){$('sizeErr').hidden=false;$('sizes').scrollIntoView({behavior:'smooth',block:'center'});return}
+    var e=ED[COLORS[state.c].id][String(state.size)];
+    if(typeof window.tcart__addProduct==='function'){
+      window.tcart__addProduct({name:PRODUCT_NAME,price:e.price,img:e.img,url:PRODUCT_URL,uid:e.uid,sku:e.sku,quantity:1,
+        options:[{option:'Сезон',variant:'Демі/Літо'},{option:'Доступні кольори',variant:e.cname},{option:'Розмір',variant:e.label}]});
+      if(typeof window.tcart__openCart==='function')window.tcart__openCart();
+      return;
+    }
+    var d=$('done');d.hidden=false;
+    d.innerHTML='<b>Тестова сторінка.</b> Ви обрали: '+COLORS[state.c].name.toLowerCase()+', розмір '+state.size+' ('+cm(state.size)+' см), 2 995 грн, артикул '+e.sku+'. На Tilda тут відкриється оформлення замовлення.';
+  };
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -10% 0px'});
+    [].forEach.call(document.querySelectorAll('.reveal'),function(el){io.observe(el)});
+  }else{[].forEach.call(document.querySelectorAll('.reveal'),function(el){el.classList.add('in')})}
+
+  var tg=$('tagline'),words=[];
+  (function split(node){
+    [].slice.call(node.childNodes).forEach(function(n){
+      if(n.nodeType===3){var f=document.createDocumentFragment();n.textContent.split(/(\s+)/).forEach(function(t){
+        if(!t)return; if(/^\s+$/.test(t)){f.appendChild(document.createTextNode(t));return}
+        var s=document.createElement('span');s.className='w'+(node.classList&&node.classList.contains('acc')?' acc':'');s.textContent=t;words.push(s);f.appendChild(s)});
+        node.replaceChild(f,n)}
+      else if(n.nodeType===1)split(n);
+    });
+  })(tg);
+  var ticking=false;
+  function paint(){ticking=false;var r=tg.getBoundingClientRect(),vh=window.innerHeight;
+    var prog=Math.min(1,Math.max(0,(vh*0.85-r.top)/(r.height+vh*0.35)));var k=Math.round(prog*words.length);
+    words.forEach(function(w,i){w.classList.toggle('on',i<k)});}
+  function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(paint)}
+    var o=$('order').getBoundingClientRect();$('dock').classList.toggle('hide',o.top<window.innerHeight&&o.bottom>0)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  drawGal();drawSum();
+})();
+</script>
+</body>
+</html>
