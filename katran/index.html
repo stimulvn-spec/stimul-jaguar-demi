@@ -605,6 +605,14 @@
     var d=$('done');d.hidden=false;
     d.innerHTML='<b>Тестова сторінка</b><br>Ви обрали: '+st.s.toLowerCase()+', '+COLORS[st.c].name.toLowerCase()+', розмір '+st.size+', '+money(e.price)+', артикул '+e.sku+'<br>На Tilda тут відкриється оформлення замовлення'};
 
+  /* після успішного оформлення в кошику Tilda — сторінка подяки */
+  var THANKS='https://stimul.vn.ua/thanks';
+  function hookCart(){
+    [].forEach.call(document.querySelectorAll('.t706 form'),function(f){f.setAttribute('data-success-url',THANKS)});
+    var cb=window.t706_onSuccessCallback;
+    if(typeof cb==='function'&&!cb.stlThanks){var w=function(){try{return cb.apply(this,arguments)}finally{setTimeout(function(){window.location.href=THANKS},800)}};w.stlThanks=1;window.t706_onSuccessCallback=w}}
+  hookCart();document.addEventListener('DOMContentLoaded',hookCart);window.addEventListener('load',hookCart);setTimeout(hookCart,3000);
+
   /* відгуки: стрічка, двічі для безшовного кола */
   function cards(dup){return REVIEWS.map(function(r){return '<article class="card'+(r.main?' main':'')+(dup?' dup':'')+'"'+(dup?' aria-hidden="true"':'')+'><p>«'+r.t+'»</p><footer><b>'+r.n+'</b>'+r.m+'</footer></article>'}).join('')}
   $('track').innerHTML=cards(false)+cards(true);
