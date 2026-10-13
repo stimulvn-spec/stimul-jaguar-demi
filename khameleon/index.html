@@ -606,15 +606,15 @@
   $('plus').onclick=function(){setCm(st.cm+0.1,true)};
   var sz='';SIZES.forEach(function(s){sz+='<button type="button" data-s="'+s[0]+'" aria-pressed="false">'+s[0]+'</button>'});
   $('sizes').innerHTML=sz;
-  function markSize(){[].forEach.call($('sizes').children,function(x){x.setAttribute('aria-pressed',st.touched&&+x.dataset.s===st.size)})}
+  function markSize(){[].forEach.call($('sizes').children,function(x){x.setAttribute('aria-pressed',+x.dataset.s===st.size)})}
   $('sizes').onclick=function(e){var b=e.target.closest('button');if(!b)return;var s=+b.dataset.s;
     for(var i=0;i<SIZES.length;i++)if(SIZES[i][0]===s)setCm(SIZES[i][1],true)};
   function drawSum(){var e=ed()[String(st.size||42)];
     $('price').textContent=money(e.price);$('priceOld').textContent=money(e.old);$('addTxt').textContent='Замовити за '+money(e.price);$('dockPrice').textContent=money(e.price);
-    $('sumNote').textContent=st.s.toLowerCase()+', '+COLORS[st.c].name.toLowerCase()+(st.touched&&st.size?', розмір '+st.size:'')}
+    $('sumNote').textContent=st.s.toLowerCase()+', '+COLORS[st.c].name.toLowerCase()+(st.size?', розмір '+st.size:'')}
 
   $('addBtn').onclick=function(){
-    if(!st.touched||!st.size){$('err').hidden=false;$('range').focus();return}
+    if(!st.size){$('err').hidden=false;$('range').focus();return}
     var e=ed()[String(st.size)];
     if(typeof window.tcart__addProduct==='function'){
       window.tcart__addProduct({name:PRODUCT_NAME,price:e.price,img:IMG[COLORS[st.c].id][0],url:PRODUCT_URL,uid:e.uid,sku:e.sku,quantity:1,
