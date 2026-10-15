@@ -121,6 +121,8 @@
     ["А-Банк", "ua.com.abank"], ["Sense Bank", "ua.alfabank.mobile.android"],
     ["izibank", "ua.izibank.app"], ["ОТП Банк", "ua.otpbank.android"]
   ];
+  // як підписати рахунок для клієнта (власниця 15.10.2026: це розрахунковий рахунок ФОП, а не особистий)
+  var ACCOUNT_LABELS = {"UA913003350000000260092436195": "Рахунок ФОП Колеснікової Наталії"};
   var b64 = (location.hash || "").replace(/^#/, "").trim();
   var lines;
   try {
@@ -129,6 +131,7 @@
     var bin = atob(s), bytes = new Uint8Array(bin.length);
     for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
     lines = new TextDecoder("utf-8").decode(bytes).split("\n");
+    if (lines[0] === "STIMULCARD" && /^\d{16}$/.test(lines[2])) { cardMode(lines); return; }
     if (lines[0] !== "BCD" || !/^UA\d{27}$/.test(lines[6])) throw new Error("bad");
   } catch (e) {
     document.getElementById("err").style.display = "block";
@@ -137,6 +140,7 @@
   }
   var v = lines[1], name = lines[5], iban = lines[6], amt = (lines[7] || "").replace(/^UAH/, ""),
       code = lines[8], purpose = lines[11] || "";
+  var label = ACCOUNT_LABELS[iban] || name;
   var hostPath = v === "003" ? "qr.bank.gov.ua/" + b64 : "bank.gov.ua/qr/" + b64;
   var universal = "https://" + hostPath;
   var android = /Android/i.test(navigator.userAgent);
@@ -144,17 +148,10 @@
 
   var money = amt ? Number(amt).toLocaleString("uk-UA", {minimumFractionDigits: amt.indexOf(".") >= 0 && !/\.00$/.test(amt) ? 2 : 0}) : "";
   document.getElementById("amount").innerHTML = money ? money + " <small>грн</small>" : "Сума — у банку";
-  document.getElementById("to-name").textContent = name;
+  document.getElementById("to-name").textContent = label;
   document.getElementById("safe-name").textContent = name;
 
   var box = document.getElementById("banks");
-  BANKS.forEach(function (b) {
-    var a = document.createElement("a");
-    a.className = "bank"; a.textContent = b[0];
-    a.href = android ? "intent://" + hostPath + "#Intent;scheme=https;package=" + b[1] +
-                       ";S.browser_fallback_url=" + encodeURIComponent(universal) + ";end" : universal;
-    box.appendChild(a);
-  });
   var osch = document.createElement("a");
   osch.className = "bank"; osch.textContent = "Ощадбанк"; osch.href = "#";
   osch.addEventListener("click", function (e) {
@@ -162,7 +159,15 @@
     var o = document.getElementById("oschad"); o.classList.toggle("open");
     if (o.classList.contains("open")) o.scrollIntoView({behavior: "smooth", block: "start"});
   });
-  box.appendChild(osch);
+  // Приват, Моно й Ощад — першими (власниця 15.10.2026)
+  BANKS.forEach(function (b, i) {
+    var a = document.createElement("a");
+    a.className = "bank"; a.textContent = b[0];
+    a.href = android ? "intent://" + hostPath + "#Intent;scheme=https;package=" + b[1] +
+                       ";S.browser_fallback_url=" + encodeURIComponent(universal) + ";end" : universal;
+    box.appendChild(a);
+    if (i === 1) box.appendChild(osch);
+  });
   var other = document.createElement("a");
   other.className = "bank other"; other.textContent = "Інший банк"; other.href = universal;
   box.appendChild(other);
@@ -207,14 +212,38 @@
   }
   var rows = document.getElementById("rows");
   [["Отримувач", name], ["IBAN", iban], ["Код отримувача (ІПН/ЄДРПОУ)", code], ["Сума", amt], ["Призначення", purpose]]
-    .forEach(function (r) {
-      if (!r[1]) return;
-      var d = document.createElement("div"); d.className = "row";
-      d.innerHTML = '<div class="grow"><div class="k"></div><div class="v"></div></div><button class="copy" type="button">Скопіювати</button>';
-      d.querySelector(".k").textContent = r[0]; d.querySelector(".v").textContent = r[1];
-      var btn = d.querySelector(".copy"); btn.addEventListener("click", function () { copy(r[1], btn); });
-      rows.appendChild(d);
-    });
+    .forEach(function (r) { addRow(rows, r[0], r[1]); });
+
+  function addRow(box, k, val) {
+    if (!val) return;
+    var d = document.createElement("div"); d.className = "row";
+    d.innerHTML = '<div class="grow"><div class="k"></div><div class="v"></div></div><button class="copy" type="button">Скопіювати</button>';
+    d.querySelector(".k").textContent = k; d.querySelector(".v").textContent = val;
+    var btn = d.querySelector(".copy"); btn.addEventListener("click", function () { copy(val, btn); });
+    box.appendChild(d);
+  }
+
+  // Оплата на картку (поле «Рахунок від» = картка): банки не відкривають переказ на картку з посилання,
+  // тож показуємо суму, номер картки і кнопки «Скопіювати»
+  function cardMode(l) {
+    var card = l[2], holder = l[3] || "", camt = l[4] || "", cpurpose = l[5] || "";
+    var pretty = card.replace(/(\d{4})(?=\d)/g, "$1 ");
+    document.querySelector(".lead").textContent = "Скопіюйте номер картки й суму — і оплатіть у застосунку свого банку";
+    var m = camt ? Number(camt).toLocaleString("uk-UA", {minimumFractionDigits: /\.00$/.test(camt) ? 0 : 2}) : "";
+    document.getElementById("amount").innerHTML = m ? m + " <small>грн</small>" : "—";
+    document.getElementById("to-name").textContent = "картка " + pretty.slice(-4) + (holder ? " · " + holder : "");
+    document.getElementById("safe-name").textContent = holder || ("картка …" + card.slice(-4));
+    ["banks", "android-hint", "ios-note", "oschad"].forEach(function (id) { document.getElementById(id).style.display = "none"; });
+    document.querySelector(".qr").style.display = "none";
+    Array.prototype.forEach.call(document.querySelectorAll("h2"), function (h) { h.style.display = "none"; });
+    var h = document.createElement("h2"); h.textContent = "Переказ на картку"; h.style.display = "";
+    var rowsBox = document.getElementById("rows");
+    rowsBox.parentNode.insertBefore(h, rowsBox);
+    addRow(rowsBox, "Номер картки", card);
+    addRow(rowsBox, "Сума", camt.replace(/\.00$/, ""));
+    addRow(rowsBox, "Отримувач", holder);
+    addRow(rowsBox, "Коментар до переказу", cpurpose);
+  }
 })();
 </script>
 </body>
