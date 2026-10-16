@@ -229,7 +229,7 @@
   <div class="hero-media">
     <img src="img/hero-poster.jpg" alt="" width="720" height="560">
     <video id="heroVid" muted loop playsinline autoplay preload="metadata" poster="img/hero-poster.jpg" aria-hidden="true">
-      <source src="media/hero-loop.mp4" type="video/mp4">
+      <source src="media/hero-loop.mp4?v=2" type="video/mp4">
     </video>
     <button class="replay js-video" type="button"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg>Огляд зі звуком</button>
   </div>
@@ -477,12 +477,20 @@
     $('sumNote').textContent=note;$('dockNote').textContent='Хамелеон · '+note}
 
   /* кошик Tilda: лише ім'я і телефон (email необов'язковий і схований) */
+  if(!$('stlCartCss')){var cs=document.createElement('style');cs.id='stlCartCss';
+    cs.textContent='.t706 .t-input-group:has(input[name="Email"]){display:none!important}';document.head.appendChild(cs)}
   function slimCart(){
     var forms=document.querySelectorAll('.t706 form, .t706__cartwin form');
     [].forEach.call(forms,function(f){
       [].forEach.call(f.querySelectorAll('input[name="Email"],input[type="email"]'),function(i){
         i.removeAttribute('data-tilda-req');i.removeAttribute('aria-required');i.required=false;
-        var g=i.closest('.t-input-group');if(g)g.style.display='none'})})}
+        var g=i.closest('.t-input-group');if(g)g.style.setProperty('display','none','important')})});
+    /* плашка «Купували раніше? Увійдіть» відволікає перед кнопкою */
+    [].forEach.call(document.querySelectorAll('.t706 div, .t706 p'),function(el){
+      var t=(el.textContent||'').trim();
+      if(t.indexOf('Купували раніше')===0&&t.length<80){var p=el;
+        while(p.parentElement&&(p.parentElement.textContent||'').trim()===t)p=p.parentElement;
+        p.style.setProperty('display','none','important')}})}
   slimCart();setTimeout(slimCart,1500);setTimeout(slimCart,4000);
 
   function order(){
