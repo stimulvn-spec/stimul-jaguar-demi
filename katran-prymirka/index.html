@@ -559,7 +559,7 @@
 
   /* кошик Tilda: лише ім'я і телефон */
   if(!$('stlCartCss')){var cs=document.createElement('style');cs.id='stlCartCss';
-    cs.textContent='.t706 .t-input-group:has(input[name="Email"]){display:none!important}';document.head.appendChild(cs)}
+    cs.textContent='.t706 .t-input-group:has(input[name="Email"]),.t706 .t706__auth{display:none!important}';document.head.appendChild(cs)}
   function slimCart(){
     [].forEach.call(document.querySelectorAll('.t706 form, .t706__cartwin form'),function(f){
       [].forEach.call(f.querySelectorAll('input[name="Email"],input[type="email"]'),function(i){
