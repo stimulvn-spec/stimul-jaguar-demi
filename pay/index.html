@@ -123,6 +123,14 @@
   ];
   // як підписати рахунок для клієнта (власниця 15.10.2026: це розрахунковий рахунок ФОП, а не особистий)
   var ACCOUNT_LABELS = {"UA913003350000000260092436195": "Рахунок ФОП Колеснікової Наталії"};
+  // Коротке посилання (власниця 16.10.2026): у «#» лише «1|f|сума|прізвище» — реквізити ФОП тут, на сторінці.
+  // Картки: «1|c|номер|сума|прізвище|власник» — номер особистої картки лише в посиланні клієнта, не в коді сторінки
+  var FOP = {name: "ФОП КОЛЕСНІКОВА НАТАЛІЯ ВІТАЛІЇВНА", iban: "UA913003350000000260092436195", code: "1907224446"};
+  function b64url(str) {
+    var u = new TextEncoder().encode(str), bin = "";
+    for (var i = 0; i < u.length; i++) bin += String.fromCharCode(u[i]);
+    return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  }
   var b64 = (location.hash || "").replace(/^#/, "").trim();
   var lines;
   try {
@@ -131,6 +139,15 @@
     var bin = atob(s), bytes = new Uint8Array(bin.length);
     for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
     lines = new TextDecoder("utf-8").decode(bytes).split("\n");
+    var sh = lines.length === 1 ? lines[0].split("|") : null;
+    if (sh && sh[0] === "1" && sh[1] === "f" && /^\d+(\.\d{1,2})?$/.test(sh[2])) {
+      lines = ["BCD", "002", "1", "UCT", "", FOP.name, FOP.iban, "UAH" + Number(sh[2]).toFixed(2), FOP.code, "", "",
+               "Оплата за взуття" + (sh[3] ? " (" + sh[3] + ")" : ""), ""];
+      b64 = b64url(lines.join("\n"));
+    } else if (sh && sh[0] === "1" && sh[1] === "c" && /^\d+(\.\d{1,2})?$/.test(sh[3])) {
+      lines = ["STIMULCARD", "1", sh[2], sh[5] || "", Number(sh[3]).toFixed(2),
+               "Оплата за взуття" + (sh[4] ? " (" + sh[4] + ")" : "")];
+    }
     if (lines[0] === "STIMULCARD" && /^\d{16}$/.test(lines[2])) { cardMode(lines); return; }
     if (lines[0] !== "BCD" || !/^UA\d{27}$/.test(lines[6])) throw new Error("bad");
   } catch (e) {
