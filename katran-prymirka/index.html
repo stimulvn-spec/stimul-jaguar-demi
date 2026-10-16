@@ -564,7 +564,13 @@
     [].forEach.call(document.querySelectorAll('.t706 form, .t706__cartwin form'),function(f){
       [].forEach.call(f.querySelectorAll('input[name="Email"],input[type="email"]'),function(i){
         i.removeAttribute('data-tilda-req');i.removeAttribute('aria-required');i.required=false;
-        var g=i.closest('.t-input-group');if(g)g.style.setProperty('display','none','important')})})}
+        var g=i.closest('.t-input-group');if(g)g.style.setProperty('display','none','important')})});
+    /* плашка «Купували раніше? Увійдіть» відволікає перед кнопкою */
+    [].forEach.call(document.querySelectorAll('.t706 div, .t706 p'),function(el){
+      var t=(el.textContent||'').trim();
+      if(t.indexOf('Купували раніше')===0&&t.length<80){var p=el;
+        while(p.parentElement&&(p.parentElement.textContent||'').trim()===t)p=p.parentElement;
+        p.style.setProperty('display','none','important')}})}
   function order(){
     if(!st.size){go(st.step<3?st.step:3);return}
     var e=ed()[String(st.size)];
