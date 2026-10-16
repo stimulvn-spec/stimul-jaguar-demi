@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Кросівки Хамелеон · STIMUL</title>
+<meta name="description" content="Кросівки Хамелеон: натуральний нубук з водовідштовхувальним просоченням, двокомпонентна підошва · від 3&nbsp;185 грн, оплата при отриманні">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0E0E0E">
+<link rel="icon" href="https://static.tildacdn.net/tild3066-6130-4530-b038-393437303438/111.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E0E0E; --ink2:#1C1C1C; --paper:#F4F1EC; --white:#FFFFFF; --orange:#FF7900; --orange-ink:#B85400;
+    --muted:#6A665F; --line:#E2DDD4; --dim:#A7A39B; --soft:#D9D4CB;
+    --display:"Unbounded","Arial Black",Arial,sans-serif; --body:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    --ease:cubic-bezier(0.32,0.72,0,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:var(--body);background:var(--paper);color:var(--ink);font-size:16px;line-height:24px;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+  img,video{display:block;max-width:100%}
+  h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-0.02em;text-wrap:balance}
+  p,li{text-wrap:pretty}
+  a{color:inherit}
+  button,input{font:inherit;color:inherit}
+  [hidden]{display:none!important}
+  :focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+  .sec{padding:56px 0}
+  .kick{font-size:13px;line-height:20px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-ink)}
+  .h2{font-size:26px;line-height:32px;margin-top:10px;max-width:760px}
+  .lead{font-size:17px;line-height:26px;color:var(--muted);margin-top:12px;max-width:640px}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:12px 24px;border-radius:999px;border:0;cursor:pointer;
+    background:var(--orange);color:var(--ink);font-weight:700;font-size:17px;line-height:24px;text-decoration:none;transition:transform .4s var(--ease),background .4s var(--ease)}
+  .btn:hover{background:#FF8B24}
+  .btn:active{transform:scale(.98)}
+  .btn svg{width:20px;height:20px;flex:none}
+  .btn-ink{background:var(--ink);color:var(--white)}
+  .btn-ink:hover{background:var(--ink2)}
+  .btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+  .btn-line:hover{background:rgba(14,14,14,.05)}
+  .btn-block{width:100%}
+
+  /* 1. Перший екран: продовження ролика */
+  .hero{background:var(--ink);color:var(--white)}
+  .hero-media{position:relative;aspect-ratio:9/7;max-height:44svh;width:100%;overflow:hidden;background:#222}
+  .hero-media video,.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,14,14,.5) 0%,rgba(14,14,14,0) 26%,rgba(14,14,14,0) 70%,rgba(14,14,14,1) 100%)}
+  .bar{position:absolute;z-index:2;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;height:60px;padding:0 16px}
+  .bar img{height:28px;width:auto;position:static}
+  .bar a{font-size:14px;line-height:20px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;
+    background:rgba(14,14,14,.62);padding:0 14px;border-radius:999px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  .bar a svg{width:18px;height:18px;color:var(--orange)}
+  .replay{position:absolute;z-index:2;right:12px;bottom:14px;display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border-radius:999px;border:0;cursor:pointer;
+    background:rgba(255,255,255,.92);color:var(--ink);font-size:14px;font-weight:700}
+  .replay svg{width:16px;height:16px}
+  .hero-in{padding:4px 16px 24px}
+  .hero h1{font-size:28px;line-height:34px;max-width:620px}
+  .hero h1 em{font-style:normal;color:var(--orange)}
+  .hero p{font-size:17px;line-height:25px;color:#E6E1D8;margin-top:10px;max-width:560px}
+  .hprice{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;margin-top:14px}
+  .hprice b{font-family:var(--display);font-size:24px;line-height:30px;color:var(--white)}
+  .hprice s{color:#8F8A81}
+  .hprice span{font-size:14px;line-height:20px;color:var(--soft)}
+  .trust{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;list-style:none}
+  .trust li{display:inline-flex;align-items:center;gap:6px;font-size:13px;line-height:18px;font-weight:600;padding:7px 11px;border-radius:999px;background:#1E1E1E;color:#EDE8DF}
+  .trust svg{width:15px;height:15px;color:var(--orange);flex:none}
+
+  /* 2. Замовлення */
+  .buy-sec{padding:20px 0 48px}
+  .buy{background:var(--white);border-radius:24px;padding:16px;box-shadow:0 1px 0 var(--line)}
+  .buy-grid{display:grid;gap:20px}
+  .gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;border-radius:18px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);scrollbar-width:none}
+  .gal::-webkit-scrollbar{display:none}
+  .gal img{flex:none;width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;scroll-snap-align:center}
+  .dots{display:flex;justify-content:center;gap:6px;margin-top:10px}
+  .dots i{width:7px;height:7px;border-radius:99px;background:var(--line);transition:background .3s,width .3s}
+  .dots i.on{background:var(--ink);width:18px}
+  .lbl{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:15px;line-height:20px;font-weight:700}
+  .lbl span{font-weight:500;color:var(--muted);font-size:14px}
+  .chips{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+  .chips button{display:flex;align-items:center;gap:10px;border:0;background:var(--paper);border-radius:14px;padding:6px 10px 6px 6px;cursor:pointer;font-size:15px;line-height:20px;font-weight:600;text-align:left;min-height:52px}
+  .chips img{width:40px;height:40px;border-radius:10px;object-fit:cover;background:#fff;flex:none}
+  .chips button[aria-pressed="true"]{box-shadow:inset 0 0 0 2px var(--orange);background:#FFF6EE}
+  .seg{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--paper);border-radius:16px;padding:4px;margin-top:10px}
+  .seg button{border:0;background:transparent;border-radius:12px;min-height:52px;padding:6px 10px;cursor:pointer;font-weight:700;line-height:18px}
+  .seg button small{display:block;font-weight:500;font-size:12px;line-height:16px;color:var(--muted);margin-top:2px}
+  .seg button[aria-pressed="true"]{background:var(--ink);color:var(--white)}
+  .seg button[aria-pressed="true"] small{color:#C9C4BA}
+  .sizes{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:10px;border-radius:14px;transition:box-shadow .3s}
+  .sizes button{border:0;background:var(--paper);border-radius:12px;min-height:48px;font-weight:700;font-size:16px;cursor:pointer}
+  .sizes button[aria-pressed="true"]{background:var(--ink);color:var(--white)}
+  .sizes.need{box-shadow:0 0 0 3px var(--orange);animation:nudge .5s var(--ease)}
+  @keyframes nudge{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+  .err{margin-top:8px;font-size:14px;line-height:20px;color:#B42318;font-weight:600}
+  .calc{margin-top:12px;border-radius:16px;background:var(--paper)}
+  .calc summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;font-weight:700;font-size:15px;min-height:48px}
+  .calc summary::-webkit-details-marker{display:none}
+  .calc summary span{color:var(--orange-ink)}
+  .calc summary::after{content:"+";font-size:24px;font-weight:400;color:var(--orange-ink);transition:transform .3s var(--ease)}
+  .calc[open] summary::after{transform:rotate(45deg)}
+  .calc-body{padding:0 14px 14px}
+  .calc-body p{font-size:14px;line-height:20px;color:var(--muted)}
+  .calc-row{display:grid;grid-template-columns:48px 1fr 48px;gap:8px;align-items:center;margin-top:10px}
+  .calc-row button{height:48px;border-radius:14px;border:0;background:var(--white);font-size:22px;font-weight:700;cursor:pointer}
+  .calc-val{text-align:center;font-family:var(--display);font-size:24px;line-height:30px}
+  .calc-body input[type=range]{width:100%;margin-top:10px;accent-color:var(--orange);height:28px}
+  .calc-out{margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--ink);color:var(--white);border-radius:14px;padding:10px 14px}
+  .calc-out b{font-family:var(--display);font-size:26px;line-height:30px;color:var(--orange)}
+  .calc-out span{font-size:14px;line-height:20px;color:var(--soft)}
+  .total{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:4px 12px;margin-top:18px}
+  .total b{font-family:var(--display);font-size:28px;line-height:34px}
+  .total s{color:var(--dim);font-size:15px;margin-left:6px;white-space:nowrap}
+  .total b{white-space:nowrap}
+  .total span{font-size:14px;line-height:20px;color:var(--muted);text-align:right}
+  .acts{display:grid;gap:8px;margin-top:12px}
+  .easy{list-style:none;display:grid;gap:8px;margin-top:14px}
+  .easy li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:14px;line-height:20px;color:var(--ink)}
+  .easy li span{color:var(--muted)}
+  .easy svg{width:20px;height:20px;color:var(--orange-ink);margin-top:0}
+  .done{margin-top:12px;border-radius:14px;padding:12px 16px;font-size:14px;line-height:20px;background:#FFF6EE;box-shadow:inset 0 0 0 1px var(--orange)}
+
+  /* 3. Що було в ролику */
+  .feat{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+  .feat figure{background:var(--white);border-radius:20px;overflow:hidden}
+  .feat img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+  .feat figcaption{padding:12px 14px 16px}
+  .feat h3{font-family:var(--body);font-size:16px;line-height:21px;letter-spacing:0}
+  .feat p{color:var(--muted);margin-top:6px;font-size:14px;line-height:20px}
+  .watch{margin-top:16px}
+
+  /* 4. Головний сумнів */
+  .proof{display:grid;margin-top:24px;background:var(--ink);color:var(--white);border-radius:24px;overflow:hidden}
+  .proof img{width:100%;height:auto;aspect-ratio:786/330;object-fit:cover}
+  .proof>div{padding:20px;display:grid;gap:10px}
+  .proof p{font-size:17px;line-height:26px;color:#E6E1D8}
+  .proof mark{background:transparent;color:var(--orange);font-weight:700}
+  .proof small{font-size:13px;line-height:18px;color:#9A958C}
+  .proof b{font-family:var(--display);font-size:16px;line-height:22px;color:var(--orange)}
+
+  /* 5. Відгуки */
+  .revs{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:24px;padding:0 16px 8px;scrollbar-width:none}
+  .revs::-webkit-scrollbar{display:none}
+  .card{flex:none;width:82%;max-width:340px;scroll-snap-align:start;background:var(--white);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:12px}
+  .card .st{color:var(--orange);letter-spacing:2px;font-size:15px}
+  .card p{font-size:15px;line-height:22px}
+  .card p mark{background:transparent;color:var(--orange-ink);font-weight:700}
+  .card footer{margin-top:auto;font-size:13px;line-height:18px;color:var(--muted)}
+  .card footer b{display:block;color:var(--ink);font-size:14px}
+  .rate{display:flex;align-items:center;gap:10px;margin-top:12px;font-size:15px;color:var(--muted)}
+  .rate b{font-family:var(--display);font-size:22px;color:var(--ink)}
+
+  /* 6. Як це відбувається */
+  .flow{display:grid;gap:10px;margin-top:24px;counter-reset:s}
+  .flow li{list-style:none;background:var(--white);border-radius:18px;padding:16px;display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
+  .flow li::before{counter-increment:s;content:counter(s);width:36px;height:36px;border-radius:999px;background:var(--orange);display:grid;place-items:center;font-weight:700}
+  .flow b{display:block}
+  .flow span{display:block;color:var(--muted);margin-top:2px;font-size:15px;line-height:22px}
+
+  /* 7. FAQ */
+  .faq{margin-top:16px;max-width:760px}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{list-style:none;cursor:pointer;padding:16px 40px 16px 0;font-weight:700;position:relative}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";position:absolute;right:4px;top:10px;font-size:28px;font-weight:400;color:var(--orange-ink);transition:transform .4s var(--ease)}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq p{padding:0 0 16px;color:var(--muted)}
+
+  .final{background:var(--ink);color:var(--white);text-align:center}
+  .final .h2{color:var(--white);margin:10px auto 0}
+  .final .lead{color:#B9B4AA;margin:12px auto 0}
+  .final .btn{margin-top:20px}
+  .foot{background:var(--ink);color:#8F8A81;font-size:14px;line-height:20px;padding:24px 0 32px;border-top:1px solid #222}
+  .foot .wrap{display:grid;gap:8px}
+  .foot a{color:var(--white);text-decoration:none}
+
+  /* панель «Замовити» знизу */
+  .dock{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(14,14,14,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--white);
+    padding:10px 88px calc(10px + env(safe-area-inset-bottom)) 16px;display:flex;align-items:center;gap:12px;transition:transform .5s var(--ease)}
+  .dock.hide{transform:translateY(120%)}
+  .dock div{flex:1;min-width:0}
+  .dock b{display:block;font-family:var(--display);font-size:17px;line-height:22px}
+  .dock span{display:block;font-size:12px;line-height:16px;color:#B9B4AA;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .dock .btn{min-height:46px;padding:10px 18px;font-size:16px}
+
+  /* ролик зі звуком */
+  .vmodal{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.88);display:grid;place-items:center;padding:16px}
+  .vmodal video{max-height:86svh;width:auto;max-width:100%;border-radius:16px;background:#000}
+  .vmodal button{position:absolute;top:12px;right:12px;width:48px;height:48px;border-radius:999px;border:0;background:#fff;font-size:26px;cursor:pointer}
+
+  .rv{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+
+  @media (min-width:820px){
+    body{padding-bottom:0}
+    .dock{display:none}
+    .sec{padding:88px 0}
+    .hero{display:grid;grid-template-columns:1fr 1fr;min-height:min(78vh,720px)}
+    .hero-media{aspect-ratio:auto;max-height:none;height:100%;order:2}
+    .hero-media::after{background:linear-gradient(90deg,rgba(14,14,14,1) 0%,rgba(14,14,14,0) 30%)}
+    .bar{padding:0 clamp(16px,4vw,64px)}
+    .hero{position:relative}
+    .hero-in{align-self:center;padding:96px clamp(16px,4vw,64px) 48px}
+    .hero h1{font-size:44px;line-height:52px}
+    .h2{font-size:38px;line-height:44px}
+    .buy-sec{padding:48px 0 88px}
+    .buy{padding:36px}
+    .buy-grid{grid-template-columns:1.05fr 1fr;gap:40px;align-items:start}
+    .feat{grid-template-columns:repeat(4,1fr);gap:16px}
+    .proof{grid-template-columns:1.2fr 1fr;align-items:center}
+    .proof img{height:100%;aspect-ratio:auto}
+    .proof>div{padding:40px}
+    .revs{max-width:1080px;margin-left:auto;margin-right:auto}
+    .card{width:320px}
+    .flow{grid-template-columns:repeat(4,1fr)}
+    .flow li{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- 1. Перший екран: той самий кадр і та сама фраза, що в ролику -->
+<header class="hero" aria-labelledby="h1">
+  <div class="hero-media">
+    <img src="img/hero-poster.jpg" alt="" width="720" height="560">
+    <video id="heroVid" muted loop playsinline autoplay preload="metadata" poster="img/hero-poster.jpg" aria-hidden="true">
+      <source src="media/hero-loop.mp4" type="video/mp4">
+    </video>
+    <button class="replay js-video" type="button"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg>Огляд зі звуком</button>
+  </div>
+  <div class="bar">
+    <img src="https://static.tildacdn.net/tild3066-6130-4530-b038-393437303438/111.png" alt="STIMUL, Вінницька фабрика взуття" width="116" height="32">
+    <a href="tel:+380632000401"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>063 200 04 01</a>
+  </div>
+  <div class="hero-in">
+    <h1 id="h1">Хорошу пару оцінюють <em>після цілого дня</em></h1>
+    <p>Кросівки Хамелеон: натуральний нубук з водовідштовхувальним просоченням і двокомпонентна підошва<br>Для міста і для активного дня</p>
+    <div class="hprice"><b id="heroPrice">3&nbsp;185 грн</b><s>3&nbsp;685 грн</s><span>оплата при отриманні</span></div>
+    <ul class="trust">
+      <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .7-5.3 4.8 1.6 7L12 17.5 5.7 21l1.6-7L2 9.3l7-.7z"/></svg>4,98 · 105 відгуків</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>14 днів на обмін</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Гарантія 1 рік на підошву</li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+<!-- 2. Одразу купити: колір і сезон уже як у ролику, лишається розмір -->
+<section class="buy-sec" id="buy" aria-label="Замовлення">
+  <div class="wrap">
+    <div class="buy">
+      <div class="buy-grid">
+        <div>
+          <div class="gal" id="gal" tabindex="0" aria-label="Фото кросівок, гортайте вбік"></div>
+          <div class="dots" id="dots" aria-hidden="true"></div>
+          <div class="lbl" style="margin-top:16px">Колір <span id="cName"></span></div>
+          <div class="chips" id="chips" role="group" aria-label="Колір"></div>
+          <div class="lbl" style="margin-top:16px">Сезон <span id="sName"></span></div>
+          <div class="seg" id="seg" role="group" aria-label="Сезон">
+            <button type="button" data-s="Демі" aria-pressed="true">Демі<small>як у ролику</small></button>
+            <button type="button" data-s="Зима" aria-pressed="false">Зима<small>WINDTEX, до −8°C</small></button>
+          </div>
+        </div>
+        <div>
+          <div class="lbl">Розмір <span>36–47</span></div>
+          <div class="sizes" id="sizes" role="group" aria-label="Розмір"></div>
+          <p class="err" id="err" hidden>Оберіть розмір: один дотик</p>
+          <details class="calc" id="calc">
+            <summary>Не знаю розмір <span>підібрати за устілкою</span></summary>
+            <div class="calc-body">
+              <p>Дістаньте устілку з кросівок, які добре сидять, і виміряйте від п'яти до носка</p>
+              <div class="calc-row">
+                <button type="button" id="minus" aria-label="Менше на 1 мм">−</button>
+                <div class="calc-val"><span id="cmVal">27,7</span> см</div>
+                <button type="button" id="plus" aria-label="Більше на 1 мм">+</button>
+              </div>
+              <input type="range" id="range" min="23.3" max="31.4" step="0.1" value="27.7" aria-label="Довжина устілки в сантиметрах">
+              <div class="calc-out" aria-live="polite"><span id="calcNote">Вам підійде розмір</span><b id="calcSize">42</b></div>
+            </div>
+          </details>
+          <div class="total"><div><b id="price">3&nbsp;185 грн</b><s id="priceOld">3&nbsp;685 грн</s></div><span id="sumNote"></span></div>
+          <div class="acts">
+            <button class="btn btn-block" type="button" id="addBtn"><span id="addTxt">Замовити за 3&nbsp;185 грн</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <a class="btn btn-line btn-block" href="tel:+380632000401">Подзвонити і замовити голосом</a>
+          </div>
+          <div class="done" id="done" hidden></div>
+          <ul class="easy">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg><p>Лише ім'я і телефон <span>· далі менеджер передзвонить і звірить розмір</span></p></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg><p>Оплата при отриманні <span>· з мінімальною передоплатою або частинами на 3 місяці</span></p></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg><p>Не підійшов розмір <span>· 14 днів на обмін неношеної пари</span></p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Те, що показано в ролику -->
+<section class="sec" aria-labelledby="h-feat" style="padding-top:0">
+  <div class="wrap">
+    <span class="kick rv">Що ви бачили в ролику</span>
+    <h2 class="h2 rv" id="h-feat">Чотири речі, які відчуваєш увечері, а не в примірочній</h2>
+    <div class="feat">
+      <figure class="rv"><img src="img/f-nubuk.jpg" alt="Натуральний нубук і сітка Хамелеона зблизька" width="560" height="560" loading="lazy"><figcaption><h3>Натуральний нубук</h3><p>Разом із сіткою: нога дихає весь день</p></figcaption></figure>
+      <figure class="rv"><img src="img/f-puddle.jpg" alt="Кросівки Хамелеон у калюжі на ґрунтовій дорозі" width="560" height="560" loading="lazy"><figcaption><h3>Гідрофобна шкіра</h3><p>Водовідштовхувальне просочення для дощу і мокрої трави</p></figcaption></figure>
+      <figure class="rv"><img src="img/f-lining.jpg" alt="Демісезонна підкладка зблизька" width="560" height="560" loading="lazy"><figcaption><h3>Демісезонна підкладка</h3><p>Текстильна сітчаста, нога не парить</p></figcaption></figure>
+      <figure class="rv"><img src="img/f-rock.jpg" alt="Кросівок Хамелеон на камені" width="560" height="560" loading="lazy"><figcaption><h3>Двокомпонентна підошва</h3><p>Глибокий протектор, масло- і бензостійка<br>Один кросівок важить 469 г</p></figcaption></figure>
+    </div>
+    <button class="btn btn-ink watch js-video rv" type="button"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg>Подивитися огляд ще раз · 17 с</button>
+  </div>
+</section>
+
+<!-- 4. Головний сумнів, закритий одним фото -->
+<section class="sec" aria-labelledby="h-proof" style="padding-top:0">
+  <div class="wrap">
+    <span class="kick rv">А як після цілого року?</span>
+    <h2 class="h2 rv" id="h-proof">Фото від покупця, який носить Хамелеон третій рік</h2>
+    <div class="proof rv">
+      <img src="../khameleon/img/r-3rik.jpg" alt="Кросівки Хамелеон покупця після трьох років носіння: верх і підошва" width="786" height="330" loading="lazy">
+      <div>
+        <p>«Третій рік експлуатації, в нещадних умовах<br>Є пошкодження, але від китайщини залишилися б шматки після такого<br><mark>Дуже зручні</mark>, за рахунок підошви ногу не пробивало»</p>
+        <small>Покупець Хамелеона, фото з його відгуку</small>
+        <b>Гарантія 1 рік на підошву і 60 днів на верх</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Відгуки -->
+<section class="sec" aria-labelledby="h-rev" style="padding-top:0;padding-left:0;padding-right:0">
+  <div class="wrap">
+    <span class="kick rv">Відгуки</span>
+    <h2 class="h2 rv" id="h-rev">Ті, хто вже носить Хамелеон</h2>
+    <div class="rate rv"><b>4,98</b>середня оцінка в 105 відгуках на сайті STIMUL</div>
+  </div>
+  <div class="revs" tabindex="0" aria-label="Відгуки покупців, гортайте вбік">
+    <article class="card"><span class="st" aria-label="5 з 5">★★★★★</span><p>«Шукав універсальне взуття на всі випадки життя і знайшов його в кросівках Хамелеон<br>Ношу їх щодня, <mark>ходжу по місту і на роботу</mark><br>Саме головне, вони зручні і <mark>ноги не болять</mark>»</p><footer><b>U K</b>про Хамелеон</footer></article>
+    <article class="card"><span class="st" aria-label="5 з 5">★★★★★</span><p>«Сіло, як влите<br>На мене не просто підібрати взуття: <mark>великий підйом і широка стопа попереду</mark>, а тут прямо супер»</p><footer><b>Володимир Сергійчик</b>про Хамелеон</footer></article>
+    <article class="card"><span class="st" aria-label="5 з 5">★★★★★</span><p>«Десь пів року носив їх по місту, було зручно і комфортно<br>А в горах <mark>скачу по камінню і взагалі не переживаю за ноги</mark><br>Оцінка 10/10»</p><footer><b>Dmytro</b>про Хамелеон</footer></article>
+    <article class="card"><span class="st" aria-label="5 з 5">★★★★★</span><p>«Усе підійшло, враження приємні<br><mark>Вживу кращі, ніж на картинці</mark>»</p><footer><b>Денис Дєдков</b>про Хамелеон</footer></article>
+  </div>
+</section>
+
+<!-- 6. Що буде після кнопки -->
+<section class="sec" aria-labelledby="h-flow" style="background:#EAE5DC">
+  <div class="wrap">
+    <span class="kick rv">Після кнопки «Замовити»</span>
+    <h2 class="h2 rv" id="h-flow">Без передоплати всієї суми і без вгадування розміру</h2>
+    <ol class="flow">
+      <li class="rv"><p><b>Ім'я і телефон</b><span>Більше нічого заповнювати не треба</span></p></li>
+      <li class="rv"><p><b>Менеджер дзвонить</b><span>Звіряє довжину устілки, щоб розмір точно підійшов</span></p></li>
+      <li class="rv"><p><b>Відправляємо Новою поштою</b><span>Оплата при отриманні з мінімальною передоплатою</span></p></li>
+      <li class="rv"><p><b>Носите цілий день</b><span>Не підійшов розмір: 14 днів на обмін, доставку при обміні оплачує покупець</span></p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 7. FAQ -->
+<section class="sec" aria-labelledby="h-faq">
+  <div class="wrap">
+    <span class="kick rv">Питання</span>
+    <h2 class="h2 rv" id="h-faq">Коротко і чесно</h2>
+    <div class="faq rv">
+      <details><summary>Не промокнуть?</summary><p>Нубук має водовідштовхувальне просочення: дощ і мокра трава йому не страшні<br>Але це кросівки з сіткою, а не гумові чоботи: довго стояти в глибокій калюжі не варто<br>На сльоту і мороз беріть зимову версію з мембраною WINDTEX</p></details>
+      <details><summary>Демі чи зима: що брати зараз?</summary><p>Демі, як у ролику, на осінь і весну<br>Зима з утеплювачем WINDTEX комфортна до −8°C, на 100 грн дорожча</p></details>
+      <details><summary>А якщо не вгадаю з розміром?</summary><p>Натисніть «Не знаю розмір» і введіть довжину устілки<br>Менеджер ще раз звірить перед відправкою<br>Якщо все одно не підійде, є 14 днів на обмін</p></details>
+      <details><summary>У мене широка стопа і високий підйом</summary><p>Покупці з широкою стопою і високим підйомом пишуть, що Хамелеон сів добре<br>Скажіть менеджеру довжину і ширину стопи, і він підкаже</p></details>
+      <details><summary>Які розміри і кольори?</summary><p>Розміри з 36 по 47, за 47-й доплата 300 грн<br>Кольори: олива, койот, чорний і сірий<br>Підходять і чоловікам, і жінкам</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec final" aria-labelledby="h-final">
+  <div class="wrap">
+    <span class="kick" style="color:var(--orange)">Хамелеон</span>
+    <h2 class="h2" id="h-final">Оцініть пару після свого цілого дня</h2>
+    <p class="lead">Від 3&nbsp;185 грн<br>Оплата при отриманні<br>14 днів на обмін</p>
+    <a class="btn js-go" href="#buy">Обрати розмір</a>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>Вінницька фабрика взуття STIMUL · 22 роки</span>
+    <span>Телефон: <a href="tel:+380632000401">063 200 04 01</a></span>
+    <span><a href="https://stimul.vn.ua/">Увесь каталог на stimul.vn.ua</a></span>
+  </div>
+</footer>
+
+<div class="dock" id="dock">
+  <div><b id="dockPrice">3&nbsp;185 грн</b><span id="dockNote">Хамелеон · оплата при отриманні</span></div>
+  <button class="btn" type="button" id="dockBtn">Замовити</button>
+</div>
+
+<div class="vmodal" id="vmodal" hidden>
+  <button type="button" id="vclose" aria-label="Закрити">×</button>
+  <video id="vfull" controls playsinline preload="none" poster="img/review-poster.jpg"><source src="media/ogliad.mp4" type="video/mp4"></video>
+</div>
+
+<script>
+(function(){
+  var ED={"Демі":{"koyot":{"36":{"uid":"960223199222","sku":"3047","price":3185,"old":3685,"label":"36 - 23.7 см устілка","cname":"Койот"},"37":{"uid":"334833593342","sku":"3046","price":3185,"old":3685,"label":"37 - 24.5 см устілка","cname":"Койот"},"38":{"uid":"759572604652","sku":"3045","price":3185,"old":3685,"label":"38 - 25 см устілка","cname":"Койот"},"39":{"uid":"435904358242","sku":"3044","price":3185,"old":3685,"label":"39 - 25.7 см устілка","cname":"Койот"},"40":{"uid":"854587395982","sku":"2996","price":3185,"old":3685,"label":"40 - 26.5 см устілка","cname":"Койот"},"41":{"uid":"580084553562","sku":"3010","price":3185,"old":3685,"label":"41 - 27 см устілка","cname":"Койот"},"42":{"uid":"408077103122","sku":"3003","price":3185,"old":3685,"label":"42 - 27.7 см устілка","cname":"Койот"},"43":{"uid":"312881787132","sku":"3011","price":3185,"old":3685,"label":"43 - 28.2 см устілка","cname":"Койот"},"44":{"uid":"461144215772","sku":"2997","price":3185,"old":3685,"label":"44 - 28.8 см устілка","cname":"Койот"},"45":{"uid":"829765911792","sku":"3043","price":3185,"old":3685,"label":"45 - 29.5 см устілка","cname":"Койот"},"46":{"uid":"658068571872","sku":"3042","price":3185,"old":3685,"label":"46 - 30.3 см устілка","cname":"Койот"},"47":{"uid":"447969278562","sku":"3060","price":3485,"old":3785,"label":"47 - 31 см устілка","cname":"Койот"}},"olyva":{"36":{"uid":"132182813202","sku":"3127","price":3185,"old":3685,"label":"36 - 23.7 см устілка","cname":"Олива"},"37":{"uid":"264124776982","sku":"3036","price":3185,"old":3685,"label":"37 - 24.5 см устілка","cname":"Олива"},"38":{"uid":"280483293722","sku":"3128","price":3185,"old":3685,"label":"38 - 25 см устілка","cname":"Олива"},"39":{"uid":"209095172742","sku":"3129","price":3185,"old":3685,"label":"39 - 25.7 см устілка","cname":"Олива"},"40":{"uid":"185201731462","sku":"3039","price":3185,"old":3685,"label":"40 - 26.5 см устілка","cname":"Олива"},"41":{"uid":"664355257502","sku":"3013","price":3185,"old":3685,"label":"41 - 27 см устілка","cname":"Олива"},"42":{"uid":"240206329372","sku":"3000","price":3185,"old":3685,"label":"42 - 27.7 см устілка","cname":"Олива"},"43":{"uid":"920999452562","sku":"3012","price":3185,"old":3685,"label":"43 - 28.2 см устілка","cname":"Олива"},"44":{"uid":"419470832212","sku":"3031","price":3185,"old":3685,"label":"44 - 28.8 см устілка","cname":"Олива"},"45":{"uid":"922191799042","sku":"3032","price":3185,"old":3685,"label":"45 - 29.5 см устілка","cname":"Олива"},"46":{"uid":"961589038182","sku":"3040","price":3185,"old":3685,"label":"46 - 30.3 см устілка","cname":"Олива"},"47":{"uid":"709898177922","sku":"3130","price":3485,"old":3785,"label":"47 - 31 см устілка","cname":"Олива"}},"chornyi":{"36":{"uid":"330452779612","sku":"3034","price":3185,"old":3685,"label":"36 - 23.7 см устілка","cname":"Чорний"},"37":{"uid":"404729970812","sku":"3125","price":3185,"old":3685,"label":"37 - 24.5 см устілка","cname":"Чорний"},"38":{"uid":"312585870282","sku":"3048","price":3185,"old":3685,"label":"38 - 25 см устілка","cname":"Чорний"},"39":{"uid":"705983792652","sku":"3035","price":3185,"old":3685,"label":"39 - 25.7 см устілка","cname":"Чорний"},"40":{"uid":"687556947752","sku":"3041","price":3185,"old":3685,"label":"40 - 26.5 см устілка","cname":"Чорний"},"41":{"uid":"763887957092","sku":"3022","price":3185,"old":3685,"label":"41 - 27 см устілка","cname":"Чорний"},"42":{"uid":"649797549792","sku":"2980","price":3185,"old":3685,"label":"42 - 27.7 см устілка","cname":"Чорний"},"43":{"uid":"703451452932","sku":"3028","price":3185,"old":3685,"label":"43 - 28.2 см устілка","cname":"Чорний"},"44":{"uid":"231856777002","sku":"3009","price":3185,"old":3685,"label":"44 - 28.8 см устілка","cname":"Чорний"},"45":{"uid":"248531978312","sku":"2998","price":3185,"old":3685,"label":"45 - 29.5 см устілка","cname":"Чорний"},"46":{"uid":"724856848822","sku":"3008","price":3185,"old":3685,"label":"46 - 30.3 см устілка","cname":"Чорний"},"47":{"uid":"330727485482","sku":"3126","price":3485,"old":3785,"label":"47 - 31 см устілка","cname":"Чорний"}},"siryi":{"36":{"uid":"848935663112","sku":"5496","price":3185,"old":3685,"label":"36 - 23.7 см устілка","cname":"Сірий"},"37":{"uid":"243144079722","sku":"5497","price":3185,"old":3685,"label":"37 - 24.5 см устілка","cname":"Сірий"},"38":{"uid":"459589559372","sku":"5498","price":3185,"old":3685,"label":"38 - 25 см устілка","cname":"Сірий"},"39":{"uid":"460325174452","sku":"5499","price":3185,"old":3685,"label":"39 - 25.7 см устілка","cname":"Сірий"},"40":{"uid":"489021139912","sku":"5500","price":3185,"old":3685,"label":"40 - 26.5 см устілка","cname":"Сірий"},"41":{"uid":"575511775952","sku":"5501","price":3185,"old":3685,"label":"41 - 27 см устілка","cname":"Сірий"},"42":{"uid":"649870197402","sku":"5502","price":3185,"old":3685,"label":"42 - 27.7 см устілка","cname":"Сірий"},"43":{"uid":"824353949752","sku":"5503","price":3185,"old":3685,"label":"43 - 28.2 см устілка","cname":"Сірий"},"44":{"uid":"761906853772","sku":"5504","price":3185,"old":3685,"label":"44 - 28.8 см устілка","cname":"Сірий"},"45":{"uid":"766218546342","sku":"5505","price":3185,"old":3685,"label":"45 - 29.5 см устілка","cname":"Сірий"},"46":{"uid":"403739855562","sku":"5506","price":3185,"old":3685,"label":"46 - 30.3 см устілка","cname":"Сірий"},"47":{"uid":"484991238082","sku":"5507","price":3485,"old":3985,"label":"47 - 31 см устілка","cname":"Сірий"}}},"Зима":{"chornyi":{"36":{"uid":"542034280512","sku":"4130","price":3285,"old":3745,"label":"36 - 23.7 см устілка","cname":"Чорний"},"37":{"uid":"926396603522","sku":"4331","price":3285,"old":3745,"label":"37 - 24.5 см устілка","cname":"Чорний"},"38":{"uid":"224578173002","sku":"4220","price":3285,"old":3745,"label":"38 - 25 см устілка","cname":"Чорний"},"39":{"uid":"887733848462","sku":"4332","price":3285,"old":3745,"label":"39 - 25.7 см устілка","cname":"Чорний"},"40":{"uid":"439782010452","sku":"4153","price":3285,"old":3745,"label":"40 - 26.5 см устілка","cname":"Чорний"},"41":{"uid":"299820944612","sku":"4154","price":3285,"old":3745,"label":"41 - 27 см устілка","cname":"Чорний"},"42":{"uid":"730607534632","sku":"4155","price":3285,"old":3745,"label":"42 - 27.7 см устілка","cname":"Чорний"},"43":{"uid":"451211511592","sku":"4156","price":3285,"old":3745,"label":"43 - 28.2 см устілка","cname":"Чорний"},"44":{"uid":"974311273942","sku":"4157","price":3285,"old":3745,"label":"44 - 28.8 см устілка","cname":"Чорний"},"45":{"uid":"414969095372","sku":"4158","price":3285,"old":3745,"label":"45 - 29.5 см устілка","cname":"Чорний"},"46":{"uid":"695634629282","sku":"4159","price":3285,"old":3745,"label":"46 - 30.3 см устілка","cname":"Чорний"},"47":{"uid":"912591698272","sku":"4235","price":3585,"old":4045,"label":"47 - 31 см устілка","cname":"Чорний"}},"koyot":{"36":{"uid":"695690398222","sku":"4134","price":3285,"old":3745,"label":"36 - 23.7 см устілка","cname":"Койот"},"37":{"uid":"429454478752","sku":"4135","price":3285,"old":3745,"label":"37 - 24.5 см устілка","cname":"Койот"},"38":{"uid":"856955660082","sku":"4136","price":3285,"old":3745,"label":"38 - 25 см устілка","cname":"Койот"},"39":{"uid":"280178721422","sku":"4137","price":3285,"old":3745,"label":"39 - 25.7 см устілка","cname":"Койот"},"40":{"uid":"653686777762","sku":"4138","price":3285,"old":3745,"label":"40 - 26.5 см устілка","cname":"Койот"},"41":{"uid":"968871599432","sku":"4139","price":3285,"old":3745,"label":"41 - 27 см устілка","cname":"Койот"},"42":{"uid":"812509476402","sku":"4140","price":3285,"old":3745,"label":"42 - 27.7 см устілка","cname":"Койот"},"43":{"uid":"121732361322","sku":"4141","price":3285,"old":3745,"label":"43 - 28.2 см устілка","cname":"Койот"},"44":{"uid":"150141997392","sku":"4142","price":3285,"old":3745,"label":"44 - 28.8 см устілка","cname":"Койот"},"45":{"uid":"469943281952","sku":"4143","price":3285,"old":3745,"label":"45 - 29.5 см устілка","cname":"Койот"},"46":{"uid":"944883122582","sku":"4144","price":3285,"old":3745,"label":"46 - 30.3 см устілка","cname":"Койот"},"47":{"uid":"338185760182","sku":"4145","price":3585,"old":4045,"label":"47 - 31 см устілка","cname":"Койот"}},"olyva":{"36":{"uid":"251360566372","sku":"4132","price":3285,"old":3745,"label":"36 - 23.7 см устілка","cname":"Олива"},"37":{"uid":"703468706052","sku":"4650","price":3285,"old":3745,"label":"37 - 24.5 см устілка","cname":"Олива"},"38":{"uid":"881999649462","sku":"4651","price":3285,"old":3745,"label":"38 - 25 см устілка","cname":"Олива"},"39":{"uid":"778177832622","sku":"4652","price":3285,"old":3745,"label":"39 - 25.7 см устілка","cname":"Олива"},"40":{"uid":"932673541742","sku":"4146","price":3285,"old":3745,"label":"40 - 26.5 см устілка","cname":"Олива"},"41":{"uid":"326545374962","sku":"4147","price":3285,"old":3745,"label":"41 - 27 см устілка","cname":"Олива"},"42":{"uid":"372157258702","sku":"4148","price":3285,"old":3745,"label":"42 - 27.7 см устілка","cname":"Олива"},"43":{"uid":"280697358162","sku":"4149","price":3285,"old":3745,"label":"43 - 28.2 см устілка","cname":"Олива"},"44":{"uid":"574044042462","sku":"4150","price":3285,"old":3745,"label":"44 - 28.8 см устілка","cname":"Олива"},"45":{"uid":"743786058882","sku":"4151","price":3285,"old":3745,"label":"45 - 29.5 см устілка","cname":"Олива"},"46":{"uid":"622782299252","sku":"4152","price":3285,"old":3745,"label":"46 - 30.3 см устілка","cname":"Олива"},"47":{"uid":"927614457232","sku":"4480","price":3585,"old":4045,"label":"47 - 31 см устілка","cname":"Олива"}},"siryi":{"36":{"uid":"449185690612","sku":"5642","price":3285,"old":3745,"label":"36 - 23.7 см устілка","cname":"Сірий"},"37":{"uid":"933208829182","sku":"5643","price":3285,"old":3745,"label":"37 - 24.5 см устілка","cname":"Сірий"},"38":{"uid":"725152273532","sku":"5644","price":3285,"old":3745,"label":"38 - 25 см устілка","cname":"Сірий"},"39":{"uid":"599624835642","sku":"5645","price":3285,"old":3745,"label":"39 - 25.7 см устілка","cname":"Сірий"},"40":{"uid":"782868954152","sku":"5646","price":3285,"old":3745,"label":"40 - 26.5 см устілка","cname":"Сірий"},"41":{"uid":"502223156362","sku":"5647","price":3285,"old":3745,"label":"41 - 27 см устілка","cname":"Сірий"},"42":{"uid":"839766060332","sku":"5648","price":3285,"old":3745,"label":"42 - 27.7 см устілка","cname":"Сірий"},"43":{"uid":"918426428462","sku":"5649","price":3285,"old":3745,"label":"43 - 28.2 см устілка","cname":"Сірий"},"44":{"uid":"767808222062","sku":"5650","price":3285,"old":3745,"label":"44 - 28.8 см устілка","cname":"Сірий"},"45":{"uid":"399237315522","sku":"5651","price":3285,"old":3745,"label":"45 - 29.5 см устілка","cname":"Сірий"},"46":{"uid":"781823095532","sku":"5652","price":3285,"old":3745,"label":"46 - 30.3 см устілка","cname":"Сірий"},"47":{"uid":"824301311612","sku":"5653","price":3585,"old":4045,"label":"47 - 31 см устілка","cname":"Сірий"}}}};
+  var IMG={"chornyi":["https://static.tildacdn.one/stor3566-3435-4165-b663-633766653237/58070431.jpg","https://static.tildacdn.one/stor3331-3863-4231-b365-333735353131/45552814.jpg","https://static.tildacdn.one/stor3832-3535-4639-b334-393163333336/57121494.jpg","https://static.tildacdn.one/stor3561-3439-4239-b235-356137316334/33062431.jpg","https://static.tildacdn.one/stor3066-3432-4163-a464-623937643635/59673304.jpg"],"koyot":["https://static.tildacdn.one/stor6165-3264-4132-a538-303039343638/16021812.jpg","https://static.tildacdn.one/stor6130-3739-4466-b437-363938653833/19313502.jpg","https://static.tildacdn.one/stor3732-6239-4037-b234-336630663735/37776277.jpg","https://static.tildacdn.one/stor6535-6530-4034-a432-313239666163/84811771.jpg","https://static.tildacdn.one/stor3932-6434-4430-b464-613565313230/36052610.jpg"],"olyva":["https://static.tildacdn.one/stor6633-3835-4235-a462-656564623062/89493513.jpg","https://static.tildacdn.one/stor3433-3637-4132-b866-613738386637/42802240.jpg","https://static.tildacdn.one/stor6262-3832-4265-b865-663630386433/74865602.jpg","https://static.tildacdn.one/stor3539-6233-4661-a630-396238393734/36332949.jpg","https://static.tildacdn.one/stor3465-3065-4235-b739-383139373433/72363289.jpg"],"siryi":["https://static.tildacdn.one/stor3666-6332-4239-b230-333233643532/95378659.jpg","https://static.tildacdn.one/stor3537-6539-4138-b363-636431623765/62669444.jpg","https://static.tildacdn.one/stor3631-3432-4233-a363-646639623166/54925721.jpg","https://static.tildacdn.one/stor3737-6435-4534-a161-633063383066/56878045.jpg","https://static.tildacdn.one/stor3335-3837-4235-b432-353665343532/41517820.jpg"]};
+  var COLORS=[{id:'olyva',name:'Олива'},{id:'koyot',name:'Койот'},{id:'chornyi',name:'Чорний'},{id:'siryi',name:'Сірий'}];
+  var SIZES=[[36,23.7],[37,24.5],[38,25],[39,25.7],[40,26.5],[41,27],[42,27.7],[43,28.2],[44,28.8],[45,29.5],[46,30.3],[47,31]];
+  var PRODUCT_NAME='Кросівки Хамелеон';
+  var PRODUCT_URL='https://stimul.vn.ua/tactical-sneakers/tproduct/215336730-302530535322-krosvki-hameleon';
+  var st={s:'Демі',c:0,size:null,cm:27.7};
+  var $=function(id){return document.getElementById(id)};
+  function img(c,i,w){var u=IMG[COLORS[c].id][i].replace('https://static.tildacdn.','https://thb.tildacdn.'),k=u.lastIndexOf('/');return u.slice(0,k)+'/-/resize/'+w+u.slice(k)}
+  function fmt(x){return x.toFixed(1).replace('.',',')}
+  function money(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' грн'}
+  function ed(){return ED[st.s][COLORS[st.c].id]}
+
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.js-go');if(!a)return;
+    e.preventDefault();$('buy').scrollIntoView({behavior:'smooth',block:'start'})});
+
+  /* цикл у першому екрані */
+  var v=$('heroVid');
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause()}
+  else{var pr=v.play&&v.play();if(pr&&pr.catch)pr.catch(function(){})}
+
+  /* ролик зі звуком */
+  document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.js-video');if(!b)return;
+    $('vmodal').hidden=false;var f=$('vfull');f.currentTime=0;var p=f.play();if(p&&p.catch)p.catch(function(){})});
+  function closeV(){$('vfull').pause();$('vmodal').hidden=true}
+  $('vclose').onclick=closeV;
+  $('vmodal').onclick=function(e){if(e.target===this)closeV()};
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!$('vmodal').hidden)closeV()});
+
+  /* фото: гортаються пальцем */
+  function drawGal(){var c=COLORS[st.c],n=IMG[c.id].length,h='',d='';
+    for(var i=0;i<n;i++){h+='<img src="'+img(st.c,i,'900x')+'" alt="Кросівки Хамелеон, колір '+c.name.toLowerCase()+', фото '+(i+1)+'" width="900" height="900"'+(i?' loading="lazy"':'')+'>';d+='<i'+(i?'':' class="on"')+'></i>'}
+    $('gal').innerHTML=h;$('gal').scrollLeft=0;$('dots').innerHTML=d;$('cName').textContent=c.name}
+  $('gal').addEventListener('scroll',function(){var g=this,k=Math.round(g.scrollLeft/g.clientWidth);
+    [].forEach.call($('dots').children,function(x,i){x.className=i===k?'on':''})},{passive:true});
+  var ch='';COLORS.forEach(function(c,i){ch+='<button type="button" data-c="'+i+'" aria-pressed="'+(i===0)+'"><img src="'+img(i,0,'120x')+'" alt="" width="40" height="40">'+c.name+'</button>'});
+  $('chips').innerHTML=ch;
+  $('chips').onclick=function(e){var b=e.target.closest('button');if(!b)return;st.c=+b.dataset.c;
+    [].forEach.call($('chips').children,function(x){x.setAttribute('aria-pressed',x===b)});drawGal();drawSum()};
+
+  /* сезон */
+  function setSeason(s){st.s=s;[].forEach.call($('seg').children,function(x){x.setAttribute('aria-pressed',x.dataset.s===s)});
+    $('sName').textContent=s==='Демі'?'осінь і весна':'утеплена';drawSum()}
+  $('seg').onclick=function(e){var b=e.target.closest('button');if(b)setSeason(b.dataset.s)};
+
+  /* розмір: один дотик або калькулятор устілки */
+  var sz='';SIZES.forEach(function(s){sz+='<button type="button" data-s="'+s[0]+'" aria-pressed="false">'+s[0]+'</button>'});
+  $('sizes').innerHTML=sz;
+  function setSize(s){st.size=s;$('err').hidden=true;$('sizes').classList.remove('need');
+    [].forEach.call($('sizes').children,function(x){x.setAttribute('aria-pressed',+x.dataset.s===s)});drawSum()}
+  $('sizes').onclick=function(e){var b=e.target.closest('button');if(!b)return;var s=+b.dataset.s;setSize(s);
+    for(var i=0;i<SIZES.length;i++)if(SIZES[i][0]===s)showCm(SIZES[i][1])};
+  function sizeFor(cm){for(var i=0;i<SIZES.length;i++)if(cm<=SIZES[i][1]+0.05)return SIZES[i][0];return null}
+  function showCm(cm){cm=Math.round(Math.min(31.4,Math.max(23.3,cm))*10)/10;st.cm=cm;$('range').value=cm;$('cmVal').textContent=fmt(cm);return cm}
+  function setCm(cm){cm=showCm(cm);var s=sizeFor(cm);
+    if(cm<23.4){$('calcNote').textContent='Хамелеон шиємо від 36 розміру (23,7 см)';$('calcSize').textContent='—'}
+    else if(!s){$('calcNote').textContent='Більше 47 розміру: зателефонуйте нам';$('calcSize').textContent='—'}
+    else{$('calcNote').textContent='Вам підійде розмір';$('calcSize').textContent=s;setSize(s)}}
+  $('range').oninput=function(){setCm(+this.value)};
+  $('minus').onclick=function(){setCm(st.cm-0.1)};
+  $('plus').onclick=function(){setCm(st.cm+0.1)};
+  $('calc').addEventListener('toggle',function(){if(this.open&&!st.size)setCm(st.cm)});
+
+  function drawSum(){var e=ed()[String(st.size||42)];
+    $('price').textContent=money(e.price);$('priceOld').textContent=money(e.old);$('addTxt').textContent=st.size?'Замовити за '+money(e.price):'Обрати розмір і замовити';
+    $('dockPrice').textContent=money(e.price);$('heroPrice').textContent=money(ED[st.s][COLORS[st.c].id]['42'].price);
+    var note=COLORS[st.c].name.toLowerCase()+', '+st.s.toLowerCase()+(st.size?', '+st.size:'');
+    $('sumNote').textContent=note;$('dockNote').textContent='Хамелеон · '+note}
+
+  /* кошик Tilda: лише ім'я і телефон (email необов'язковий і схований) */
+  function slimCart(){
+    var forms=document.querySelectorAll('.t706 form, .t706__cartwin form');
+    [].forEach.call(forms,function(f){
+      [].forEach.call(f.querySelectorAll('input[name="Email"],input[type="email"]'),function(i){
+        i.removeAttribute('data-tilda-req');i.removeAttribute('aria-required');i.required=false;
+        var g=i.closest('.t-input-group');if(g)g.style.display='none'})})}
+  slimCart();setTimeout(slimCart,1500);setTimeout(slimCart,4000);
+
+  function order(){
+    if(!st.size){$('err').hidden=false;var z=$('sizes');z.classList.remove('need');void z.offsetWidth;z.classList.add('need');
+      z.scrollIntoView({behavior:'smooth',block:'center'});return}
+    var e=ed()[String(st.size)];
+    if(typeof window.tcart__addProduct==='function'){
+      window.tcart__addProduct({name:PRODUCT_NAME,price:e.price,img:IMG[COLORS[st.c].id][0],url:PRODUCT_URL,uid:e.uid,sku:e.sku,quantity:1,
+        options:[{option:'Сезон',variant:st.s},{option:'Доступні кольори',variant:e.cname},{option:'Розмір',variant:e.label}]});
+      slimCart();
+      if(typeof window.tcart__openCart==='function')window.tcart__openCart();
+      setTimeout(slimCart,300);return}
+    var d=$('done');d.hidden=false;
+    d.innerHTML='<b>Тестова сторінка</b><br>Ви обрали: '+COLORS[st.c].name.toLowerCase()+', '+st.s.toLowerCase()+', розмір '+st.size+', '+money(e.price)+', артикул '+e.sku+'<br>На Tilda тут відкриється оформлення замовлення'}
+  $('addBtn').onclick=order;
+
+  /* панель «Замовити»: після першого екрана завжди під пальцем */
+  $('dockBtn').onclick=function(){if(st.size){order();return}
+    $('err').hidden=false;$('sizes').scrollIntoView({behavior:'smooth',block:'center'});setTimeout(function(){$('sizes').classList.add('need')},400)};
+
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    [].forEach.call(document.querySelectorAll('.rv'),function(el){io.observe(el)})}
+  else[].forEach.call(document.querySelectorAll('.rv'),function(el){el.classList.add('in')});
+
+  drawGal();setSeason('Демі');
+})();
+</script>
+</body>
+</html>
