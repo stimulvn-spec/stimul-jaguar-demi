@@ -209,6 +209,37 @@
 
   .rv{opacity:0;transform:translateY(32px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
   .rv.in{opacity:1;transform:none}
+
+  .sizecol{margin-top:24px}
+  @media (min-width:820px){.sizecol{margin-top:0}}
+  /* Галерея і збільшення фото */
+  .gal-wrap{position:relative}
+  .gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;border-radius:18px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);scrollbar-width:none}
+  .gal::-webkit-scrollbar{display:none}
+  .gi{flex:none;width:100%;border:0;padding:0;background:#fff;cursor:zoom-in;scroll-snap-align:center;display:block}
+  .gi img{width:100%;height:auto;aspect-ratio:1/1;object-fit:contain}
+  .gi img.life{object-fit:cover}
+  .zoomhint{position:absolute;right:10px;bottom:10px;display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border-radius:999px;background:rgba(14,14,14,.78);color:#fff;font-size:13px;line-height:16px;font-weight:800;pointer-events:none}
+  .zoomhint svg{width:15px;height:15px}
+  .galnum{position:absolute;left:10px;top:10px;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.92);font-size:13px;font-weight:800;pointer-events:none;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+  .gnav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:999px;border:0;background:rgba(255,255,255,.94);box-shadow:0 1px 4px rgba(0,0,0,.15);display:grid;place-items:center;cursor:pointer}
+  .gnav svg{width:20px;height:20px}
+  .gprev{left:8px}.gnext{right:8px}
+  .dots{display:flex;justify-content:center;gap:6px;margin-top:10px}
+  .dots i{width:7px;height:7px;border-radius:99px;background:var(--line);transition:width .3s var(--ease),background-color .3s}
+  .dots i.on{background:var(--ink);width:18px}
+  .lb{position:fixed;inset:0;z-index:80;background:#0B0B0B;display:flex;flex-direction:column;color:#fff}
+  .lb-top{display:flex;justify-content:space-between;align-items:center;padding:8px 10px 8px 16px;font-weight:800;font-size:15px}
+  .lb-top button{width:48px;height:48px;border-radius:999px;border:0;background:#fff;color:#0E0E0E;font-size:28px;line-height:1;cursor:pointer}
+  .lb-stage{position:relative;flex:1;overflow:hidden;display:flex;align-items:center;justify-content:center;touch-action:pan-y}
+  .lb-stage img{max-width:100%;max-height:100%;object-fit:contain;cursor:zoom-in;user-select:none;-webkit-user-drag:none}
+  .lb-stage.zoom{display:block;overflow:auto;touch-action:auto}
+  .lb-stage.zoom img{max-width:none;max-height:none;width:240%;cursor:zoom-out}
+  .lb-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:48px;height:48px;border-radius:999px;border:0;background:rgba(255,255,255,.92);color:#0E0E0E;display:grid;place-items:center;cursor:pointer}
+  .lb-nav svg{width:22px;height:22px}
+  .lb-prev{left:8px}.lb-next{right:8px}
+  .lb.zoomed .lb-nav{display:none}
+  .lb-hint{text-align:center;color:#BDB8AE;font-size:14px;line-height:20px;padding:10px 16px calc(14px + env(safe-area-inset-bottom))}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
 
   @media (min-width:820px){
@@ -269,10 +300,34 @@
   <div class="wrap">
     <span class="q">Головне питання перед покупкою</span>
     <h2 class="h2" id="h-fit">А раптом <em>не той розмір?</em></h2>
-    <p class="lead">Найчастіша причина обміну взуття: взяли на розмір більше «про запас»<br>Тут розмір рахується за сантиметрами, а не навмання</p>
+    <p class="lead">Найчастіша причина обміну взуття: взяли на розмір більше «про запас»<br>Роздивіться пару зблизька і порахуйте розмір за сантиметрами</p>
     <div class="fit">
-      <div>
-        <div class="tabs" role="tablist" aria-label="Як підібрати розмір">
+      <div class="pick">
+        <div>
+          <div class="gal-wrap">
+            <div class="gal" id="gal" aria-label="Фото кросівок Катран, гортайте вбік, натисніть, щоб збільшити"></div>
+            <span class="galnum" id="galNum">1 / 7</span>
+            <button class="gnav gprev" type="button" id="gPrev" aria-label="Попереднє фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
+            <button class="gnav gnext" type="button" id="gNext" aria-label="Наступне фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
+            <span class="zoomhint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4M11 8v6M8 11h6"/></svg>Натисніть, щоб збільшити</span>
+          </div>
+          <div class="dots" id="dots" aria-hidden="true"></div>
+        </div>
+        <div>
+          <div class="lbl">Колір <span id="cName">Олива</span></div>
+          <div class="chips" id="chips" role="group" aria-label="Колір"></div>
+        </div>
+        <div>
+          <div class="lbl">Сезон <span id="sName">осінь і весна</span></div>
+          <div class="seg" id="seg" role="group" aria-label="Сезон">
+            <button type="button" data-s="Демі" aria-pressed="true">Демі<small>як у ролику</small></button>
+            <button type="button" data-s="Зима" aria-pressed="false">Зима<small>WINDTEX, до −8°C</small></button>
+          </div>
+        </div>
+      </div>
+      <div class="sizecol">
+        <div class="lbl">Розмір <span>40–46</span></div>
+        <div class="tabs" role="tablist" aria-label="Як підібрати розмір" style="margin-top:8px">
           <button type="button" role="tab" id="tabCm" aria-selected="true" aria-controls="paneCm">Знаю довжину устілки</button>
           <button type="button" role="tab" id="tabSz" aria-selected="false" aria-controls="paneSz">Знаю свій розмір</button>
         </div>
@@ -294,19 +349,8 @@
           <div class="res-top"><span id="resNote">Ваш розмір у Катрані</span><b id="resSize">42</b></div>
           <p id="resTxt"></p>
         </div>
-      </div>
-      <div class="pick">
-        <div>
-          <div class="lbl">Колір <span id="cName">Олива</span></div>
-          <div class="chips" id="chips" role="group" aria-label="Колір"></div>
-        </div>
-        <div>
-          <div class="lbl">Сезон <span id="sName">осінь і весна</span></div>
-          <div class="seg" id="seg" role="group" aria-label="Сезон">
-            <button type="button" data-s="Демі" aria-pressed="true">Демі<small>як у ролику</small></button>
-            <button type="button" data-s="Зима" aria-pressed="false">Зима<small>WINDTEX, до −8°C</small></button>
-          </div>
-        </div>
+      
+        <div class="pick" style="margin-top:16px">
         <div class="total"><b id="price">3&nbsp;585 грн</b><s id="priceOld">4&nbsp;385 грн</s><span id="sumNote">олива, демі, розмір 42</span></div>
         <button class="btn btn-block" type="button" id="addBtn"><span id="addTxt">Замовити 42 за 3&nbsp;585 грн</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
@@ -316,6 +360,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg><p><b>Оплата при отриманні</b> з мінімальною передоплатою</p></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg><p><b>14 днів на обмін</b>, якщо розмір усе ж не підійшов</p></li>
         </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -457,6 +502,13 @@
   <button class="btn" type="button" id="dockBtn">Замовити</button>
 </div>
 
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Фото кросівок Катран">
+  <div class="lb-top"><span id="lbNum">1 / 7</span><button type="button" id="lbClose" aria-label="Закрити">×</button></div>
+  <div class="lb-stage" id="lbStage"><img id="lbImg" src="" alt=""></div>
+  <button class="lb-nav lb-prev" type="button" id="lbPrev" aria-label="Попереднє фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
+  <button class="lb-nav lb-next" type="button" id="lbNext" aria-label="Наступне фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
+  <p class="lb-hint" id="lbHint">Торкніться фото, щоб наблизити · гортайте вбік</p>
+</div>
 <div class="vmodal" id="vmodal" hidden>
   <button type="button" id="vclose" aria-label="Закрити">×</button>
   <video id="vfull" controls playsinline preload="none" poster="img/review-poster.jpg"><source src="media/ogliad.mp4" type="video/mp4"></video>
@@ -492,6 +544,38 @@
   $('vclose').onclick=closeV;$('vmodal').onclick=function(e){if(e.target===this)closeV()};
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!$('vmodal').hidden)closeV()});
 
+
+  /* галерея: фото товару + кадри з ролика; натискання відкриває на весь екран */
+  var LIFE={"olyva":["img/life-trava.jpg","img/life-nubuk.jpg"],"koyot":["img/life-kaluzha.jpg","img/life-brud.jpg"]};
+  function galList(c){var col=COLORS[c],a=[];
+    for(var i=0;i<IMG[col.id].length;i++)a.push({t:img(c,i,'900x'),f:img(c,i,'1600x'),alt:'Кросівки Катран, колір '+col.name.toLowerCase()+', фото '+(i+1),life:0});
+    (LIFE[col.id]||[]).forEach(function(u){a.push({t:u,f:u,alt:'Кросівки Катран, колір '+col.name.toLowerCase()+', кадр з ролика',life:1})});return a}
+  var GL=[];
+  function drawGal(){GL=galList(st.c);var h='',d='';
+    GL.forEach(function(p,i){h+='<button type="button" class="gi" data-i="'+i+'" aria-label="Збільшити фото '+(i+1)+'"><img'+(p.life?' class="life"':'')+' src="'+p.t+'" alt="'+p.alt+'" width="900" height="900"'+(i?' loading="lazy"':'')+'></button>';d+='<i'+(i?'':' class="on"')+'></i>'});
+    $('gal').innerHTML=h;$('gal').scrollLeft=0;$('dots').innerHTML=d;$('galNum').textContent='1 / '+GL.length}
+  function galIdx(){var g=$('gal');return Math.round(g.scrollLeft/g.clientWidth)}
+  $('gal').addEventListener('scroll',function(){var k=galIdx();$('galNum').textContent=(k+1)+' / '+GL.length;
+    [].forEach.call($('dots').children,function(x,i){x.className=i===k?'on':''})},{passive:true});
+  function galGo(k){var g=$('gal');k=(k+GL.length)%GL.length;g.scrollTo({left:k*g.clientWidth,behavior:'smooth'})}
+  $('gPrev').onclick=function(){galGo(galIdx()-1)};$('gNext').onclick=function(){galGo(galIdx()+1)};
+  $('gal').onclick=function(e){var b=e.target.closest('.gi');if(b)openLb(+b.dataset.i)};
+  var lbI=0,lbX=null;
+  function lbShow(){var p=GL[lbI];$('lbImg').src=p.f;$('lbImg').alt=p.alt;$('lbNum').textContent=(lbI+1)+' / '+GL.length;unzoom()}
+  function openLb(i){lbI=i;$('lb').hidden=false;document.documentElement.style.overflow='hidden';lbShow()}
+  function closeLb(){$('lb').hidden=true;document.documentElement.style.overflow='';galGo(lbI)}
+  function lbStep(d){lbI=(lbI+d+GL.length)%GL.length;lbShow()}
+  function unzoom(){$('lbStage').classList.remove('zoom');$('lb').classList.remove('zoomed');$('lbHint').textContent='Торкніться фото, щоб наблизити · гортайте вбік'}
+  $('lbImg').onclick=function(e){var s=$('lbStage');
+    if(s.classList.contains('zoom')){unzoom();return}
+    var r=this.getBoundingClientRect(),fx=(e.clientX-r.left)/r.width,fy=(e.clientY-r.top)/r.height;
+    s.classList.add('zoom');$('lb').classList.add('zoomed');$('lbHint').textContent='Ведіть пальцем, щоб роздивитися · торкніться, щоб віддалити';
+    var im=this;setTimeout(function(){s.scrollLeft=fx*im.offsetWidth-s.clientWidth/2;s.scrollTop=fy*im.offsetHeight-s.clientHeight/2},0)};
+  $('lbClose').onclick=closeLb;$('lbPrev').onclick=function(){lbStep(-1)};$('lbNext').onclick=function(){lbStep(1)};
+  $('lbStage').addEventListener('touchstart',function(e){lbX=$('lbStage').classList.contains('zoom')?null:e.touches[0].clientX},{passive:true});
+  $('lbStage').addEventListener('touchend',function(e){if(lbX===null)return;var dx=e.changedTouches[0].clientX-lbX;lbX=null;if(Math.abs(dx)>50)lbStep(dx<0?1:-1)},{passive:true});
+  document.addEventListener('keydown',function(e){if($('lb').hidden)return;if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')lbStep(1);if(e.key==='ArrowLeft')lbStep(-1)});
+
   /* підбір розміру: два способи */
   function setTab(m){st.mode=m;$('tabCm').setAttribute('aria-selected',m==='cm');$('tabSz').setAttribute('aria-selected',m==='sz');
     $('paneCm').hidden=m!=='cm';$('paneSz').hidden=m!=='sz';drawRes()}
@@ -521,7 +605,7 @@
   var ch='';COLORS.forEach(function(c,i){ch+='<button type="button" data-c="'+i+'" aria-pressed="'+(i===0)+'"><img src="'+img(i,0,'200x')+'" alt="" width="80" height="80">'+c.name+'</button>'});
   $('chips').innerHTML=ch;
   $('chips').onclick=function(e){var b=e.target.closest('button');if(!b)return;st.c=+b.dataset.c;
-    [].forEach.call($('chips').children,function(x){x.setAttribute('aria-pressed',x===b)});$('cName').textContent=COLORS[st.c].name;drawSum()};
+    [].forEach.call($('chips').children,function(x){x.setAttribute('aria-pressed',x===b)});$('cName').textContent=COLORS[st.c].name;drawGal();drawSum()};
   $('seg').onclick=function(e){var b=e.target.closest('button');if(!b)return;st.s=b.dataset.s;
     [].forEach.call($('seg').children,function(x){x.setAttribute('aria-pressed',x===b)});$('sName').textContent=st.s==='Демі'?'осінь і весна':'утеплена';drawSum()};
 
@@ -541,7 +625,7 @@
 
   /* кошик Tilda: лише ім'я і телефон */
   if(!$('stlCartCss')){var cs=document.createElement('style');cs.id='stlCartCss';
-    cs.textContent='.t706 .t-input-group:has(input[name="Email"]){display:none!important}';document.head.appendChild(cs)}
+    cs.textContent='.t706 .t-input-group:has(input[name="Email"]),.t706 .t706__auth{display:none!important}';document.head.appendChild(cs)}
   function slimCart(){
     [].forEach.call(document.querySelectorAll('.t706 form, .t706__cartwin form'),function(f){
       [].forEach.call(f.querySelectorAll('input[name="Email"],input[type="email"]'),function(i){
@@ -583,7 +667,7 @@
     [].forEach.call(document.querySelectorAll('.rv'),function(el){io.observe(el)})}
   else[].forEach.call(document.querySelectorAll('.rv'),function(el){el.classList.add('in')});
 
-  setCm(27.7);
+  drawGal();setCm(27.7);
 })();
 </script>
 </body>
